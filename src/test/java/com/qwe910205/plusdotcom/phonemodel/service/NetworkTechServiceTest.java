@@ -61,4 +61,16 @@ class NetworkTechServiceTest {
         // then
         Assertions.assertThat(repository.count()).isEqualTo(3);
     }
+
+    @Transactional
+    @Test
+    void 잘못된_통신기술명은_저장할_수_없다() {
+        // given
+        String name1 = " ";
+        String name2 = null;
+
+        // when // then
+        Assertions.assertThatThrownBy(() -> service.save(name1)).isInstanceOf(IllegalArgumentException.class);
+        Assertions.assertThatThrownBy(() -> service.save(name2)).isInstanceOf(IllegalArgumentException.class);
+    }
 }
