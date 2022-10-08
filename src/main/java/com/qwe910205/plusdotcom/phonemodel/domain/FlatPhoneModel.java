@@ -13,7 +13,7 @@ import java.time.LocalDate;
 public class FlatPhoneModel extends PhoneModel {
 
     @Builder
-    FlatPhoneModel(PhoneModelId id, PhoneModelName name, Manufacturer manufacturer, NetworkTech networkTech, ImageSource thumbnail, ScreenSize screenSize, Size size, Weight weight, MemoryCapacity memoryCapacity, BatteryCapacity batteryCapacity, PhoneDescription description, Price price, LocalDate releaseDate) {
-        super(id, name, manufacturer, networkTech, thumbnail, screenSize, size, weight, memoryCapacity, batteryCapacity, description, price, releaseDate);
+    public FlatPhoneModel(PhoneModelId id, PhoneModelName name, Manufacturer manufacturer, NetworkTech networkTech, Price price) {
+        super(id, name, manufacturer, networkTech, price);
     }
 }

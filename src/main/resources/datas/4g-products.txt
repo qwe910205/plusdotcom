@@ -1,0 +1,350 @@
+{
+  "products": [
+    {
+      "name": "Galaxy A13",
+      "model_id": "SM-A135N",
+      "manufacturer": "SAMSUNG",
+      "price": 297000,
+      "hash_tag": "#쿼드카메라 #64GB메모리 #5000mAh배터리",
+      "color": [
+        {
+          "color_code": "#3A3A3A",
+          "color_name": "블랙",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220722-095447-761-gJLEScE0.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220722-095447-808-zYg3y8VB.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220722-095447-778-fMv7EDwF.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220722-095447-799-BzJnpw3b.jpg"
+          ]
+        },
+        {
+          "color_code": "#ECECEC",
+          "color_name": "화이트",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220722-100638-605-yyuTwDiw.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220722-100638-627-SEUZcL2C.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220722-100638-602-5MD7y9bU.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220722-100638-617-eCL4qvfi.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://image.lguplus.com/static/pc-contents/images/fcmm/cnts/imge/20220722-100807-787-M7PPgdcI.jpg"
+      ],
+      "CPU": "Octa-Core(Exynos850)",
+      "display_description": "6.6\"(167.2mm) FHD+ TFT V-Cut 디스플레이",
+      "camera": "메인 50MP(F1.8) 초광각 5MP(F2.2) 심도 2MP(F2.4) 접사 2MP(2.4)",
+      "memory_ram": "4",
+      "memory_rom": "64",
+      "battery_capacity": "5,000mAh, 고속충전 15W",
+      "waterproof": ""
+    },
+    {
+      "name": "Redmi Note 11",
+      "model_id": "2201117TY",
+      "manufacturer": "XIAOMI",
+      "price": 299200,
+      "hash_tag": "#90 Hz 아몰레드 디스플레이 #33W 고속충전",
+      "color": [
+        {
+          "color_code": "#757575",
+          "color_name": "그레이",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/2201117TY/imge_cut/ushop_2201117TY_B7_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/2201117TY/imge_cut/ushop_2201117TY_B7_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/2201117TY/imge_cut/ushop_2201117TY_B7_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/2201117TY/imge_cut/ushop_2201117TY_B7_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20220406/PC_Redmi%20Note_22040420220406090255890.jpg"
+      ],
+      "CPU": "퀄컴 스냅드래곤 680 Octa Core (6nm 고성능 프로세서)",
+      "display_description": "6.43” FHD+ 아몰레드 디스플레이 90Hz",
+      "camera": "후면 50MP+8MP+2MP+2MP/ 전면 13MP",
+      "battery_capacity": "5,000mAh",
+      "waterproof": ""
+    },
+    {
+      "name": "갤럭시 A23",
+      "model_id": "SM-A235N",
+      "manufacturer": "SAMSUNG",
+      "price": 374000,
+      "hash_tag": "#6.6인치 대화면 #5,000mAh배터리",
+      "color": [
+        {
+          "color_code": "#2F2F2F",
+          "color_name": "블랙",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-A235N/imge_cut/ushop_SM-A235N_01_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A235N/imge_cut/ushop_SM-A235N_01_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A235N/imge_cut/ushop_SM-A235N_01_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A235N/imge_cut/ushop_SM-A235N_01_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#D7E8F8",
+          "color_name": "라이트블루",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-A235N/imge_cut/ushop_SM-A235N_30_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A235N/imge_cut/ushop_SM-A235N_30_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A235N/imge_cut/ushop_SM-A235N_30_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A235N/imge_cut/ushop_SM-A235N_30_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#FFFFFF",
+          "color_name": "화이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-A235N/imge_cut/ushop_SM-A235N_67_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A235N/imge_cut/ushop_SM-A235N_67_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A235N/imge_cut/ushop_SM-A235N_67_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A235N/imge_cut/ushop_SM-A235N_67_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20220325/PC_SM-A235N_1080px20220325094428875.jpg"
+      ],
+      "CPU": "Octa Core (2.4GHz + 1.9GHz)",
+      "display_description": "6.6”(167.2mm) / FHD+ TFT 인피니티-V 디스플레이 / 90 Hz",
+      "camera": "후면 메인 50 MP (F1.8) OIS / 초광각 5 MP (F2.2) 심도 2 MP (F2.4) / 접사 2 MP (F2.4), 전면 8 MP (F2.2)",
+      "memory_ram": "",
+      "memory_rom": "4",
+      "battery_capacity": "5,000 mAh",
+      "waterproof": ""
+    },
+    {
+      "name": "U+키즈폰 with 리틀카카오프렌즈",
+      "model_id": "SM-G525N-UK",
+      "manufacturer": "SAMSUNG",
+      "price": 322000,
+      "hash_tag": "#풍부한테마 #안심케어+ #특별패키지",
+      "color": [
+        {
+          "color_code": "#FFFFFF",
+          "color_name": "화이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-G525N-UK/imge_cut/ushop_SM-G525N-UK_67_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G525N-UK/imge_cut/ushop_SM-G525N-UK_67_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G525N-UK/imge_cut/ushop_SM-G525N-UK_67_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G525N-UK/imge_cut/ushop_SM-G525N-UK_67_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://image.lguplus.com/static/pc-contents/images/fcmm/cnts/imge/20220712-102756-457-zVfAM76K.jpg"
+      ],
+      "CPU": "Exynos850 (Octa 2.0GHz)",
+      "display_description": "5.3\"(134.8mm) HD+ TFT",
+      "camera": "후면 : 16MP AF(F1.8) 전면 : 5MP FF(F2.2)",
+      "memory_ram": "",
+      "memory_rom": "64",
+      "battery_capacity": "3,000mAh",
+      "waterproof": "IP68"
+    },
+    {
+      "name": "갤럭시 폴더2 2021",
+      "model_id": "SM-G160N2021",
+      "manufacturer": "SAMSUNG",
+      "price": 253000,
+      "hash_tag": "#레트로디자인 #탈착식배터리 #편리한사용성",
+      "color": [
+        {
+          "color_code": "#EBECF0",
+          "color_name": "화이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-G160N2021/imge_cut/ushop_SM-G160N2021_67_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G160N2021/imge_cut/ushop_SM-G160N2021_67_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G160N2021/imge_cut/ushop_SM-G160N2021_67_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G160N2021/imge_cut/ushop_SM-G160N2021_67_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#5C1240",
+          "color_name": "레드",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-G160N2021/imge_cut/ushop_SM-G160N2021_80_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G160N2021/imge_cut/ushop_SM-G160N2021_80_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G160N2021/imge_cut/ushop_SM-G160N2021_80_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G160N2021/imge_cut/ushop_SM-G160N2021_80_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#2F3D40",
+          "color_name": "그레이",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-G160N2021/imge_cut/ushop_SM-G160N2021_B7_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G160N2021/imge_cut/ushop_SM-G160N2021_B7_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G160N2021/imge_cut/ushop_SM-G160N2021_B7_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G160N2021/imge_cut/ushop_SM-G160N2021_B7_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20210730/PC_SM-G160N_1080px2021040209445138620210730142827243.jpg"
+      ],
+      "CPU": "Qualcomm | WTR2965 1.4GHz Quad core",
+      "display_description": "3.8\" 96.6mm WVGA TFT",
+      "camera": "전면 : 5MP F1.9 / 후면 : 8MP F2.2",
+      "memory_ram": "",
+      "memory_rom": "32",
+      "battery_capacity": "1,950mAh",
+      "waterproof": ""
+    },
+    {
+      "name": "갤럭시 A12",
+      "model_id": "SM-A125N",
+      "manufacturer": "SAMSUNG",
+      "price": 275000,
+      "hash_tag": "#대화면 #대용량배터리 #쿼드카메라",
+      "color": [
+        {
+          "color_code": "#2B2E37",
+          "color_name": "블랙",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-A125N/imge_cut/ushop_SM-A125N_01_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A125N/imge_cut/ushop_SM-A125N_01_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A125N/imge_cut/ushop_SM-A125N_01_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A125N/imge_cut/ushop_SM-A125N_01_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#FFFFFF",
+          "color_name": "화이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-A125N/imge_cut/ushop_SM-A125N_67_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A125N/imge_cut/ushop_SM-A125N_67_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A125N/imge_cut/ushop_SM-A125N_67_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A125N/imge_cut/ushop_SM-A125N_67_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20210730/PC_galaxyA212021020517432321520210730143400173.jpg"
+      ],
+      "CPU": "Octa-Core",
+      "display_description": "6.5“ (165.5 mm) HD+ TFT Infinity-V Display",
+      "camera": "후면 - 메인 : 48 MP, 초광각 : 5 MP, 접사 : 2 MP, 심도 : 2 MP, 전면 - 8 MP",
+      "memory_ram": "",
+      "memory_rom": "32",
+      "battery_capacity": "5,000mAh",
+      "waterproof": ""
+    },
+    {
+      "name": "갤럭시 A21s",
+      "model_id": "SM-A217N",
+      "manufacturer": "SAMSUNG",
+      "price": 297000,
+      "hash_tag": "#접사지원 #쿼드카메라 #대용량배터리",
+      "color": [
+        {
+          "color_code": "#ED419",
+          "color_name": "레드",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-A217N/imge_cut/ushop_SM-A217N_80_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A217N/imge_cut/ushop_SM-A217N_80_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A217N/imge_cut/ushop_SM-A217N_80_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A217N/imge_cut/ushop_SM-A217N_80_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#000",
+          "color_name": "블랙",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-A217N/imge_cut/ushop_SM-A217N_01_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A217N/imge_cut/ushop_SM-A217N_01_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A217N/imge_cut/ushop_SM-A217N_01_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A217N/imge_cut/ushop_SM-A217N_01_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#FFFFFF",
+          "color_name": "화이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-A217N/imge_cut/ushop_SM-A217N_67_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A217N/imge_cut/ushop_SM-A217N_67_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A217N/imge_cut/ushop_SM-A217N_67_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A217N/imge_cut/ushop_SM-A217N_67_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#9FA1A5",
+          "color_name": "실버",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-A217N/imge_cut/ushop_SM-A217N_19_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A217N/imge_cut/ushop_SM-A217N_19_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A217N/imge_cut/ushop_SM-A217N_19_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A217N/imge_cut/ushop_SM-A217N_19_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20200716/PC_%EA%B0%A4%EB%9F%AD%EC%8B%9C_A21s_20071420200717083206515.jpg"
+      ],
+      "CPU": "엑시노스850 2.0GHz*2.0GHz 옥타코어",
+      "display_description": "166.3 mm Infinity-O Display",
+      "camera": "전면 - 1,300만화소 후면 - 4,800만화소 + 800만화소 + 200만화소 + 200만화소",
+      "memory_ram": "3",
+      "memory_rom": "",
+      "battery_capacity": "5,000 mAh",
+      "waterproof": ""
+    },
+    {
+      "name": "갤럭시 A31",
+      "model_id": "SM-A315N",
+      "manufacturer": "SAMSUNG",
+      "price": 374000,
+      "hash_tag": "#접사지원 #쿼드카메라 #슬림디자인",
+      "color": [
+        {
+          "color_code": "#2B2E37",
+          "color_name": "프리즘 크러시 블랙",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-A315N/imge_cut/ushop_SM-A315N_01_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A315N/imge_cut/ushop_SM-A315N_01_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A315N/imge_cut/ushop_SM-A315N_01_B.jpg"
+          ]
+        },
+        {
+          "color_code": "#F6F6F5",
+          "color_name": "프리즘 크러시 실버",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-A315N/imge_cut/ushop_SM-A315N_19_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A315N/imge_cut/ushop_SM-A315N_19_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A315N/imge_cut/ushop_SM-A315N_19_B.jpg"
+          ]
+        },
+        {
+          "color_code": "#2B387E",
+          "color_name": "프리즘 크러시 블루",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-A315N/imge_cut/ushop_SM-A315N_20_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A315N/imge_cut/ushop_SM-A315N_20_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A315N/imge_cut/ushop_SM-A315N_20_B.jpg"
+          ]
+        },
+        {
+          "color_code": "#FFFFFF",
+          "color_name": "프리즘 크러시 화이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-A315N/imge_cut/ushop_SM-A315N_67_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A315N/imge_cut/ushop_SM-A315N_67_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A315N/imge_cut/ushop_SM-A315N_67_B.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20200506/SM-A315N_1080px20200507083219971.jpg"
+      ],
+      "CPU": "Octa-Core 2GHz, 1.7GHz",
+      "display_description": "162.1㎜ FHD+ Super AMOLED Infinity-U",
+      "camera": "전면 : 20MP(F2.2) 후면 - 초광각 : 8 MP, 메인 : 48 MP AF , 접사 : 5 MP , 심도 : 5 MP",
+      "memory_ram": "",
+      "memory_rom": "64",
+      "battery_capacity": "5,000 mAh",
+      "waterproof": ""
+    }
+  ]
+}

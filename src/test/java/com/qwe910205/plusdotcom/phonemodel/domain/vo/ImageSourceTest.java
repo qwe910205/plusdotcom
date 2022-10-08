@@ -58,4 +58,16 @@ class ImageSourceTest {
         Assertions.assertThat(imageSource.getUrl()).isEqualTo(correctUrl1);
     }
 
+    @Test
+    void 이미지_주소를_생성할_수_있다() {
+        // given
+        String url = "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-020701-465-vFiTeAxV.jpg";
+
+        // when
+        ImageSource imageSource = new ImageSource(url);
+
+        // then
+        Assertions.assertThat(imageSource.getUrl()).isEqualTo(url);
+    }
+
 }

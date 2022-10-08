@@ -17,8 +17,8 @@ public class ColorCode {
     private String code;
 
     public ColorCode(String code) {
-        if (!Pattern.matches("^#[0-9a-fA-F]{6}$", code))
-            throw new IllegalArgumentException("알맞은 색상 코드의 형식을 입력바랍니다.");
+        if (!Pattern.matches("^#[0-9a-fA-F]{1,6}$", code))
+            throw new IllegalArgumentException(code + "는 알맞지 않는 색상 코드입니다.");
         this.code = code;
     }
 }

@@ -3,15 +3,13 @@ package com.qwe910205.plusdotcom.phonemodel.domain;
 import com.qwe910205.plusdotcom.phonemodel.domain.vo.ImageSource;
 import com.qwe910205.plusdotcom.phonemodel.domain.vo.*;
 import com.qwe910205.plusdotcom.plan.domain.Plan;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.*;
 
+@Getter
 @EqualsAndHashCode(of = {"id"})
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -47,7 +45,7 @@ public abstract class PhoneModel {
 
     @MapKeyColumn(name = "COLOR_NAME")
     @OneToMany(mappedBy = "phoneModel", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Map<String, PhoneProduct> products = new HashMap<>();
+    private Map<String, PhoneProduct> productMap = new HashMap<>();
 
     @Embedded
     private ScreenSize screenSize;
@@ -88,19 +86,76 @@ public abstract class PhoneModel {
     @ManyToMany
     private List<Plan> recommendedPlans = new ArrayList<>();
 
-    PhoneModel(PhoneModelId id, PhoneModelName name, Manufacturer manufacturer, NetworkTech networkTech, ImageSource thumbnail, ScreenSize screenSize, Size size, Weight weight, MemoryCapacity memoryCapacity, BatteryCapacity batteryCapacity, PhoneDescription description, Price price, LocalDate releaseDate) {
+    protected PhoneModel(PhoneModelId id, PhoneModelName name, Manufacturer manufacturer, NetworkTech networkTech, Price price) {
+        Objects.requireNonNull(id, "스마트폰 모델의 아이디는 필수입니다.");
+        Objects.requireNonNull(name, "스마트폰 모델명은 필수입니다.");
+        Objects.requireNonNull(manufacturer, "스마트폰 모델의 제조사는 필수입니다.");
+        Objects.requireNonNull(networkTech, "스마트폰 모델의 통신 기술은 필수입니다.");
+        Objects.requireNonNull(price, "스마트폰 모델의 가격은 필수입니다.");
         this.id = id;
         this.name = name;
         this.manufacturer = manufacturer;
         this.networkTech = networkTech;
-        this.thumbnail = thumbnail;
-        this.screenSize = screenSize;
-        this.size = size;
-        this.weight = weight;
-        this.memoryCapacity = memoryCapacity;
-        this.batteryCapacity = batteryCapacity;
-        this.description = description;
         this.price = price;
+    }
+
+    public String getId() {
+        return this.id.getId();
+    }
+
+    public String getName() {
+        return this.name.getName();
+    }
+
+    public void addHashTags(List<HashTag> hashTags) {
+        this.hashTags.addAll(hashTags);
+    }
+
+    public void setDescription(PhoneDescription description) {
+        this.description = description;
+    }
+
+    public void addDescriptionImages(List<ImageSource> descriptionImages) {
+        this.descriptionImages.addAll(descriptionImages);
+    }
+
+    public void addProduct(Color color, List<ImageSource> images, Stock stock) {
+        PhoneProduct phoneProduct = new PhoneProduct(this, color, images, stock);
+        this.productMap.put(color.getName(), phoneProduct);
+    }
+
+    public void setSize(Size size) {
+        this.size = size;
+    }
+
+    public void setWeight(Weight weight) {
+        this.weight = weight;
+    }
+
+    public void setBatteryCapacity(BatteryCapacity batteryCapacity) {
+        this.batteryCapacity = batteryCapacity;
+    }
+
+    public void setScreenSize(ScreenSize screenSize) {
+        this.screenSize = screenSize;
+    }
+
+    public void setMemoryCapacity(MemoryCapacity memoryCapacity) {
+        this.memoryCapacity = memoryCapacity;
+    }
+
+    public void setReleaseDate(LocalDate releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    public void addConvenienceFunctions(List<ConvenienceFunction> convenienceFunctions) {
+        this.convenienceFunctions.addAll(convenienceFunctions);
+    }
+    public void setThumbnail(ImageSource thumbnail) {
+        this.thumbnail = thumbnail;
+    }
+
+    public List<PhoneProduct> getAllProducts() {
+        return this.productMap.values().stream().toList();
     }
 }

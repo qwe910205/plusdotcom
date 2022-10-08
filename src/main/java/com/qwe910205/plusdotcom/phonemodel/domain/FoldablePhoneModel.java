@@ -21,8 +21,11 @@ public class FoldablePhoneModel extends PhoneModel {
     private Size foldedSize;
 
     @Builder
-    FoldablePhoneModel(PhoneModelId id, PhoneModelName name, Manufacturer manufacturer, NetworkTech networkTech, ImageSource thumbnail, ScreenSize screenSize, Size size, Weight weight, MemoryCapacity memoryCapacity, BatteryCapacity batteryCapacity, PhoneDescription description, Price price, LocalDate releaseDate, Size foldedSize) {
-        super(id, name, manufacturer, networkTech, thumbnail, screenSize, size, weight, memoryCapacity, batteryCapacity, description, price, releaseDate);
+    public FoldablePhoneModel(PhoneModelId id, PhoneModelName name, Manufacturer manufacturer, NetworkTech networkTech, Price price) {
+        super(id, name, manufacturer, networkTech, price);
+    }
+
+    public void setFoldedSize(Size foldedSize) {
         this.foldedSize = foldedSize;
     }
 }

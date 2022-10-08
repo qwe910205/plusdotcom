@@ -1,0 +1,1667 @@
+{
+  "products": [
+    {
+      "name": "갤럭시 Z Flip 4",
+      "model_id": "SM-F721N",
+      "manufacturer": "SAMSUNG",
+      "price": 1353000,
+      "hash_tag": "#최적의화면비 #가벼워진무게 #멀티태스킹",
+      "color": [
+        {
+          "color_code": "#B8AACB",
+          "color_name": "보라 퍼플",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-020618-663-OMVftJP5.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-020618-678-C8yYoMIx.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-020618-674-ItkOP0vp.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-020618-663-cMCHj8k6.jpg"
+          ]
+        },
+        {
+          "color_code": "#ECDBD3",
+          "color_name": "핑크 골드",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-020631-391-bPE9jcWN.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-020631-412-gCsMNDbi.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-020631-408-G3z83woI.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-020631-401-2JepFcRu.jpg"
+          ]
+        },
+        {
+          "color_code": "#C9D1E4",
+          "color_name": "블루",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-020644-529-ZPW12jIy.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-020644-547-64XjTeRC.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-020644-560-4vO3OWch.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-020644-539-mlrSiD9s.jpg"
+          ]
+        },
+        {
+          "color_code": "#424347",
+          "color_name": "그라파이트",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-020701-465-vFiTeAxV.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-020701-465-VGEBhGV7.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-020701-471-PIQiO80S.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-020701-460-sxZD3Tpa.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://image.lguplus.com/static/pc-contents/images/fcmm/cnts/imge/20220812-123056-120-5Eb8oAhV.jpg",
+        "https://image.lguplus.com/static/pc-contents/images/fcmm/cnts/imge/20220812-123159-898-A0RYMpQ9.jpg"
+      ],
+      "CPU": "Snapdragon 8+ Gen 1(4nm)",
+      "display_description": "메인 : 7.6”(192.1 mm) QXGA+, Dynamic AMOLED 2X / 커버 : 6.2“(157.3 mm) HD+, Dynamic AMOLED 2X",
+      "camera": "후면 : 12MP (F2.2) , 50MP Dual Pixel AF, OIS, F1.8 전면 : UDC 2.0 4MP F1.8 커버 : 10MP Dual Pixel F2.2",
+      "memory_ram": "12",
+      "memory_rom": "256",
+      "battery_capacity": "4,400 mAh",
+      "waterproof": "IPX8"
+    },
+    {
+      "name": "갤럭시 Z Flip 4 메종키츠네 에디션",
+      "model_id": "SM-F721N-MK",
+      "manufacturer": "SAMSUNG",
+      "price": 1386000,
+      "hash_tag": "#대용량배터리 #플렉스캠 #커버디스플레이",
+      "color": [
+        {
+          "color_code": "#FFFFFF",
+          "color_name": "화이트",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-030104-557-H2uealCE.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-030104-576-j6VSIUKk.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-030104-576-CkgRDXqb.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-030104-836-ETWAEtux.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://image.lguplus.com/static/pc-contents/images/fcmm/cnts/imge/20220812-123056-120-5Eb8oAhV.jpg",
+        "https://image.lguplus.com/static/pc-contents/images/fcmm/cnts/imge/20220812-123159-898-A0RYMpQ9.jpg"
+      ],
+      "CPU": "스냅드래곤 8+Gen1 (SM8475) (4nm, Octa-Core)",
+      "display_description": "메인 : 6.7” (170.3 mm) FHD+ , Dynamic AMOLED 2X 커버 : 1.9”(48.2 mm) , Super AMOLED",
+      "camera": "후면 - 초광각 : 12MP F2.2, 광각 : 12MP Dual pixel AF, OIS, F1,8 전면 - 10MP F2.4",
+      "memory_ram": "8",
+      "memory_rom": "256",
+      "battery_capacity": "3,700mAh",
+      "waterproof": "IPX8"
+    },
+    {
+      "name": "갤럭시 Z Flip 4 512GB",
+      "model_id": "SM-F721N512",
+      "manufacturer": "SAMSUNG",
+      "price": 1474000,
+      "hash_tag": "#대용량배터리 #플렉스캠 #커버디스플레이",
+      "color": [
+        {
+          "color_code": "#B8AACB",
+          "color_name": "보라 퍼플",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-025133-265-KrkSLySJ.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-025133-253-zXC8Ac4F.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-025133-286-JjMAEWeE.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-025133-274-Mq9MHVm8.jpg"
+          ]
+        },
+        {
+          "color_code": "#ECDBD3",
+          "color_name": "핑크 골드",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-025148-652-PMuV8Boz.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-025148-686-SsJ34T9H.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-025148-672-qIpmFxpT.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-025148-675-EyVo2ErP.jpg"
+          ]
+        },
+        {
+          "color_code": "#C9D1E4",
+          "color_name": "블루",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-025202-152-iwIvj3lI.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-025202-157-nE3Xrdea.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-025202-151-XAiWP5QL.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-025202-180-YhmHuMpq.jpg"
+          ]
+        },
+        {
+          "color_code": "#424347",
+          "color_name": "그라파이트",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220815-103323-774-KG4Knl3j.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220815-103323-777-Ir7HE0By.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220815-103323-782-ftLrAM6k.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220815-103323-778-8zOpF134.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://image.lguplus.com/static/pc-contents/images/fcmm/cnts/imge/20220812-123056-120-5Eb8oAhV.jpg",
+        "https://image.lguplus.com/static/pc-contents/images/fcmm/cnts/imge/20220812-123159-898-A0RYMpQ9.jpg"
+      ],
+      "CPU": "스냅드래곤 8+Gen1 (SM8475) (4nm, Octa-Core)",
+      "display_description": "메인 : 6.7” (170.3 mm) FHD+ , Dynamic AMOLED 2X 커버 : 1.9”(48.2 mm) , Super AMOLED",
+      "camera": "후면 - 초광각 : 12MP F2.2, 광각 : 12MP Dual pixel AF, OIS, F1,8 전면 - 10MP F2.4",
+      "memory_ram": "8",
+      "memory_rom": "512",
+      "battery_capacity": "3,700mAh",
+      "waterproof": "IPX8"
+    },
+    {
+      "name": "갤럭시 Z Fold 4",
+      "model_id": "SM-F936N",
+      "manufacturer": "SAMSUNG",
+      "price": 1998700,
+      "hash_tag": "#최적의화면비 #가벼워진무게 #멀티태스킹",
+      "color": [
+        {
+          "color_code": "#535D64",
+          "color_name": "그레이 그린",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-011331-152-1UnttTU4.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-011331-180-5cyWZibe.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-011331-154-TknEYIRd.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-011331-162-d3jrsLhI.jpg"
+          ]
+        },
+        {
+          "color_code": "#1C1D1F",
+          "color_name": "팬텀 블랙",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-011344-854-D3KVKm2K.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-011344-867-xlBLmt13.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-011344-911-9pgzBRZY.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-011344-886-vlaEKJb2.jpg"
+          ]
+        },
+        {
+          "color_code": "#EAE6DB",
+          "color_name": "베이지",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-011400-508-0IBz7t2j.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-011400-523-py6o2UKZ.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-011400-533-h3mV5TT3.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-011400-523-WsiPaXoL.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://image.lguplus.com/static/pc-contents/images/fcmm/cnts/imge/20220812-112801-535-ZU1zM7Ht.jpg",
+        "https://image.lguplus.com/static/pc-contents/images/fcmm/cnts/imge/20220812-112854-099-gi1wDy1K.jpg"
+      ],
+      "CPU": "Snapdragon 8+ Gen 1(4nm)",
+      "display_description": "메인 : 7.6”(192.1 mm) QXGA+, Dynamic AMOLED 2X / 커버 : 6.2“(157.3 mm) HD+, Dynamic AMOLED 2X",
+      "camera": "후면 : 12MP (F2.2) , 50MP Dual Pixel AF, OIS, F1.8 전면 : UDC 2.0 4MP F1.8 커버 : 10MP Dual Pixel F2.2",
+      "memory_ram": "12",
+      "memory_rom": "256",
+      "battery_capacity": "4,400 mAh",
+      "waterproof": "IPX8"
+    },
+    {
+      "name": "갤럭시 Z Fold 4 512GB",
+      "model_id": "SM-F936N512",
+      "manufacturer": "SAMSUNG",
+      "price": 2119700,
+      "hash_tag": "#멀티뷰 #S펜지원 #폴더블최초방수",
+      "color": [
+        {
+          "color_code": "#1C1D1F",
+          "color_name": "팬텀 블랙",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-034619-849-XwuD6bpL.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-034619-869-LSYClJpr.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-034619-862-hr1KiEel.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-034619-868-8AERwkfu.jpg"
+          ]
+        },
+        {
+          "color_code": "#F5F5DC",
+          "color_name": "베이지",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-034632-809-MfGjqVXy.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-034632-809-5Co1a40v.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-034632-809-PCplAyJg.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-034632-815-Ts8ds0oU.jpg"
+          ]
+        },
+        {
+          "color_code": "#535D64",
+          "color_name": "그레이 그린",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-034606-145-DDmYngp6.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-034606-171-qn2qeTiE.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-034606-150-jzFmigAk.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220812-034606-148-STvo9jPA.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://image.lguplus.com/static/pc-contents/images/fcmm/cnts/imge/20220812-112801-535-ZU1zM7Ht.jpg",
+        "https://image.lguplus.com/static/pc-contents/images/fcmm/cnts/imge/20220812-112854-099-gi1wDy1K.jpg"
+      ],
+      "CPU": "Snapdragon 8+ Gen 1(4nm)",
+      "display_description": "메인 디스플레이 : 191.9 mm(7.6\") Dynamic AMOLED 2X UDC 적용 Infinity Flex Display(2,208 x 1,768) 커버 디스플레이 : 158.2 mm(6.2\") Dynamic AMOLED 2X Infinity-O Display (2,268 x 842)",
+      "camera": "후면 : 12MP (F2.2) , 50MP Dual Pixel AF, OIS, F1.8 전면 : UDC 2.0 4MP F1.8 커버 : 10MP Dual Pixel F2.2",
+      "memory_ram": "12",
+      "memory_rom": "512",
+      "battery_capacity": "4,400 mAh",
+      "waterproof": "IPX8"
+    },
+    {
+      "name": "갤럭시 S20 중고폰",
+      "model_id": "RU-SM-G981N",
+      "manufacturer": "SAMSUNG",
+      "price": 367000,
+      "hash_tag": "#스페이스줌 #AI카메라 #AllDay배터리",
+      "color": [
+        {
+          "color_code": "#9EC2E6",
+          "color_name": "클라우드 블루",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-043011-551-7S6o2RfU.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-043011-538-uRtKF4IC.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-043011-554-1MFGml1T.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-043011-551-EtwXEl1d.jpg"
+          ]
+        },
+        {
+          "color_code": "#9FA1A0",
+          "color_name": "코스믹그레이",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-043025-688-J2ND3nNF.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-043025-705-U39f82vD.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-043025-697-6wXJyQNT.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-043025-674-hzAnwaeb.jpg"
+          ]
+        },
+        {
+          "color_code": "#FFFFFF",
+          "color_name": "클라우드 화이트",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-043125-546-CfarlOQE.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-043125-541-TTmbOIFI.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-043125-582-kMdjsI0n.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-043125-565-7eLCYBeZ.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://image.lguplus.com/static/pc-contents/images/fcmm/cnts/imge/20220808-105055-351-QNUcfJ2W.png"
+      ],
+      "CPU": "SM8250 + X55",
+      "display_description": "6.2” WQHD+ Dynamic AMOLED 2X",
+      "camera": "후면 - 광각 : 12 MP, 망원 : 64 MP, 초광각 : 12 MP 전면 - 광각 : 10 MP (듀얼픽셀 AF)",
+      "memory_ram": "",
+      "memory_rom": "128",
+      "battery_capacity": "4,000 mAh",
+      "waterproof": ""
+    },
+    {
+      "name": "갤럭시 S20+ 중고폰",
+      "model_id": "RU-SM-G986N",
+      "manufacturer": "SAMSUNG",
+      "price": 428000,
+      "hash_tag": "#스페이스줌 #AI카메라 #AllDay배터리",
+      "color": [
+        {
+          "color_code": "#F3799",
+          "color_name": "아토믹 블루",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-044010-642-Xu70TWFa.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-044010-645-gRDxeXI1.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-044010-631-lyacHvkG.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-044010-631-h3HW9uax.jpg"
+          ]
+        },
+        {
+          "color_code": "#9FA1A0",
+          "color_name": "그레이",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-044056-529-XzlmRaOJ.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-044056-531-DeRavdRU.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-044056-533-5GeLUrpb.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-044056-509-Qg8fng2D.jpg"
+          ]
+        },
+        {
+          "color_code": "#FFFFFF",
+          "color_name": "화이트",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-044144-714-nzVqh7iG.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-044144-692-zrEb3e1t.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-044144-702-n3i9pTlh.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-044144-715-ginNGPto.jpg"
+          ]
+        },
+        {
+          "color_code": "#9EC2E6",
+          "color_name": "스카이 블루",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-044035-826-ruDphybd.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-044035-845-zl7PpEMn.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-044035-852-aqF93EN7.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-044035-832-3xpLNizJ.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://image.lguplus.com/static/pc-contents/images/fcmm/cnts/imge/20220808-105211-472-aXwyBNyB.png"
+      ],
+      "CPU": "SM8250 + X55",
+      "display_description": "6.7” WQHD+ Dynamic AMOLED 2X",
+      "camera": "후면 - 광각 : 12 MP, 망원 : 64 MP, 초광각 : 12 MP, ToF 전면 - 광각 : 10 MP (듀얼픽셀 AF)",
+      "memory_ram": "",
+      "memory_rom": "256",
+      "battery_capacity": "4,500 mAh",
+      "waterproof": ""
+    },
+    {
+      "name": "갤럭시 S20 Ultra 중고폰",
+      "model_id": "RU-SM-G988N",
+      "manufacturer": "SAMSUNG",
+      "price": 500000,
+      "hash_tag": "#스페이스줌 #AI카메라 #AllDay배터리",
+      "color": [
+        {
+          "color_code": "#9FA1A0",
+          "color_name": "코스믹 그레이",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-045035-165-QF0z7IAh.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-045035-168-L8XniKxS.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-045035-172-ALwYcR5s.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-045035-176-RW9bOqbw.jpg"
+          ]
+        },
+        {
+          "color_code": "#000",
+          "color_name": "코스믹 블랙",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-045102-955-RDcaJMPt.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-045102-955-1YxkuiS4.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-045102-967-QWsAXwDi.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220809-045102-967-VxZjKy6k.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://image.lguplus.com/static/pc-contents/images/fcmm/cnts/imge/20220808-105306-615-30mQXr4h.png"
+      ],
+      "CPU": "SM8250 + X55",
+      "display_description": "6.9” WQHD+ Dynamic AMOLED 2X",
+      "camera": "후면 - 광각 : 108 MP, 망원 : 48 MP, 초광각 : 12 MP, ToF 전면 - 광각 : 40 MP (PD AF)",
+      "memory_ram": "",
+      "memory_rom": "256",
+      "battery_capacity": "5,000 mAh",
+      "waterproof": ""
+    },
+    {
+      "name": "갤럭시 A33 5G",
+      "model_id": "SM-A336N",
+      "manufacturer": "SAMSUNG",
+      "price": 499400,
+      "hash_tag": "#방수방진IP67 #쿼드카메라 #5000mAh배터리",
+      "color": [
+        {
+          "color_code": "#D8E9F8",
+          "color_name": "어썸 블루",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220729-094006-249-ebTNQ9k6.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220729-094006-267-c6suc21W.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220729-094006-251-mfiIdYfk.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220729-094006-267-NSZMQsk6.jpg"
+          ]
+        },
+        {
+          "color_code": "#2A2A2B",
+          "color_name": "어썸 블랙",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220729-094018-410-2ONKJaOr.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220729-094018-394-HXlFssEF.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220729-094018-411-hO31YNsG.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220729-094018-392-iazqi3fJ.jpg"
+          ]
+        },
+        {
+          "color_code": "#F6F8F7",
+          "color_name": "어썸 화이트",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220729-094031-666-UouZERci.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220729-094031-685-43GH7ceC.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220729-094031-681-z4e71psZ.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220729-094031-686-vV9gYNQI.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://image.lguplus.com/static/pc-contents/images/fcmm/cnts/imge/20220729-093046-501-to9T6VV8.jpg"
+      ],
+      "CPU": "5nm AP, Octa Core, Exynos 1280",
+      "display_description": "6.4\"(164.0 mm) FHD+ Super AMOLED",
+      "camera": "메인 48MP(F1.8) AF OIS, 초광각 8MP(F2.2) 심도 2MP(F2.4), 접사 5MP(F2.4)",
+      "memory_ram": "6",
+      "memory_rom": "",
+      "battery_capacity": "5,000mAh",
+      "waterproof": "IP67"
+    },
+    {
+      "name": "Galaxy Buddy 2",
+      "model_id": "SM-M236L",
+      "manufacturer": "SAMSUNG",
+      "price": 399300,
+      "hash_tag": "#가성비갑 #초고화질화면 #트리플카메라",
+      "color": [
+        {
+          "color_code": "#C9DDDF",
+          "color_name": "라이트 블루",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220616-074546-107-EpOJVZKV.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220616-074546-105-5XFcEWAn.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220616-074546-123-xI98LvJp.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220616-074546-105-6upl4lWx.jpg"
+          ]
+        },
+        {
+          "color_code": "#DE897E",
+          "color_name": "오렌지",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220616-074557-449-G2nZoUbT.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220616-074557-447-AIzt5mdI.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220616-074557-475-KunBLEXI.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220616-074557-477-oOPDYUXb.jpg"
+          ]
+        },
+        {
+          "color_code": "#5D7171",
+          "color_name": "그린",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220616-074608-406-otq7JYZi.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220616-074608-442-WBxp9p1e.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220616-074608-437-LmQUjduZ.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220616-074608-429-lmLNoHD8.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://image.lguplus.com/static/pc-contents/images/fcmm/cnts/imge/20220630-053541-153-CpNBgRjh.png",
+        "https://image.lguplus.com/static/pc-contents/images/fcmm/cnts/imge/20220616-074757-707-ISAjTxfj.jpg"
+      ],
+      "CPU": "퀄컴 SM7225",
+      "display_description": "6.6” FHD + TFT (Infinity-V)",
+      "camera": "후면카메라 : 5000만 화소, f/1.8, (Wide), PDAF 800만 화소, f/2.2, 200만 화소, f/2.4 전면 카메라 : 800만 화소, f/2.2, (Wide)",
+      "memory_ram": "",
+      "memory_rom": "",
+      "battery_capacity": "5,000mAh",
+      "waterproof": "-"
+    },
+    {
+      "name": "Galaxy A53 5G",
+      "model_id": "SM-A536N",
+      "manufacturer": "SAMSUNG",
+      "price": 599500,
+      "hash_tag": "#뛰어난성능 #합리적인가격 #대화면",
+      "color": [
+        {
+          "color_code": "#D7E8F8",
+          "color_name": "라이트블루",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-A536N/imge_cut/ushop_SM-A536N_AB_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A536N/imge_cut/ushop_SM-A536N_AB_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A536N/imge_cut/ushop_SM-A536N_AB_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A536N/imge_cut/ushop_SM-A536N_AB_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#FFFFFF",
+          "color_name": "화이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-A536N/imge_cut/ushop_SM-A536N_AW_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A536N/imge_cut/ushop_SM-A536N_AW_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A536N/imge_cut/ushop_SM-A536N_AW_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A536N/imge_cut/ushop_SM-A536N_AW_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#2F2F2F",
+          "color_name": "블랙",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-A536N/imge_cut/ushop_SM-A536N_AK_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A536N/imge_cut/ushop_SM-A536N_AK_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A536N/imge_cut/ushop_SM-A536N_AK_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A536N/imge_cut/ushop_SM-A536N_AK_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20220324/PC_%EA%B0%A4%EB%9F%AD%EC%8B%9CA53_%EC%A0%9C%ED%92%88%EC%83%81%EC%84%B820220324170924488.jpg"
+      ],
+      "CPU": "5nm AP, Octa Core, Exynos 1280",
+      "display_description": "FHD+ Super AMOLED 인피티니티-O 디스플레이 120Hz",
+      "camera": "전면 | 32MP(F2.2) 후면 | 메인 64MP(F1.8), 초광각 12MP(F2.2), 심도 5MP(F2.4), 접사 5MP(F2.4)",
+      "memory_ram": "6",
+      "memory_rom": "128",
+      "battery_capacity": "5,000mAh",
+      "waterproof": ""
+    },
+    {
+      "name": "iPhone SE 128GB 3세대",
+      "model_id": "A2783-128",
+      "manufacturer": "APPLE",
+      "price": 660000,
+      "hash_tag": "#획기적인배터리 #A15Bionic칩 #홈버튼",
+      "color": [
+        {
+          "color_code": "#FFFFFF",
+          "color_name": "스타라이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2783-128/imge_cut/ushop_A2783-128_67_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2783-128/imge_cut/ushop_A2783-128_67_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2783-128/imge_cut/ushop_A2783-128_67_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2783-128/imge_cut/ushop_A2783-128_67_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#262529",
+          "color_name": "미드나이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2783-128/imge_cut/ushop_A2783-128_01_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2783-128/imge_cut/ushop_A2783-128_01_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2783-128/imge_cut/ushop_A2783-128_01_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2783-128/imge_cut/ushop_A2783-128_01_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#A5292C",
+          "color_name": "(PRODUCT)RED",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2783-128/imge_cut/ushop_A2783-128_80_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2783-128/imge_cut/ushop_A2783-128_80_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2783-128/imge_cut/ushop_A2783-128_80_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2783-128/imge_cut/ushop_A2783-128_80_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20220315/PC_iPhoneSE3_%EC%A0%9C%ED%92%88%EC%A0%95%EB%B3%B4_U+Shop20220315164701717.jpg"
+      ],
+      "CPU": "A15 Bioninc 칩",
+      "display_description": "4.7형 Retina HD 디스플레이",
+      "camera": "싱글 12MP 와이드 카메라(와이드)",
+      "battery_capacity": "동영상 재생 : 최대 15시간, 스트리밍 최대 10시간 / 오디오 재생 : 최대 50시간",
+      "waterproof": "IP67 (최대 수심 1m, 최대 30분)"
+    },
+    {
+      "name": "iPhone SE 64GB 3세대",
+      "model_id": "A2783-64",
+      "manufacturer": "APPLE",
+      "price": 589600,
+      "hash_tag": "#획기적인배터리 #A15Bionic칩 #홈버튼",
+      "color": [
+        {
+          "color_code": "#FFFFFF",
+          "color_name": "스타라이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2783-64/imge_cut/ushop_A2783-64_67_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2783-64/imge_cut/ushop_A2783-64_67_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2783-64/imge_cut/ushop_A2783-64_67_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2783-64/imge_cut/ushop_A2783-64_67_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#262529",
+          "color_name": "미드나이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2783-64/imge_cut/ushop_A2783-64_01_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2783-64/imge_cut/ushop_A2783-64_01_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2783-64/imge_cut/ushop_A2783-64_01_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2783-64/imge_cut/ushop_A2783-64_01_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#A5292C",
+          "color_name": "(PRODUCT)RED",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2783-64/imge_cut/ushop_A2783-64_80_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2783-64/imge_cut/ushop_A2783-64_80_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2783-64/imge_cut/ushop_A2783-64_80_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2783-64/imge_cut/ushop_A2783-64_80_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20220315/PC_iPhoneSE3_%EC%A0%9C%ED%92%88%EC%A0%95%EB%B3%B4_U+Shop20220315164701717.jpg"
+      ],
+      "CPU": "A15 Bioninc 칩",
+      "display_description": "4.7형 Retina HD 디스플레이",
+      "camera": "싱글 12MP 와이드 카메라(와이드)",
+      "battery_capacity": "동영상 재생 : 최대 15시간, 스트리밍 최대 10시간 / 오디오 재생 : 최대 50시간",
+      "waterproof": "IP67 (최대 수심 1m, 최대 30분)"
+    },
+    {
+      "name": "갤럭시 S22",
+      "model_id": "SM-S901N",
+      "manufacturer": "SAMSUNG",
+      "price": 999900,
+      "hash_tag": "#슈퍼카메라 #콤팩트사이즈 #플랫디자인",
+      "color": [
+        {
+          "color_code": "#B8AACB",
+          "color_name": "보라 퍼플",
+          "color_image": [
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220810-050335-443-wy20d2Cz.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220810-050335-443-fheChOkq.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220810-050335-443-A0ixpojC.jpg",
+            "https://image.lguplus.com/static/pc-contents/images/prdv/20220810-050335-443-Jd51xejS.jpg"
+          ]
+        },
+        {
+          "color_code": "#171717",
+          "color_name": "팬텀 블랙",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-S901N/imge_cut/ushop_SM-S901N_EK_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S901N/imge_cut/ushop_SM-S901N_EK_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S901N/imge_cut/ushop_SM-S901N_EK_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S901N/imge_cut/ushop_SM-S901N_EK_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#FFFFFF",
+          "color_name": "팬텀 화이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-S901N/imge_cut/ushop_SM-S901N_EW_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S901N/imge_cut/ushop_SM-S901N_EW_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S901N/imge_cut/ushop_SM-S901N_EW_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S901N/imge_cut/ushop_SM-S901N_EW_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#E5D3CF",
+          "color_name": "핑크 골드",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-S901N/imge_cut/ushop_SM-S901N_ED_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S901N/imge_cut/ushop_SM-S901N_ED_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S901N/imge_cut/ushop_SM-S901N_ED_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S901N/imge_cut/ushop_SM-S901N_ED_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#3D5551",
+          "color_name": "그린",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-S901N/imge_cut/ushop_SM-S901N_EG_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S901N/imge_cut/ushop_SM-S901N_EG_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S901N/imge_cut/ushop_SM-S901N_EG_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S901N/imge_cut/ushop_SM-S901N_EG_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20220211/PC_S22_S22+_U+Shop_0120220211141344416.jpg",
+        "https://www.lguplus.com/common/images/hphn/comm/20220211/PC_S22_S22+_U+Shop_0220220211141406054.jpg",
+        "https://www.lguplus.com/common/images/hphn/comm/20220211/PC_S22_S22+_U+Shop_0320220211141437232.jpg"
+      ],
+      "CPU": "Snapdragon® 8 Gen 1",
+      "display_description": "6.1인치(153.9mm) FHD+ 다이내믹 아몰레드 2X (2,340x1,080)",
+      "camera": "전면 10MP F2.2(듀얼 픽셀AF) / 후면 초광각 12MP F2.2(FF), 광각 50MP F1.8(듀얼 픽셀AF) OIS, 망원 10MP F2.4(3x, PD AF) OIS",
+      "memory_ram": "",
+      "memory_rom": "256",
+      "battery_capacity": "3,700 mAh",
+      "waterproof": "IP68"
+    },
+    {
+      "name": "갤럭시 S22+",
+      "model_id": "SM-S906N",
+      "manufacturer": "SAMSUNG",
+      "price": 1199000,
+      "hash_tag": "#슈퍼카메라 #대화면 디스플레이 #플랫디자인",
+      "color": [
+        {
+          "color_code": "#FFFFFF",
+          "color_name": "팬텀 화이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-S906N/imge_cut/ushop_SM-S906N_EW_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S906N/imge_cut/ushop_SM-S906N_EW_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S906N/imge_cut/ushop_SM-S906N_EW_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S906N/imge_cut/ushop_SM-S906N_EW_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#171717",
+          "color_name": "팬텀 블랙",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-S906N/imge_cut/ushop_SM-S906N_EK_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S906N/imge_cut/ushop_SM-S906N_EK_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S906N/imge_cut/ushop_SM-S906N_EK_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S906N/imge_cut/ushop_SM-S906N_EK_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#E5D3CF",
+          "color_name": "핑크 골드",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-S906N/imge_cut/ushop_SM-S906N_ED_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S906N/imge_cut/ushop_SM-S906N_ED_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S906N/imge_cut/ushop_SM-S906N_ED_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S906N/imge_cut/ushop_SM-S906N_ED_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20220211/PC_S22_S22+_U+Shop_0120220211141344416.jpg",
+        "https://www.lguplus.com/common/images/hphn/comm/20220211/PC_S22_S22+_U+Shop_0220220211141406054.jpg",
+        "https://www.lguplus.com/common/images/hphn/comm/20220211/PC_S22_S22+_U+Shop_0320220211141437232.jpg"
+      ],
+      "CPU": "Snapdragon® 8 Gen 1",
+      "display_description": "6.6인치(166.5mm) FHD+ 다이내믹 아몰레드 2X (2,340x1,080)",
+      "camera": "전면 10MP F2.2(듀얼 픽셀AF) / 후면 초광각 12MP F2.2(FF), 광각 50MP F1.8(듀얼 픽셀AF) OIS, 망원 10MP F2.4(3x, PD AF) OIS",
+      "memory_ram": "",
+      "memory_rom": "256",
+      "battery_capacity": "4,500 mAh",
+      "waterproof": "IP68"
+    },
+    {
+      "name": "갤럭시 S22 Ultra",
+      "model_id": "SM-S908N",
+      "manufacturer": "SAMSUNG",
+      "price": 1452000,
+      "hash_tag": "#울트라카메라 #내장S펜 #무광패널",
+      "color": [
+        {
+          "color_code": "#825D64",
+          "color_name": "버건디",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-S908N/imge_cut/ushop_SM-S908N_ER_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S908N/imge_cut/ushop_SM-S908N_ER_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S908N/imge_cut/ushop_SM-S908N_ER_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S908N/imge_cut/ushop_SM-S908N_ER_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#3D5551",
+          "color_name": "그린",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-S908N/imge_cut/ushop_SM-S908N_EG_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S908N/imge_cut/ushop_SM-S908N_EG_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S908N/imge_cut/ushop_SM-S908N_EG_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S908N/imge_cut/ushop_SM-S908N_EG_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#FFFFFF",
+          "color_name": "팬텀 화이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-S908N/imge_cut/ushop_SM-S908N_EW_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S908N/imge_cut/ushop_SM-S908N_EW_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S908N/imge_cut/ushop_SM-S908N_EW_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S908N/imge_cut/ushop_SM-S908N_EW_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#171717",
+          "color_name": "팬텀 블랙",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-S908N/imge_cut/ushop_SM-S908N_EK_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S908N/imge_cut/ushop_SM-S908N_EK_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S908N/imge_cut/ushop_SM-S908N_EK_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-S908N/imge_cut/ushop_SM-S908N_EK_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20220211/PC_S22_Ultra_U+Shop_0120220211141556327.jpg",
+        "https://www.lguplus.com/common/images/hphn/comm/20220211/PC_S22_Ultra_U+Shop_0220220211141620537.jpg",
+        "https://www.lguplus.com/common/images/hphn/comm/20220211/PC_S22_Ultra_U+Shop_0320220211141709441.jpg"
+      ],
+      "CPU": "Snapdragon® 8 Gen 1",
+      "display_description": "6.8인치(173.1mm) WQHD+ 다이내믹 아몰레드 2X (3,088x1,440)",
+      "camera": "전면 40MP F2.2(PD AF) / 후면 초광각 12MP F2.2(듀얼 픽셀AF), 광각 108MP F1.8(PD AF) OIS, 망원1 10MP F2.4(3x, 듀얼 픽셀 AF) OIS, 망원2 10MP F4.9(10x, 듀얼 픽셀AF) OIS",
+      "memory_ram": "",
+      "memory_rom": "256",
+      "battery_capacity": "5,000 mAh",
+      "waterproof": "IP68"
+    },
+    {
+      "name": "iPhone 13 mini 128G",
+      "model_id": "A2628-128",
+      "manufacturer": "APPLE",
+      "price": 946000,
+      "hash_tag": "#듀얼카메라 #A15Bionic칩 #향상된배터리",
+      "color": [
+        {
+          "color_code": "#FADDD7",
+          "color_name": "핑크",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2628-128/imge_cut/ushop_A2628-128_21_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2628-128/imge_cut/ushop_A2628-128_21_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2628-128/imge_cut/ushop_A2628-128_21_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2628-128/imge_cut/ushop_A2628-128_21_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#232A31",
+          "color_name": "미드나이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2628-128/imge_cut/ushop_A2628-128_01_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2628-128/imge_cut/ushop_A2628-128_01_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2628-128/imge_cut/ushop_A2628-128_01_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2628-128/imge_cut/ushop_A2628-128_01_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#FAF6F2",
+          "color_name": "스타라이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2628-128/imge_cut/ushop_A2628-128_67_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2628-128/imge_cut/ushop_A2628-128_67_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2628-128/imge_cut/ushop_A2628-128_67_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2628-128/imge_cut/ushop_A2628-128_67_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#BF013",
+          "color_name": "(PRODUCT)RED",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2628-128/imge_cut/ushop_A2628-128_80_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2628-128/imge_cut/ushop_A2628-128_80_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2628-128/imge_cut/ushop_A2628-128_80_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2628-128/imge_cut/ushop_A2628-128_80_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20210928/PC_iPhone13_%EC%83%81%ED%92%88%EC%83%81%EC%84%B820210928112835366.jpg"
+      ],
+      "CPU": "A15 Bionic 칩",
+      "display_description": "5.4형 Super Retina XDR 디스플레이",
+      "camera": "듀얼 12MP 카메라 시스템(와이드, 울트라 와이드) 와이드: f/1.6 조리개, 울트라 와이드: f/2.4 조리개",
+      "battery_capacity": "동영상 재생 : 최대 17시간, 스트리밍 최대 13시간 / 오디오 재생 : 최대 55시간",
+      "waterproof": "IP68 (최대 수심 6m, 최대 30분)"
+    },
+    {
+      "name": "iPhone 13 128G",
+      "model_id": "A2633-128",
+      "manufacturer": "APPLE",
+      "price": 1078000,
+      "hash_tag": "#듀얼카메라 #A15Bionic칩 #향상된배터리",
+      "color": [
+        {
+          "color_code": "#FADDD7",
+          "color_name": "핑크",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2633-128/imge_cut/ushop_A2633-128_21_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2633-128/imge_cut/ushop_A2633-128_21_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2633-128/imge_cut/ushop_A2633-128_21_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2633-128/imge_cut/ushop_A2633-128_21_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#FAF6F2",
+          "color_name": "스타라이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2633-128/imge_cut/ushop_A2633-128_67_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2633-128/imge_cut/ushop_A2633-128_67_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2633-128/imge_cut/ushop_A2633-128_67_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2633-128/imge_cut/ushop_A2633-128_67_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20210928/PC_iPhone13_%EC%83%81%ED%92%88%EC%83%81%EC%84%B820210928112835366.jpg"
+      ],
+      "CPU": "A15 Bionic 칩",
+      "display_description": "6.1형 Super Retina XDR 디스플레이",
+      "camera": "듀얼 12MP 카메라 시스템(와이드, 울트라 와이드) 와이드: f/1.6 조리개, 울트라 와이드: f/2.4 조리개",
+      "battery_capacity": "동영상 재생 : 최대 19시간, 스트리밍 최대 15시간 / 오디오 재생 : 최대 75시간",
+      "waterproof": "IP68 (최대 수심 6m, 최대 30분)"
+    },
+    {
+      "name": "iPhone 13 Pro 128G",
+      "model_id": "A2638-128",
+      "manufacturer": "APPLE",
+      "price": 1342000,
+      "hash_tag": "#프로급카메라 #A15Bionic칩 #향상된배터리",
+      "color": [
+        {
+          "color_code": "#576856",
+          "color_name": "알파인 그린",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2638-128/imge_cut/ushop_A2638-128_91_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-128/imge_cut/ushop_A2638-128_91_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-128/imge_cut/ushop_A2638-128_91_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-128/imge_cut/ushop_A2638-128_91_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#F1F2ED",
+          "color_name": "실버",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2638-128/imge_cut/ushop_A2638-128_19_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-128/imge_cut/ushop_A2638-128_19_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-128/imge_cut/ushop_A2638-128_19_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-128/imge_cut/ushop_A2638-128_19_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#FAE7CF",
+          "color_name": "골드",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2638-128/imge_cut/ushop_A2638-128_10_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-128/imge_cut/ushop_A2638-128_10_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-128/imge_cut/ushop_A2638-128_10_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-128/imge_cut/ushop_A2638-128_10_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#54524F",
+          "color_name": "그래파이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2638-128/imge_cut/ushop_A2638-128_GP_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-128/imge_cut/ushop_A2638-128_GP_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-128/imge_cut/ushop_A2638-128_GP_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-128/imge_cut/ushop_A2638-128_GP_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#A7C1D9",
+          "color_name": "시에라 블루",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2638-128/imge_cut/ushop_A2638-128_SU_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-128/imge_cut/ushop_A2638-128_SU_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-128/imge_cut/ushop_A2638-128_SU_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-128/imge_cut/ushop_A2638-128_SU_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20210928/PC_iPhone13Pro_%EC%83%81%ED%92%88%EC%83%81%EC%84%B820210928112751492.jpg"
+      ],
+      "CPU": "A15 Bionic 칩",
+      "display_description": "6.1형 ProMotion 기술이 적용된 Super Retina XDR 디스플레이",
+      "camera": "프로급 12MP 카메라 시스템(망원, 와이드, 울트라 와이드) 망원: f/2.8 조리개, 와이드: f/1.5 조리개, 울트라 와이드: f/1.8 조리개",
+      "battery_capacity": "동영상 재생 : 최대 22시간, 스트리밍 최대 20시간 / 오디오 재생 : 최대 75시간",
+      "waterproof": "IP68 (최대 수심 6m, 최대 30분)"
+    },
+    {
+      "name": "iPhone 13 Pro 256G",
+      "model_id": "A2638-256",
+      "manufacturer": "APPLE",
+      "price": 1474000,
+      "hash_tag": "#프로급카메라 #A15Bionic칩 #향상된배터리",
+      "color": [
+        {
+          "color_code": "#576856",
+          "color_name": "알파인 그린",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2638-256/imge_cut/ushop_A2638-256_91_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-256/imge_cut/ushop_A2638-256_91_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-256/imge_cut/ushop_A2638-256_91_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-256/imge_cut/ushop_A2638-256_91_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#FAE7CF",
+          "color_name": "골드",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2638-256/imge_cut/ushop_A2638-256_10_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-256/imge_cut/ushop_A2638-256_10_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-256/imge_cut/ushop_A2638-256_10_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-256/imge_cut/ushop_A2638-256_10_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#54524F",
+          "color_name": "그래파이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2638-256/imge_cut/ushop_A2638-256_GP_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-256/imge_cut/ushop_A2638-256_GP_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-256/imge_cut/ushop_A2638-256_GP_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2638-256/imge_cut/ushop_A2638-256_GP_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20210928/PC_iPhone13Pro_%EC%83%81%ED%92%88%EC%83%81%EC%84%B820210928112751492.jpg"
+      ],
+      "CPU": "A15 Bionic 칩",
+      "display_description": "6.1형 ProMotion 기술이 적용된 Super Retina XDR 디스플레이",
+      "camera": "프로급 12MP 카메라 시스템(망원, 와이드, 울트라 와이드) 망원: f/2.8 조리개, 와이드: f/1.5 조리개, 울트라 와이드: f/1.8 조리개",
+      "battery_capacity": "동영상 재생 : 최대 22시간, 스트리밍 최대 20시간 / 오디오 재생 : 최대 75시간",
+      "waterproof": "IP68 (최대 수심 6m, 최대 30분)"
+    },
+    {
+      "name": "iPhone 13 Pro Max 128G",
+      "model_id": "A2643-128",
+      "manufacturer": "APPLE",
+      "price": 1474000,
+      "hash_tag": "#프로급카메라 #A15Bionic칩 #향상된배터리",
+      "color": [
+        {
+          "color_code": "#F1F2ED",
+          "color_name": "실버",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2643-128/imge_cut/ushop_A2643-128_19_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2643-128/imge_cut/ushop_A2643-128_19_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2643-128/imge_cut/ushop_A2643-128_19_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2643-128/imge_cut/ushop_A2643-128_19_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#54524F",
+          "color_name": "그래파이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2643-128/imge_cut/ushop_A2643-128_GP_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2643-128/imge_cut/ushop_A2643-128_GP_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2643-128/imge_cut/ushop_A2643-128_GP_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2643-128/imge_cut/ushop_A2643-128_GP_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20220128/PC_%EB%94%94%EC%A6%88%EB%8B%88%EC%B6%9C%EC%8B%9C_%EB%8B%A8%EB%A7%90%EC%83%81%EC%84%B8%ED%94%84%EB%A1%9C%EB%AA%A8%EC%85%98_220127_%EC%A0%84%EA%B2%BD%EC%98%A520220128160309555.jpg",
+        "https://www.lguplus.com/common/images/hphn/comm/20210928/PC_iPhone13Pro_%EC%83%81%ED%92%88%EC%83%81%EC%84%B820210928112751492.jpg"
+      ],
+      "CPU": "A15 Bionic 칩",
+      "display_description": "6.7형 ProMotion 기술이 적용된 Super Retina XDR 디스플레이",
+      "camera": "프로급 12MP 카메라 시스템(망원, 와이드, 울트라 와이드) 망원: f/2.8 조리개, 와이드: f/1.5 조리개, 울트라 와이드: f/1.8 조리개",
+      "battery_capacity": "동영상 재생 : 최대 28시간, 스트리밍 최대 25시간 / 오디오 재생 : 최대 95시간",
+      "waterproof": "IP68 (최대 수심 6m, 최대 30분)"
+    },
+    {
+      "name": "iPhone 13 Pro Max 256G",
+      "model_id": "A2643-256",
+      "manufacturer": "APPLE",
+      "price": 1606000,
+      "hash_tag": "#프로급카메라 #A15Bionic칩 #향상된배터리",
+      "color": [
+        {
+          "color_code": "#F1F2ED",
+          "color_name": "실버",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2643-256/imge_cut/ushop_A2643-256_19_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2643-256/imge_cut/ushop_A2643-256_19_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2643-256/imge_cut/ushop_A2643-256_19_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2643-256/imge_cut/ushop_A2643-256_19_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#FAE7CF",
+          "color_name": "골드",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2643-256/imge_cut/ushop_A2643-256_10_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2643-256/imge_cut/ushop_A2643-256_10_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2643-256/imge_cut/ushop_A2643-256_10_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2643-256/imge_cut/ushop_A2643-256_10_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20210928/PC_iPhone13Pro_%EC%83%81%ED%92%88%EC%83%81%EC%84%B820210928112751492.jpg"
+      ],
+      "CPU": "A15 Bionic 칩",
+      "display_description": "6.7형 ProMotion 기술이 적용된 Super Retina XDR 디스플레이",
+      "camera": "프로급 12MP 카메라 시스템(망원, 와이드, 울트라 와이드) 망원: f/2.8 조리개, 와이드: f/1.5 조리개, 울트라 와이드: f/1.8 조리개",
+      "battery_capacity": "동영상 재생 : 최대 28시간, 스트리밍 최대 25시간 / 오디오 재생 : 최대 95시간",
+      "waterproof": "IP68 (최대 수심 6m, 최대 30분)"
+    },
+    {
+      "name": "Galaxy Buddy",
+      "model_id": "SM-A226L",
+      "manufacturer": "SAMSUNG",
+      "price": 399300,
+      "hash_tag": "#초고속 5G #대용량 배터리 #128GB 메모리",
+      "color": [
+        {
+          "color_code": "#C8E0D0",
+          "color_name": "민트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-A226L/imge_cut/ushop_SM-A226L_AG_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A226L/imge_cut/ushop_SM-A226L_AG_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A226L/imge_cut/ushop_SM-A226L_AG_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A226L/imge_cut/ushop_SM-A226L_AG_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#161719",
+          "color_name": "그레이",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-A226L/imge_cut/ushop_SM-A226L_EA_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A226L/imge_cut/ushop_SM-A226L_EA_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A226L/imge_cut/ushop_SM-A226L_EA_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A226L/imge_cut/ushop_SM-A226L_EA_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#E9EAEC",
+          "color_name": "화이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-A226L/imge_cut/ushop_SM-A226L_EW_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A226L/imge_cut/ushop_SM-A226L_EW_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A226L/imge_cut/ushop_SM-A226L_EW_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-A226L/imge_cut/ushop_SM-A226L_EW_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20210910/PC_%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B2%84%EB%94%94_%EC%83%81%ED%92%88%EC%83%81%EC%84%B8_21090220210910091842654.jpg"
+      ],
+      "CPU": "디미어텍MT6833 옥타코어 2.2GHz+2.0GHz",
+      "display_description": "6.6인치 LCD형 인피니티 V FHD+",
+      "camera": "전면 카메라 : 800만 화소 후면 카메라 : 4,800만 화소(AF) + 500만 화소+200만 화소(플래시 지원",
+      "memory_ram": "",
+      "memory_rom": "128",
+      "battery_capacity": "5,000 mAh",
+      "waterproof": ""
+    },
+    {
+      "name": "갤럭시 Z 플립3",
+      "model_id": "SM-F711N",
+      "manufacturer": "SAMSUNG",
+      "price": 1254000,
+      "hash_tag": "#투톤디자인 #커버디스플레이 #폴더블최초방수",
+      "color": [
+        {
+          "color_code": "#1C1D1F",
+          "color_name": "팬텀 블랙",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-F711N/imge_cut/ushop_SM-F711N_EK_A.jpg.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-F711N/imge_cut/ushop_SM-F711N_EK_B.jpg.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-F711N/imge_cut/ushop_SM-F711N_EK_C.jpg.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-F711N/imge_cut/ushop_SM-F711N_EK_D.jpg.jpg"
+          ]
+        },
+        {
+          "color_code": "#738182",
+          "color_name": "그린",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-F711N/imge_cut/ushop_SM-F711N_EG_A.jpg.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-F711N/imge_cut/ushop_SM-F711N_EG_B.jpg.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-F711N/imge_cut/ushop_SM-F711N_EG_C.jpg.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-F711N/imge_cut/ushop_SM-F711N_EG_D.jpg.jpg"
+          ]
+        },
+        {
+          "color_code": "#F8F2E4",
+          "color_name": "크림",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-F711N/imge_cut/ushop_SM-F711N_EE_A.jpg.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-F711N/imge_cut/ushop_SM-F711N_EE_B.jpg.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-F711N/imge_cut/ushop_SM-F711N_EE_C.jpg.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-F711N/imge_cut/ushop_SM-F711N_EE_D.jpg.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20210909/PC_U+Shop_%EC%A0%9C%ED%92%88%EC%A0%95%EB%B3%B4_%ED%94%8C%EB%A6%BD3_2021090920210909170039332.jpg"
+      ],
+      "CPU": "Snapdragon 888",
+      "display_description": "메인 디스플레이 : 170.3 mm(6.7\") Dynamic AMOLED 2X Infinity-O Display(2,640 x 1,080) 커버 디스플레이 : 48.2 mm(1.9\") Super AMOLED (260 x 512)",
+      "camera": "전면 : 10 MP 1.22μm FF, F2.4 후면 : 초광각 12 MP 1.12μm, F2.2, 광각 12 MP 1.4μm 2PD OIS, F1.8",
+      "memory_ram": "8",
+      "memory_rom": "256",
+      "battery_capacity": "3,300 mAh",
+      "waterproof": "IPX8"
+    },
+    {
+      "name": "갤럭시 S21",
+      "model_id": "SM-G991N",
+      "manufacturer": "SAMSUNG",
+      "price": 999900,
+      "hash_tag": "#팬텀컬러 #스페이스줌 #주사율자동조절",
+      "color": [
+        {
+          "color_code": "#FEDFDA",
+          "color_name": "팬텀 핑크",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-G991N/imge_cut/ushop_SM-G991N_EI_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G991N/imge_cut/ushop_SM-G991N_EI_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G991N/imge_cut/ushop_SM-G991N_EI_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G991N/imge_cut/ushop_SM-G991N_EI_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#57585C",
+          "color_name": "팬텀 그레이",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-G991N/imge_cut/ushop_SM-G991N_EA_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G991N/imge_cut/ushop_SM-G991N_EA_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G991N/imge_cut/ushop_SM-G991N_EA_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G991N/imge_cut/ushop_SM-G991N_EA_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#FFFFFF",
+          "color_name": "팬텀 화이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-G991N/imge_cut/ushop_SM-G991N_EW_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G991N/imge_cut/ushop_SM-G991N_EW_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G991N/imge_cut/ushop_SM-G991N_EW_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G991N/imge_cut/ushop_SM-G991N_EW_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#BDBCDB",
+          "color_name": "팬텀 바이올렛",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-G991N/imge_cut/ushop_SM-G991N_EV_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G991N/imge_cut/ushop_SM-G991N_EV_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G991N/imge_cut/ushop_SM-G991N_EV_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G991N/imge_cut/ushop_SM-G991N_EV_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20210730/pc_S212021011415060154120210730130520370.jpg"
+      ],
+      "CPU": "Exynos 2100",
+      "display_description": "6.2’’ Dynamic AMOLED 2X FHD+",
+      "camera": "후면 - 초광각 : 12 MP, 광각 : 12 MP, 망원 : 64 MP, 전면 - 광각 : 10 MP",
+      "memory_ram": "",
+      "memory_rom": "256",
+      "battery_capacity": "4,000mAh",
+      "waterproof": "IP68"
+    },
+    {
+      "name": "iPhone 12 mini 128G",
+      "model_id": "A2399-128",
+      "manufacturer": "APPLE",
+      "price": 682000,
+      "hash_tag": "#5G #A14 Bionic칩셋 #듀얼카메라",
+      "color": [
+        {
+          "color_code": "#25212B",
+          "color_name": "블랙",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2399-128/imge_cut/ushop_A2399-128_01_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2399-128/imge_cut/ushop_A2399-128_01_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2399-128/imge_cut/ushop_A2399-128_01_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2399-128/imge_cut/ushop_A2399-128_01_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#FFFFFF",
+          "color_name": "화이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2399-128/imge_cut/ushop_A2399-128_67_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2399-128/imge_cut/ushop_A2399-128_67_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2399-128/imge_cut/ushop_A2399-128_67_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2399-128/imge_cut/ushop_A2399-128_67_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20210422/PC_%EB%8B%A8%EB%A7%90%EC%83%81%EC%84%B8_Purple20210422140515750.jpg"
+      ],
+      "CPU": "A14 Bionic 칩",
+      "display_description": "5.4형 Super Retina XDR 디스플레이",
+      "camera": "듀얼 12MP 카메라 (울트라 와이드, 와이드) 울트라 와이드 : f/2.4 조리개 와이드 : f/1.6 조리개",
+      "battery_capacity": "동영상 재생 : 최대 15시간, 스트리밍 최대 10시간 / 오디오 재생 : 최대 50시간",
+      "waterproof": "IP68"
+    },
+    {
+      "name": "iPhone 12 Pro Max 256G",
+      "model_id": "A2411-256",
+      "manufacturer": "APPLE",
+      "price": 1606000,
+      "hash_tag": "#5G #A14 Bionic칩셋 #야간모드지원",
+      "color": [
+        {
+          "color_code": "#FCEBD3",
+          "color_name": "골드",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2411-256/imge_cut/ushop_A2411-256_10_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2411-256/imge_cut/ushop_A2411-256_10_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2411-256/imge_cut/ushop_A2411-256_10_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2411-256/imge_cut/ushop_A2411-256_10_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#E3E4DF",
+          "color_name": "실버",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2411-256/imge_cut/ushop_A2411-256_19_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2411-256/imge_cut/ushop_A2411-256_19_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2411-256/imge_cut/ushop_A2411-256_19_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2411-256/imge_cut/ushop_A2411-256_19_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#52514D",
+          "color_name": "그래파이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2411-256/imge_cut/ushop_A2411-256_GP_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2411-256/imge_cut/ushop_A2411-256_GP_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2411-256/imge_cut/ushop_A2411-256_GP_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2411-256/imge_cut/ushop_A2411-256_GP_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#2D4E5C",
+          "color_name": "퍼시픽블루",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2411-256/imge_cut/ushop_A2411-256_PU_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2411-256/imge_cut/ushop_A2411-256_PU_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2411-256/imge_cut/ushop_A2411-256_PU_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2411-256/imge_cut/ushop_A2411-256_PU_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20210730/pc_iphone12pro_1080px2020102018452042220210730132044486.jpg"
+      ],
+      "CPU": "A14 Bionic 칩",
+      "display_description": "6.7형 Super Retina XDR 디스플레이",
+      "camera": "프로급 12MP 카메라 (울트라 와이드, 와이드, 망원) 울트라 와이드 : f/2.4 조리개 와이드 : f/1.6 조리개 망원 : f/2.2 조리개",
+      "battery_capacity": "동영상 재생 : 최대 20시간, 스트리밍 최대 12시간 / 오디오 재생 : 최대 80시간",
+      "waterproof": "IP68"
+    },
+    {
+      "name": "iPhone 12 128G",
+      "model_id": "A2403-128",
+      "manufacturer": "APPLE",
+      "price": 1155000,
+      "hash_tag": "#5G #A14 Bionic칩셋 #듀얼카메라",
+      "color": [
+        {
+          "color_code": "#CEC5FA",
+          "color_name": "퍼플",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_C1_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_C1_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_C1_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_C1_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#25212B",
+          "color_name": "블랙",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_01_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_01_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_01_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_01_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#FFFFFF",
+          "color_name": "화이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_67_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_67_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_67_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_67_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#D82E2E",
+          "color_name": "(PRODUCT)RED",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_80_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_80_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_80_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_80_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#D8EFD5",
+          "color_name": "그린",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_91_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_91_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_91_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_91_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#23B63",
+          "color_name": "블루",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_20_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_20_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_20_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-128/imge_cut/ushop_A2403-128_20_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20210422/PC_%EB%8B%A8%EB%A7%90%EC%83%81%EC%84%B8_Purple20210422140515750.jpg"
+      ],
+      "CPU": "A14 Bionic 칩",
+      "display_description": "6.1형 Super Retina XDR 디스플레이",
+      "camera": "듀얼 12MP 카메라 (울트라 와이드, 와이드) 울트라 와이드 : f/2.4 조리개 및 120° 시야각 와이드 : f/1.6 조리개",
+      "battery_capacity": "동영상 재생 : 최대 17시간, 스트리밍 최대 11시간 / 오디오 재생 : 최대 65시간",
+      "waterproof": "IP68"
+    },
+    {
+      "name": "iPhone 12 64G",
+      "model_id": "A2403-64",
+      "manufacturer": "APPLE",
+      "price": 1078000,
+      "hash_tag": "#5G #A14 Bionic칩셋 #넉넉한배터리",
+      "color": [
+        {
+          "color_code": "#CEC5FA",
+          "color_name": "퍼플",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2403-64/imge_cut/ushop_A2403-64_C1_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-64/imge_cut/ushop_A2403-64_C1_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-64/imge_cut/ushop_A2403-64_C1_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-64/imge_cut/ushop_A2403-64_C1_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#25212B",
+          "color_name": "블랙",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2403-64/imge_cut/ushop_A2403-64_01_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-64/imge_cut/ushop_A2403-64_01_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-64/imge_cut/ushop_A2403-64_01_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-64/imge_cut/ushop_A2403-64_01_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#D82E2E",
+          "color_name": "(PRODUCT)RED",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2403-64/imge_cut/ushop_A2403-64_80_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-64/imge_cut/ushop_A2403-64_80_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-64/imge_cut/ushop_A2403-64_80_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-64/imge_cut/ushop_A2403-64_80_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#23B63",
+          "color_name": "블루",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2403-64/imge_cut/ushop_A2403-64_20_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-64/imge_cut/ushop_A2403-64_20_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-64/imge_cut/ushop_A2403-64_20_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2403-64/imge_cut/ushop_A2403-64_20_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20210422/PC_%EB%8B%A8%EB%A7%90%EC%83%81%EC%84%B8_Purple20210422140515750.jpg"
+      ],
+      "CPU": "A14 Bionic 칩",
+      "display_description": "6.1형 Super Retina XDR 디스플레이",
+      "camera": "듀얼 12MP 카메라 (울트라 와이드, 와이드) 울트라 와이드 : f/2.4 조리개 및 120° 시야각 와이드 : f/1.6 조리개",
+      "battery_capacity": "동영상 재생 : 최대 17시간, 스트리밍 최대 11시간 / 오디오 재생 : 최대 65시간",
+      "waterproof": "IP68"
+    },
+    {
+      "name": "iPhone 12 Pro 256G",
+      "model_id": "A2407-256",
+      "manufacturer": "APPLE",
+      "price": 1474000,
+      "hash_tag": "#5G #A14 Bionic칩셋 #야간모드지원",
+      "color": [
+        {
+          "color_code": "#52514D",
+          "color_name": "그래파이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2407-256/imge_cut/ushop_A2407-256_GP_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2407-256/imge_cut/ushop_A2407-256_GP_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2407-256/imge_cut/ushop_A2407-256_GP_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2407-256/imge_cut/ushop_A2407-256_GP_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#2D4E5C",
+          "color_name": "퍼시픽블루",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2407-256/imge_cut/ushop_A2407-256_PU_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2407-256/imge_cut/ushop_A2407-256_PU_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2407-256/imge_cut/ushop_A2407-256_PU_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2407-256/imge_cut/ushop_A2407-256_PU_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#E3E4DF",
+          "color_name": "실버",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2407-256/imge_cut/ushop_A2407-256_19_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2407-256/imge_cut/ushop_A2407-256_19_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2407-256/imge_cut/ushop_A2407-256_19_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2407-256/imge_cut/ushop_A2407-256_19_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#FCEBD3",
+          "color_name": "골드",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/A2407-256/imge_cut/ushop_A2407-256_10_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2407-256/imge_cut/ushop_A2407-256_10_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2407-256/imge_cut/ushop_A2407-256_10_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/A2407-256/imge_cut/ushop_A2407-256_10_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20201020/pc_iphone12pro_1080px20201020184520422.jpg"
+      ],
+      "CPU": "A14 Bionic 칩",
+      "display_description": "6.1형 Super Retina XDR 디스플레이",
+      "camera": "프로급 12MP 카메라 (울트라 와이드, 와이드, 망원) 울트라 와이드 : f/2.4 조리개 및 120° 시야각 와이드 : f/1.6 조리개 망원 : f/2.0 조리개",
+      "battery_capacity": "동영상 재생 : 최대 17시간, 스트리밍 최대 11시간 / 오디오 재생 : 최대 65시간",
+      "waterproof": "IP68"
+    },
+    {
+      "name": "갤럭시 S20 FE 5G",
+      "model_id": "SM-G781N",
+      "manufacturer": "SAMSUNG",
+      "price": 732600,
+      "hash_tag": "#트리플카메라 #대용량배터리 #방수방진",
+      "color": [
+        {
+          "color_code": "#455475",
+          "color_name": "클라우드 네이비",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-G781N/imge_cut/ushop_SM-G781N_AB_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G781N/imge_cut/ushop_SM-G781N_AB_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G781N/imge_cut/ushop_SM-G781N_AB_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G781N/imge_cut/ushop_SM-G781N_AB_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#F7DDFA",
+          "color_name": "클라우드 라벤더",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-G781N/imge_cut/ushop_SM-G781N_AV_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G781N/imge_cut/ushop_SM-G781N_AV_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G781N/imge_cut/ushop_SM-G781N_AV_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G781N/imge_cut/ushop_SM-G781N_AV_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#CAE6D8",
+          "color_name": "클라우드 민트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-G781N/imge_cut/ushop_SM-G781N_AG_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G781N/imge_cut/ushop_SM-G781N_AG_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G781N/imge_cut/ushop_SM-G781N_AG_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G781N/imge_cut/ushop_SM-G781N_AG_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#EE464D",
+          "color_name": "클라우드 레드",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-G781N/imge_cut/ushop_SM-G781N_AR_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G781N/imge_cut/ushop_SM-G781N_AR_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G781N/imge_cut/ushop_SM-G781N_AR_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G781N/imge_cut/ushop_SM-G781N_AR_D.jpg"
+          ]
+        },
+        {
+          "color_code": "#FFFFFF",
+          "color_name": "클라우드 화이트",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-G781N/imge_cut/ushop_SM-G781N_AW_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G781N/imge_cut/ushop_SM-G781N_AW_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G781N/imge_cut/ushop_SM-G781N_AW_C.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-G781N/imge_cut/ushop_SM-G781N_AW_D.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20210827/pc_%EA%B0%A4%EB%9F%AD%EC%8B%9Cs20fe_1080px2020100511201125020210827162001549.jpg"
+      ],
+      "CPU": "Snapdragon 865",
+      "display_description": "6.5” FHD+Super AMOLED",
+      "camera": "후면 - 광각 : 12 MP, 망원 : 8 MP, 초광각 : 12 MP 전면 - 광각 : 32 MP",
+      "memory_ram": "",
+      "memory_rom": "128",
+      "battery_capacity": "4,500 mAh",
+      "waterproof": "IP68"
+    },
+    {
+      "name": "갤럭시 노트20",
+      "model_id": "SM-N981N",
+      "manufacturer": "SAMSUNG",
+      "price": 1100000,
+      "hash_tag": "#미스틱컬러 #향상된S펜 #초해상도줌",
+      "color": [
+        {
+          "color_code": "#95B59E",
+          "color_name": "미스틱 그린",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-N981N/imge_cut/ushop_SM-N981N_AG_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-N981N/imge_cut/ushop_SM-N981N_AG_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-N981N/imge_cut/ushop_SM-N981N_AG_C.jpg"
+          ]
+        },
+        {
+          "color_code": "#A87D75",
+          "color_name": "미스틱 브론즈",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-N981N/imge_cut/ushop_SM-N981N_AN_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-N981N/imge_cut/ushop_SM-N981N_AN_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-N981N/imge_cut/ushop_SM-N981N_AN_C.jpg"
+          ]
+        },
+        {
+          "color_code": "#999999",
+          "color_name": "미스틱 그레이",
+          "color_image": [
+            "https://image.lguplus.com/common/images/hphn/product/SM-N981N/imge_cut/ushop_SM-N981N_AA_A.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-N981N/imge_cut/ushop_SM-N981N_AA_B.jpg",
+            "https://image.lguplus.com/common/images/hphn/product/SM-N981N/imge_cut/ushop_SM-N981N_AA_C.jpg"
+          ]
+        }
+      ],
+      "detail_image": [
+        "https://www.lguplus.com/common/images/hphn/comm/20210730/PC_note20_%EC%A0%9C%ED%92%88%EC%A0%95%EB%B3%B4_1080_012020080617435943620210730141226829.jpg",
+        "https://www.lguplus.com/common/images/hphn/comm/20200806/PC_note20_%EC%A0%9C%ED%92%88%EC%A0%95%EB%B3%B4_1080_0220200806174430582.jpg"
+      ],
+      "CPU": "스냅드래곤 865+",
+      "display_description": "169.5mm FHD+ Super AMOLED Plus 플랫 디스플레이",
+      "camera": "후면 - 광각 : 12 MP, 망원 : 64 MP, 초광각 : 12 MP 전면 - 광각 : 10 MP",
+      "memory_ram": "",
+      "memory_rom": "256",
+      "battery_capacity": "4,300 mAh",
+      "waterproof": "IP68"
+    }
+  ]
+}

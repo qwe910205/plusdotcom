@@ -3,12 +3,15 @@ package com.qwe910205.plusdotcom.phonemodel.domain;
 import com.qwe910205.plusdotcom.phonemodel.domain.vo.Color;
 import com.qwe910205.plusdotcom.phonemodel.domain.vo.ImageSource;
 import com.qwe910205.plusdotcom.phonemodel.domain.vo.Stock;
+import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @EqualsAndHashCode(of = {"phoneModel", "color"})
 @Table(uniqueConstraints = {@UniqueConstraint(
         name = "PHONE_MODEL_COLOR_NAME_UNIQUE",
@@ -37,4 +40,12 @@ public class PhoneProduct {
 
     @Embedded
     private Stock stock;
+
+    PhoneProduct(PhoneModel phoneModel, Color color, List<ImageSource> images, Stock stock) {
+        this.phoneModel = phoneModel;
+        this.color = color;
+        if (images != null)
+            this.images.addAll(images);
+        this.stock = stock;
+    }
 }

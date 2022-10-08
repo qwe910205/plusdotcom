@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
 
-@Getter
 @EqualsAndHashCode
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Embeddable
@@ -19,4 +18,13 @@ public class Color {
 
     @Embedded
     private ColorCode code;
+
+    public Color(String name, String code) {
+        this.name = new ColorName(name);
+        this.code = new ColorCode(code);
+    }
+
+    public String getName() {
+        return this.name.getName();
+    }
 }
