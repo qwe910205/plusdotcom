@@ -1,6 +1,7 @@
 package com.qwe910205.plusdotcom.plan.domain.vo;
 
 import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.util.StringUtils;
@@ -9,6 +10,7 @@ import javax.persistence.Embeddable;
 import java.io.Serializable;
 
 @Getter
+@EqualsAndHashCode
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Embeddable
 public class ServiceName implements Serializable {

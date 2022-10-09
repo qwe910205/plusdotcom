@@ -13,11 +13,11 @@ import java.io.Serializable;
 @EqualsAndHashCode
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Embeddable
-public class CategoryName implements Serializable {
+public class PlanCategoryName implements Serializable {
 
     private String name;
 
-    public CategoryName(String name) {
+    public PlanCategoryName(String name) {
         if (!StringUtils.hasText(name))
             throw new IllegalArgumentException("카테고리명은 한 글자 이상이어야 합니다.");
         this.name = name;

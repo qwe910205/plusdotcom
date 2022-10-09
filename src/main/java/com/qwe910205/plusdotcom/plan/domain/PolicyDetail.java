@@ -4,10 +4,12 @@ import com.qwe910205.plusdotcom.plan.domain.vo.DataBoundary;
 import com.qwe910205.plusdotcom.plan.domain.vo.DataExcessChargePolicy;
 import com.qwe910205.plusdotcom.plan.domain.vo.DataSpeed;
 import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@EqualsAndHashCode(of = {"dataPolicy", "dataBoundary"})
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(uniqueConstraints = @UniqueConstraint(
         name = "POLICY_BOUNDARY_UNIQUE",

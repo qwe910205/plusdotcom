@@ -148,7 +148,7 @@ class PhoneInitServiceTest {
 
     @Transactional
     @Test
-    void 스마트폰_모델_데이터를_초기화할_수_있다() {
+    void 모든_스마트폰_모델_관련_데이터를_초기화할_수_있다() {
         // given
         convenienceFunctionInitService.init();
         manufacturerInitService.init();

@@ -17,8 +17,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.*;
 
-import static com.qwe910205.plusdotcom.datainit.controller.ConvenienceFunction.*;
-
 @RequiredArgsConstructor
 @Service
 public class PhoneInitService {
@@ -286,6 +284,9 @@ public class PhoneInitService {
     }
 
     public void initConvenienceFunction(Map<String, PhoneModel> phoneModelMap) {
+        final String FINGERPRINT_RECOGNITION = "지문인식";
+        final String SAMSUNG_PAY = "삼성페이";
+        final String FACE_RECOGNITION = "안면인식";
         setConvenienceFunctions(phoneModelMap, "갤럭시 Z Flip 4", FINGERPRINT_RECOGNITION, SAMSUNG_PAY);
         setConvenienceFunctions(phoneModelMap, "갤럭시 Z Flip 4 메종키츠네 에디션", FINGERPRINT_RECOGNITION, SAMSUNG_PAY);
         setConvenienceFunctions(phoneModelMap, "갤럭시 Z Flip 4 512GB", FINGERPRINT_RECOGNITION, SAMSUNG_PAY);

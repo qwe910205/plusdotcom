@@ -1,12 +1,14 @@
 package com.qwe910205.plusdotcom.plan.domain;
 
 import com.qwe910205.plusdotcom.plan.domain.vo.ServingDataQuantity;
+import lombok.EqualsAndHashCode;
 import org.hibernate.annotations.SortNatural;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@EqualsAndHashCode(of = {"id"})
 @Entity
 public class DataPolicy {
 

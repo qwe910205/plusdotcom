@@ -5,11 +5,13 @@ import com.qwe910205.plusdotcom.plan.domain.vo.MonthlyPayment;
 import com.qwe910205.plusdotcom.plan.domain.vo.PlanDescription;
 import com.qwe910205.plusdotcom.plan.domain.vo.PlanId;
 import com.qwe910205.plusdotcom.plan.domain.vo.PlanName;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@EqualsAndHashCode(of = {"id"})
 @Entity
 public class Plan {
 
