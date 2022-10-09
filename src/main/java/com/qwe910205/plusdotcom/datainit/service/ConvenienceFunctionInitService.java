@@ -1,11 +1,9 @@
 package com.qwe910205.plusdotcom.datainit.service;
 
-import com.qwe910205.plusdotcom.phonemodel.domain.ConvenienceFunction;
-import com.qwe910205.plusdotcom.phonemodel.repository.ConvenienceFunctionRepository;
+import com.qwe910205.plusdotcom.phone.domain.ConvenienceFunction;
+import com.qwe910205.plusdotcom.phone.repository.ConvenienceFunctionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @RequiredArgsConstructor
 @Service

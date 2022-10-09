@@ -1,6 +1,6 @@
 package com.qwe910205.plusdotcom.plan.domain;
 
-import com.qwe910205.plusdotcom.phonemodel.domain.vo.ImageSource;
+import com.qwe910205.plusdotcom.phone.domain.vo.ImageSource;
 import com.qwe910205.plusdotcom.plan.domain.vo.ServiceName;
 import lombok.EqualsAndHashCode;
 

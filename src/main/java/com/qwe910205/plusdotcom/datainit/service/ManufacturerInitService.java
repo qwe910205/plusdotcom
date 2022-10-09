@@ -1,7 +1,7 @@
 package com.qwe910205.plusdotcom.datainit.service;
 
-import com.qwe910205.plusdotcom.phonemodel.domain.Manufacturer;
-import com.qwe910205.plusdotcom.phonemodel.repository.ManufacturerRepository;
+import com.qwe910205.plusdotcom.phone.domain.Manufacturer;
+import com.qwe910205.plusdotcom.phone.repository.ManufacturerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
 package com.qwe910205.plusdotcom.datainit.service;
 
-import com.qwe910205.plusdotcom.phonemodel.domain.NetworkTech;
-import com.qwe910205.plusdotcom.phonemodel.repository.NetworkTechRepository;
+import com.qwe910205.plusdotcom.phone.domain.NetworkTech;
+import com.qwe910205.plusdotcom.phone.repository.NetworkTechRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +12,6 @@ import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class NetworkTechInitServiceTest {

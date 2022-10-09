@@ -4,11 +4,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qwe910205.plusdotcom.datainit.controller.dto.ColorDto;
 import com.qwe910205.plusdotcom.datainit.controller.dto.PhoneModelDto;
 import com.qwe910205.plusdotcom.datainit.controller.dto.PhoneModelDtoList;
-import com.qwe910205.plusdotcom.phonemodel.domain.FoldablePhoneModel;
-import com.qwe910205.plusdotcom.phonemodel.domain.PhoneModel;
-import com.qwe910205.plusdotcom.phonemodel.domain.factory.PhoneModelFactory;
-import com.qwe910205.plusdotcom.phonemodel.domain.vo.*;
-import com.qwe910205.plusdotcom.phonemodel.repository.PhoneRepository;
+import com.qwe910205.plusdotcom.phone.domain.FoldablePhoneModel;
+import com.qwe910205.plusdotcom.phone.domain.PhoneModel;
+import com.qwe910205.plusdotcom.phone.domain.factory.PhoneModelFactory;
+import com.qwe910205.plusdotcom.phone.domain.vo.*;
+import com.qwe910205.plusdotcom.phone.repository.PhoneRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
@@ -333,7 +333,7 @@ public class PhoneInitService {
         PhoneModel phoneModel = phoneModelMap.get(name);
         if (Objects.isNull(phoneModel)) return;
         phoneModel.addConvenienceFunctions(Arrays.stream(ConvenienceFunctionName)
-                .map(com.qwe910205.plusdotcom.phonemodel.domain.ConvenienceFunction::new).toList());
+                .map(com.qwe910205.plusdotcom.phone.domain.ConvenienceFunction::new).toList());
     }
 
     public void initThumbnail(Map<String, PhoneModel> phoneModelMap) {

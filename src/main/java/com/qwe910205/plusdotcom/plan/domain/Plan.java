@@ -1,6 +1,6 @@
 package com.qwe910205.plusdotcom.plan.domain;
 
-import com.qwe910205.plusdotcom.phonemodel.domain.NetworkTech;
+import com.qwe910205.plusdotcom.phone.domain.NetworkTech;
 import com.qwe910205.plusdotcom.plan.domain.vo.MonthlyPayment;
 import com.qwe910205.plusdotcom.plan.domain.vo.PlanDescription;
 import com.qwe910205.plusdotcom.plan.domain.vo.PlanId;

@@ -1,7 +1,7 @@
 package com.qwe910205.plusdotcom.datainit.service;
 
-import com.qwe910205.plusdotcom.phonemodel.domain.Manufacturer;
-import com.qwe910205.plusdotcom.phonemodel.repository.ManufacturerRepository;
+import com.qwe910205.plusdotcom.phone.domain.Manufacturer;
+import com.qwe910205.plusdotcom.phone.repository.ManufacturerRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +12,6 @@ import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class ManufacturerInitServiceTest {
