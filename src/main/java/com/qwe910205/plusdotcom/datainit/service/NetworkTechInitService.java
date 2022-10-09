@@ -10,9 +10,11 @@ import org.springframework.stereotype.Service;
 public class NetworkTechInitService {
 
     private final NetworkTechRepository networkTechRepository;
+    private final String[] NETWORK_TECH_NAMES = {"5G", "LTE"};
 
     public void init() {
-        networkTechRepository.save(new NetworkTech("5G"));
-        networkTechRepository.save(new NetworkTech("LTE"));
+        for (String name : NETWORK_TECH_NAMES) {
+            networkTechRepository.save(new NetworkTech(name));
+        }
     }
 }

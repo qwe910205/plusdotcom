@@ -10,9 +10,11 @@ import org.springframework.stereotype.Service;
 public class ManufacturerInitService {
 
     private final ManufacturerRepository manufacturerRepository;
+    private final String[] MANUFACTURER_NAMES = {"SAMSUNG", "APPLE"};
 
     public void init() {
-        manufacturerRepository.save(new Manufacturer("SAMSUNG"));
-        manufacturerRepository.save(new Manufacturer("APPLE"));
+        for (String name : MANUFACTURER_NAMES) {
+            manufacturerRepository.save(new Manufacturer(name));
+        }
     }
 }

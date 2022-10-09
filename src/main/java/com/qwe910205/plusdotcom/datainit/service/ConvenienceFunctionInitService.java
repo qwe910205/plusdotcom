@@ -5,15 +5,18 @@ import com.qwe910205.plusdotcom.phonemodel.repository.ConvenienceFunctionReposit
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class ConvenienceFunctionInitService {
     
     private final ConvenienceFunctionRepository convenienceFunctionRepository;
+    private final String[] CONVENIENCE_FUNCTION_NAMES = {"삼성페이", "지문인식", "안면인식"};
     
     public void init() {
-        convenienceFunctionRepository.save(new ConvenienceFunction("삼성페이"));
-        convenienceFunctionRepository.save(new ConvenienceFunction("지문인식"));
-        convenienceFunctionRepository.save(new ConvenienceFunction("안면인식"));
+        for (String name : CONVENIENCE_FUNCTION_NAMES) {
+            convenienceFunctionRepository.save(new ConvenienceFunction(name));
+        }
     }
 }

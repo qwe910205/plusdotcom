@@ -1,9 +1,6 @@
 package com.qwe910205.plusdotcom.datainit.controller;
 
-import com.qwe910205.plusdotcom.datainit.service.ConvenienceFunctionInitService;
-import com.qwe910205.plusdotcom.datainit.service.ManufacturerInitService;
-import com.qwe910205.plusdotcom.datainit.service.NetworkTechInitService;
-import com.qwe910205.plusdotcom.datainit.service.PhoneInitService;
+import com.qwe910205.plusdotcom.datainit.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +13,7 @@ public class InitController {
     private final NetworkTechInitService networkTechInitService;
     private final ConvenienceFunctionInitService convenienceFunctionInitService;
     private final PhoneInitService phoneInitService;
+    private final PlanInitService planInitService;
 
     @GetMapping("/init")
     public String init() {
@@ -23,6 +21,7 @@ public class InitController {
         networkTechInitService.init();
         convenienceFunctionInitService.init();
         phoneInitService.init();
+        planInitService.init();
 
         return "데이터 초기화 완료";
     }
