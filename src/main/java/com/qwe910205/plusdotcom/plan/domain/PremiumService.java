@@ -1,7 +1,7 @@
 package com.qwe910205.plusdotcom.plan.domain;
 
-import com.qwe910205.plusdotcom.phone.domain.vo.ImageSource;
-import com.qwe910205.plusdotcom.plan.domain.vo.ServiceName;
+import com.qwe910205.plusdotcom.phone.domain.wrapper.ImageSource;
+import com.qwe910205.plusdotcom.plan.domain.wrapper.ServiceName;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.EmbeddedId;

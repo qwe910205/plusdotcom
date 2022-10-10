@@ -1,6 +1,6 @@
 package com.qwe910205.plusdotcom.phone.domain;
 
-import com.qwe910205.plusdotcom.phone.domain.vo.ManufacturerName;
+import com.qwe910205.plusdotcom.phone.domain.wrapper.ManufacturerName;
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;

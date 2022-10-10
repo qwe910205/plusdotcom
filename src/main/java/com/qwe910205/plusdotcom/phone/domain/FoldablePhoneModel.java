@@ -1,6 +1,6 @@
 package com.qwe910205.plusdotcom.phone.domain;
 
-import com.qwe910205.plusdotcom.phone.domain.vo.*;
+import com.qwe910205.plusdotcom.phone.domain.wrapper.*;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.NoArgsConstructor;

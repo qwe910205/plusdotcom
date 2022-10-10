@@ -1,8 +1,7 @@
 package com.qwe910205.plusdotcom.plan.domain;
 
-import com.qwe910205.plusdotcom.plan.domain.vo.DataBoundary;
-import com.qwe910205.plusdotcom.plan.domain.vo.DataExcessChargePolicy;
-import com.qwe910205.plusdotcom.plan.domain.vo.DataSpeed;
+import com.qwe910205.plusdotcom.plan.domain.wrapper.DataBoundary;
+import com.qwe910205.plusdotcom.plan.domain.wrapper.DataSpeed;
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;

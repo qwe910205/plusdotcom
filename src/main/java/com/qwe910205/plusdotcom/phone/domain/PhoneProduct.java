@@ -1,8 +1,7 @@
 package com.qwe910205.plusdotcom.phone.domain;
 
-import com.qwe910205.plusdotcom.phone.domain.vo.Color;
-import com.qwe910205.plusdotcom.phone.domain.vo.ImageSource;
-import com.qwe910205.plusdotcom.phone.domain.vo.Stock;
+import com.qwe910205.plusdotcom.phone.domain.wrapper.ImageSource;
+import com.qwe910205.plusdotcom.phone.domain.wrapper.Stock;
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;

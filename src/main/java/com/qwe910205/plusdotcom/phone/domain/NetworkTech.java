@@ -1,6 +1,6 @@
 package com.qwe910205.plusdotcom.phone.domain;
 
-import com.qwe910205.plusdotcom.phone.domain.vo.NetworkTechName;
+import com.qwe910205.plusdotcom.phone.domain.wrapper.NetworkTechName;
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;

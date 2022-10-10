@@ -1,6 +1,6 @@
 package com.qwe910205.plusdotcom.plan.domain;
 
-import com.qwe910205.plusdotcom.plan.domain.vo.ServingDataQuantity;
+import com.qwe910205.plusdotcom.plan.domain.wrapper.ServingDataQuantity;
 import lombok.EqualsAndHashCode;
 import org.hibernate.annotations.SortNatural;
 

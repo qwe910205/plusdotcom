@@ -1,7 +1,7 @@
 package com.qwe910205.plusdotcom.phone.domain;
 
-import com.qwe910205.plusdotcom.phone.domain.vo.ImageSource;
-import com.qwe910205.plusdotcom.phone.domain.vo.*;
+import com.qwe910205.plusdotcom.phone.domain.wrapper.ImageSource;
+import com.qwe910205.plusdotcom.phone.domain.wrapper.*;
 import com.qwe910205.plusdotcom.plan.domain.Plan;
 import lombok.*;
 
@@ -105,6 +105,10 @@ public abstract class PhoneModel {
 
     public String getName() {
         return this.name.getName();
+    }
+
+    public String getNetworkTech() {
+        return this.networkTech.getName();
     }
 
     public void addHashTags(List<HashTag> hashTags) {

@@ -1,13 +1,15 @@
 package com.qwe910205.plusdotcom.datainit.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.qwe910205.plusdotcom.datainit.controller.dto.ColorDto;
-import com.qwe910205.plusdotcom.datainit.controller.dto.PhoneModelDto;
-import com.qwe910205.plusdotcom.datainit.controller.dto.PhoneModelDtoList;
+import com.qwe910205.plusdotcom.datainit.service.dto.ColorDto;
+import com.qwe910205.plusdotcom.datainit.service.dto.PhoneModelDto;
+import com.qwe910205.plusdotcom.datainit.service.dto.PhoneModelDtoList;
+import com.qwe910205.plusdotcom.phone.domain.Color;
 import com.qwe910205.plusdotcom.phone.domain.FoldablePhoneModel;
+import com.qwe910205.plusdotcom.phone.domain.PhoneDescription;
 import com.qwe910205.plusdotcom.phone.domain.PhoneModel;
 import com.qwe910205.plusdotcom.phone.domain.factory.PhoneModelFactory;
-import com.qwe910205.plusdotcom.phone.domain.vo.*;
+import com.qwe910205.plusdotcom.phone.domain.wrapper.*;
 import com.qwe910205.plusdotcom.phone.repository.PhoneRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.ClassPathResource;
@@ -25,8 +27,8 @@ public class PhoneInitService {
     private final ObjectMapper objectMapper;
 
     public void init() {
-        Map<String, PhoneModel> phoneModels = convertJsonToPhoneModels("datas/5g-products.txt", "5G");
-        phoneModels.putAll(convertJsonToPhoneModels("datas/4g-products.txt", "LTE"));
+        Map<String, PhoneModel> phoneModels = convertJsonToPhoneModels("data/5g-products.json", "5G");
+        phoneModels.putAll(convertJsonToPhoneModels("data/4g-products.json", "LTE"));
         deletePhonesForInit(phoneModels);
         initSize(phoneModels);
         initWeight(phoneModels);

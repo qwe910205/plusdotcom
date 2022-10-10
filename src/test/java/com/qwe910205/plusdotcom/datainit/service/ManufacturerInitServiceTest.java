@@ -3,6 +3,7 @@ package com.qwe910205.plusdotcom.datainit.service;
 import com.qwe910205.plusdotcom.phone.domain.Manufacturer;
 import com.qwe910205.plusdotcom.phone.repository.ManufacturerRepository;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,6 +13,8 @@ import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 import java.util.List;
+
+import static org.assertj.core.api.Assertions.*;
 
 @SpringBootTest
 class ManufacturerInitServiceTest {
@@ -24,19 +27,16 @@ class ManufacturerInitServiceTest {
 
     @Transactional
     @Test
-    void 제조사_데이터를_초기화할_수_있다() {
-        // given
+    @DisplayName("제조사 데이터를 초기화할 수 있다.")
+    void initManufacturerData() {
         String[] names = {"SAMSUNG", "APPLE"};
 
-        // when
         service.init();
         em.flush();
         em.clear();
 
-        // then
         List<Manufacturer> manufacturers = repository.findAll();
-        Assertions.assertThat(manufacturers.size()).isEqualTo(names.length);
         List<String> manufacturerNames = manufacturers.stream().map(Manufacturer::getName).toList();
-        Assertions.assertThat(manufacturerNames).containsOnly(names);
+        assertThat(manufacturerNames).containsOnly(names);
     }
 }

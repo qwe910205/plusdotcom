@@ -1,10 +1,9 @@
 package com.qwe910205.plusdotcom.plan.domain;
 
 import com.qwe910205.plusdotcom.phone.domain.NetworkTech;
-import com.qwe910205.plusdotcom.plan.domain.vo.MonthlyPayment;
-import com.qwe910205.plusdotcom.plan.domain.vo.PlanDescription;
-import com.qwe910205.plusdotcom.plan.domain.vo.PlanId;
-import com.qwe910205.plusdotcom.plan.domain.vo.PlanName;
+import com.qwe910205.plusdotcom.plan.domain.wrapper.MonthlyPayment;
+import com.qwe910205.plusdotcom.plan.domain.wrapper.PlanId;
+import com.qwe910205.plusdotcom.plan.domain.wrapper.PlanName;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
