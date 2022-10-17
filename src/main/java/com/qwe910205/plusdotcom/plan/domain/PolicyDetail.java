@@ -7,6 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @EqualsAndHashCode(of = {"dataPolicy", "dataBoundary"})
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -32,12 +33,19 @@ public class PolicyDetail implements Comparable<PolicyDetail> {
     @Embedded
     private DataSpeed speedLimit;
 
-    @AttributeOverrides({
-            @AttributeOverride(name = "dataUnit", column = @Column(nullable = false)),
-            @AttributeOverride(name = "cost", column = @Column(nullable = false))
-    })
     @Embedded
     private DataExcessChargePolicy excessChargePolicy;
+
+    public PolicyDetail(DataPolicy dataPolicy, int dataBoundary, Long speedLimit) {
+        this.dataPolicy = dataPolicy;
+        this.dataBoundary = new DataBoundary(dataBoundary);
+        if (Objects.nonNull(speedLimit))
+            this.speedLimit = new DataSpeed(speedLimit);
+    }
+
+    public void setExcessChargePolicy(DataExcessChargePolicy excessChargePolicy) {
+        this.excessChargePolicy = excessChargePolicy;
+    }
 
     @Override
     public int compareTo(PolicyDetail o) {

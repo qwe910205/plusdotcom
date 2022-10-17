@@ -42,4 +42,8 @@ public class PubliclySubsidy {
         this.plan = plan;
         this.amount = amount;
     }
+
+    public int getAmount() {
+        return this.amount;
+    }
 }

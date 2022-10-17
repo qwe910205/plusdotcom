@@ -13,7 +13,7 @@ import java.io.Serializable;
 @EqualsAndHashCode
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Embeddable
-public class PlanId implements Serializable {
+public class PlanId {
 
     private String id;
 

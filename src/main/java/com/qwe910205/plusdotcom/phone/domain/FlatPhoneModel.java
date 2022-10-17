@@ -12,7 +12,7 @@ import javax.persistence.Entity;
 public class FlatPhoneModel extends PhoneModel {
 
     @Builder
-    public FlatPhoneModel(PhoneModelId id, PhoneModelName name, Manufacturer manufacturer, NetworkTech networkTech, Price price) {
+    public FlatPhoneModel(String id, String name, String manufacturer, String networkTech, int price) {
         super(id, name, manufacturer, networkTech, price);
     }
 }

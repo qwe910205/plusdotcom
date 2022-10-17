@@ -9,16 +9,19 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.*;
 
-@Getter
-@EqualsAndHashCode(of = {"id"})
+@EqualsAndHashCode(of = {"phoneModelId"})
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn
 @Entity
 public abstract class PhoneModel {
 
-    @EmbeddedId
-    private PhoneModelId id;
+    @Id @GeneratedValue
+    private Long id;
+
+    @AttributeOverride(name = "id", column = @Column(name = "PHONE_MODEL_ID", unique = true, nullable = false, updatable = false))
+    @Embedded
+    private PhoneModelId phoneModelId;
 
     @AttributeOverride(name = "name", column = @Column(unique = true, nullable = false))
     @Embedded
@@ -43,9 +46,9 @@ public abstract class PhoneModel {
     @ElementCollection
     private List<ImageSource> descriptionImages = new ArrayList<>();
 
-    @MapKeyColumn(name = "COLOR_NAME")
+    @MapKey(name = "colorName")
     @OneToMany(mappedBy = "phoneModel", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Map<String, PhoneProduct> productMap = new HashMap<>();
+    private Map<ColorName, PhoneProduct> productMap = new HashMap<>();
 
     @Embedded
     private ScreenSize screenSize;
@@ -79,35 +82,35 @@ public abstract class PhoneModel {
     @OneToMany(mappedBy = "phoneModel", cascade = CascadeType.ALL, orphanRemoval = true)
     private Map<Long, PubliclySubsidy> publiclySubsidies = new HashMap<>();
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn
-    private Plan mostRecommendedPlan;
-
-    @ManyToMany
-    private List<Plan> recommendedPlans = new ArrayList<>();
-
-    protected PhoneModel(PhoneModelId id, PhoneModelName name, Manufacturer manufacturer, NetworkTech networkTech, Price price) {
+    protected PhoneModel(String id, String name, String manufacturer, String networkTech, int price) {
         Objects.requireNonNull(id, "스마트폰 모델의 아이디는 필수입니다.");
         Objects.requireNonNull(name, "스마트폰 모델명은 필수입니다.");
         Objects.requireNonNull(manufacturer, "스마트폰 모델의 제조사는 필수입니다.");
         Objects.requireNonNull(networkTech, "스마트폰 모델의 통신 기술은 필수입니다.");
-        Objects.requireNonNull(price, "스마트폰 모델의 가격은 필수입니다.");
-        this.id = id;
-        this.name = name;
-        this.manufacturer = manufacturer;
-        this.networkTech = networkTech;
-        this.price = price;
+        this.phoneModelId = new PhoneModelId(id);
+        this.name = new PhoneModelName(name);
+        this.manufacturer = new Manufacturer(manufacturer);
+        this.networkTech = new NetworkTech(networkTech);
+        this.price = new Price(price);
     }
 
-    public String getId() {
-        return this.id.getId();
+    public Long getId() {
+        return this.id;
+    }
+
+    public String getPhoneModelId() {
+        return this.phoneModelId.getId();
     }
 
     public String getName() {
+        if (Objects.isNull(this.name))
+            return null;
         return this.name.getName();
     }
 
     public String getNetworkTech() {
+        if (Objects.isNull(this.networkTech))
+            return null;
         return this.networkTech.getName();
     }
 
@@ -123,43 +126,108 @@ public abstract class PhoneModel {
         this.descriptionImages.addAll(descriptionImages);
     }
 
-    public void addProduct(Color color, List<ImageSource> images, Stock stock) {
-        PhoneProduct phoneProduct = new PhoneProduct(this, color, images, stock);
-        this.productMap.put(color.getName(), phoneProduct);
+    public void addProduct(String colorName, String colorCode, List<String> images, int stock) {
+        PhoneProduct phoneProduct = new PhoneProduct(this, colorName, colorCode, images, stock);
+        this.productMap.put(new ColorName(colorName), phoneProduct);
+    }
+
+    public Size getSize() {
+        return this.size;
     }
 
     public void setSize(Size size) {
         this.size = size;
     }
 
+    public Integer getWeight() {
+        if (Objects.isNull(this.weight))
+            return null;
+        return this.weight.getWeight();
+    }
+
     public void setWeight(Weight weight) {
         this.weight = weight;
+    }
+
+    public Integer getBatteryCapacity() {
+        if (Objects.isNull(this.batteryCapacity))
+            return null;
+        return this.batteryCapacity.getBatteryCapacity();
     }
 
     public void setBatteryCapacity(BatteryCapacity batteryCapacity) {
         this.batteryCapacity = batteryCapacity;
     }
 
+    public Double getScreenSize() {
+        if (Objects.isNull(this.screenSize))
+            return null;
+        return this.screenSize.getScreenSize();
+    }
+
     public void setScreenSize(ScreenSize screenSize) {
         this.screenSize = screenSize;
+    }
+
+    public MemoryCapacity getMemoryCapacity() {
+        return this.memoryCapacity;
     }
 
     public void setMemoryCapacity(MemoryCapacity memoryCapacity) {
         this.memoryCapacity = memoryCapacity;
     }
 
+    public LocalDate getReleaseDate() {
+        return this.releaseDate;
+    }
+
     public void setReleaseDate(LocalDate releaseDate) {
         this.releaseDate = releaseDate;
     }
 
-    public void addConvenienceFunctions(List<ConvenienceFunction> convenienceFunctions) {
-        this.convenienceFunctions.addAll(convenienceFunctions);
+    public List<ConvenienceFunction> getConvenienceFunctions() {
+        return this.convenienceFunctions;
     }
-    public void setThumbnail(ImageSource thumbnail) {
-        this.thumbnail = thumbnail;
+
+    public void addConvenienceFunctions(List<String> convenienceFunctions) {
+        for (String name : convenienceFunctions) {
+            ConvenienceFunction convenienceFunction = new ConvenienceFunction(name);
+            if (!this.convenienceFunctions.contains(convenienceFunction))
+                this.convenienceFunctions.add(convenienceFunction);
+        }
+    }
+
+    public String getThumbnail() {
+        if (Objects.isNull(this.thumbnail))
+            return null;
+        return this.thumbnail.getUrl();
+    }
+    public void setThumbnail(String url) {
+        this.thumbnail = new ImageSource(url);
+    }
+
+    public PhoneDescription getDescription() {
+        return this.description;
     }
 
     public List<PhoneProduct> getAllProducts() {
         return this.productMap.values().stream().toList();
     }
+
+    public int getPubliclySubsidy(Plan plan) {
+        if (!this.publiclySubsidies.containsKey(plan.getId()))
+            throw new NoSuchElementException("등록되지 않은 요금제입니다.");
+        PubliclySubsidy publiclySubsidy = publiclySubsidies.get(plan.getId());
+        return publiclySubsidy.getAmount();
+    }
+
+    public List<PubliclySubsidy> getPubliclySubsidies() {
+        return this.publiclySubsidies.values().stream().toList();
+    }
+
+    public void putPubliclySubsidy(Plan plan, int amount) {
+        this.publiclySubsidies.put(plan.getId(), new PubliclySubsidy(this, plan, amount));
+    }
+
+
 }

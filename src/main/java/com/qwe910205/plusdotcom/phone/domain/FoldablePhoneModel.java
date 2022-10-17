@@ -20,7 +20,7 @@ public class FoldablePhoneModel extends PhoneModel {
     private Size foldedSize;
 
     @Builder
-    public FoldablePhoneModel(PhoneModelId id, PhoneModelName name, Manufacturer manufacturer, NetworkTech networkTech, Price price) {
+    public FoldablePhoneModel(String id, String name, String manufacturer, String networkTech, int price) {
         super(id, name, manufacturer, networkTech, price);
     }
 
