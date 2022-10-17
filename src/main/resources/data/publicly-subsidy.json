@@ -1,0 +1,2738 @@
+{
+  "phones": [
+    {
+      "name": "Galaxy A13",
+      "publiclySubsidies": [
+        {
+          "plan_name": "LTE 데이터 33",
+          "amount": 120000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 44",
+          "amount": 133000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 49",
+          "amount": 139000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 59",
+          "amount": 151000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 69",
+          "amount": 162000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 청소년 33",
+          "amount": 120000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 청소년 49",
+          "amount": 139000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 청소년 59",
+          "amount": 151000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 청소년 69",
+          "amount": 162000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 시니어 49",
+          "amount": 139000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 시니어 69",
+          "amount": 162000
+        },
+        {
+          "plan_name": "현역병사 데이터 33",
+          "amount": 120000
+        },
+        {
+          "plan_name": "현역병사 데이터 55",
+          "amount": 146000
+        },
+        {
+          "plan_name": "LTE 다이렉트 45",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 데이터 시니어 33",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 복지 33",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 복지 49",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 시니어 16.5 요금제(New 시니어 A)",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 청소년 19",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 키즈 22",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 키즈 29",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 키즈 39",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 표준 요금제",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 프리미어 에센셜",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 프리미어 플러스",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "갤럭시 A23",
+      "publiclySubsidies": [
+        {
+          "plan_name": "LTE 데이터 33",
+          "amount": 197000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 44",
+          "amount": 236000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 49",
+          "amount": 254000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 59",
+          "amount": 290000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 69",
+          "amount": 325000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 청소년 33",
+          "amount": 197000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 청소년 49",
+          "amount": 254000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 청소년 59",
+          "amount": 290000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 청소년 69",
+          "amount": 325000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 시니어 49",
+          "amount": 254000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 시니어 69",
+          "amount": 325000
+        },
+        {
+          "plan_name": "현역병사 데이터 33",
+          "amount": 197000
+        },
+        {
+          "plan_name": "현역병사 데이터 55",
+          "amount": 275000
+        },
+        {
+          "plan_name": "LTE 다이렉트 45",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 데이터 시니어 33",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 복지 33",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 복지 49",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 시니어 16.5 요금제(New 시니어 A)",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 청소년 19",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 키즈 22",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 키즈 29",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 키즈 39",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 표준 요금제",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 프리미어 에센셜",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 프리미어 플러스",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "갤럭시 폴더2 2021",
+      "publiclySubsidies": [
+        {
+          "plan_name": "LTE 데이터 33",
+          "amount": 120000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 44",
+          "amount": 133000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 49",
+          "amount": 139000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 59",
+          "amount": 151000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 69",
+          "amount": 162000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 청소년 33",
+          "amount": 120000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 청소년 49",
+          "amount": 139000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 청소년 59",
+          "amount": 151000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 청소년 69",
+          "amount": 162000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 시니어 49",
+          "amount": 139000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 시니어 69",
+          "amount": 162000
+        },
+        {
+          "plan_name": "현역병사 데이터 33",
+          "amount": 120000
+        },
+        {
+          "plan_name": "현역병사 데이터 55",
+          "amount": 146000
+        },
+        {
+          "plan_name": "LTE 다이렉트 45",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 데이터 시니어 33",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 복지 33",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 복지 49",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 시니어 16.5 요금제(New 시니어 A)",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 청소년 19",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 키즈 22",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 키즈 29",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 키즈 39",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 표준 요금제",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 프리미어 에센셜",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 프리미어 플러스",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "갤럭시 A12",
+      "publiclySubsidies": [
+        {
+          "plan_name": "LTE 데이터 33",
+          "amount": 120000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 44",
+          "amount": 133000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 49",
+          "amount": 139000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 59",
+          "amount": 151000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 69",
+          "amount": 162000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 청소년 33",
+          "amount": 120000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 청소년 49",
+          "amount": 139000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 청소년 59",
+          "amount": 151000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 청소년 69",
+          "amount": 162000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 시니어 49",
+          "amount": 139000
+        },
+        {
+          "plan_name": "추가 요금 걱정 없는 데이터 시니어 69",
+          "amount": 162000
+        },
+        {
+          "plan_name": "현역병사 데이터 33",
+          "amount": 120000
+        },
+        {
+          "plan_name": "현역병사 데이터 55",
+          "amount": 146000
+        },
+        {
+          "plan_name": "LTE 다이렉트 45",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 데이터 시니어 33",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 복지 33",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 복지 49",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 시니어 16.5 요금제(New 시니어 A)",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 청소년 19",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 키즈 22",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 키즈 29",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 키즈 39",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 표준 요금제",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 프리미어 에센셜",
+          "amount": 0
+        },
+        {
+          "plan_name": "LTE 프리미어 플러스",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "갤럭시 Z Flip 4",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 175000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 233000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 268000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 268000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 268000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 280000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 326000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 442000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 500000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 500000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 326000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 442000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "갤럭시 Z Flip 4 메종키츠네 에디션",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 175000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 233000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 268000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 268000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 268000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 280000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 326000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 442000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 500000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 500000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 326000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 442000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "갤럭시 Z Flip 4 512GB",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 175000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 233000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 268000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 268000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 268000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 280000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 326000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 442000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 500000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 500000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 326000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 442000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "갤럭시 Z Fold 4",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 175000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 233000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 268000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 268000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 268000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 280000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 326000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 442000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 500000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 500000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 326000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 442000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "갤럭시 Z Fold 4 512GB",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 175000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 233000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 268000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 268000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 268000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 280000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 326000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 442000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 500000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 500000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 326000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 442000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "갤럭시 S20 중고폰",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 273000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 367000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 424000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 424000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 424000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 443000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 518000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 706000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 800000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 800000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 518000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 706000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "갤럭시 S20+ 중고폰",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 273000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 367000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 424000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 424000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 424000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 443000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 518000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 706000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 800000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 800000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 518000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 706000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "갤럭시 S20 Ultra 중고폰",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 273000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 367000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 424000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 424000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 424000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 443000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 518000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 706000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 800000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 800000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 518000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 706000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "Galaxy A53 5G",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 102000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 138000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 159000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 159000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 159000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 166000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 194000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 264000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 300000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 300000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 194000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 264000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "iPhone SE 128GB 3세대",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 136000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 182000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 210000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 210000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 210000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 220000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 257000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 350000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 400000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 400000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 257000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 350000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "iPhone SE 64GB 3세대",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 136000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 182000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 210000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 210000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 210000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 220000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 257000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 350000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 400000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 400000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 257000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 350000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "갤럭시 S22",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 52000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 69000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 80000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 80000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 80000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 84000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 98000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 133000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 151000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 168000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 98000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 133000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "갤럭시 S22+",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 52000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 69000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 80000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 80000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 80000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 84000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 98000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 133000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 151000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 168000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 98000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 133000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "갤럭시 S22 Ultra",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 188000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 253000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 292000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 292000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 292000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 305000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 356000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 486000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 550000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 550000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 356000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 486000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "iPhone 13 mini 128G",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 137000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 184000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 212000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 212000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 212000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 222000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 259000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 353000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 400000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 447000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 259000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 353000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "iPhone 13 128G",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 137000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 184000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 212000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 212000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 212000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 222000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 259000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 353000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 400000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 400000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 259000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 353000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "iPhone 13 Pro 128G",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 56000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 73000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 84000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 84000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 84000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 87000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 101000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 135000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 152000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 169000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 101000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 135000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "iPhone 13 Pro 256G",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 56000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 73000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 84000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 84000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 84000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 87000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 101000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 135000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 152000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 169000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 101000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 135000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "Galaxy Buddy",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 304000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 321000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 331000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 331000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 331000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 335000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 348000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 382000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 399000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 399000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 348000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 382000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "갤럭시 Z 플립3",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 230000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 296000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 336000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 336000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 336000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 349000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 402000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 533000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 600000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 600000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 402000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 533000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "갤럭시 S21",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 175000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 233000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 268000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 268000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 268000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 280000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 326000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 442000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 500000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 500000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 326000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 442000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "iPhone 12 mini 128G",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 269000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 319000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 349000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 349000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 349000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 360000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 400000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 500000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 550000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 550000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 400000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 500000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "iPhone 12 Pro Max 256G",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 137000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 184000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 212000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 212000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 212000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 222000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 259000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 353000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 400000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 400000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 259000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 353000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "iPhone 12 128G",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 212000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 212000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 222000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 259000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 353000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 400000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 400000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "iPhone 12 64G",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 212000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 212000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 222000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 259000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 353000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 400000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 400000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "iPhone 12 Pro 256G",
+      "publiclySubsidies": [
+        {
+          "plan_name": "5G 키즈 29",
+          "amount": 137000
+        },
+        {
+          "plan_name": "5G 키즈 39",
+          "amount": 184000
+        },
+        {
+          "plan_name": "5G 라이트 청소년",
+          "amount": 212000
+        },
+        {
+          "plan_name": "5G 라이트 시니어",
+          "amount": 212000
+        },
+        {
+          "plan_name": "5G 키즈 45",
+          "amount": 212000
+        },
+        {
+          "plan_name": "5G 슬림+",
+          "amount": 222000
+        },
+        {
+          "plan_name": "5G 라이트+",
+          "amount": 259000
+        },
+        {
+          "plan_name": "5G 스탠다드",
+          "amount": 353000
+        },
+        {
+          "plan_name": "5G 프리미어 에센셜",
+          "amount": 400000
+        },
+        {
+          "plan_name": "5G 프리미어 레귤러",
+          "amount": 400000
+        },
+        {
+          "plan_name": "5G 다이렉트 37.5",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 51",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 65",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 플러스",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 프리미어 슈퍼",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 시그니처",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 복지 55",
+          "amount": 259000
+        },
+        {
+          "plan_name": "5G 복지 75",
+          "amount": 353000
+        },
+        {
+          "plan_name": "5G 다이렉트 34",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 다이렉트 44",
+          "amount": 0
+        },
+        {
+          "plan_name": "5G 심플+",
+          "amount": 0
+        }
+      ]
+    }
+  ]
+}
