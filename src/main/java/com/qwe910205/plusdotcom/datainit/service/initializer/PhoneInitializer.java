@@ -61,7 +61,7 @@ public class PhoneInitializer implements DataInitializer {
         Map<String, PhoneModel> phoneModels = new HashMap<>();
         for (PhoneModelDto product : phoneModelDtoList.products()) {
             PhoneModel phoneModel = PhoneModelFactory.create(product.model_id(), product.name(), product.manufacturer(), networkTechName, product.price());
-            phoneModel.addHashTags(Arrays.stream(product.hash_tag().split(" ")).map(HashTag::new).toList());
+            phoneModel.addHashTags(Arrays.stream(product.hash_tag().split(" ")).toList());
             PhoneDescription description = PhoneDescription.builder().cpuDescription(product.CPU()).displayDescription(product.display_description())
                     .cameraDescription(product.camera()).batteryDescription(product.battery_capacity()).waterproofDescription(product.waterproof())
                     .build();

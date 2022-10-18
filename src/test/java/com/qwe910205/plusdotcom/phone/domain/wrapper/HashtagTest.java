@@ -7,13 +7,13 @@ import org.junit.jupiter.params.provider.NullAndEmptySource;
 
 import static org.assertj.core.api.Assertions.*;
 
-class HashTagTest {
+class HashtagTest {
 
     @ParameterizedTest
     @NullAndEmptySource
     @DisplayName("해시태그를 텍스트가 없는 문자열이나 널로 생성하면 예외가 발생한다.")
     void createHashTagWithoutText(String hashTag) {
-        assertThatThrownBy(() -> new HashTag(hashTag)).isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new Hashtag(hashTag)).isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
@@ -21,7 +21,7 @@ class HashTagTest {
     void createHashTagWithStringStartWithSharp() {
         String string = "#hashTag";
 
-        HashTag hashTag = new HashTag(string);
+        Hashtag hashTag = new Hashtag(string);
 
         assertThat(hashTag.getHashTag()).isEqualTo(string);
     }
@@ -31,7 +31,7 @@ class HashTagTest {
     void createHashTagWithStringNotStartWithSharp() {
         String string = "hashTag";
 
-        HashTag hashTag = new HashTag(string);
+        Hashtag hashTag = new Hashtag(string);
 
         assertThat(hashTag.getHashTag()).isEqualTo("#" + string);
     }

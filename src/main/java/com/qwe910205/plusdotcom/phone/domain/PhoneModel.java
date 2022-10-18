@@ -35,7 +35,7 @@ public abstract class PhoneModel {
     private NetworkTech networkTech;
 
     @ElementCollection
-    private List<HashTag> hashTags = new ArrayList<>();
+    private List<Hashtag> hashtags = new ArrayList<>();
 
     @AttributeOverride(name = "url", column = @Column(name = "THUMBNAIL"))
     @Embedded
@@ -98,23 +98,31 @@ public abstract class PhoneModel {
     }
 
     public String getPhoneModelId() {
-        return this.phoneModelId.getId();
+        if (Objects.isNull(phoneModelId))
+            return null;
+        return phoneModelId.getId();
     }
 
     public String getName() {
-        if (Objects.isNull(this.name))
+        if (Objects.isNull(name))
             return null;
-        return this.name.getName();
+        return name.getName();
+    }
+
+    public String getManufacturer() {
+        if (Objects.isNull(manufacturer))
+            return null;
+        return manufacturer.getName();
     }
 
     public String getNetworkTech() {
-        if (Objects.isNull(this.networkTech))
+        if (Objects.isNull(networkTech))
             return null;
-        return this.networkTech.getName();
+        return networkTech.getName();
     }
 
-    public void addHashTags(List<HashTag> hashTags) {
-        this.hashTags.addAll(hashTags);
+    public void addHashTags(List<String> hashtags) {
+        this.hashtags.addAll(hashtags.stream().map(Hashtag::new).toList());
     }
 
     public void setDescription(PhoneDescription description) {
@@ -131,7 +139,7 @@ public abstract class PhoneModel {
     }
 
     public Size getSize() {
-        return this.size;
+        return size;
     }
 
     public void setSize(Size size) {
@@ -139,29 +147,19 @@ public abstract class PhoneModel {
     }
 
     public Integer getWeight() {
-        if (Objects.isNull(this.weight))
+        if (Objects.isNull(weight))
             return null;
-        return this.weight.getWeight();
+        return weight.getWeight();
     }
 
     public void setWeight(Weight weight) {
         this.weight = weight;
     }
 
-    public Integer getBatteryCapacity() {
-        if (Objects.isNull(this.batteryCapacity))
-            return null;
-        return this.batteryCapacity.getBatteryCapacity();
-    }
-
-    public void setBatteryCapacity(BatteryCapacity batteryCapacity) {
-        this.batteryCapacity = batteryCapacity;
-    }
-
     public Double getScreenSize() {
-        if (Objects.isNull(this.screenSize))
+        if (Objects.isNull(screenSize))
             return null;
-        return this.screenSize.getScreenSize();
+        return screenSize.getScreenSize();
     }
 
     public void setScreenSize(ScreenSize screenSize) {
@@ -169,23 +167,51 @@ public abstract class PhoneModel {
     }
 
     public MemoryCapacity getMemoryCapacity() {
-        return this.memoryCapacity;
+        return memoryCapacity;
+    }
+
+    public Integer getRamCapacity() {
+        if (Objects.isNull(memoryCapacity))
+            return null;
+        return memoryCapacity.getRam();
+    }
+
+    public Integer getRomCapacity() {
+        if (Objects.isNull(memoryCapacity))
+            return null;
+        return memoryCapacity.getRom();
     }
 
     public void setMemoryCapacity(MemoryCapacity memoryCapacity) {
         this.memoryCapacity = memoryCapacity;
     }
 
+    public Integer getBatteryCapacity() {
+        if (Objects.isNull(batteryCapacity))
+            return null;
+        return batteryCapacity.getBatteryCapacity();
+    }
+
+    public void setBatteryCapacity(BatteryCapacity batteryCapacity) {
+        this.batteryCapacity = batteryCapacity;
+    }
+
+    public Integer getPrice() {
+        if (Objects.isNull(price))
+            return null;
+        return price.getPrice();
+    }
+
     public LocalDate getReleaseDate() {
-        return this.releaseDate;
+        return releaseDate;
     }
 
     public void setReleaseDate(LocalDate releaseDate) {
         this.releaseDate = releaseDate;
     }
 
-    public List<ConvenienceFunction> getConvenienceFunctions() {
-        return this.convenienceFunctions;
+    public List<String> getConvenienceFunctions() {
+        return convenienceFunctions.stream().map(ConvenienceFunction::getName).toList();
     }
 
     public void addConvenienceFunctions(List<String> convenienceFunctions) {
@@ -197,35 +223,35 @@ public abstract class PhoneModel {
     }
 
     public String getThumbnail() {
-        if (Objects.isNull(this.thumbnail))
+        if (Objects.isNull(thumbnail))
             return null;
-        return this.thumbnail.getUrl();
+        return thumbnail.getUrl();
     }
     public void setThumbnail(String url) {
         this.thumbnail = new ImageSource(url);
     }
 
     public PhoneDescription getDescription() {
-        return this.description;
+        return description;
     }
 
     public List<PhoneProduct> getAllProducts() {
-        return this.productMap.values().stream().toList();
+        return productMap.values().stream().toList();
     }
 
     public int getPubliclySubsidy(Plan plan) {
-        if (!this.publiclySubsidies.containsKey(plan.getId()))
+        if (!publiclySubsidies.containsKey(plan.getId()))
             throw new NoSuchElementException("등록되지 않은 요금제입니다.");
         PubliclySubsidy publiclySubsidy = publiclySubsidies.get(plan.getId());
         return publiclySubsidy.getAmount();
     }
 
     public List<PubliclySubsidy> getPubliclySubsidies() {
-        return this.publiclySubsidies.values().stream().toList();
+        return publiclySubsidies.values().stream().toList();
     }
 
     public void putPubliclySubsidy(Plan plan, int amount) {
-        this.publiclySubsidies.put(plan.getId(), new PubliclySubsidy(this, plan, amount));
+        publiclySubsidies.put(plan.getId(), new PubliclySubsidy(this, plan, amount));
     }
 
 
