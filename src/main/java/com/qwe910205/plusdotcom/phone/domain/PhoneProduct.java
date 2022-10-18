@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @EqualsAndHashCode(of = {"phoneModel", "colorName"})
@@ -50,5 +51,27 @@ public class PhoneProduct {
         if (images != null)
             this.images.addAll(images.stream().map(ImageSource::new).toList());
         this.stock = new Stock(stock);
+    }
+
+    public String getColorName() {
+        if (Objects.isNull(colorName))
+            return null;
+        return this.colorName.getName();
+    }
+
+    public String getColorCode() {
+        if (Objects.isNull(colorCode))
+            return null;
+        return this.colorCode.getCode();
+    }
+
+    public List<String> getImages() {
+        return images.stream().map(ImageSource::getUrl).toList();
+    }
+
+    public Integer getStock() {
+        if (Objects.isNull(stock))
+            return null;
+        return stock.getStock();
     }
 }
