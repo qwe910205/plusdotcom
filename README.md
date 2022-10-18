@@ -25,4 +25,29 @@ product-server 리포지토리와 data-init-server 리포지토리에서 부족�
 ## 4. 도메인 모델
 ![도메인 모델](images/domain-model.png)
 
-참고로 모서리가 둥근 사각형은 하나의 애그리게이트를 표현합니다. 모서리가 둥근 사각형 안에 있지 않는 사각형은 모두 애그리게이트 루트입니다.
+\* _참고로 모서리가 둥근 사각형은 하나의 애그리게이트를 표현합니다. 모서리가 둥근 사각형 안에 있지 않는 사각형은 모두 애그리게이트 루트입니다._
+
+## 5. 프로젝트 디렉터리 구조
+```
+main
+  ├─java.com.qwe910205.plusdotcom
+  │  ├─datainit                       -> 데이터 초기화 모듈
+  │  │  ├─controller
+  │  │  └─service
+  │  │      ├─dto
+  │  │      └─initializer             -> 특정 데이터를 초기화하는 컴포넌트가 있는 패키지
+  │  ├─phone                          -> 스마트폰 관련 모듈
+  │  │  ├─controller
+  │  │  ├─domain
+  │  │  │  ├─factory                  -> 팩토리 패턴 객체가 있는 패키지
+  │  │  │  └─wrapper                  -> 원시값을 포장해 값의 무결성을 보장하는 책임을 가진 객체가 있는 패키지
+  │  │  ├─repository
+  │  │  └─service
+  │  └─plan                           -> 요금제 관련 모듈
+  │      ├─domain
+  │      │  ├─factory         
+  │      │  └─wrapper
+  │      └─repository
+  └─resources
+      └─data                          -> 초기화할 데이터가 있는 패키지
+```
