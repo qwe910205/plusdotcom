@@ -34,11 +34,13 @@ class PlanInitializerTest {
     @DisplayName("요금제들의 데이터 정책을 한 번에 초기화할 수 있다.")
     void setDataPoliciesAtOnce() {
         Map<String, Plan> planMap = createPlanMap();
-        assertThat(planMap.values().stream().map(Plan::getDataPolicies)).allMatch(policies -> policies.size() == 0);
+        assertThat(planMap.values().stream().map(Plan::getDataPolicies).toList())
+                .allSatisfy(dataPolicies -> assertThat(dataPolicies.size()).isEqualTo(0));
 
         planInitializer.initDataPolicy(planMap);
 
-        assertThat(planMap.values().stream().map(Plan::getDataPolicies)).allMatch(policies -> policies.size() >= 1);
+        assertThat(planMap.values().stream().map(Plan::getDataPolicies).toList())
+                .allSatisfy(dataPolicies -> assertThat(dataPolicies.size()).isGreaterThanOrEqualTo(1));
     }
 
     private Map<String, Plan> createPlanMap() {
