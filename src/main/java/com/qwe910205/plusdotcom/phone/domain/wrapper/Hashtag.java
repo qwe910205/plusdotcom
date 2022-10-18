@@ -12,11 +12,11 @@ import javax.persistence.Embeddable;
 @EqualsAndHashCode
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Embeddable
-public class HashTag {
+public class Hashtag {
 
     private String hashTag;
 
-    public HashTag(String hashTag) {
+    public Hashtag(String hashTag) {
         if (!StringUtils.hasText(hashTag))
             throw new IllegalArgumentException("해시 태그는 한 글자 이상이어야 합니다.");
         if (hashTag.startsWith("#"))
