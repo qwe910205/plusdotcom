@@ -133,6 +133,10 @@ public abstract class PhoneModel {
         this.descriptionImages.addAll(descriptionImages);
     }
 
+    public List<String> getDescriptionImages() {
+        return descriptionImages.stream().map(ImageSource::getUrl).toList();
+    }
+
     public void addProduct(String colorName, String colorCode, List<String> images, int stock) {
         PhoneProduct phoneProduct = new PhoneProduct(this, colorName, colorCode, images, stock);
         this.productMap.put(new ColorName(colorName), phoneProduct);

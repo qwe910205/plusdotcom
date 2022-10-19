@@ -36,4 +36,13 @@ class PhoneControllerTest {
         mockMvc.perform(builder).andExpect(status().is2xxSuccessful()).andDo(print());
     }
 
+    @Test
+    @DisplayName("스마트폰 모델의 상세 정보를 요청할 수 있는 api를 호출할 수 있다.")
+    void getPhone() throws Exception {
+        String modelId = "RU-SM-G981N";
+        MockHttpServletRequestBuilder builder = get("/phones/" + modelId);
+
+        mockMvc.perform(builder).andExpect(status().is2xxSuccessful()).andDo(print());
+    }
+
 }
