@@ -1,18 +1,32 @@
 package com.qwe910205.plusdotcom.phone.service.dto;
 
 import com.qwe910205.plusdotcom.phone.domain.PhoneModel;
+import com.qwe910205.plusdotcom.phone.domain.PhoneProduct;
+import lombok.Builder;
 
 import java.sql.Timestamp;
 import java.util.List;
 
+@Builder
 public record PhoneDtoForList(String modelId, String modelName, String manufacturer, String networkTech,
-                              String thumbnailUrl, Double screenSize, Integer ramCapacity, Integer romCapacity,
+                              String thumbnailUrl, List<String> colorCodes, Double screenSize, Integer ramCapacity, Integer romCapacity,
                               Integer batteryCapacity, Integer price, Long releaseDate, List<String> convenienceFunctions) {
 
     public static PhoneDtoForList create(PhoneModel phoneModel) {
-        return new PhoneDtoForList(phoneModel.getPhoneModelId(), phoneModel.getName(), phoneModel.getManufacturer(),
-                phoneModel.getNetworkTech(), phoneModel.getThumbnail(), phoneModel.getScreenSize(), phoneModel.getRamCapacity(),
-                phoneModel.getRomCapacity(), phoneModel.getBatteryCapacity(), phoneModel.getPrice(),
-                Timestamp.valueOf(phoneModel.getReleaseDate().atStartOfDay()).getTime(), phoneModel.getConvenienceFunctions());
+        return PhoneDtoForList.builder()
+                .modelId(phoneModel.getPhoneModelId())
+                .modelName(phoneModel.getName())
+                .manufacturer(phoneModel.getManufacturer())
+                .networkTech(phoneModel.getNetworkTech())
+                .thumbnailUrl(phoneModel.getThumbnail())
+                .colorCodes(phoneModel.getAllProducts().stream().map(PhoneProduct::getColorCode).toList())
+                .screenSize(phoneModel.getScreenSize())
+                .ramCapacity(phoneModel.getRamCapacity())
+                .romCapacity(phoneModel.getRomCapacity())
+                .batteryCapacity(phoneModel.getBatteryCapacity())
+                .price(phoneModel.getPrice())
+                .releaseDate(Timestamp.valueOf(phoneModel.getReleaseDate().atStartOfDay()).getTime())
+                .convenienceFunctions(phoneModel.getConvenienceFunctions())
+                .build();
     }
 }
