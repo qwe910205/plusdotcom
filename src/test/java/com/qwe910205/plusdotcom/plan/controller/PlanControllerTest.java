@@ -1,4 +1,4 @@
-package com.qwe910205.plusdotcom.phone.controller;
+package com.qwe910205.plusdotcom.plan.controller;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -17,32 +17,21 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @TestPropertySource(properties = {"spring.jpa.hibernate.ddl-auto=none", "spring.datasource.url=jdbc:mysql://localhost:3306/uplusdotcom"})
 @SpringBootTest
-class PhoneControllerTest {
+class PlanControllerTest {
 
-    @Autowired PhoneController phoneController;
+    @Autowired PlanController planController;
 
     private MockMvc mockMvc;
 
     @BeforeEach
     void setup() {
-        mockMvc = MockMvcBuilders.standaloneSetup(phoneController).build();
+        mockMvc = MockMvcBuilders.standaloneSetup(planController).build();
     }
 
     @Test
-    @DisplayName("스마트폰 모델 리스트를 요청할 수 있는 api를 호출할 수 있다.")
-    void getPhones() throws Exception {
-        MockHttpServletRequestBuilder builder = get("/phones");
-
-        mockMvc.perform(builder)
-                .andExpect(status().is2xxSuccessful())
-                .andDo(print());
-    }
-
-    @Test
-    @DisplayName("스마트폰 모델의 상세 정보를 요청할 수 있는 api를 호출할 수 있다.")
-    void getPhone() throws Exception {
-        String modelId = "RU-SM-G981N";
-        MockHttpServletRequestBuilder builder = get("/phones/" + modelId);
+    @DisplayName("요금제 리스트를 요청할 수 있는 API를 호출할 수 있다.")
+    void getPlans() throws Exception {
+        MockHttpServletRequestBuilder builder = get("/plans");
 
         mockMvc.perform(builder)
                 .andExpect(status().is2xxSuccessful())

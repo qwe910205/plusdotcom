@@ -65,47 +65,63 @@ public class Plan {
     }
 
     public Long getId() {
-        return this.id;
+        return id;
     }
 
     public String getPlanId() {
-        return this.planId.getId();
+        return planId.getId();
     }
 
     public String getName() {
-        if (Objects.isNull(this.name))
+        if (Objects.isNull(name))
             return null;
-        return this.name.getName();
+        return name.getName();
+    }
+
+    public String getNetworkTech() {
+        if (Objects.isNull(networkTech))
+            return null;
+        return networkTech.getName();
+    }
+
+    public Integer getMonthlyPayment() {
+        if (Objects.isNull(monthlyPayment))
+            return null;
+        return monthlyPayment.getMonthlyPayment();
     }
 
     public String getCategory() {
-        if (Objects.isNull(this.category))
+        if (Objects.isNull(category))
             return null;
-        return this.category.getName();
+        return category.getName();
     }
 
     public void setDescription(PlanDescription planDescription) {
         this.description = planDescription;
     }
 
+    public PlanDescription getDescription() {
+        return description;
+    }
+
     public DataPolicy getDataPolicy(DataPolicyUnitPeriod unitPeriod) {
-        if (!this.dataPolicies.containsKey(unitPeriod))
+        if (!dataPolicies.containsKey(unitPeriod))
             throw new NoSuchElementException(unitPeriod + " 단위의 데이터 정책은 등록되지 않았습니다.");
-        return this.dataPolicies.get(unitPeriod);
+        return dataPolicies.get(unitPeriod);
     }
 
     public List<DataPolicy> getDataPolicies() {
-        return this.dataPolicies.values().stream().toList();
+        return dataPolicies.values().stream().toList();
     }
 
     public void addUnLimitDataPolicy(DataPolicyUnitPeriod unitPeriod) {
         DataPolicy dataPolicy = new DataPolicy(this, null);
-        this.dataPolicies.put(unitPeriod, dataPolicy);
+        dataPolicies.put(unitPeriod, dataPolicy);
     }
 
     public void addLimitDataPolicy(DataPolicyUnitPeriod unitPeriod, int dataQuantity) {
         DataPolicy dataPolicy = new DataPolicy(this, dataQuantity);
-        this.dataPolicies.put(unitPeriod, dataPolicy);
+        dataPolicies.put(unitPeriod, dataPolicy);
     }
 
     public void addPolicyDetail(DataPolicyUnitPeriod unitPeriod, int dataBoundary, Long speedLimit, Integer dataUnit, Double cost, Long maxCost) {
@@ -114,7 +130,7 @@ public class Plan {
     }
 
     public List<PremiumService> getPremiumServices() {
-        return this.premiumServices;
+        return premiumServices;
     }
 
     public void addPremiumService(PremiumService premiumService) {
@@ -123,7 +139,7 @@ public class Plan {
     }
 
     public List<MediaService> getMediaServices() {
-        return this.mediaServices;
+        return mediaServices;
     }
 
     public void addMediaService(MediaService mediaService) {
