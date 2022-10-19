@@ -19,4 +19,7 @@ public interface PlanRepository extends JpaRepository<Plan, Long> {
 
     Optional<Plan> findByName(PlanName planName);
 
+    @EntityGraph(attributePaths = {"networkTech", "category"})
+    Optional<Plan> findByPlanId(PlanId planId);
+
 }

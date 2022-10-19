@@ -38,4 +38,15 @@ class PlanControllerTest {
                 .andDo(print());
     }
 
+    @Test
+    @DisplayName("요금제를 단건으로 요청할 수 있는 API를 호출할 수 있다.")
+    void getPlan() throws Exception {
+        String planId = "Z202205252";
+        MockHttpServletRequestBuilder builder = get("/plans/" + planId);
+
+        mockMvc.perform(builder)
+                .andExpect(status().is2xxSuccessful())
+                .andDo(print());
+    }
+
 }

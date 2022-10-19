@@ -12,7 +12,7 @@ import javax.persistence.Entity;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @EqualsAndHashCode(of = {"name"})
 @Entity
-public class MediaService {
+public class MediaService implements Service {
 
     @EmbeddedId
     private ServiceName name;
@@ -22,5 +22,15 @@ public class MediaService {
     public MediaService(String name, String image) {
         this.name = new ServiceName(name);
         this.image = new ImageSource(image);
+    }
+
+    @Override
+    public String getName() {
+        return name.getName();
+    }
+
+    @Override
+    public String getImage() {
+        return image.getUrl();
     }
 }

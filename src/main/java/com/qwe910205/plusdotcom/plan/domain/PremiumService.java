@@ -10,7 +10,7 @@ import javax.persistence.Entity;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @EqualsAndHashCode(of = {"name"})
 @Entity
-public class PremiumService {
+public class PremiumService implements Service {
 
     @EmbeddedId
     private ServiceName name;
@@ -22,7 +22,13 @@ public class PremiumService {
         this.image = new ImageSource(image);
     }
 
+    @Override
     public String getName() {
-        return this.name.getName();
+        return name.getName();
+    }
+
+    @Override
+    public String getImage() {
+        return image.getUrl();
     }
 }
