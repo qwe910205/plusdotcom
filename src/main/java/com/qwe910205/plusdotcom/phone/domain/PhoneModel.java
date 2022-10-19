@@ -125,6 +125,10 @@ public abstract class PhoneModel {
         this.hashtags.addAll(hashtags.stream().map(Hashtag::new).toList());
     }
 
+    public List<String> getHashtags() {
+        return hashtags.stream().map(Hashtag::getHashTag).toList();
+    }
+
     public void setDescription(PhoneDescription description) {
         this.description = description;
     }

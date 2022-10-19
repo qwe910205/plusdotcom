@@ -6,8 +6,9 @@ import lombok.Builder;
 import java.util.List;
 
 @Builder
-public record PhoneDto(String modelId, String modelName, String manufacturer, String networkTech, List<String> descriptionImages,
-                       Integer price, List<PhoneProductDto> products, List<String> convenienceFunctions) {
+public record PhoneDto(String modelId, String modelName, String manufacturer, String networkTech, List<String> hashtags,
+                       List<String> descriptionImages, PhoneDescriptionDto description, Integer price,
+                       List<PhoneProductDto> products, List<String> convenienceFunctions) {
 
     public static PhoneDto create(PhoneModel phoneModel) {
         return PhoneDto.builder()
@@ -15,7 +16,9 @@ public record PhoneDto(String modelId, String modelName, String manufacturer, St
                 .modelName(phoneModel.getName())
                 .manufacturer(phoneModel.getManufacturer())
                 .networkTech(phoneModel.getNetworkTech())
+                .hashtags(phoneModel.getHashtags())
                 .descriptionImages(phoneModel.getDescriptionImages())
+                .description(PhoneDescriptionDto.create(phoneModel.getDescription()))
                 .price(phoneModel.getPrice())
                 .products(phoneModel.getAllProducts().stream().map(PhoneProductDto::create).toList())
                 .convenienceFunctions(phoneModel.getConvenienceFunctions())
