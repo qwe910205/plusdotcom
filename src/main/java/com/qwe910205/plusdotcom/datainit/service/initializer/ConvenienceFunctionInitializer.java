@@ -5,8 +5,6 @@ import com.qwe910205.plusdotcom.phone.repository.ConvenienceFunctionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import javax.transaction.Transactional;
-
 @RequiredArgsConstructor
 @Component
 public class ConvenienceFunctionInitializer implements DataInitializer {

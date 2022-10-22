@@ -11,8 +11,6 @@ import com.qwe910205.plusdotcom.plan.repository.PremiumServiceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import javax.transaction.Transactional;
-
 @RequiredArgsConstructor
 @Component
 public class PlanServiceInitializer implements DataInitializer {

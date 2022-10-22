@@ -20,8 +20,8 @@ class PlanTest {
         String image = "https://image.lguplus.com/static/pc-contents/cv2022/images/indv/plan-sp-disneyplus.png";
         PremiumService service = new PremiumService(serviceName, image);
         Plan plan = Plan.builder().id("요금제1").name("요금제1").networkTech("5G").monthlyPayment(50000).category("데이터 일반").build();
-
         PremiumService duplicatedService = new PremiumService(serviceName, "https://naver.com");
+
         plan.addPremiumService(duplicatedService);
 
         assertThat(plan.getPremiumServices().size()).isEqualTo(1);
