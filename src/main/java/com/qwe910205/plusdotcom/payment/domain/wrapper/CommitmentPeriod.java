@@ -11,8 +11,12 @@ public class CommitmentPeriod {
     private final Integer period;
 
     public CommitmentPeriod(int period) {
+        checkIntegrity(period);
+        this.period = period;
+    }
+
+    private void checkIntegrity(int period) {
         if (!(0 <= period && period <= 24))
             throw new IllegalArgumentException("약정 기간은 0 ~ 24개월이어야 합니다.");
-        this.period = period;
     }
 }

@@ -30,7 +30,7 @@ class PubliclySubsidyDiscountApplierTest {
     @Test
     @DisplayName("요금 명세서의 할인 방식이 공시지원금이라면 공시지원금 할인을 적용할 수 있다.")
     void applyPubliclySubsidyDiscount() {
-        PaymentSpecification paymentSpecification = getPaymentSpecification();
+        PaymentSpecification paymentSpecification = getPaymentSpecificationThatHasPubliclySubsidy();
         PaymentSpecification.PhoneField phoneField = paymentSpecification.getPhoneField();
         int monthlyInstallment = phoneField.getMonthlyInstallment();
 
@@ -39,7 +39,7 @@ class PubliclySubsidyDiscountApplierTest {
         assertThat(paymentSpecification.getPhoneField().getMonthlyInstallment()).isLessThan(monthlyInstallment);
     }
 
-    private PaymentSpecification getPaymentSpecification() {
+    private PaymentSpecification getPaymentSpecificationThatHasPubliclySubsidy() {
         PhoneModel phoneModel = phoneRepository.findByPhoneModelId(new PhoneModelId("SM-F721N512")).orElseThrow();
         Plan plan = planRepository.findByPlanId(new PlanId("LPZ0000433")).orElseThrow();
         int installmentPeriod = 24;

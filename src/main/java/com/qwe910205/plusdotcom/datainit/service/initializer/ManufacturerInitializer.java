@@ -5,8 +5,6 @@ import com.qwe910205.plusdotcom.phone.repository.ManufacturerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import javax.transaction.Transactional;
-
 @RequiredArgsConstructor
 @Component
 public class ManufacturerInitializer implements DataInitializer {

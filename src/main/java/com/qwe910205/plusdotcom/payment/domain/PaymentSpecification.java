@@ -37,7 +37,7 @@ public class PaymentSpecification {
     public void applyPubliclySubsidy() {
         phoneField.applyPubliclySubsidy(planField.plan);
     }
-    public void minusPlanFee(int amount) {
+    public void setCommitmentDiscountAmount(int amount) {
         planField.setCommitmentDiscountAmount(amount);
     }
 
@@ -71,11 +71,7 @@ public class PaymentSpecification {
             this.installmentPeriod = new InstallmentPeriod(installmentPeriod);
             this.installmentPrinciple = new Price(phoneModel.getPrice());
             this.installmentFee = InstallmentFeeCalculator.calculate(installmentPeriod, installmentPrinciple.getPrice());
-            if (installmentPeriod == 0) {
-                this.monthlyInstallment = new Price(installmentPrinciple.getPrice() + installmentFee.getPrice());
-                return;
-            }
-            this.monthlyInstallment = new Price((installmentPrinciple.getPrice() + installmentFee.getPrice()) / installmentPeriod);
+            this.monthlyInstallment = installmentPrinciple.plus(installmentFee).divide(installmentPeriod);
         }
 
         public String getModelId() {
@@ -92,7 +88,7 @@ public class PaymentSpecification {
 
         public void applyPubliclySubsidy(Plan plan) {
             publiclySubsidy = new Price(phoneModel.getPubliclySubsidy(plan));
-            additionalSubsidy = new Price(publiclySubsidy.getPrice() / 100 * 15);
+            additionalSubsidy = publiclySubsidy.divide(100).multiply(15);
             installmentPrinciple = normalPrice.minus(publiclySubsidy).minus(additionalSubsidy);
             installmentFee = InstallmentFeeCalculator.calculate(installmentPeriod.getPeriod(), installmentPrinciple.getPrice());
             monthlyInstallment = installmentPrinciple.plus(installmentFee).divide(installmentPeriod.getPeriod());

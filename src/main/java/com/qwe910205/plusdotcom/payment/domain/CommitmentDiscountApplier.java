@@ -17,8 +17,9 @@ public class CommitmentDiscountApplier implements DiscountApplier {
     public void applyDiscount(PaymentSpecification paymentSpecification) {
         if (!canApplyDiscount(paymentSpecification))
             throw new IllegalArgumentException("해당 명세서는 약정 할인을 적용할 수 없습니다.");
+
         PaymentSpecification.PlanField planField = paymentSpecification.getPlanField();
         int normalFee = planField.getNormalFee();
-        paymentSpecification.minusPlanFee(normalFee / 100 * DISCOUNT_RATE);
+        paymentSpecification.setCommitmentDiscountAmount(normalFee / 100 * DISCOUNT_RATE);
     }
 }
