@@ -28,7 +28,7 @@ class PubliclySubsidyDiscountApplierTest {
 
     @Transactional
     @Test
-    @DisplayName("요금 명세서의 할인 방식이 공시지원금이라면 공시지원금 할인을 적용할 수 있다.")
+    @DisplayName("지불 금액 명세서의 할인 방식이 공시지원금이라면 공시지원금 할인을 적용할 수 있다.")
     void applyPubliclySubsidyDiscount() {
         PaymentSpecification paymentSpecification = getPaymentSpecificationThatHasPubliclySubsidy();
         PaymentSpecification.PhoneField phoneField = paymentSpecification.getPhoneField();

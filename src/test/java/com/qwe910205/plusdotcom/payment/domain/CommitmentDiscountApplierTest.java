@@ -24,7 +24,7 @@ class CommitmentDiscountApplierTest {
     CommitmentDiscountApplier commitmentDiscountApplier;
 
     @Test
-    @DisplayName("할인 방식이 약정 할인인 요금 명세서에 약정 할인을 적용할 수 있다.")
+    @DisplayName("할인 방식이 약정 할인인 지불 금액 명세서에 약정 할인을 적용할 수 있다.")
     void applyCommitmentDiscount() {
         PaymentSpecification paymentSpecification = getPaymentSpecification();
         int fee = paymentSpecification.getPlanField().getFee();

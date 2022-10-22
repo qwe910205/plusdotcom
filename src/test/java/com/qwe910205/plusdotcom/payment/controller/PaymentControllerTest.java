@@ -27,7 +27,7 @@ class PaymentControllerTest {
     }
 
     @Test
-    @DisplayName("스마트폰 모델 아이디, 요금제 아이디, 할부기간, 할인 방식에 맞는 요금 명세서를 요청할 수 있는 API를 호출할 수 있다.")
+    @DisplayName("스마트폰 모델 아이디, 요금제 아이디, 할부기간, 할인 방식에 맞는 지불 금액 명세서를 요청할 수 있는 API를 호출할 수 있다.")
     void getPaymentSpecification() throws Exception {
         String modelId = "SM-F721N512";
         String planId = "LPZ0000433";
@@ -46,7 +46,7 @@ class PaymentControllerTest {
     }
 
     @Test
-    @DisplayName("요금제 아이디, 할부기간, 할인 방식에 맞는 모든 요금 명세서를 요청할 수 있는 API를 호출할 수 있다.")
+    @DisplayName("요금제 아이디, 할부기간, 할인 방식에 맞는 모든 지불 금액 명세서를 요청할 수 있는 API를 호출할 수 있다.")
     void getPaymentSpecifications() throws Exception {
         String planId = "LPZ0000433";
         String installmentPeriod = "24";

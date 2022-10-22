@@ -26,7 +26,7 @@ class PaymentSpecificationTest {
     PlanRepository planRepository;
 
     @Test
-    @DisplayName("요금 명세서를 생성하면 명세서의 스마트폰 영역의 정상가는 할부원금과 같다.")
+    @DisplayName("지불 금액 명세서를 생성하면 명세서의 스마트폰 영역의 정상가는 할부원금과 같다.")
     void createPaymentSpecification_1() {
         PaymentSpecification paymentSpecification = getPaymentSpecification();
 
@@ -36,7 +36,7 @@ class PaymentSpecificationTest {
     }
 
     @Test
-    @DisplayName("요금 명세서를 생성하면 명세서의 스마트폰 영역의 공시지원금과 추가지원금은 0이다.")
+    @DisplayName("지불 금액 명세서를 생성하면 명세서의 스마트폰 영역의 공시지원금과 추가지원금은 0이다.")
     void createPaymentSpecification_2() {
         PaymentSpecification paymentSpecification = getPaymentSpecification();
 
@@ -47,7 +47,7 @@ class PaymentSpecificationTest {
     }
 
     @Test
-    @DisplayName("요금 명세서를 생성하면 명세서의 요금제 영역의 기본 통신 요금은 지불해야 할 통신 요금과 같다.")
+    @DisplayName("지불 금액 명세서를 생성하면 명세서의 요금제 영역의 기본 통신 요금은 지불해야 할 통신 요금과 같다.")
     void createPaymentSpecification_3() {
         PaymentSpecification paymentSpecification = getPaymentSpecification();
 
@@ -58,7 +58,7 @@ class PaymentSpecificationTest {
     }
 
     @Test
-    @DisplayName("요금 명세서를 생성하면 명세서의 요금제 영역의 할인 금액은 0이다.")
+    @DisplayName("지불 금액 명세서를 생성하면 명세서의 요금제 영역의 할인 금액은 0이다.")
     void createPaymentSpecification_4() {
         PaymentSpecification paymentSpecification = getPaymentSpecification();
 
@@ -68,7 +68,7 @@ class PaymentSpecificationTest {
     }
 
     @Test
-    @DisplayName("요금 명세서에 할부 기간이 0이라면 할부 금액은 할부원금과 할부수수료를 더한 값이다.")
+    @DisplayName("지불 금액 명세서에 할부 기간이 0이라면 할부 금액은 할부원금과 할부수수료를 더한 값이다.")
     void createPaymentSpecification_5() {
         PaymentSpecification paymentSpecification = getPaymentSpecificationWithoutInstallment();
 
@@ -80,7 +80,7 @@ class PaymentSpecificationTest {
 
     @Transactional
     @Test
-    @DisplayName("요금 명세서에 공시지원금을 적용하면 스마트폰의 할부 금액과 그 외의 정보가 그에 맞게 변할 수 있다.")
+    @DisplayName("지불 금액 명세서에 공시지원금을 적용하면 스마트폰의 할부 금액과 그 외의 정보가 그에 맞게 변할 수 있다.")
     void applyPubliclySubsidy() {
         PaymentSpecification paymentSpecification = getPaymentSpecificationWithoutInstallment();
         int installmentPrinciple = paymentSpecification.getPhoneField().getInstallmentPrinciple();
@@ -98,7 +98,7 @@ class PaymentSpecificationTest {
 
     @Transactional
     @Test
-    @DisplayName("요금 명세서에 공시지원금을 적용하면 추가지원금은 공시지원금의 15퍼센트가 된다.")
+    @DisplayName("지불 금액 명세서에 공시지원금을 적용하면 추가지원금은 공시지원금의 15퍼센트가 된다.")
     void applyPubliclySubsidy_1() {
         PaymentSpecification paymentSpecification = getPaymentSpecification();
 
@@ -111,7 +111,7 @@ class PaymentSpecificationTest {
 
     @Transactional
     @Test
-    @DisplayName("요금 명세서에 공시지원금을 적용하면 원래 할부원금은 바뀐 할부원금, 바뀐 공시지원금, 바뀐 추가지원금을 모두 더한 값이다.")
+    @DisplayName("지불 금액 명세서에 공시지원금을 적용하면 원래 할부원금은 바뀐 할부원금, 바뀐 공시지원금, 바뀐 추가지원금을 모두 더한 값이다.")
     void applyPubliclySubsidy_2() {
         PaymentSpecification paymentSpecification = getPaymentSpecification();
         int installmentPrinciple = paymentSpecification.getPhoneField().getInstallmentPrinciple();
@@ -126,7 +126,7 @@ class PaymentSpecificationTest {
 
     @Transactional
     @Test
-    @DisplayName("요금 명세서에 공시지원금을 적용하면 할부 금액은 할부원금과 할부수수료를 더한 값에서 할부 기간을 나눈 값이다.")
+    @DisplayName("지불 금액 명세서에 공시지원금을 적용하면 할부 금액은 할부원금과 할부수수료를 더한 값에서 할부 기간을 나눈 값이다.")
     void applyPubliclySubsidy_3() {
         PaymentSpecification paymentSpecification = getPaymentSpecification();
 
@@ -141,7 +141,7 @@ class PaymentSpecificationTest {
 
     @ParameterizedTest
     @ValueSource(ints = {1, 10000})
-    @DisplayName("요금 명세서에 약정 할인 금액을 바꾸면 그만큼 요금제의 비용이 차감된다.")
+    @DisplayName("지불 금액 명세서에 약정 할인 금액을 바꾸면 그만큼 요금제의 비용이 차감된다.")
     void setCommitmentDiscountAmount(int amount) {
         PaymentSpecification paymentSpecification = getPaymentSpecification();
         int fee = paymentSpecification.getPlanField().getFee();

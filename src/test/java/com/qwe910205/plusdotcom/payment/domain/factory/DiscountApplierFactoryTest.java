@@ -30,7 +30,7 @@ class DiscountApplierFactoryTest {
     @Transactional
     @ParameterizedTest
     @MethodSource
-    @DisplayName("요금 명세서에 맞는 할인 적용자를 받을 수 있다.")
+    @DisplayName("지불 금액 명세서에 맞는 할인 적용자를 받을 수 있다.")
     void getDiscountApplier(DiscountType discountType, Class<DiscountApplier> discountApplierClass) {
         PaymentSpecification paymentSpecification = getPaymentSpecification(discountType);
 

@@ -26,7 +26,7 @@ class PaymentServiceTest {
     PlanRepository planRepository;
 
     @Test
-    @DisplayName("스마트폰 모델 아이디, 요금제 아이디, 할부 기간, 할인 방식을 선택하면 그에 맞는 요금 명세서를 조회할 수 있다.")
+    @DisplayName("스마트폰 모델 아이디, 요금제 아이디, 할부 기간, 할인 방식을 선택하면 그에 맞는 지불 금액 명세서를 조회할 수 있다.")
     void getPaymentSpecification() {
         String modelId = "SM-F721N512";
         String planId = "LPZ0000433";
@@ -43,7 +43,7 @@ class PaymentServiceTest {
     }
 
     @Test
-    @DisplayName("요금제 아이디, 할부 기간, 할인 방식을 선택하면 모든 스마트폰 모델에 대해 그에 맞는 요금 명세서를 조회할 수 있다.")
+    @DisplayName("요금제 아이디, 할부 기간, 할인 방식을 선택하면 모든 스마트폰 모델에 대해 그에 맞는 지불 금액 명세서를 조회할 수 있다.")
     void getPaymentSpecifications() {
         String planId = "LPZ0000433";
         int installmentPeriod = 24;
