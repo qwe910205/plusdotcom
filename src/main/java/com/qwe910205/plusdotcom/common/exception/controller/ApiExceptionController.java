@@ -1,4 +1,4 @@
-package com.qwe910205.plusdotcom.exception.controller;
+package com.qwe910205.plusdotcom.common.exception.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;

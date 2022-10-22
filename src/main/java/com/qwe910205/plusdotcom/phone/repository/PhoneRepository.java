@@ -1,5 +1,6 @@
 package com.qwe910205.plusdotcom.phone.repository;
 
+import com.qwe910205.plusdotcom.phone.domain.NetworkTech;
 import com.qwe910205.plusdotcom.phone.domain.PhoneModel;
 import com.qwe910205.plusdotcom.phone.domain.wrapper.PhoneModelId;
 import com.qwe910205.plusdotcom.phone.domain.wrapper.PhoneModelName;
@@ -19,8 +20,12 @@ public interface PhoneRepository extends JpaRepository<PhoneModel, Long> {
     @Override
     List<PhoneModel> findAll();
 
+    @EntityGraph(attributePaths = {"manufacturer", "networkTech"})
     Optional<PhoneModel> findByName(PhoneModelName phoneModelName);
 
     @EntityGraph(attributePaths = {"manufacturer", "networkTech"})
     Optional<PhoneModel> findByPhoneModelId(PhoneModelId phoneModelId);
+
+    @EntityGraph(attributePaths = {"manufacturer", "networkTech"})
+    List<PhoneModel> findByNetworkTech(NetworkTech networkTech);
 }

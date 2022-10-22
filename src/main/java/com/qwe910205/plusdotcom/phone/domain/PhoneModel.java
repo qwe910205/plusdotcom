@@ -79,7 +79,7 @@ public abstract class PhoneModel {
 
     @MapKey(name = "plan")
     @OneToMany(mappedBy = "phoneModel", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Map<Long, PubliclySubsidy> publiclySubsidies = new HashMap<>();
+    private Map<Plan, PubliclySubsidy> publiclySubsidies = new HashMap<>();
 
     protected PhoneModel(String id, String name, String manufacturer, String networkTech, int price) {
         Objects.requireNonNull(id, "스마트폰 모델의 아이디는 필수입니다.");
@@ -248,9 +248,9 @@ public abstract class PhoneModel {
     }
 
     public int getPubliclySubsidy(Plan plan) {
-        if (!publiclySubsidies.containsKey(plan.getId()))
+        if (!publiclySubsidies.containsKey(plan))
             throw new NoSuchElementException("등록되지 않은 요금제입니다.");
-        PubliclySubsidy publiclySubsidy = publiclySubsidies.get(plan.getId());
+        PubliclySubsidy publiclySubsidy = publiclySubsidies.get(plan);
         return publiclySubsidy.getAmount();
     }
 
@@ -259,7 +259,7 @@ public abstract class PhoneModel {
     }
 
     public void putPubliclySubsidy(Plan plan, int amount) {
-        publiclySubsidies.put(plan.getId(), new PubliclySubsidy(this, plan, amount));
+        publiclySubsidies.put(plan, new PubliclySubsidy(this, plan, amount));
     }
 
 
