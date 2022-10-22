@@ -7,23 +7,18 @@ import com.qwe910205.plusdotcom.phone.repository.PhoneRepository;
 import com.qwe910205.plusdotcom.plan.domain.Plan;
 import com.qwe910205.plusdotcom.plan.domain.wrapper.PlanId;
 import com.qwe910205.plusdotcom.plan.repository.PlanRepository;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
-@TestPropertySource(properties = {"spring.jpa.hibernate.ddl-auto=none", "spring.datasource.url=jdbc:mysql://localhost:3306/uplusdotcom"})
 @SpringBootTest
 class DiscountApplierFactoryTest {
 

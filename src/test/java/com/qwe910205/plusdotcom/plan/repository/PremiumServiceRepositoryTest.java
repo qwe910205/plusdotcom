@@ -17,14 +17,10 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class PremiumServiceRepositoryTest {
 
-    @Autowired PremiumServiceRepository repository;
+    @Autowired
+    PremiumServiceRepository repository;
     @Autowired
     ServiceInitializer initializer;
-
-    @BeforeEach
-    void initPremiumService() {
-        initializer.init();
-    }
 
     @Test
     @DisplayName("프리미엄 서비스 이름으로 프리미엄 서비스를 불러올 수 있다.")

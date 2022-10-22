@@ -6,7 +6,6 @@ import com.qwe910205.plusdotcom.phone.repository.PhoneRepository;
 import com.qwe910205.plusdotcom.plan.domain.Plan;
 import com.qwe910205.plusdotcom.plan.domain.wrapper.PlanId;
 import com.qwe910205.plusdotcom.plan.repository.PlanRepository;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +15,7 @@ import org.springframework.test.context.TestPropertySource;
 import javax.transaction.Transactional;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
-@TestPropertySource(properties = {"spring.jpa.hibernate.ddl-auto=none", "spring.datasource.url=jdbc:mysql://localhost:3306/uplusdotcom"})
 @SpringBootTest
 class PubliclySubsidyDiscountApplierTest {
 

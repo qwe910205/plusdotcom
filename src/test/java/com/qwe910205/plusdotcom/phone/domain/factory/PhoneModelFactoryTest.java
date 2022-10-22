@@ -3,7 +3,6 @@ package com.qwe910205.plusdotcom.phone.domain.factory;
 import com.qwe910205.plusdotcom.phone.domain.FlatPhoneModel;
 import com.qwe910205.plusdotcom.phone.domain.FoldablePhoneModel;
 import com.qwe910205.plusdotcom.phone.domain.PhoneModel;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
