@@ -23,15 +23,19 @@ public class DataExcessChargePolicy {
     }
 
     public DataExcessChargePolicy(int dataUnit, double cost, Long maxCost) {
+        checkIntegrity(dataUnit, cost, maxCost);
+        this.dataUnit = dataUnit;
+        this.cost = cost;
+        this.maxCost = maxCost;
+    }
+
+    private void checkIntegrity(int dataUnit, double cost, Long maxCost) {
         if (dataUnit <= 0)
             throw new IllegalArgumentException("단위 데이터는 양수여야 합니다.");
         if (cost < 0)
             throw new IllegalArgumentException("단위 당 비용은 음수일 수 없습니다.");
-        if (Objects.nonNull(maxCost) && maxCost < 0)
+        if (!Objects.isNull(maxCost) && maxCost < 0)
             throw new IllegalArgumentException("최대 비용은 음수일 수 없습니다.");
-        this.dataUnit = dataUnit;
-        this.cost = cost;
-        this.maxCost = maxCost;
     }
 
     public boolean hasCostLimit() {

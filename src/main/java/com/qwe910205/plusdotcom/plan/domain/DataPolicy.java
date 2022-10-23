@@ -8,9 +8,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.SortNatural;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @EqualsAndHashCode(of = {"id"})
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -24,12 +22,13 @@ public class DataPolicy {
     @JoinColumn(nullable = false, updatable = false)
     private Plan plan;
 
+    @AttributeOverride(name = "value", column = @Column(name = "SERVING_DATA_QUANTITY"))
     @Embedded
     private ServingDataQuantity servingDataQuantity;
 
     @SortNatural
     @OneToMany(mappedBy = "dataPolicy",cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<PolicyDetail> policyDetails = new ArrayList<>();
+    private SortedSet<PolicyDetail> policyDetails = new TreeSet<>();
 
     public DataPolicy(Plan plan, Integer dataQuantity) {
         this.plan = plan;
@@ -41,6 +40,7 @@ public class DataPolicy {
         PolicyDetail policyDetail = new PolicyDetail(this, dataBoundary, speedLimit);
         if (Objects.nonNull(dataUnit))
             policyDetail.setExcessChargePolicy(new DataExcessChargePolicy(dataUnit, cost, maxCost));
+        this.policyDetails.remove(policyDetail);
         this.policyDetails.add(policyDetail);
     }
 }

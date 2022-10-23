@@ -18,8 +18,4 @@ public class PlanFactory {
         plan.setDescription(planDescription);
         return plan;
     }
-
-    public static Plan create(String id, String name, String networkTechName, Integer monthlyPayment, String category) {
-        return new Plan(id, name, networkTechName, monthlyPayment, category);
-    }
 }

@@ -16,9 +16,9 @@ class InstallmentFeeCalculatorTest {
     @MethodSource
     @DisplayName("할부 기간과 할부원금으로 할부수수료를 계산할 수 있다.")
     void calculateInstallmentFee(int installmentPeriod, int installmentPrinciple, int installmentFee) {
-        Price fee = InstallmentFeeCalculator.calculate(installmentPeriod, installmentPrinciple);
+        int calculatedFee = InstallmentFeeCalculator.calculate(installmentPeriod, installmentPrinciple);
 
-        assertThat(fee.getPrice()).isEqualTo(installmentFee);
+        assertThat(calculatedFee).isEqualTo(installmentFee);
     }
 
     private static Stream<Arguments> calculateInstallmentFee() {

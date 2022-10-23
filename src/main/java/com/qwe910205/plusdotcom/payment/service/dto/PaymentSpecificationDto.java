@@ -11,7 +11,7 @@ public record PaymentSpecificationDto(String discountType, PhoneFieldDto phoneFi
                 .discountType(paymentSpecification.getDiscountTypeName())
                 .phoneField(PhoneFieldDto.create(paymentSpecification.getPhoneField()))
                 .planField(PlanFieldDto.create(paymentSpecification.getPlanField()))
-                .totalMonthlyPayment(paymentSpecification.getTotalPayment())
+                .totalMonthlyPayment(paymentSpecification.getTotalMonthlyPayment())
                 .build();
     }
 

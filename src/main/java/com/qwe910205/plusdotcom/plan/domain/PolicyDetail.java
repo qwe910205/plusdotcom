@@ -25,11 +25,11 @@ public class PolicyDetail implements Comparable<PolicyDetail> {
     @JoinColumn(nullable = false, updatable = false)
     private DataPolicy dataPolicy;
 
-    @AttributeOverride(name = "boundary", column = @Column(name = "DATA_BOUNDARY", nullable = false))
+    @AttributeOverride(name = "value", column = @Column(name = "DATA_BOUNDARY", nullable = false))
     @Embedded
     private DataBoundary dataBoundary;
 
-    @AttributeOverride(name = "speed", column = @Column(name = "SPEED_LIMIT"))
+    @AttributeOverride(name = "value", column = @Column(name = "SPEED_LIMIT"))
     @Embedded
     private DataSpeed speedLimit;
 
@@ -49,6 +49,6 @@ public class PolicyDetail implements Comparable<PolicyDetail> {
 
     @Override
     public int compareTo(PolicyDetail o) {
-        return this.dataBoundary.getBoundary() - o.dataBoundary.getBoundary();
+        return this.dataBoundary.getValue() - o.dataBoundary.getValue();
     }
 }

@@ -14,11 +14,15 @@ import javax.persistence.Embeddable;
 public class ScreenSize {
 
     /** 단위는 inch */
-    private Double screenSize;
+    private double value;
 
-    public ScreenSize(double screenSize) {
-        if (screenSize < 0)
+    public ScreenSize(double value) {
+        checkIntegrity(value);
+        this.value = value;
+    }
+
+    private void checkIntegrity(double value) {
+        if (value < 0)
             throw new IllegalArgumentException("화면 크기는 음수일 수 없습니다.");
-        this.screenSize = screenSize;
     }
 }

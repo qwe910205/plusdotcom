@@ -12,6 +12,7 @@ import javax.persistence.*;
 @Entity
 public class NetworkTech {
 
+    @AttributeOverride(name = "value", column = @Column(name = "NAME"))
     @EmbeddedId
     private NetworkTechName name;
 
@@ -20,6 +21,6 @@ public class NetworkTech {
     }
 
     public String getName() {
-        return this.name.getName();
+        return this.name.getValue();
     }
 }

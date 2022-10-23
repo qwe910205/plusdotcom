@@ -14,15 +14,15 @@ import javax.persistence.Embeddable;
 public class MemoryCapacity {
 
     /** 단위는 GB */
-    private Integer ram;
+    private int value;
 
-    /** 단위는 GB */
-    private Integer rom;
+    public MemoryCapacity(int value) {
+        checkIntegrity(value);
+        this.value = value;
+    }
 
-    public MemoryCapacity(int ram, int rom) {
-        if (ram < 0 || rom < 0)
+    private void checkIntegrity(int value) {
+        if (value < 0)
             throw new IllegalArgumentException("메모리의 저장 용량은 음수일 수 없습니다.");
-        this.ram = ram;
-        this.rom = rom;
     }
 }

@@ -1,5 +1,6 @@
 package com.qwe910205.plusdotcom.phone.domain;
 
+import com.qwe910205.plusdotcom.phone.domain.wrapper.Price;
 import com.qwe910205.plusdotcom.plan.domain.Plan;
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
@@ -31,19 +32,25 @@ public class PubliclySubsidy {
     @JoinColumn(nullable = false, updatable = false)
     private Plan plan;
 
-    private Integer amount;
+    @AttributeOverride(name = "value", column = @Column(name = "amount", nullable = false))
+    @Embedded
+    private Price amount;
 
     PubliclySubsidy(PhoneModel phoneModel, Plan plan, int amount) {
+        checkIntegrity(phoneModel, plan, amount);
+        this.phoneModel = phoneModel;
+        this.plan = plan;
+        this.amount = new Price(amount);
+    }
+
+    private void checkIntegrity(PhoneModel phoneModel, Plan plan, int amount) {
         Objects.requireNonNull(phoneModel, "공시지원금을 설정하려면 스마트폰 모델이 필요합니다.");
         Objects.requireNonNull(plan, "공시지원금을 설정하려면 요금제가 필요합니다.");
         if (amount < 0)
             throw new IllegalArgumentException("공시지원금은 음수일 수 없습니다.");
-        this.phoneModel = phoneModel;
-        this.plan = plan;
-        this.amount = amount;
     }
 
     public int getAmount() {
-        return this.amount;
+        return this.amount.getValue();
     }
 }

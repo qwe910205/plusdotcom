@@ -13,11 +13,15 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Stock {
 
-    private Integer stock;
+    private int value;
 
-    public Stock(int stock) {
-        if (stock < 0)
+    public Stock(int value) {
+        checkIntegrity(value);
+        this.value = value;
+    }
+
+    private void checkIntegrity(int value) {
+        if (value < 0)
             throw new IllegalArgumentException("재고는 음수일 수 없습니다.");
-        this.stock = stock;
     }
 }

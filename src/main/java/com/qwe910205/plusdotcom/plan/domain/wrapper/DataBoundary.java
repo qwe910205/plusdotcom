@@ -14,11 +14,15 @@ import javax.persistence.Embeddable;
 public class DataBoundary {
 
     /** 단위는 MB */
-    private Integer boundary;
+    private int value;
 
-    public DataBoundary(int boundary) {
-        if (boundary < 0)
+    public DataBoundary(int value) {
+        checkIntegrity(value);
+        this.value = value;
+    }
+
+    private void checkIntegrity(int value) {
+        if (value < 0)
             throw new IllegalArgumentException("데이터 경계값은 음수일 수 없습니다.");
-        this.boundary = boundary;
     }
 }

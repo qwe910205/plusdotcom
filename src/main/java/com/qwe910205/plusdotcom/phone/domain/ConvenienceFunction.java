@@ -12,6 +12,7 @@ import javax.persistence.*;
 @Entity
 public class ConvenienceFunction {
 
+    @AttributeOverride(name = "value", column = @Column(name = "NAME"))
     @EmbeddedId
     private ConvenienceFunctionName name;
 
@@ -20,6 +21,6 @@ public class ConvenienceFunction {
     }
 
     public String getName() {
-        return this.name.getName();
+        return this.name.getValue();
     }
 }

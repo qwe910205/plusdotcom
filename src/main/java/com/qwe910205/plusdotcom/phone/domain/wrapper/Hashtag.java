@@ -14,14 +14,21 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Hashtag {
 
-    private String hashTag;
+    private String value;
 
-    public Hashtag(String hashTag) {
-        if (!StringUtils.hasText(hashTag))
+    public Hashtag(String value) {
+        checkIntegrity(value);
+        this.value = format(value);
+    }
+
+    private void checkIntegrity(String value) {
+        if (!StringUtils.hasText(value))
             throw new IllegalArgumentException("해시 태그는 한 글자 이상이어야 합니다.");
-        if (hashTag.startsWith("#"))
-            this.hashTag = hashTag;
-        else
-            this.hashTag = "#" + hashTag;
+    }
+
+    private String format(String value) {
+        if (!value.startsWith("#"))
+            return "#" + value;
+        return value;
     }
 }

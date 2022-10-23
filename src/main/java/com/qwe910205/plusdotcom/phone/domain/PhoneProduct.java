@@ -9,9 +9,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @EqualsAndHashCode(of = {"phoneModel", "colorName"})
@@ -29,18 +27,19 @@ public class PhoneProduct {
     @JoinColumn(nullable = false, updatable = false)
     private PhoneModel phoneModel;
 
-    @AttributeOverride(name = "name", column = @Column(name = "COLOR_NAME", nullable = false, updatable = false))
+    @AttributeOverride(name = "value", column = @Column(name = "COLOR_NAME", nullable = false, updatable = false))
     @Embedded
     private ColorName colorName;
 
-    @AttributeOverride(name = "code", column = @Column(name = "COLOR_CODE", nullable = false))
+    @AttributeOverride(name = "value", column = @Column(name = "COLOR_CODE", nullable = false))
     @Embedded
     private ColorCode colorCode;
 
     @OrderColumn
     @ElementCollection
-    private List<ImageSource> images = new ArrayList<>();
+    private final List<ImageSource> images = new ArrayList<>();
 
+    @AttributeOverride(name = "value", column = @Column(name = "STOCK"))
     @Embedded
     private Stock stock;
 
@@ -48,7 +47,7 @@ public class PhoneProduct {
         this.phoneModel = phoneModel;
         this.colorName = new ColorName(colorName);
         this.colorCode = new ColorCode(colorCode);
-        if (images != null)
+        if (!Objects.isNull(images))
             this.images.addAll(images.stream().map(ImageSource::new).toList());
         this.stock = new Stock(stock);
     }
@@ -56,13 +55,13 @@ public class PhoneProduct {
     public String getColorName() {
         if (Objects.isNull(colorName))
             return null;
-        return this.colorName.getName();
+        return this.colorName.getValue();
     }
 
     public String getColorCode() {
         if (Objects.isNull(colorCode))
             return null;
-        return this.colorCode.getCode();
+        return this.colorCode.getValue();
     }
 
     public List<String> getImages() {
@@ -72,6 +71,6 @@ public class PhoneProduct {
     public Integer getStock() {
         if (Objects.isNull(stock))
             return null;
-        return stock.getStock();
+        return stock.getValue();
     }
 }

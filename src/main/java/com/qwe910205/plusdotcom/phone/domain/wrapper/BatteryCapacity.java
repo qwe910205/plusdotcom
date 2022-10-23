@@ -14,11 +14,15 @@ import javax.persistence.Embeddable;
 public class BatteryCapacity {
 
     /** 단위는 mAh */
-    private Integer batteryCapacity;
+    private int value;
 
-    public BatteryCapacity(int batteryCapacity) {
-        if (batteryCapacity < 0)
+    public BatteryCapacity(int value) {
+        checkIntegrity(value);
+        this.value = value;
+    }
+
+    private void checkIntegrity(int value) {
+        if (value < 0)
             throw new IllegalArgumentException("배터리의 용량은 음수일 수 없습니다.");
-        this.batteryCapacity = batteryCapacity;
     }
 }

@@ -6,17 +6,19 @@ import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @EqualsAndHashCode(of = {"name"})
 @Entity
 public class MediaService implements Service {
 
+    @AttributeOverride(name = "value", column = @Column(name = "NAME"))
     @EmbeddedId
     private ServiceName name;
 
+    @AttributeOverride(name = "url", column = @Column(name = "image"))
+    @Embedded
     private ImageSource image;
 
     public MediaService(String name, String image) {
@@ -26,7 +28,7 @@ public class MediaService implements Service {
 
     @Override
     public String getName() {
-        return name.getName();
+        return name.getValue();
     }
 
     @Override

@@ -3,16 +3,13 @@ package com.qwe910205.plusdotcom.payment.domain.wrapper;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
-@Getter
-@EqualsAndHashCode
-public class CommitmentPeriod {
+/**
+ * @param value 단위는 개월
+ */
+public record CommitmentPeriod(int value) {
 
-    /** 단위는 개월 */
-    private final Integer period;
-
-    public CommitmentPeriod(int period) {
-        checkIntegrity(period);
-        this.period = period;
+    public CommitmentPeriod {
+        checkIntegrity(value);
     }
 
     private void checkIntegrity(int period) {

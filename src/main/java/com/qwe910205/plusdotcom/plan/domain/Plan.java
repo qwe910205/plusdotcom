@@ -1,11 +1,10 @@
 package com.qwe910205.plusdotcom.plan.domain;
 
 import com.qwe910205.plusdotcom.phone.domain.NetworkTech;
-import com.qwe910205.plusdotcom.plan.domain.wrapper.MonthlyPayment;
+import com.qwe910205.plusdotcom.phone.domain.wrapper.Price;
 import com.qwe910205.plusdotcom.plan.domain.wrapper.PlanId;
 import com.qwe910205.plusdotcom.plan.domain.wrapper.PlanName;
 import lombok.*;
-import org.springframework.validation.ObjectError;
 
 import javax.persistence.*;
 import java.util.*;
@@ -18,11 +17,11 @@ public class Plan {
     @Id @GeneratedValue
     private Long id;
 
-    @AttributeOverride(name = "id", column = @Column(name = "PLAN_ID", unique = true, nullable = false, updatable = false))
+    @AttributeOverride(name = "value", column = @Column(name = "PLAN_ID", unique = true, nullable = false, updatable = false))
     @Embedded
     private PlanId planId;
 
-    @AttributeOverride(name = "name", column = @Column(nullable = false, unique = true))
+    @AttributeOverride(name = "value", column = @Column(name = "NAME", nullable = false, unique = true))
     @Embedded
     private PlanName name;
 
@@ -30,9 +29,9 @@ public class Plan {
     @JoinColumn(nullable = false)
     private NetworkTech networkTech;
 
-    @AttributeOverride(name = "monthlyPayment", column = @Column(nullable = false))
+    @AttributeOverride(name = "value", column = @Column(name = "MONTHLY_PAYMENT", nullable = false))
     @Embedded
-    private MonthlyPayment monthlyPayment;
+    private Price monthlyPayment;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(nullable = false)
@@ -46,10 +45,10 @@ public class Plan {
     private PlanDescription description;
 
     @ManyToMany
-    private List<PremiumService> premiumServices = new ArrayList<>();
+    private Set<PremiumService> premiumServices = new HashSet<>();
 
     @ManyToMany
-    private List<MediaService> mediaServices = new ArrayList<>();
+    private Set<MediaService> mediaServices = new HashSet<>();
 
     @Builder
     public Plan(String id, String name, String networkTech, int monthlyPayment, String category) {
@@ -60,7 +59,7 @@ public class Plan {
         this.planId = new PlanId(id);
         this.name = new PlanName(name);
         this.networkTech = new NetworkTech(networkTech);
-        this.monthlyPayment = new MonthlyPayment(monthlyPayment);
+        this.monthlyPayment = new Price(monthlyPayment);
         this.category = new PlanCategory(category);
     }
 
@@ -69,13 +68,13 @@ public class Plan {
     }
 
     public String getPlanId() {
-        return planId.getId();
+        return planId.getValue();
     }
 
     public String getName() {
         if (Objects.isNull(name))
             return null;
-        return name.getName();
+        return name.getValue();
     }
 
     public String getNetworkTech() {
@@ -87,7 +86,7 @@ public class Plan {
     public Integer getMonthlyPayment() {
         if (Objects.isNull(monthlyPayment))
             return null;
-        return monthlyPayment.getMonthlyPayment();
+        return monthlyPayment.getValue();
     }
 
     public String getCategory() {
@@ -130,21 +129,21 @@ public class Plan {
     }
 
     public List<PremiumService> getPremiumServices() {
-        return premiumServices;
+        return premiumServices.stream().toList();
     }
 
     public void addPremiumService(PremiumService premiumService) {
-        if (!premiumServices.contains(premiumService))
-            premiumServices.add(premiumService);
+        premiumServices.remove(premiumService);
+        premiumServices.add(premiumService);
     }
 
     public List<MediaService> getMediaServices() {
-        return mediaServices;
+        return mediaServices.stream().toList();
     }
 
     public void addMediaService(MediaService mediaService) {
-        if (!mediaServices.contains(mediaService))
-            mediaServices.add(mediaService);
+        mediaServices.remove(mediaService);
+        mediaServices.add(mediaService);
     }
 
 

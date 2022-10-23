@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.util.StringUtils;
 
 import javax.persistence.Embeddable;
-import java.io.Serializable;
 
 @Getter
 @EqualsAndHashCode
@@ -15,11 +14,15 @@ import java.io.Serializable;
 @Embeddable
 public class PlanId {
 
-    private String id;
+    private String value;
 
-    public PlanId(String id) {
-        if (!StringUtils.hasText(id))
+    public PlanId(String value) {
+        checkIntegrity(value);
+        this.value = value;
+    }
+
+    private void checkIntegrity(String value) {
+        if (!StringUtils.hasText(value))
             throw new IllegalArgumentException("요금제 아이디는 한 글자 이상이어야 합니다.");
-        this.id = id;
     }
 }

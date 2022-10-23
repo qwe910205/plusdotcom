@@ -4,17 +4,19 @@ import com.qwe910205.plusdotcom.phone.domain.wrapper.ImageSource;
 import com.qwe910205.plusdotcom.plan.domain.wrapper.ServiceName;
 import lombok.*;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @EqualsAndHashCode(of = {"name"})
 @Entity
 public class PremiumService implements Service {
 
+    @AttributeOverride(name = "value", column = @Column(name = "NAME"))
     @EmbeddedId
     private ServiceName name;
 
+    @AttributeOverride(name = "url", column = @Column(name = "image"))
+    @Embedded
     private ImageSource image;
 
     public PremiumService(String name, String image) {
@@ -24,7 +26,7 @@ public class PremiumService implements Service {
 
     @Override
     public String getName() {
-        return name.getName();
+        return name.getValue();
     }
 
     @Override

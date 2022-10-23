@@ -15,11 +15,15 @@ import java.io.Serializable;
 @Embeddable
 public class NetworkTechName implements Serializable {
 
-    private String name;
+    private String value;
 
-    public NetworkTechName(String name) {
-        if (!StringUtils.hasText(name))
+    public NetworkTechName(String value) {
+        checkIntegrity(value);
+        this.value = value;
+    }
+
+    private void checkIntegrity(String value) {
+        if (!StringUtils.hasText(value))
             throw new IllegalArgumentException("통신 기술 이름은 한 글자 이상이어야 합니다.");
-        this.name = name;
     }
 }

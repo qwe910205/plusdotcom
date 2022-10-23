@@ -3,6 +3,7 @@ package com.qwe910205.plusdotcom.phone.domain;
 import lombok.*;
 
 import javax.persistence.Embeddable;
+import java.util.Objects;
 
 @Getter
 @EqualsAndHashCode
@@ -30,19 +31,19 @@ public class PhoneDescription {
     }
 
     public PhoneDescription changedDescription(String cpuDescription, String displayDescription, String sizeDescription, String cameraDescription, String memoryDescription, String batteryDescription, String waterproofDescription) {
-        if (cpuDescription == null)
+        if (Objects.isNull(cpuDescription))
             cpuDescription = this.cpuDescription;
-        if (displayDescription == null)
+        if (Objects.isNull(displayDescription))
             displayDescription = this.displayDescription;
-        if (sizeDescription == null)
+        if (Objects.isNull(sizeDescription))
             sizeDescription = this.sizeDescription;
-        if (cameraDescription == null)
+        if (Objects.isNull(cameraDescription))
             cameraDescription = this.cameraDescription;
-        if (memoryDescription == null)
+        if (Objects.isNull(memoryDescription))
             memoryDescription = this.memoryDescription;
-        if (batteryDescription == null)
+        if (Objects.isNull(batteryDescription))
             batteryDescription = this.batteryDescription;
-        if (waterproofDescription == null)
+        if (Objects.isNull(waterproofDescription))
             waterproofDescription = this.waterproofDescription;
         return new PhoneDescription(cpuDescription, displayDescription, sizeDescription, cameraDescription, memoryDescription, batteryDescription, waterproofDescription);
     }

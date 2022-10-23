@@ -14,11 +14,15 @@ import javax.persistence.Embeddable;
 public class Weight {
 
     /** 단위는 g */
-    private Integer weight;
+    private int value;
 
-    public Weight(int weight) {
-        if (weight < 0)
+    public Weight(int value) {
+        checkIntegrity(value);
+        this.value = value;
+    }
+
+    private void checkIntegrity(int value) {
+        if (value < 0)
             throw new IllegalArgumentException("스마트폰의 무게는 음수일 수 없습니다.");
-        this.weight = weight;
     }
 }

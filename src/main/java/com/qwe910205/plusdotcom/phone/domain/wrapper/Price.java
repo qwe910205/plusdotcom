@@ -13,33 +13,33 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Price {
 
-    private Integer price;
+    private int value;
 
-    public Price(int price) {
-        checkIntegrity(price);
-        this.price = price;
+    public Price(int value) {
+        checkIntegrity(value);
+        this.value = value;
     }
 
     public Price plus(Price amount) {
-        int newPrice = price + amount.getPrice();
+        int newPrice = value + amount.getValue();
         checkIntegrity(newPrice);
         return new Price(newPrice);
     }
 
     public Price minus(Price amount) {
-        int newPrice = Math.max(0, price - amount.getPrice());
+        int newPrice = Math.max(0, value - amount.getValue());
         return new Price(newPrice);
     }
 
     public Price multiply(int value) {
-        int newPrice = price * value;
+        int newPrice = this.value * value;
         checkIntegrity(newPrice);
         return new Price(newPrice);
     }
 
     public Price divide(int value) {
         if (value == 0) return this;
-        int newPrice = price / value;
+        int newPrice = this.value / value;
         return new Price(newPrice);
     }
 

@@ -23,7 +23,7 @@ class HashtagTest {
 
         Hashtag hashTag = new Hashtag(string);
 
-        assertThat(hashTag.getHashTag()).isEqualTo(string);
+        assertThat(hashTag.getValue()).isEqualTo(string);
     }
 
     @Test
@@ -33,6 +33,6 @@ class HashtagTest {
 
         Hashtag hashTag = new Hashtag(string);
 
-        assertThat(hashTag.getHashTag()).isEqualTo("#" + string);
+        assertThat(hashTag.getValue()).isEqualTo("#" + string);
     }
 }

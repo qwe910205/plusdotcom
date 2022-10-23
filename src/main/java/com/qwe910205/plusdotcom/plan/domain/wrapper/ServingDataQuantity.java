@@ -14,11 +14,15 @@ import javax.persistence.Embeddable;
 public class ServingDataQuantity {
 
     /** 단위는 MB */
-    private Integer quantity;
+    private Integer value;
 
-    public ServingDataQuantity(int quantity) {
-        if (quantity < 0)
+    public ServingDataQuantity(int value) {
+        checkIntegrity(value);
+        this.value = value;
+    }
+
+    private void checkIntegrity(int value) {
+        if (value < 0)
             throw new IllegalArgumentException("기본 데이터 제공량은 음수일 수 없습니다.");
-        this.quantity = quantity;
     }
 }
