@@ -109,16 +109,12 @@ public class Plan {
         return dataPolicies.get(unitPeriod);
     }
 
-    public List<DataPolicy> getDataPolicies() {
-        return dataPolicies.values().stream().toList();
-    }
-
-    public void addUnLimitDataPolicy(DataPolicyUnitPeriod unitPeriod) {
+    public void putUnLimitDataPolicy(DataPolicyUnitPeriod unitPeriod) {
         DataPolicy dataPolicy = new DataPolicy(this, null);
         dataPolicies.put(unitPeriod, dataPolicy);
     }
 
-    public void addLimitDataPolicy(DataPolicyUnitPeriod unitPeriod, int dataQuantity) {
+    public void putLimitDataPolicy(DataPolicyUnitPeriod unitPeriod, int dataQuantity) {
         DataPolicy dataPolicy = new DataPolicy(this, dataQuantity);
         dataPolicies.put(unitPeriod, dataPolicy);
     }

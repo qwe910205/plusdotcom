@@ -1,6 +1,5 @@
 package com.qwe910205.plusdotcom.payment.domain;
 
-import com.qwe910205.plusdotcom.phone.domain.wrapper.Price;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;

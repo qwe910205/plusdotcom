@@ -233,6 +233,8 @@ public class PhoneModel {
     }
 
     public void putPubliclySubsidy(Plan plan, int amount) {
+        if (!this.getNetworkTech().equals(plan.getNetworkTech()))
+            throw new IllegalArgumentException("스마트폰 모델과 요금제의 통신기술이 다르면 공시지원금을 추가할 수 없습니다.");
         publiclySubsidies.put(plan, new PubliclySubsidy(this, plan, amount));
     }
 }

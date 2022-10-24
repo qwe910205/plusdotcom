@@ -28,7 +28,7 @@ public class DataPolicy {
 
     @SortNatural
     @OneToMany(mappedBy = "dataPolicy",cascade = CascadeType.ALL, orphanRemoval = true)
-    private SortedSet<PolicyDetail> policyDetails = new TreeSet<>();
+    private final SortedSet<PolicyDetail> policyDetails = new TreeSet<>();
 
     public DataPolicy(Plan plan, Integer dataQuantity) {
         this.plan = plan;
@@ -42,5 +42,9 @@ public class DataPolicy {
             policyDetail.setExcessChargePolicy(new DataExcessChargePolicy(dataUnit, cost, maxCost));
         this.policyDetails.remove(policyDetail);
         this.policyDetails.add(policyDetail);
+    }
+
+    public int getServingDataQuantity() {
+        return servingDataQuantity.getValue();
     }
 }

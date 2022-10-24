@@ -117,10 +117,10 @@ public class PlanInitializer implements DataInitializer {
     private void setDataPolicy(Map<String, Plan> planMap, String name, DataPolicyUnitPeriod unitPeriod, Integer dataQuantity) {
         Plan plan = planMap.get(name);
         if (Objects.nonNull(dataQuantity)) {
-            plan.addLimitDataPolicy(unitPeriod, dataQuantity);
+            plan.putLimitDataPolicy(unitPeriod, dataQuantity);
             return;
         }
-        plan.addUnLimitDataPolicy(unitPeriod);
+        plan.putUnLimitDataPolicy(unitPeriod);
     }
 
     public void initPolicyDetail(Map<String, Plan> planMap) {

@@ -5,11 +5,9 @@ import com.qwe910205.plusdotcom.payment.domain.wrapper.InstallmentPeriod;
 import com.qwe910205.plusdotcom.phone.domain.PhoneModel;
 import com.qwe910205.plusdotcom.phone.domain.wrapper.Price;
 import com.qwe910205.plusdotcom.plan.domain.Plan;
-import lombok.Getter;
 
 import java.util.Objects;
 
-@Getter
 public class PaymentSpecification {
 
     private final PhoneField phoneField;
@@ -25,9 +23,23 @@ public class PaymentSpecification {
             throw new IllegalArgumentException("요금 명세서를 생성할 때 요금제는 필수입니다.");
         if (Objects.isNull(discountType))
             throw new IllegalArgumentException("요금 명세서를 생성할 때 할인 유형은 필수입니다.");
+        if (!phoneModel.getNetworkTech().equals(plan.getNetworkTech()))
+            throw new IllegalArgumentException("통신 기술이 다른 스마트폰 모델과 요금제는 함께 구매할 수 없습니다.");
         this.phoneField = new PhoneField(phoneModel, installmentPeriod);
         this.planField = new PlanField(plan, discountType);
         this.discountType = discountType;
+    }
+
+    public PhoneField getPhoneField() {
+        return phoneField;
+    }
+
+    public PlanField getPlanField() {
+        return planField;
+    }
+
+    public DiscountType getDiscountType() {
+        return discountType;
     }
 
     public String getDiscountTypeName() {
