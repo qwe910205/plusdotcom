@@ -1,7 +1,12 @@
 package com.qwe910205.plusdotcom.payment.domain;
 
-import com.qwe910205.plusdotcom.phone.domain.wrapper.Price;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class InstallmentFeeCalculator {
 
     private final static double ANNUAL_INTEREST_RATE = 0.059;

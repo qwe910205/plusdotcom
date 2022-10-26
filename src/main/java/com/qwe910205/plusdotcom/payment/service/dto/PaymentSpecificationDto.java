@@ -41,10 +41,10 @@ public record PaymentSpecificationDto(String discountType, PhoneFieldDto phoneFi
         public static PlanFieldDto create(PaymentSpecification.PlanField planField) {
             return PlanFieldDto.builder()
                     .planId(planField.getPlanId())
-                    .normalFee(planField.getNormalFee())
+                    .normalFee(planField.getBasicMonthlyCharge())
                     .commitmentPeriod(planField.getCommitmentPeriod())
                     .commitmentDiscountAmount(planField.getCommitmentDiscountAmount())
-                    .fee(planField.getFee())
+                    .fee(planField.getMonthlyCharge())
                     .build();
         }
     }

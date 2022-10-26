@@ -19,7 +19,7 @@ public record PhoneDto(String modelId, String modelName, String manufacturer, St
                 .hashtags(phoneModel.getHashtags())
                 .descriptionImages(phoneModel.getDescriptionImages())
                 .description(PhoneDescriptionDto.create(phoneModel.getDescription()))
-                .price(phoneModel.getPrice())
+                .price(phoneModel.getMoney())
                 .products(phoneModel.getAllProducts().stream().map(PhoneProductDto::create).toList())
                 .convenienceFunctions(phoneModel.getConvenienceFunctions())
                 .build();

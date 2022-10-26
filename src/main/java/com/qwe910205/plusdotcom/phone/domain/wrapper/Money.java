@@ -11,36 +11,36 @@ import javax.persistence.Embeddable;
 @EqualsAndHashCode
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Embeddable
-public class Price {
+public class Money {
 
     private int value;
 
-    public Price(int value) {
+    public Money(int value) {
         checkIntegrity(value);
         this.value = value;
     }
 
-    public Price plus(Price amount) {
+    public Money plus(Money amount) {
         int newPrice = value + amount.getValue();
         checkIntegrity(newPrice);
-        return new Price(newPrice);
+        return new Money(newPrice);
     }
 
-    public Price minus(Price amount) {
+    public Money minus(Money amount) {
         int newPrice = Math.max(0, value - amount.getValue());
-        return new Price(newPrice);
+        return new Money(newPrice);
     }
 
-    public Price multiply(int value) {
+    public Money multiply(int value) {
         int newPrice = this.value * value;
         checkIntegrity(newPrice);
-        return new Price(newPrice);
+        return new Money(newPrice);
     }
 
-    public Price divide(int value) {
+    public Money divide(int value) {
         if (value == 0) return this;
-        int newPrice = this.value / value;
-        return new Price(newPrice);
+        int newPrice = (int) Math.round((double) this.value / value);
+        return new Money(newPrice);
     }
 
     private void checkIntegrity(int price) {

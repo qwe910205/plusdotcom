@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ConvenienceFunctionInitializer implements DataInitializer {
 
-    private int priority = 0;
+    private final int priority = 0;
     
     private final ConvenienceFunctionRepository convenienceFunctionRepository;
     private final String[] CONVENIENCE_FUNCTION_NAMES = {"삼성페이", "지문인식", "안면인식"};

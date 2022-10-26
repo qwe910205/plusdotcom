@@ -81,7 +81,7 @@ class PhoneModelTest {
                 .id("Z202205252")
                 .name("5G 프리미어 플러스")
                 .networkTech("5G")
-                .monthlyPayment(105000)
+                .basicMonthlyCharge(105000)
                 .category("데이터 무제한")
                 .build();
     }
@@ -91,7 +91,7 @@ class PhoneModelTest {
                 .id("LPZ0000679")
                 .name("LTE 프리미어 에센셜")
                 .networkTech("LTE")
-                .monthlyPayment(85000)
+                .basicMonthlyCharge(85000)
                 .category("데이터 무제한")
                 .build();
     }

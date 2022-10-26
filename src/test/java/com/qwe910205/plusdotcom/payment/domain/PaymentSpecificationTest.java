@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import javax.transaction.Transactional;
-
 import static org.assertj.core.api.Assertions.*;
 
 class PaymentSpecificationTest {
@@ -50,8 +48,8 @@ class PaymentSpecificationTest {
         PaymentSpecification paymentSpecification = createPaymentSpecification();
 
         PaymentSpecification.PlanField planField = paymentSpecification.getPlanField();
-        int normalFee = planField.getNormalFee();
-        int fee = planField.getFee();
+        int normalFee = planField.getBasicMonthlyCharge();
+        int fee = planField.getMonthlyCharge();
         assertThat(normalFee).isEqualTo(fee);
     }
 
@@ -138,11 +136,11 @@ class PaymentSpecificationTest {
     @DisplayName("지불 금액 명세서에 약정 할인 금액을 바꾸면 그만큼 요금제의 비용이 차감된다.")
     void setCommitmentDiscountAmount(int amount) {
         PaymentSpecification paymentSpecification = createPaymentSpecification();
-        int fee = paymentSpecification.getPlanField().getFee();
+        int fee = paymentSpecification.getPlanField().getMonthlyCharge();
 
         paymentSpecification.setCommitmentDiscountAmount(amount);
 
-        int changedFee = paymentSpecification.getPlanField().getFee();
+        int changedFee = paymentSpecification.getPlanField().getMonthlyCharge();
         assertThat(changedFee).isEqualTo(fee - amount);
     }
 
@@ -154,7 +152,7 @@ class PaymentSpecificationTest {
 
         paymentSpecification.setCommitmentDiscountAmount(amount);
 
-        int changedFee = paymentSpecification.getPlanField().getFee();
+        int changedFee = paymentSpecification.getPlanField().getMonthlyCharge();
         assertThat(changedFee).isZero();
     }
 
@@ -191,7 +189,7 @@ class PaymentSpecificationTest {
                 .id("Z202205252")
                 .name("5G 프리미어 플러스")
                 .networkTech("5G")
-                .monthlyPayment(105000)
+                .basicMonthlyCharge(105000)
                 .category("데이터 무제한")
                 .build();
     }
@@ -201,7 +199,7 @@ class PaymentSpecificationTest {
                 .id("LPZ0000679")
                 .name("LTE 프리미어 에센셜")
                 .networkTech("LTE")
-                .monthlyPayment(85000)
+                .basicMonthlyCharge(85000)
                 .category("데이터 무제한")
                 .build();
     }

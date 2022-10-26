@@ -51,7 +51,7 @@ class PubliclySubsidyDiscountApplierTest {
                 .id("Z202205252")
                 .name("5G 프리미어 플러스")
                 .networkTech("5G")
-                .monthlyPayment(105000)
+                .basicMonthlyCharge(105000)
                 .category("데이터 무제한")
                 .build();
     }

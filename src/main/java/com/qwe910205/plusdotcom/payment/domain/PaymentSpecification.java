@@ -3,7 +3,7 @@ package com.qwe910205.plusdotcom.payment.domain;
 import com.qwe910205.plusdotcom.payment.domain.wrapper.CommitmentPeriod;
 import com.qwe910205.plusdotcom.payment.domain.wrapper.InstallmentPeriod;
 import com.qwe910205.plusdotcom.phone.domain.PhoneModel;
-import com.qwe910205.plusdotcom.phone.domain.wrapper.Price;
+import com.qwe910205.plusdotcom.phone.domain.wrapper.Money;
 import com.qwe910205.plusdotcom.plan.domain.Plan;
 
 import java.util.Objects;
@@ -54,35 +54,35 @@ public class PaymentSpecification {
     }
 
     public Integer getTotalMonthlyPayment() {
-        return phoneField.getMonthlyInstallment() + planField.getFee();
+        return phoneField.getMonthlyInstallment() + planField.getMonthlyCharge();
     }
 
     public class PhoneField {
 
         private final PhoneModel phoneModel;
 
-        private final Price normalPrice;
+        private final Money normalPrice;
 
-        private Price publiclySubsidy;
+        private Money publiclySubsidy;
 
-        private Price additionalSubsidy;
+        private Money additionalSubsidy;
 
         private final InstallmentPeriod installmentPeriod;
 
-        private Price installmentPrinciple;
+        private Money installmentPrinciple;
 
-        private Price installmentFee;
+        private Money installmentFee;
 
-        private Price monthlyInstallment;
+        private Money monthlyInstallment;
 
         private PhoneField(PhoneModel phoneModel, int installmentPeriod) {
             this.phoneModel = phoneModel;
-            this.normalPrice = new Price(phoneModel.getPrice());
-            this.publiclySubsidy = new Price(0);
-            this.additionalSubsidy = new Price(0);
+            this.normalPrice = new Money(phoneModel.getMoney());
+            this.publiclySubsidy = new Money(0);
+            this.additionalSubsidy = new Money(0);
             this.installmentPeriod = new InstallmentPeriod(installmentPeriod);
-            this.installmentPrinciple = new Price(phoneModel.getPrice());
-            this.installmentFee = new Price(InstallmentFeeCalculator.calculate(installmentPeriod, installmentPrinciple.getValue()));
+            this.installmentPrinciple = new Money(phoneModel.getMoney());
+            this.installmentFee = new Money(InstallmentFeeCalculator.calculate(installmentPeriod, installmentPrinciple.getValue()));
             this.monthlyInstallment = installmentPrinciple.plus(installmentFee).divide(installmentPeriod);
         }
 
@@ -99,10 +99,10 @@ public class PaymentSpecification {
         }
 
         public void applyPubliclySubsidyAbout(Plan plan) {
-            publiclySubsidy = new Price(phoneModel.getPubliclySubsidy(plan));
+            publiclySubsidy = new Money(phoneModel.getPubliclySubsidy(plan));
             additionalSubsidy = publiclySubsidy.divide(100).multiply(15);
             installmentPrinciple = normalPrice.minus(publiclySubsidy).minus(additionalSubsidy);
-            installmentFee = new Price(InstallmentFeeCalculator.calculate(installmentPeriod.value(), installmentPrinciple.getValue()));
+            installmentFee = new Money(InstallmentFeeCalculator.calculate(installmentPeriod.value(), installmentPrinciple.getValue()));
             monthlyInstallment = installmentPrinciple.plus(installmentFee).divide(installmentPeriod.value());
         }
 
@@ -130,32 +130,32 @@ public class PaymentSpecification {
 
         private final Plan plan;
 
-        private final Price normalFee;
+        private final Money basicMonthlyCharge;
 
         private CommitmentPeriod commitmentPeriod;
 
-        private Price commitmentDiscountAmount;
+        private Money commitmentDiscountAmount;
 
-        private Price fee;
+        private Money monthlyCharge;
 
         private PlanField(Plan plan, DiscountType discountType) {
             this.plan = plan;
-            this.normalFee = new Price(plan.getMonthlyPayment());
+            this.basicMonthlyCharge = new Money(plan.getBasicMonthlyCharge());
             this.commitmentPeriod = new CommitmentPeriod(0);
             if (discountType == DiscountType.COMMITMENT_12MONTH)
                 this.commitmentPeriod = new CommitmentPeriod(12);
             else if (discountType == DiscountType.COMMITMENT_24MONTH)
                 this.commitmentPeriod = new CommitmentPeriod(24);
-            this.commitmentDiscountAmount = new Price(0);
-            this.fee = new Price(plan.getMonthlyPayment());
+            this.commitmentDiscountAmount = new Money(0);
+            this.monthlyCharge = new Money(plan.getBasicMonthlyCharge());
         }
 
         public String getPlanId() {
             return plan.getPlanId();
         }
 
-        public int getNormalFee() {
-            return normalFee.getValue();
+        public int getBasicMonthlyCharge() {
+            return basicMonthlyCharge.getValue();
         }
 
         public int getCommitmentPeriod() {
@@ -167,12 +167,12 @@ public class PaymentSpecification {
         }
 
         private void setCommitmentDiscountAmount(int amount) {
-            commitmentDiscountAmount = new Price(amount);
-            fee = normalFee.minus(commitmentDiscountAmount);
+            commitmentDiscountAmount = new Money(amount);
+            monthlyCharge = basicMonthlyCharge.minus(commitmentDiscountAmount);
         }
 
-        public int getFee() {
-            return fee.getValue();
+        public int getMonthlyCharge() {
+            return monthlyCharge.getValue();
         }
     }
 }

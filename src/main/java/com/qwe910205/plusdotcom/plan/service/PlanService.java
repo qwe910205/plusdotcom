@@ -27,6 +27,14 @@ public class PlanService {
     public PlanDto getPlan(String planId) {
         Plan plan = planRepository.findByPlanId(new PlanId(planId))
                 .orElseThrow(() -> new NoSuchElementException("아이디가 " + planId + "인 요금제는 존재하지 않습니다."));
+
         return PlanDto.create(plan);
+    }
+
+    public long getChargeAboutMonthlyDataUsage(String planId, long dataUsage) {
+        Plan plan = planRepository.findByPlanId(new PlanId(planId))
+                .orElseThrow(() -> new NoSuchElementException("아이디가 " + planId + "인 요금제는 존재하지 않습니다."));
+
+        return plan.getChargeAboutMonthlyDataUsage(dataUsage);
     }
 }

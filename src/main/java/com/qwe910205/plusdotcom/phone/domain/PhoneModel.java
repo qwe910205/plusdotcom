@@ -68,7 +68,7 @@ public class PhoneModel {
 
     @AttributeOverride(name = "value", column = @Column(name = "PRICE", nullable = false))
     @Embedded
-    private Price price;
+    private Money money;
 
     @Column(nullable = false)
     private LocalDate releaseDate;
@@ -90,7 +90,7 @@ public class PhoneModel {
         this.name = new PhoneModelName(name);
         this.manufacturer = new Manufacturer(manufacturer);
         this.networkTech = new NetworkTech(networkTech);
-        this.price = new Price(price);
+        this.money = new Money(price);
     }
 
     public Long getId() {
@@ -186,10 +186,10 @@ public class PhoneModel {
         this.batteryCapacity = new BatteryCapacity(capacity);
     }
 
-    public Integer getPrice() {
-        if (Objects.isNull(price))
+    public Integer getMoney() {
+        if (Objects.isNull(money))
             return null;
-        return price.getValue();
+        return money.getValue();
     }
 
     public LocalDate getReleaseDate() {

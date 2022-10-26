@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class PlanServiceInitializer implements DataInitializer {
 
-    private int priority = 2;
+    private final int priority = 2;
     private final PlanRepository planRepository;
     private final PremiumServiceRepository premiumServiceRepository;
     private final MediaServiceRepository mediaServiceRepository;

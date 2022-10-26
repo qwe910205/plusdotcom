@@ -1,7 +1,10 @@
 package com.qwe910205.plusdotcom.payment.domain;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Component
 public class PubliclySubsidyDiscountApplier implements DiscountApplier {
     @Override

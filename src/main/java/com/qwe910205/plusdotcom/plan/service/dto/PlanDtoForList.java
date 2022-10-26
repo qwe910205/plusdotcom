@@ -12,7 +12,7 @@ public record PlanDtoForList(String planId, String name, String networkTech, Int
                 .planId(plan.getPlanId())
                 .name(plan.getName())
                 .networkTech(plan.getNetworkTech())
-                .monthlyPayment(plan.getMonthlyPayment())
+                .monthlyPayment(plan.getBasicMonthlyCharge())
                 .category(plan.getCategory())
                 .description(PlanDescriptionDto.create(plan.getDescription()))
                 .build();

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ManufacturerInitializer implements DataInitializer {
 
-    private int priority = 0;
+    private final int priority = 0;
 
     private final ManufacturerRepository manufacturerRepository;
     private final String[] MANUFACTURER_NAMES = {"SAMSUNG", "APPLE"};

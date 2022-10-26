@@ -35,7 +35,7 @@ public class PaymentService {
                 .orElseThrow(() -> new NoSuchElementException("요금제 아이디가 " + planId + "인 요금제는 존재하지 않습니다."));
         DiscountType discountType = resolveDiscountTypeName(discountTypeName);
 
-        PaymentSpecification paymentSpecification = PaymentSpecificationFactory.create(phoneModel, plan, installmentPeriod, discountType);
+        PaymentSpecification paymentSpecification = PaymentSpecificationFactory.createAndApplyDiscount(phoneModel, plan, installmentPeriod, discountType);
 
         return PaymentSpecificationDto.create(paymentSpecification);
     }
@@ -49,7 +49,7 @@ public class PaymentService {
 
         return new PaymentSpecificationListDto(
                 phoneModels.stream()
-                .map(phoneModel -> PaymentSpecificationFactory.create(phoneModel, plan, installmentPeriod, discountType))
+                .map(phoneModel -> PaymentSpecificationFactory.createAndApplyDiscount(phoneModel, plan, installmentPeriod, discountType))
                 .map(PaymentSpecificationDto::create)
                 .toList()
         );

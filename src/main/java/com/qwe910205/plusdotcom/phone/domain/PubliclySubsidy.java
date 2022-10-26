@@ -1,6 +1,6 @@
 package com.qwe910205.plusdotcom.phone.domain;
 
-import com.qwe910205.plusdotcom.phone.domain.wrapper.Price;
+import com.qwe910205.plusdotcom.phone.domain.wrapper.Money;
 import com.qwe910205.plusdotcom.plan.domain.Plan;
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
@@ -34,13 +34,13 @@ public class PubliclySubsidy {
 
     @AttributeOverride(name = "value", column = @Column(name = "amount", nullable = false))
     @Embedded
-    private Price amount;
+    private Money amount;
 
     PubliclySubsidy(PhoneModel phoneModel, Plan plan, int amount) {
         checkIntegrity(phoneModel, plan, amount);
         this.phoneModel = phoneModel;
         this.plan = plan;
-        this.amount = new Price(amount);
+        this.amount = new Money(amount);
     }
 
     private void checkIntegrity(PhoneModel phoneModel, Plan plan, int amount) {

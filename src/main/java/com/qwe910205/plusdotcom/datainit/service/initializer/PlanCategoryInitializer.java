@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class PlanCategoryInitializer implements DataInitializer {
 
-    private int priority = 0;
+    private final int priority = 0;
 
     private final PlanCategoryRepository planCategoryRepository;
 

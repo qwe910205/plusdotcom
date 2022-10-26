@@ -1,7 +1,10 @@
 package com.qwe910205.plusdotcom.payment.domain;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Component
 public class CommitmentDiscountApplier implements DiscountApplier {
 
@@ -19,7 +22,7 @@ public class CommitmentDiscountApplier implements DiscountApplier {
             throw new IllegalArgumentException("해당 명세서는 약정 할인을 적용할 수 없습니다.");
 
         PaymentSpecification.PlanField planField = paymentSpecification.getPlanField();
-        int normalFee = planField.getNormalFee();
-        paymentSpecification.setCommitmentDiscountAmount(normalFee / 100 * DISCOUNT_RATE);
+        int basicMonthlyCharge = planField.getBasicMonthlyCharge();
+        paymentSpecification.setCommitmentDiscountAmount(basicMonthlyCharge / 100 * DISCOUNT_RATE);
     }
 }

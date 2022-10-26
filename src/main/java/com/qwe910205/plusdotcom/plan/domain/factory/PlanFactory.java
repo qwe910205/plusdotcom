@@ -9,9 +9,9 @@ public class PlanFactory {
     public static Plan create(PlanDto planDto) {
         Plan plan;
         if (planDto.name().contains("다이렉트")) {
-            plan = new Plan(planDto.id(), planDto.name(), planDto.network_tech(), planDto.monthly_payment(), "다이렉트");
+            plan = new Plan(planDto.id(), planDto.name(), planDto.network_tech(), planDto.basic_monthly_charge(), "다이렉트");
         } else {
-            plan = new Plan(planDto.id(), planDto.name(), planDto.network_tech(), planDto.monthly_payment(), planDto.plan_category());
+            plan = new Plan(planDto.id(), planDto.name(), planDto.network_tech(), planDto.basic_monthly_charge(), planDto.plan_category());
         }
         PlanDescription planDescription = PlanDescription.builder().shareData(planDto.sharing_data()).callingPolicy(planDto.callingPolicy_calling())
                 .messagePolicy(planDto.messagePolicy_msg()).build();

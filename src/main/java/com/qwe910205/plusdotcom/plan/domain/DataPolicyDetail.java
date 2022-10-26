@@ -16,7 +16,7 @@ import java.util.Objects;
         columnNames = {"DATA_POLICY_ID", "DATA_BOUNDARY"}
 ))
 @Entity
-public class PolicyDetail implements Comparable<PolicyDetail> {
+public class DataPolicyDetail implements Comparable<DataPolicyDetail> {
 
     @Id @GeneratedValue
     private Long id;
@@ -33,22 +33,41 @@ public class PolicyDetail implements Comparable<PolicyDetail> {
     @Embedded
     private DataSpeed speedLimit;
 
+    @AttributeOverrides({
+            @AttributeOverride(name = "dataUnit", column = @Column(name = "DATA_UNIT", nullable = true)),
+            @AttributeOverride(name = "cost", column = @Column(name = "COST", nullable = true)),
+            @AttributeOverride(name = "maximumCharge", column = @Column(name = "MAXIMUM_CHARGE", nullable = true))
+    })
     @Embedded
-    private DataExcessChargePolicy excessChargePolicy;
+    private ChargePolicyAboutExcessDataUsage chargePolicy;
 
-    public PolicyDetail(DataPolicy dataPolicy, int dataBoundary, Long speedLimit) {
+    public DataPolicyDetail(DataPolicy dataPolicy, int dataBoundary, Long speedLimit) {
         this.dataPolicy = dataPolicy;
         this.dataBoundary = new DataBoundary(dataBoundary);
         if (Objects.nonNull(speedLimit))
             this.speedLimit = new DataSpeed(speedLimit);
     }
 
-    public void setExcessChargePolicy(DataExcessChargePolicy excessChargePolicy) {
-        this.excessChargePolicy = excessChargePolicy;
+    public void setChargePolicyAboutExcessDataUsage(ChargePolicyAboutExcessDataUsage chargePolicy) {
+        this.chargePolicy = chargePolicy;
+    }
+
+    public int getDataBoundary() {
+        return dataBoundary.getValue();
+    }
+
+    public long getChargeAbout(long dataUsage) {
+        if (!hasChargeAboutExcessDataUsage())
+            return 0;
+        return chargePolicy.getChargeAbout(dataUsage);
+    }
+
+    private boolean hasChargeAboutExcessDataUsage() {
+        return Objects.nonNull(chargePolicy);
     }
 
     @Override
-    public int compareTo(PolicyDetail o) {
+    public int compareTo(DataPolicyDetail o) {
         return this.dataBoundary.getValue() - o.dataBoundary.getValue();
     }
 }

@@ -15,4 +15,10 @@ public class ApiExceptionController {
     public String NoSuchElementException(NoSuchElementException e) {
         return e.getMessage();
     }
+
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler
+    public String RuntimeException(RuntimeException e) {
+        return e.getMessage();
+    }
 }

@@ -24,7 +24,7 @@ public record PhoneDtoForList(String modelId, String modelName, String manufactu
                 .ramCapacity(phoneModel.getRamCapacity())
                 .romCapacity(phoneModel.getRomCapacity())
                 .batteryCapacity(phoneModel.getBatteryCapacity())
-                .price(phoneModel.getPrice())
+                .price(phoneModel.getMoney())
                 .releaseDate(Timestamp.valueOf(phoneModel.getReleaseDate().atStartOfDay()).getTime())
                 .convenienceFunctions(phoneModel.getConvenienceFunctions())
                 .build();

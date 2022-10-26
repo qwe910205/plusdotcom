@@ -15,7 +15,7 @@ public record PlanDto(String planId, String name, String networkTech, Integer mo
                 .planId(plan.getPlanId())
                 .name(plan.getName())
                 .networkTech(plan.getNetworkTech())
-                .monthlyPayment(plan.getMonthlyPayment())
+                .monthlyPayment(plan.getBasicMonthlyCharge())
                 .category(plan.getCategory())
                 .description(PlanDescriptionDto.create(plan.getDescription()))
                 .premiumServices(plan.getPremiumServices().stream().map(ServiceDto::create).toList())

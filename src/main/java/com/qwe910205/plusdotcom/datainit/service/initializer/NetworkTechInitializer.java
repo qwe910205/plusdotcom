@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class NetworkTechInitializer implements DataInitializer {
 
-    private int priority = 0;
+    private final int priority = 0;
 
     private final NetworkTechRepository networkTechRepository;
     private final String[] NETWORK_TECH_NAMES = {"5G", "LTE"};

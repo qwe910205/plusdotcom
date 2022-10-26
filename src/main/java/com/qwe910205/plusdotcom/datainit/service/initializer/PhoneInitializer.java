@@ -20,7 +20,7 @@ import java.util.*;
 @Component
 public class PhoneInitializer implements DataInitializer {
 
-    private int priority = 1;
+    private final int priority = 1;
 
     private final PhoneRepository phoneRepository;
     private final ObjectMapper objectMapper;

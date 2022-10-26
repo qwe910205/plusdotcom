@@ -18,11 +18,11 @@ class CommitmentDiscountApplierTest {
     @DisplayName("할인 방식이 약정 할인인 지불 금액 명세서에 약정 할인을 적용할 수 있다.")
     void applyCommitmentDiscount() {
         PaymentSpecification paymentSpecification = getPaymentSpecification();
-        int fee = paymentSpecification.getPlanField().getFee();
+        int fee = paymentSpecification.getPlanField().getMonthlyCharge();
 
         commitmentDiscountApplier.applyDiscount(paymentSpecification);
 
-        assertThat(paymentSpecification.getPlanField().getFee()).isLessThan(fee);
+        assertThat(paymentSpecification.getPlanField().getMonthlyCharge()).isLessThan(fee);
     }
 
     private PaymentSpecification getPaymentSpecification() {
@@ -48,7 +48,7 @@ class CommitmentDiscountApplierTest {
                 .id("Z202205252")
                 .name("5G 프리미어 플러스")
                 .networkTech("5G")
-                .monthlyPayment(105000)
+                .basicMonthlyCharge(105000)
                 .category("데이터 무제한")
                 .build();
     }
