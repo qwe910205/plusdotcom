@@ -8,6 +8,7 @@
 * ```GET /phones/{modelId}```: 스마트폰 모델 아이디로 스마트폰 모델 조회
 * ```GET /plans```: 모든 요금제 조회
 * ```GET /plans/{planId}```: 요금제 아이디로 요금제 조회
+* ```GET /plans/{planId}/charge?monthlyDataUsage```: 특정 요금제의 한 달간 데이터 사용량(MB 단위)에 대한 부과 비용 계산
 * ```GET /payments?modelId=planId=installmentPeriod=discountType=```: 스마트폰 모델, 요금제, 할부 기간, 할인 방식에 맞는 지불 금액 명세서 조회
 * ```GET /payments?planId=installmentPeriod=discountType=```: 요금제, 할부 기간, 할인 방식에 맞는 모든 스마트폰 모델에 대한 지불 금액 명세서 조회
 
@@ -20,7 +21,7 @@
     * Validation
     * MySql
     * Lombok
-* 테스트 : Junit
+* 테스트 : Junit5
 
 ## 3. 프로젝트 규칙
 도메인 주도 설계 책에 나온 계층형 아키텍처를 따릅니다.
