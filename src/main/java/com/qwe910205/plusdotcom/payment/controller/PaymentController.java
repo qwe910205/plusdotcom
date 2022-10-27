@@ -24,7 +24,7 @@ public class PaymentController {
     }
 
     @GetMapping(params = {"planId"})
-    public PaymentSpecificationListDto getPaymentSpecification(@RequestParam String planId,
+    public PaymentSpecificationListDto getPaymentSpecifications(@RequestParam String planId,
                                                                @RequestParam(required = false, defaultValue = "0") Integer installmentPeriod,
                                                                @RequestParam(required = false, defaultValue = "없음") String discountType) {
         return paymentService.getPaymentSpecifications(planId, installmentPeriod, discountType);
