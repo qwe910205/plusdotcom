@@ -42,6 +42,16 @@ class DataPolicyTest {
                 .doesNotThrowAnyException();
     }
 
+    @Test
+    @DisplayName("데이터 정책이 무제한 데이터 정책이라면 세부사항을 추가하면 예외가 발생한다.")
+    void addDataPolicyDetail_3() {
+        Plan plan = createPlan();
+        DataPolicy dataPolicy = new DataPolicy(plan, null);
+
+        assertThatThrownBy(() -> dataPolicy.addDataPolicyDetailThatHasNotAdditionalCharge(0, null))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
 //    @Test
 //    @DisplayName("데이터 정책의 데이터 정책 세부사항들의 데이터 경곗값의 첫 번째 이외의 값들을 리스트로 만들 수 있다.")
 //    void getDataBoundariesExceptFirst() {

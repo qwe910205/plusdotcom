@@ -47,6 +47,8 @@ public class DataPolicy {
     }
 
     private void addDataPolicyDetail(DataPolicyDetail dataPolicyDetail) {
+        if (isUnlimited())
+            throw new IllegalArgumentException("무제한 데이터 정책에는 세부사항을 추가할 수 없습니다.");
         if (dataPolicyDetail.getDataBoundary() != 0)
             checkContainsDataPolicyDetailThatHasDataBoundaryOfZero();
 
