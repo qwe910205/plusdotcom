@@ -3,6 +3,7 @@ package com.qwe910205.plusdotcom.plan.domain;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import static org.assertj.core.api.Assertions.*;
@@ -16,11 +17,14 @@ class PlanTest {
         String image = "https://image.lguplus.com/static/pc-contents/cv2022/images/indv/plan-sp-disneyplus.png";
         Plan plan = createPlan();
         plan.addPremiumService(new PremiumService(serviceName, image));
-        PremiumService duplicatedService = new PremiumService(serviceName, "https://naver.com");
+        String newImage = "https://naver.com";
+        PremiumService duplicatedService = new PremiumService(serviceName, newImage);
 
         plan.addPremiumService(duplicatedService);
 
         assertThat(plan.getPremiumServices().size()).isEqualTo(1);
+        List<PremiumService> premiumServices = plan.getPremiumServices();
+        assertThat(premiumServices.get(0).getImage()).isEqualTo(newImage);
     }
 
     @Test
