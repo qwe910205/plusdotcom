@@ -82,6 +82,23 @@ class PlanTest {
                 .isInstanceOf(RuntimeException.class);
     }
 
+    @Test
+    @DisplayName("월간 데이터 사용량에 대한 비용을 계산할 수 있다.")
+    void getChargeAboutMonthlyDataUsage() {
+        Plan plan = createPlan();
+        plan.putLimitedDataPolicy(DataPolicyUnitPeriod.MONTH, 10);
+        plan.addDataPolicyDetail(DataPolicyUnitPeriod.MONTH, 0, null, 1000, 1, null);
+        plan.addDataPolicyDetail(DataPolicyUnitPeriod.MONTH, 10, null, 1000, 1, null);
+        plan.addDataPolicyDetail(DataPolicyUnitPeriod.MONTH, 20, null, 1000, 2, null);
+        plan.addDataPolicyDetail(DataPolicyUnitPeriod.MONTH, 30, null, 1000, 1, null);
+        plan.addDataPolicyDetail(DataPolicyUnitPeriod.MONTH, 40, null, 1000, 1, null);
+        long dataUsage = 35;
+
+        long charge = plan.getChargeAboutMonthlyDataUsage(dataUsage);
+
+        assertThat(charge).isEqualTo(plan.getBasicMonthlyCharge() + 30);
+    }
+
     private Plan createPlan() {
         return Plan.builder()
                 .id("Z202205252")

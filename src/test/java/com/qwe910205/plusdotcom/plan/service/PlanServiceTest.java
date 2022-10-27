@@ -47,4 +47,13 @@ class PlanServiceTest {
         assertThatThrownBy(() -> planService.getPlan(planId)).isInstanceOf(NoSuchElementException.class);
     }
 
+    @Test
+    @DisplayName("특정 요금제의 한 달간 데이터 사용량에 대한 부과 비용을 요청할 수 있다.")
+    void getChargeAboutMonthlyDataUsage() {
+        String planId = "LPZ0001204";
+        long dataUsage = 1000;
+
+        assertThatCode(() -> planService.getChargeAboutMonthlyDataUsage(planId, dataUsage)).doesNotThrowAnyException();
+    }
+
 }

@@ -57,7 +57,7 @@ public class DataPolicyDetail implements Comparable<DataPolicyDetail> {
     }
 
     public long getChargeAbout(long dataUsage) {
-        if (!hasChargeAboutExcessDataUsage())
+        if (!hasChargeAboutExcessDataUsage() || dataUsage <= 0)
             return 0;
         return chargePolicy.getChargeAbout(dataUsage);
     }

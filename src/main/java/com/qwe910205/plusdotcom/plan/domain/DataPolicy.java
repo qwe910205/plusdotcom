@@ -37,15 +37,26 @@ public class DataPolicy {
 
     public void addDataPolicyDetailThatHasNotAdditionalCharge(int dataBoundary, Long speedLimit) {
         DataPolicyDetail dataPolicyDetail = new DataPolicyDetail(this, dataBoundary, speedLimit);
-        this.dataPolicyDetails.remove(dataPolicyDetail);
-        this.dataPolicyDetails.add(dataPolicyDetail);
+        addDataPolicyDetail(dataPolicyDetail);
     }
 
     public void addDataPolicyDetail(int dataBoundary, Long speedLimit, int dataUnit, double cost, Integer maxCost) {
         DataPolicyDetail dataPolicyDetail = new DataPolicyDetail(this, dataBoundary, speedLimit);
         dataPolicyDetail.setChargePolicyAboutExcessDataUsage(new ChargePolicyAboutExcessDataUsage(dataUnit, cost, maxCost));
+        addDataPolicyDetail(dataPolicyDetail);
+    }
+
+    private void addDataPolicyDetail(DataPolicyDetail dataPolicyDetail) {
+        if (dataPolicyDetail.getDataBoundary() != 0)
+            checkContainsDataPolicyDetailThatHasDataBoundaryOfZero();
+
         this.dataPolicyDetails.remove(dataPolicyDetail);
         this.dataPolicyDetails.add(dataPolicyDetail);
+    }
+
+    private void checkContainsDataPolicyDetailThatHasDataBoundaryOfZero() {
+        if (!dataPolicyDetails.contains(new DataPolicyDetail(this, 0, null)))
+            throw new IllegalArgumentException("데이터 정책에 세부사항을 추가하려면 데이터 경곗값이 0인 세부사항을 가장 먼저 추가해야 합니다.");
     }
 
     public int getServingDataQuantity() {
@@ -57,26 +68,50 @@ public class DataPolicy {
     }
 
     public long getAdditionalChargeAbout(long dataUsage) {
-        int additionalCharge = 0;
-        long remainData = dataUsage - servingDataQuantity.getValue();
-        if (remainData <= 0)
+        long additionalCharge = 0;
+        long remainDataUsage = dataUsage - servingDataQuantity.getValue();
+        if (remainDataUsage <= 0)
             return additionalCharge;
-        List<Integer> dataBoundaries = dataPolicyDetails.stream().map(DataPolicyDetail::getDataBoundary).toList();
-        List<DataPolicyDetail> dataPolicyDetailList = dataPolicyDetails.stream().toList();
-        for (int index = 0; index < dataBoundaries.size(); index++) {
-            if (remainData <= 0)
-                return additionalCharge;
-            long checkData;
-            if (index < dataBoundaries.size() - 1 && dataPolicyDetailList.get(index).getDataBoundary() + remainData > dataPolicyDetailList.get(index + 1).getDataBoundary()) {
-                checkData = dataPolicyDetailList.get(index + 1).getDataBoundary() - dataPolicyDetailList.get(index).getDataBoundary();
-            } else {
-                checkData = remainData;
-            }
-            remainData -= checkData;
-            DataPolicyDetail dataPolicyDetail = dataPolicyDetailList.get(index);
-            long charge = dataPolicyDetail.getChargeAbout(checkData);
-            additionalCharge += charge;
+
+        List<ObjectThatGivesCharge> objectsThatGivesCharge = getObjectsThatGivesCharge(remainDataUsage);
+        for (ObjectThatGivesCharge objectThatGivesCharge : objectsThatGivesCharge) {
+            additionalCharge += objectThatGivesCharge.getCharge();
         }
         return additionalCharge;
+    }
+
+    private List<ObjectThatGivesCharge> getObjectsThatGivesCharge(long remainDataUsage) {
+        List<ObjectThatGivesCharge> result = new ArrayList<>();
+        if (dataPolicyDetails.size() == 0)
+            return result;
+
+        long point = 0;
+        List<DataPolicyDetail> dataPolicyDetailList = dataPolicyDetails.stream().toList();
+        List<Integer> dataBoundaries = getDataBoundariesExceptFirst();
+        for (int dataBoundary : dataBoundaries) {
+            long dataUsage = Math.min(remainDataUsage - point, dataBoundary - point);
+            ObjectThatGivesCharge objectThatGivesCharge = new ObjectThatGivesCharge(dataPolicyDetailList.get(result.size()), dataUsage);
+            result.add(objectThatGivesCharge);
+            point = dataBoundary;
+        }
+        result.add(new ObjectThatGivesCharge(dataPolicyDetailList.get(result.size()), remainDataUsage - point));
+        return result;
+    }
+
+    private List<Integer> getDataBoundariesExceptFirst() {
+        if (dataPolicyDetails.size() == 0)
+            return new ArrayList<>();
+
+        return dataPolicyDetails.stream()
+                .map(DataPolicyDetail::getDataBoundary)
+                .toList()
+                .subList(1, dataPolicyDetails.size());
+    }
+
+    private record ObjectThatGivesCharge(DataPolicyDetail dataPolicyDetail, long checkData) {
+
+        private long getCharge() {
+            return dataPolicyDetail.getChargeAbout(checkData);
+        }
     }
 }
