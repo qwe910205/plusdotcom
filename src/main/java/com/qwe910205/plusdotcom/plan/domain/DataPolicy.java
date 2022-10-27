@@ -53,16 +53,15 @@ public class DataPolicy {
     private void addDataPolicyDetail(DataPolicyDetail dataPolicyDetail) {
         if (isUnlimited())
             throw new IllegalArgumentException("무제한 데이터 정책에는 세부사항을 추가할 수 없습니다.");
-        if (dataPolicyDetail.getDataBoundary() != 0)
-            checkContainsDataPolicyDetailThatHasDataBoundaryOfZero();
+        if (dataPolicyDetail.getDataBoundary() != 0 && !hasDataPolicyDetailThatHasDataBoundaryOfZero())
+            throw new IllegalArgumentException("데이터 정책에 세부사항을 추가하려면 데이터 경곗값이 0인 세부사항을 가장 먼저 추가해야 합니다.");
 
         this.dataPolicyDetails.remove(dataPolicyDetail);
         this.dataPolicyDetails.add(dataPolicyDetail);
     }
 
-    private void checkContainsDataPolicyDetailThatHasDataBoundaryOfZero() {
-        if (!dataPolicyDetails.contains(new DataPolicyDetail(this, 0, null)))
-            throw new IllegalArgumentException("데이터 정책에 세부사항을 추가하려면 데이터 경곗값이 0인 세부사항을 가장 먼저 추가해야 합니다.");
+    private boolean hasDataPolicyDetailThatHasDataBoundaryOfZero() {
+        return dataPolicyDetails.contains(new DataPolicyDetail(this, 0, null));
     }
 
     public boolean isUnlimited() {
