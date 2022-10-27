@@ -35,6 +35,10 @@ public class DataPolicy {
             this.servingDataQuantity = new ServingDataQuantity(dataQuantity);
     }
 
+    public int getServingDataQuantity() {
+        return servingDataQuantity.getValue();
+    }
+
     public void addDataPolicyDetailThatHasNotAdditionalCharge(int dataBoundary, Long speedLimit) {
         DataPolicyDetail dataPolicyDetail = new DataPolicyDetail(this, dataBoundary, speedLimit);
         addDataPolicyDetail(dataPolicyDetail);
@@ -59,10 +63,6 @@ public class DataPolicy {
     private void checkContainsDataPolicyDetailThatHasDataBoundaryOfZero() {
         if (!dataPolicyDetails.contains(new DataPolicyDetail(this, 0, null)))
             throw new IllegalArgumentException("데이터 정책에 세부사항을 추가하려면 데이터 경곗값이 0인 세부사항을 가장 먼저 추가해야 합니다.");
-    }
-
-    public int getServingDataQuantity() {
-        return servingDataQuantity.getValue();
     }
 
     public boolean isUnlimited() {

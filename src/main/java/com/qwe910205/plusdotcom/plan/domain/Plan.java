@@ -110,21 +110,24 @@ public class Plan {
     }
 
     public void putUnLimitedDataPolicy(DataPolicyUnitPeriod unitPeriod) {
-        for (DataPolicy dataPolicy : dataPolicies.values())
-            if (dataPolicy.isUnlimited())
-                throw new IllegalArgumentException("무제한 데이터 정책을 가진 요금제는 다른 데이터 정책을 추가할 수 없습니다.");
-
         DataPolicy dataPolicy = new DataPolicy(this, null);
-        dataPolicies.put(unitPeriod, dataPolicy);
+        putDataPolicy(unitPeriod, dataPolicy);
     }
 
     public void putLimitedDataPolicy(DataPolicyUnitPeriod unitPeriod, int dataQuantity) {
-        for (DataPolicy dataPolicy : dataPolicies.values())
-            if (dataPolicy.isUnlimited())
-                throw new IllegalArgumentException("무제한 데이터 정책을 가진 요금제는 다른 데이터 정책을 추가할 수 없습니다.");
-
         DataPolicy dataPolicy = new DataPolicy(this, dataQuantity);
+        putDataPolicy(unitPeriod, dataPolicy);
+    }
+
+    private void putDataPolicy(DataPolicyUnitPeriod unitPeriod, DataPolicy dataPolicy) {
+        if (hasUnlimitedDataPolicy())
+            throw new IllegalArgumentException("무제한 데이터 정책을 가진 요금제는 다른 데이터 정책을 추가할 수 없습니다.");
+
         dataPolicies.put(unitPeriod, dataPolicy);
+    }
+
+    private boolean hasUnlimitedDataPolicy() {
+        return dataPolicies.values().stream().anyMatch(DataPolicy::isUnlimited);
     }
 
     public void addDataPolicyDetailThatHasNotAdditionalCharge(DataPolicyUnitPeriod unitPeriod, int dataBoundary, Long speedLimit) {
