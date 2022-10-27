@@ -56,6 +56,10 @@ public class DataPolicyDetail implements Comparable<DataPolicyDetail> {
         return dataBoundary.getValue();
     }
 
+    public boolean hasSpeedLimit() {
+        return Objects.nonNull(speedLimit);
+    }
+
     public long getChargeAbout(long dataUsage) {
         if (!hasChargeAboutExcessDataUsage() || dataUsage <= 0)
             return 0;

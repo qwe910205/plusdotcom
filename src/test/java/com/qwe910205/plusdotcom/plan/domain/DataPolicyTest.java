@@ -22,8 +22,18 @@ class DataPolicyTest {
     }
 
     @Test
-    @DisplayName("데이터 정책에 데이터 경곗값이 0인 세부사항이 추가되지 않았을 때 데이터 경곗값이 0이 아닌 세부사항을 추가하면 예외가 발생한다.")
+    @DisplayName("데이터 정책이 무제한 데이터 정책이라면 세부사항을 추가하면 예외가 발생한다.")
     void addDataPolicyDetail_1() {
+        Plan plan = createPlan();
+        DataPolicy dataPolicy = new DataPolicy(plan, null);
+
+        assertThatThrownBy(() -> dataPolicy.addDataPolicyDetailThatHasNotAdditionalCharge(0, null))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
+    @DisplayName("데이터 정책에 데이터 경곗값이 0인 세부사항이 추가되지 않았을 때 데이터 경곗값이 0이 아닌 세부사항을 추가하면 예외가 발생한다.")
+    void addDataPolicyDetail_2() {
         Plan plan = createPlan();
         DataPolicy dataPolicy = new DataPolicy(plan, 1000);
         int dataBoundary = 10;
@@ -33,7 +43,7 @@ class DataPolicyTest {
 
     @Test
     @DisplayName("데이터 정책에 데이터 경곗값이 0인 세부사항이 추가되었다면 데이터 경곗값이 0이 아닌 세부사항을 추가할 수 있다.")
-    void addDataPolicyDetail_2() {
+    void addDataPolicyDetail_3() {
         Plan plan = createPlan();
         DataPolicy dataPolicy = new DataPolicy(plan, 1000);
         dataPolicy.addDataPolicyDetailThatHasNotAdditionalCharge(0, null);
@@ -43,12 +53,13 @@ class DataPolicyTest {
     }
 
     @Test
-    @DisplayName("데이터 정책이 무제한 데이터 정책이라면 세부사항을 추가하면 예외가 발생한다.")
-    void addDataPolicyDetail_3() {
+    @DisplayName("데이터 정책의 마지막 세부사항 이외의 세부사항이 속도 제한을 가지면 예외가 발생한다.")
+    void addDataPolicyDetail_4() {
         Plan plan = createPlan();
-        DataPolicy dataPolicy = new DataPolicy(plan, null);
+        DataPolicy dataPolicy = new DataPolicy(plan, 1000);
+        dataPolicy.addDataPolicyDetailThatHasNotAdditionalCharge(0, 10L);
 
-        assertThatThrownBy(() -> dataPolicy.addDataPolicyDetailThatHasNotAdditionalCharge(0, null))
+        assertThatThrownBy(() -> dataPolicy.addDataPolicyDetailThatHasNotAdditionalCharge(10, 20L))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 

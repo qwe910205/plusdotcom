@@ -55,6 +55,10 @@ public class DataPolicy {
             throw new IllegalArgumentException("무제한 데이터 정책에는 세부사항을 추가할 수 없습니다.");
         if (dataPolicyDetail.getDataBoundary() != 0 && !hasDataPolicyDetailThatHasDataBoundaryOfZero())
             throw new IllegalArgumentException("데이터 정책에 세부사항을 추가하려면 데이터 경곗값이 0인 세부사항을 가장 먼저 추가해야 합니다.");
+        if (dataPolicyDetails.size() >= 1
+                && dataPolicyDetails.last().getDataBoundary() < dataPolicyDetail.getDataBoundary()
+                && dataPolicyDetails.last().hasSpeedLimit())
+                throw new IllegalArgumentException("데이터 정책의 세부사항 중 마지막 세부사항만 속도 제한을 가질 수 있습니다.");
 
         this.dataPolicyDetails.remove(dataPolicyDetail);
         this.dataPolicyDetails.add(dataPolicyDetail);
