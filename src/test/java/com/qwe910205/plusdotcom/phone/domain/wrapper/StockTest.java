@@ -8,7 +8,7 @@ class StockTest {
 
     @Test
     @DisplayName("재고를 음수로 생성하면 예외가 발생한다.")
-    void createStockWithNegative() {
+    void newStock() {
         int stock = -1;
 
         Assertions.assertThatThrownBy(() -> new Stock(stock)).isInstanceOf(IllegalArgumentException.class);

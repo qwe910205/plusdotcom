@@ -36,7 +36,7 @@ class DataPolicyDetailTest {
 
     private Plan createPlan() {
         return Plan.builder()
-                .id("Z202205252")
+                .planId("Z202205252")
                 .name("5G 프리미어 플러스")
                 .networkTech("5G")
                 .basicMonthlyCharge(105000)

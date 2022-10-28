@@ -13,11 +13,11 @@ import java.util.Objects;
 
 @EqualsAndHashCode(of = {"phoneModel", "plan"})
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Table(uniqueConstraints = @UniqueConstraint(
-        name = "PHONE_MODEL_PLAN_UNIQUE",
-        columnNames = {"PHONE_MODEL_ID", "PLAN_ID"}
-))
-@Entity
+//@Table(uniqueConstraints = @UniqueConstraint(
+//        name = "PHONE_MODEL_PLAN_UNIQUE",
+//        columnNames = {"PHONE_MODEL_ID", "PLAN_ID"}
+//))
+//@Entity
 public class PubliclySubsidy {
 
     @Id @GeneratedValue

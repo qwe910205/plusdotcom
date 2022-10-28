@@ -1,8 +1,5 @@
 package com.qwe910205.plusdotcom.payment.domain.wrapper;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-
 /**
  * @param value 단위는 개월
  */

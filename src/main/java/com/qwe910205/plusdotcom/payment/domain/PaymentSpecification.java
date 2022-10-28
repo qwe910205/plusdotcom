@@ -87,7 +87,7 @@ public class PaymentSpecification {
         }
 
         public String getModelId() {
-            return phoneModel.getPhoneModelId();
+            return phoneModel.getModelId();
         }
 
         public int getNormalPrice() {

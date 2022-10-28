@@ -33,7 +33,6 @@ class PaymentControllerTest {
         String planId = "LPZ0000433";
         String installmentPeriod = "24";
         String discountType = "공시지원금";
-
         MockHttpServletRequestBuilder builder = get("/payments")
                 .param("modelId", modelId)
                 .param("planId", planId)
@@ -51,7 +50,6 @@ class PaymentControllerTest {
         String planId = "LPZ0000433";
         String installmentPeriod = "24";
         String discountType = "공시지원금";
-
         MockHttpServletRequestBuilder builder = get("/payments")
                 .param("planId", planId)
                 .param("installmentPeriod", installmentPeriod)

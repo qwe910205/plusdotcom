@@ -25,7 +25,7 @@ public class PhoneService {
     }
 
     public PhoneDto getPhone(String modelId) {
-        PhoneModel phoneModel = phoneRepository.findByPhoneModelId(new PhoneModelId(modelId))
+        PhoneModel phoneModel = phoneRepository.findByModelId(new PhoneModelId(modelId))
                 .orElseThrow(() -> new NoSuchElementException("모델 아이디가 " + modelId + "인 스마트폰 모델이 존재하지 않습니다"));
         return PhoneDto.create(phoneModel);
     }

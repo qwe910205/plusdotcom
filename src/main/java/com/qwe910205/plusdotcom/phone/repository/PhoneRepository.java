@@ -24,7 +24,7 @@ public interface PhoneRepository extends JpaRepository<PhoneModel, Long> {
     Optional<PhoneModel> findByName(PhoneModelName phoneModelName);
 
     @EntityGraph(attributePaths = {"manufacturer", "networkTech"})
-    Optional<PhoneModel> findByPhoneModelId(PhoneModelId phoneModelId);
+    Optional<PhoneModel> findByModelId(PhoneModelId phoneModelId);
 
     @EntityGraph(attributePaths = {"manufacturer", "networkTech"})
     List<PhoneModel> findByNetworkTech(NetworkTech networkTech);

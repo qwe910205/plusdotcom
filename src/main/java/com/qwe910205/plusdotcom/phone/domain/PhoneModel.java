@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.*;
 
-@EqualsAndHashCode(of = {"phoneModelId"})
+@EqualsAndHashCode(of = {"modelId"})
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 public class PhoneModel {
@@ -16,9 +16,9 @@ public class PhoneModel {
     @Id @GeneratedValue
     private Long id;
 
-    @AttributeOverride(name = "value", column = @Column(name = "PHONE_MODEL_ID", unique = true, nullable = false, updatable = false))
+    @AttributeOverride(name = "value", column = @Column(name = "MODEL_ID", unique = true, nullable = false, updatable = false))
     @Embedded
-    private PhoneModelId phoneModelId;
+    private PhoneModelId modelId;
 
     @AttributeOverride(name = "value", column = @Column(name = "NAME", unique = true, nullable = false))
     @Embedded
@@ -76,17 +76,21 @@ public class PhoneModel {
     @ManyToMany
     private final Set<ConvenienceFunction> convenienceFunctions = new HashSet<>();
 
-    @MapKey(name = "plan")
-    @OneToMany(mappedBy = "phoneModel", cascade = CascadeType.ALL, orphanRemoval = true)
-    private final Map<Plan, PubliclySubsidy> publiclySubsidies = new HashMap<>();
+//    @MapKey(name = "plan")
+//    @OneToMany(mappedBy = "phoneModel", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private final Map<Plan, PubliclySubsidy> publiclySubsidies = new HashMap<>();
+
+    @ElementCollection
+    @MapKeyJoinColumn(name = "PLAN")
+    private final Map<Plan, Money> publiclySubsidies = new HashMap<>();
 
     @Builder
-    protected PhoneModel(String id, String name, String manufacturer, String networkTech, int price) {
-        Objects.requireNonNull(id, "스마트폰 모델의 아이디는 필수입니다.");
+    private PhoneModel(String modelId, String name, String manufacturer, String networkTech, int price) {
+        Objects.requireNonNull(modelId, "스마트폰 모델의 아이디는 필수입니다.");
         Objects.requireNonNull(name, "스마트폰 모델명은 필수입니다.");
         Objects.requireNonNull(manufacturer, "스마트폰 모델의 제조사는 필수입니다.");
         Objects.requireNonNull(networkTech, "스마트폰 모델의 통신 기술은 필수입니다.");
-        this.phoneModelId = new PhoneModelId(id);
+        this.modelId = new PhoneModelId(modelId);
         this.name = new PhoneModelName(name);
         this.manufacturer = new Manufacturer(manufacturer);
         this.networkTech = new NetworkTech(networkTech);
@@ -97,10 +101,10 @@ public class PhoneModel {
         return this.id;
     }
 
-    public String getPhoneModelId() {
-        if (Objects.isNull(phoneModelId))
+    public String getModelId() {
+        if (Objects.isNull(modelId))
             return null;
-        return phoneModelId.getValue();
+        return modelId.getValue();
     }
 
     public String getName() {
@@ -227,14 +231,13 @@ public class PhoneModel {
 
     public int getPubliclySubsidy(Plan plan) {
         if (!publiclySubsidies.containsKey(plan))
-            throw new NoSuchElementException("등록되지 않은 요금제입니다.");
-        PubliclySubsidy publiclySubsidy = publiclySubsidies.get(plan);
-        return publiclySubsidy.getAmount();
+            return 0;
+        return publiclySubsidies.get(plan).getValue();
     }
 
     public void putPubliclySubsidy(Plan plan, int amount) {
         if (!this.getNetworkTech().equals(plan.getNetworkTech()))
             throw new IllegalArgumentException("스마트폰 모델과 요금제의 통신기술이 다르면 공시지원금을 추가할 수 없습니다.");
-        publiclySubsidies.put(plan, new PubliclySubsidy(this, plan, amount));
+        publiclySubsidies.put(plan, new Money(amount));
     }
 }

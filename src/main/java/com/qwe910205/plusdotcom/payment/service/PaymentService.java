@@ -29,7 +29,7 @@ public class PaymentService {
     private final PlanRepository planRepository;
 
     public PaymentSpecificationDto getPaymentSpecification(String modelId, String planId, Integer installmentPeriod, String discountTypeName) {
-        PhoneModel phoneModel = phoneRepository.findByPhoneModelId(new PhoneModelId(modelId))
+        PhoneModel phoneModel = phoneRepository.findByModelId(new PhoneModelId(modelId))
                 .orElseThrow(() -> new NoSuchElementException("스마트폰 모델 아이디가 " + modelId + "인 스마트폰 모델은 존재하지 않습니다."));
         Plan plan = planRepository.findByPlanId(new PlanId(planId))
                 .orElseThrow(() -> new NoSuchElementException("요금제 아이디가 " + planId + "인 요금제는 존재하지 않습니다."));
@@ -37,7 +37,7 @@ public class PaymentService {
 
         PaymentSpecification paymentSpecification = PaymentSpecificationFactory.createAndApplyDiscount(phoneModel, plan, installmentPeriod, discountType);
 
-        return PaymentSpecificationDto.create(paymentSpecification);
+        return PaymentSpecificationDto.from(paymentSpecification);
     }
 
     public PaymentSpecificationListDto getPaymentSpecifications(String planId, Integer installmentPeriod, String discountTypeName) {
@@ -47,12 +47,11 @@ public class PaymentService {
         List<PhoneModel> phoneModels = phoneRepository.findByNetworkTech(new NetworkTech(networkTech));
         DiscountType discountType = resolveDiscountTypeName(discountTypeName);
 
-        return new PaymentSpecificationListDto(
-                phoneModels.stream()
+        List<PaymentSpecification> paymentSpecifications = phoneModels.stream()
                 .map(phoneModel -> PaymentSpecificationFactory.createAndApplyDiscount(phoneModel, plan, installmentPeriod, discountType))
-                .map(PaymentSpecificationDto::create)
-                .toList()
-        );
+                .toList();
+
+        return PaymentSpecificationListDto.from(paymentSpecifications);
     }
 
     private DiscountType resolveDiscountTypeName(String discountTypeName) {

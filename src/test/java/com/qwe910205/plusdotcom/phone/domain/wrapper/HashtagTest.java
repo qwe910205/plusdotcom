@@ -12,13 +12,13 @@ class HashtagTest {
     @ParameterizedTest
     @NullAndEmptySource
     @DisplayName("해시태그를 텍스트가 없는 문자열이나 널로 생성하면 예외가 발생한다.")
-    void createHashTagWithoutText(String hashTag) {
+    void newHashtag_1(String hashTag) {
         assertThatThrownBy(() -> new Hashtag(hashTag)).isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
     @DisplayName("맨 앞에 #이 붙은 문자열로 해시태그를 생성할 수 있다.")
-    void createHashTagWithStringStartWithSharp() {
+    void newHashtag_2() {
         String string = "#hashTag";
 
         Hashtag hashTag = new Hashtag(string);
@@ -28,7 +28,7 @@ class HashtagTest {
 
     @Test
     @DisplayName("맨 앞에 #이 붙지 않은 문자열로 해시태그를 생성하면 자동으로 #이 붙는다.")
-    void createHashTagWithStringNotStartWithSharp() {
+    void newHashtag_3() {
         String string = "hashTag";
 
         Hashtag hashTag = new Hashtag(string);

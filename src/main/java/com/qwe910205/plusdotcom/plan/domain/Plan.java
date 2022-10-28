@@ -51,12 +51,12 @@ public class Plan {
     private final Set<MediaService> mediaServices = new HashSet<>();
 
     @Builder
-    public Plan(String id, String name, String networkTech, int basicMonthlyCharge, String category) {
-        Objects.requireNonNull(id, "요금제의 아이디는 필수입니다.");
+    private Plan(String planId, String name, String networkTech, int basicMonthlyCharge, String category) {
+        Objects.requireNonNull(planId, "요금제의 아이디는 필수입니다.");
         Objects.requireNonNull(name, "요금제의 이름은 필수입니다.");
         Objects.requireNonNull(networkTech, "요금제의 통신 기술은 필수입니다.");
         Objects.requireNonNull(category, "요금제의 카테고리는 필수입니다");
-        this.planId = new PlanId(id);
+        this.planId = new PlanId(planId);
         this.name = new PlanName(name);
         this.networkTech = new NetworkTech(networkTech);
         this.basicMonthlyCharge = new Money(basicMonthlyCharge);

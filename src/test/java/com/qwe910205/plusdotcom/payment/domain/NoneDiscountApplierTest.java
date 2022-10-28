@@ -3,6 +3,7 @@ package com.qwe910205.plusdotcom.payment.domain;
 import com.qwe910205.plusdotcom.phone.domain.PhoneModel;
 import com.qwe910205.plusdotcom.plan.domain.Plan;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,33 +12,31 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.assertj.core.api.Assertions.*;
 
 @SpringBootTest
-class CommitmentDiscountApplierTest {
-    @Autowired
-    CommitmentDiscountApplier commitmentDiscountApplier;
+class NoneDiscountApplierTest {
+
+    @Autowired NoneDiscountApplier discountApplier;
 
     @ParameterizedTest
-    @EnumSource(value = DiscountType.class, names = {"COMMITMENT_24MONTH", "COMMITMENT_12MONTH"}, mode = EnumSource.Mode.EXCLUDE)
-    @DisplayName("선택약정 할인 방식 이외의 할인 방식의 지불 금액 명세서에는 약정 할인을 적용할 수 없다.")
+    @EnumSource(value = DiscountType.class, names = {"NONE"}, mode = EnumSource.Mode.EXCLUDE)
+    @DisplayName("할인 방식이 없는게 아닌 지불 금액 명세서에 할인 없음을 적용할 수 없다.")
     void canApplyDiscount(DiscountType discountType) {
         PaymentSpecification paymentSpecification = new PaymentSpecification(createPhoneModel(), createPlan(), 24, discountType);
 
-        boolean canApply = commitmentDiscountApplier.canApplyDiscount(paymentSpecification);
+        boolean canApply = discountApplier.canApplyDiscount(paymentSpecification);
 
         assertThat(canApply).isFalse();
     }
 
-    @ParameterizedTest
-    @EnumSource(value = DiscountType.class, names = {"COMMITMENT_24MONTH", "COMMITMENT_12MONTH"})
-    @DisplayName("할인 방식이 약정 할인인 지불 금액 명세서에 약정 할인을 적용할 수 있다.")
-    void applyDiscount(DiscountType discountType) {
-        PhoneModel phoneModel = createPhoneModel();
-        Plan plan = createPlan();
-        PaymentSpecification paymentSpecification = new PaymentSpecification(phoneModel, plan, 24, discountType);
-        Integer basicMonthlyCharge = plan.getBasicMonthlyCharge();
+    @Test
+    @DisplayName("할인 방식이 없는 지불 금액 명세서에 할인 없음을 적용하면 금액 변화가 없다.")
+    void applyDiscount() {
+        PaymentSpecification paymentSpecification = new PaymentSpecification(createPhoneModel(), createPlan(), 24, DiscountType.NONE);
+        Integer totalMonthlyPayment = paymentSpecification.getTotalMonthlyPayment();
 
-        commitmentDiscountApplier.applyDiscount(paymentSpecification);
+        discountApplier.applyDiscount(paymentSpecification);
 
-        assertThat(paymentSpecification.getPlanField().getMonthlyCharge()).isLessThan(basicMonthlyCharge);
+        Integer afterTotalMonthlyPayment = paymentSpecification.getTotalMonthlyPayment();
+        assertThat(totalMonthlyPayment).isEqualTo(afterTotalMonthlyPayment);
     }
 
     private PhoneModel createPhoneModel() {

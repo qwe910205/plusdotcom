@@ -12,7 +12,7 @@ public record PhoneDto(String modelId, String modelName, String manufacturer, St
 
     public static PhoneDto create(PhoneModel phoneModel) {
         return PhoneDto.builder()
-                .modelId(phoneModel.getPhoneModelId())
+                .modelId(phoneModel.getModelId())
                 .modelName(phoneModel.getName())
                 .manufacturer(phoneModel.getManufacturer())
                 .networkTech(phoneModel.getNetworkTech())

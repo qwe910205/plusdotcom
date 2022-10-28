@@ -14,7 +14,7 @@ public record PhoneDtoForList(String modelId, String modelName, String manufactu
 
     public static PhoneDtoForList create(PhoneModel phoneModel) {
         return PhoneDtoForList.builder()
-                .modelId(phoneModel.getPhoneModelId())
+                .modelId(phoneModel.getModelId())
                 .modelName(phoneModel.getName())
                 .manufacturer(phoneModel.getManufacturer())
                 .networkTech(phoneModel.getNetworkTech())

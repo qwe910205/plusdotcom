@@ -11,14 +11,14 @@ class BatteryCapacityTest {
     @ParameterizedTest
     @ValueSource(ints = {0, Integer.MAX_VALUE, 1000, 123456789})
     @DisplayName("0이나 자연수로 배터리 용량을 생성할 수 있다.")
-    void createBatteryCapacityWithPositive(int capacity) {
+    void newBatteryCapacity_1(int capacity) {
         assertThatCode(() -> new BatteryCapacity(capacity)).doesNotThrowAnyException();
     }
 
     @ParameterizedTest
     @ValueSource(ints = {Integer.MIN_VALUE, -1})
     @DisplayName("배터리 용량을 음수로 생성하면 예외가 발생한다.")
-    void createBatterCapacityWithNegative(int negative) {
+    void newBatteryCapacity_2(int negative) {
         assertThatThrownBy(() -> new BatteryCapacity(negative)).isInstanceOf(IllegalArgumentException.class);
     }
 

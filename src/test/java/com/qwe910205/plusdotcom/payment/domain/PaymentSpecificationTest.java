@@ -13,7 +13,7 @@ class PaymentSpecificationTest {
 
     @Test
     @DisplayName("통신 기술이 다른 스마트폰 모델과 요금제를 같이 구매할 수 없습니다.")
-    void createPaymentSpecificationWithModelAndPlanThatHaveDifferentNetworkTech() {
+    void newPaymentSpecification_1() {
         PhoneModel phoneModel = createPhoneModel();
         Plan ltePlan = createLTEPlan();
 
@@ -23,7 +23,7 @@ class PaymentSpecificationTest {
 
     @Test
     @DisplayName("지불 금액 명세서를 생성하면 명세서의 스마트폰 영역의 정상가는 할부원금과 같다.")
-    void createPaymentSpecification_1() {
+    void newPaymentSpecification_2() {
         PaymentSpecification paymentSpecification = createPaymentSpecification();
 
         PaymentSpecification.PhoneField phoneField = paymentSpecification.getPhoneField();
@@ -33,7 +33,7 @@ class PaymentSpecificationTest {
 
     @Test
     @DisplayName("지불 금액 명세서를 생성하면 명세서의 스마트폰 영역의 공시지원금과 추가지원금은 0이다.")
-    void createPaymentSpecification_2() {
+    void newPaymentSpecification_3() {
         PaymentSpecification paymentSpecification = createPaymentSpecification();
 
         PaymentSpecification.PhoneField phoneField = paymentSpecification.getPhoneField();
@@ -44,7 +44,7 @@ class PaymentSpecificationTest {
 
     @Test
     @DisplayName("지불 금액 명세서를 생성하면 명세서의 요금제 영역의 기본 통신 요금은 지불해야 할 통신 요금과 같다.")
-    void createPaymentSpecification_3() {
+    void newPaymentSpecification_4() {
         PaymentSpecification paymentSpecification = createPaymentSpecification();
 
         PaymentSpecification.PlanField planField = paymentSpecification.getPlanField();
@@ -55,7 +55,7 @@ class PaymentSpecificationTest {
 
     @Test
     @DisplayName("지불 금액 명세서를 생성하면 명세서의 요금제 영역의 할인 금액은 0이다.")
-    void createPaymentSpecification_4() {
+    void newPaymentSpecification_5() {
         PaymentSpecification paymentSpecification = createPaymentSpecification();
 
         PaymentSpecification.PlanField planField = paymentSpecification.getPlanField();
@@ -65,30 +65,13 @@ class PaymentSpecificationTest {
 
     @Test
     @DisplayName("지불 금액 명세서에 할부 기간이 0이라면 할부 금액은 할부원금과 할부수수료를 더한 값이다.")
-    void createPaymentSpecification_5() {
+    void newPaymentSpecification_6() {
         PaymentSpecification paymentSpecification = createPaymentSpecificationWithoutInstallment();
 
         int monthlyInstallment = paymentSpecification.getPhoneField().getMonthlyInstallment();
         int installmentPrinciple = paymentSpecification.getPhoneField().getInstallmentPrinciple();
         int installmentFee = paymentSpecification.getPhoneField().getInstallmentFee();
         assertThat(monthlyInstallment).isEqualTo(installmentPrinciple + installmentFee);
-    }
-
-    @Test
-    @DisplayName("지불 금액 명세서에 공시지원금을 적용하면 스마트폰의 할부 금액과 그 외의 정보가 그에 맞게 변할 수 있다.")
-    void applyPubliclySubsidy() {
-        PaymentSpecification paymentSpecification = createPaymentSpecificationWithoutInstallment();
-        int installmentPrinciple = paymentSpecification.getPhoneField().getInstallmentPrinciple();
-
-        paymentSpecification.applyPubliclySubsidy();
-
-        int changedPubliclySubsidy = paymentSpecification.getPhoneField().getPubliclySubsidy();
-        int changedAdditionalSubsidy = paymentSpecification.getPhoneField().getAdditionalSubsidy();
-        assertThat(changedPubliclySubsidy / 100 * 15).isEqualTo(changedAdditionalSubsidy);
-        int changedInstallmentPrinciple = paymentSpecification.getPhoneField().getInstallmentPrinciple();
-        assertThat(installmentPrinciple).isEqualTo(changedInstallmentPrinciple + changedPubliclySubsidy + changedAdditionalSubsidy);
-        int monthlyInstallment = paymentSpecification.getPhoneField().getMonthlyInstallment();
-        assertThat(monthlyInstallment).isEqualTo(changedInstallmentPrinciple + paymentSpecification.getPhoneField().getInstallmentFee());
     }
 
     @Test
@@ -136,12 +119,12 @@ class PaymentSpecificationTest {
     @DisplayName("지불 금액 명세서에 약정 할인 금액을 바꾸면 그만큼 요금제의 비용이 차감된다.")
     void setCommitmentDiscountAmount(int amount) {
         PaymentSpecification paymentSpecification = createPaymentSpecification();
-        int fee = paymentSpecification.getPlanField().getMonthlyCharge();
+        int charge = paymentSpecification.getPlanField().getMonthlyCharge();
 
         paymentSpecification.setCommitmentDiscountAmount(amount);
 
-        int changedFee = paymentSpecification.getPlanField().getMonthlyCharge();
-        assertThat(changedFee).isEqualTo(fee - amount);
+        int changedCharge = paymentSpecification.getPlanField().getMonthlyCharge();
+        assertThat(changedCharge).isEqualTo(charge - amount);
     }
 
     @ParameterizedTest
@@ -176,7 +159,7 @@ class PaymentSpecificationTest {
 
     private PhoneModel createPhoneModel() {
         return PhoneModel.builder()
-                .id("SM-F721N-MK")
+                .modelId("SM-F721N-MK")
                 .name("갤럭시 Z Flip 4 메종키츠네 에디션")
                 .manufacturer("SAMSUNG")
                 .networkTech("5G")
@@ -186,7 +169,7 @@ class PaymentSpecificationTest {
 
     private Plan createPlan() {
         return Plan.builder()
-                .id("Z202205252")
+                .planId("Z202205252")
                 .name("5G 프리미어 플러스")
                 .networkTech("5G")
                 .basicMonthlyCharge(105000)
@@ -196,7 +179,7 @@ class PaymentSpecificationTest {
 
     private Plan createLTEPlan() {
         return Plan.builder()
-                .id("LPZ0000679")
+                .planId("LPZ0000679")
                 .name("LTE 프리미어 에센셜")
                 .networkTech("LTE")
                 .basicMonthlyCharge(85000)

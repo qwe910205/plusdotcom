@@ -3,7 +3,6 @@ package com.qwe910205.plusdotcom.payment.service;
 import com.qwe910205.plusdotcom.payment.service.dto.PaymentSpecificationDto;
 import com.qwe910205.plusdotcom.payment.service.dto.PaymentSpecificationListDto;
 import com.qwe910205.plusdotcom.phone.domain.NetworkTech;
-import com.qwe910205.plusdotcom.phone.domain.PhoneModel;
 import com.qwe910205.plusdotcom.phone.repository.PhoneRepository;
 import com.qwe910205.plusdotcom.plan.domain.wrapper.PlanId;
 import com.qwe910205.plusdotcom.plan.repository.PlanRepository;
@@ -11,8 +10,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 

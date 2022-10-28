@@ -68,7 +68,7 @@ class PhoneModelTest {
 
     private PhoneModel createPhoneModel() {
         return PhoneModel.builder()
-                .id("SM-F721N-MK")
+                .modelId("SM-F721N-MK")
                 .name("갤럭시 Z Flip 4 메종키츠네 에디션")
                 .manufacturer("SAMSUNG")
                 .networkTech("5G")
@@ -78,7 +78,7 @@ class PhoneModelTest {
 
     private Plan createPlan() {
         return Plan.builder()
-                .id("Z202205252")
+                .planId("Z202205252")
                 .name("5G 프리미어 플러스")
                 .networkTech("5G")
                 .basicMonthlyCharge(105000)
@@ -88,7 +88,7 @@ class PhoneModelTest {
 
     private Plan createLTEPlan() {
         return Plan.builder()
-                .id("LPZ0000679")
+                .planId("LPZ0000679")
                 .name("LTE 프리미어 에센셜")
                 .networkTech("LTE")
                 .basicMonthlyCharge(85000)

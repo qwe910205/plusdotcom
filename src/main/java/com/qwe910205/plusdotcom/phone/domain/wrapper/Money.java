@@ -45,6 +45,6 @@ public class Money {
 
     private void checkIntegrity(int price) {
         if (price < 0)
-            throw new IllegalArgumentException("가격은 음수일 수 없습니다.");
+            throw new RuntimeException("가격은 음수일 수 없습니다.");
     }
 }
