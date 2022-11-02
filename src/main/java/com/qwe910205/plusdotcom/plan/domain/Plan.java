@@ -158,9 +158,10 @@ public class Plan {
         if (hasDataPolicyOtherThanMonthlyDataPolicy())
             throw new RuntimeException(planId + " 요금제는 월간 데이터 정책 이외의 데이터 정책을 가지고 있어서 데이터 사용량에 따른 한 달간 요금을 계산할 수 없습니다.");
 
+        if (getMaxMonthlyDataUsage() < dataUsage)
+            throw new IllegalArgumentException("요금제의 월간 최대 데이터 사용량은 " + (int) getMaxMonthlyDataUsage() + "MB 입니다.");
+
         DataPolicy dataPolicy = dataPolicies.get(DataPolicyUnitPeriod.MONTH);
-        if (dataPolicy.isUnlimited())
-            return getBasicMonthlyCharge();
 
         long additionalCharge = dataPolicy.getAdditionalChargeAbout(dataUsage);
         return basicMonthlyCharge.getValue() + additionalCharge;

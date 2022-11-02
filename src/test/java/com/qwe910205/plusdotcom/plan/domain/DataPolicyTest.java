@@ -118,8 +118,18 @@ class DataPolicyTest {
 //    }
 
     @Test
-    @DisplayName("데이터 사용량이 데이터 정책의 기본 데이터 제공량을 초과하지 않는다면 부과 비용은 0이다.")
+    @DisplayName("데이터 정책이 무제한 데이터 정책이라면 데이터 사용에 따른 추가적인 비용은 0이다")
     void getAdditionalChargeAbout_1() {
+        DataPolicy dataPolicy = new DataPolicy(createPlan(), null);
+
+        long additionalCharge = dataPolicy.getAdditionalChargeAbout(Long.MAX_VALUE);
+
+        assertThat(additionalCharge).isZero();
+    }
+
+    @Test
+    @DisplayName("데이터 사용량이 데이터 정책의 기본 데이터 제공량을 초과하지 않는다면 부과 비용은 0이다.")
+    void getAdditionalChargeAbout_2() {
         Plan plan = createPlan();
         DataPolicy dataPolicy = new DataPolicy(plan, 5000);
         long dataUsage = 4999;
@@ -131,7 +141,7 @@ class DataPolicyTest {
 
     @Test
     @DisplayName("데이터 정책은 데이터 사용량에 따른 추가적인 비용을 계산할 수 있다.")
-    void getAdditionalChargeAbout_2() {
+    void getAdditionalChargeAbout_3() {
         Plan plan = createPlan();
         DataPolicy dataPolicy = new DataPolicy(plan, 10);
         int[] dataBoundaries = {0, 10, 20, 30, 40, 50};

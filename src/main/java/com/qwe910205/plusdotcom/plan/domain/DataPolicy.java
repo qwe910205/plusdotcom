@@ -75,6 +75,8 @@ public class DataPolicy {
 
     public long getAdditionalChargeAbout(long dataUsage) {
         long additionalCharge = 0;
+        if (isUnlimited()) return additionalCharge;
+
         long remainDataUsage = dataUsage - servingDataQuantity.getValue();
         if (remainDataUsage <= 0)
             return additionalCharge;

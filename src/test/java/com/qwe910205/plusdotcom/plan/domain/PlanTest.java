@@ -91,8 +91,23 @@ class PlanTest {
     }
 
     @Test
-    @DisplayName("월간 데이터 사용량에 대한 비용을 계산할 수 있다.")
+    @DisplayName("월간 데이터 사용량이 월간 최대 데이터 사용량을 초과한다면 월간 데이터 사용량에 대한 비용을 계산할 수 없다.")
     void getChargeAboutMonthlyDataUsage_2() {
+        Plan plan = createPlan();
+        plan.putLimitedDataPolicy(DataPolicyUnitPeriod.MONTH, 10);
+        plan.addDataPolicyDetail(DataPolicyUnitPeriod.MONTH, 0, null, 1000, 1, null);
+        plan.addDataPolicyDetail(DataPolicyUnitPeriod.MONTH, 10, null, 1000, 1, null);
+        plan.addDataPolicyDetail(DataPolicyUnitPeriod.MONTH, 20, null, 1000, 2, null);
+        plan.addDataPolicyDetail(DataPolicyUnitPeriod.MONTH, 30, null, 1000, 1, null);
+        plan.addDataPolicyDetail(DataPolicyUnitPeriod.MONTH, 40, 0L, 1000, 1, null);
+        long dataUsage = 51;
+
+        assertThatThrownBy(() -> plan.getChargeAboutMonthlyDataUsage(dataUsage)).isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
+    @DisplayName("월간 데이터 사용량에 대한 비용을 계산할 수 있다.")
+    void getChargeAboutMonthlyDataUsage_3() {
         Plan plan = createPlan();
         plan.putLimitedDataPolicy(DataPolicyUnitPeriod.MONTH, 10);
         plan.addDataPolicyDetail(DataPolicyUnitPeriod.MONTH, 0, null, 1000, 1, null);
