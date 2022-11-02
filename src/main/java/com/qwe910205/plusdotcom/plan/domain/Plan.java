@@ -170,4 +170,12 @@ public class Plan {
         Set<DataPolicyUnitPeriod> dataPolicyUnitPeriods = dataPolicies.keySet();
         return !(dataPolicyUnitPeriods.contains(DataPolicyUnitPeriod.MONTH) && dataPolicyUnitPeriods.size() == 1);
     }
+
+    public double getMaxMonthlyDataUsage() {
+        if (hasDataPolicyOtherThanMonthlyDataPolicy())
+            throw new RuntimeException(planId + " 요금제는 월간 데이터 정책 이외의 데이터 정책을 가지고 있어서 한 달간 최대로 사용할 수 있는 데이터양을 계산할 수 없습니다.");
+
+        DataPolicy dataPolicy = dataPolicies.get(DataPolicyUnitPeriod.MONTH);
+        return dataPolicy.getMaxDataUsage();
+    }
 }

@@ -32,6 +32,26 @@ class DataPolicyDetailTest {
         assertThat(charge).isZero();
     }
 
+    @Test
+    @DisplayName("데이터 정책 세부사항이 만약 속도 제한이 0이라면 데이터를 사용할 수 없다.")
+    void availableData_1() {
+        DataPolicyDetail dataPolicyDetail = new DataPolicyDetail(new DataPolicy(createPlan(), 0), 0, 0L);
+
+        boolean available = dataPolicyDetail.availableData();
+
+        assertThat(available).isFalse();
+    }
+
+    @Test
+    @DisplayName("데이터 정책 세부사항이 만약 속도 제한이 없다면 데이터를 사용할 수 있다.")
+    void availableData_2() {
+        DataPolicyDetail dataPolicyDetail = new DataPolicyDetail(new DataPolicy(createPlan(), 0), 0, null);
+
+        boolean available = dataPolicyDetail.availableData();
+
+        assertThat(available).isTrue();
+    }
+
     private Plan createPlan() {
         return Plan.builder()
                 .planId("Z202205252")

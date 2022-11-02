@@ -14,7 +14,8 @@ import java.util.*;
 @Entity
 public class DataPolicy {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -26,7 +27,7 @@ public class DataPolicy {
     private ServingDataQuantity servingDataQuantity;
 
     @SortNatural
-    @OneToMany(mappedBy = "dataPolicy",cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "dataPolicy", cascade = CascadeType.ALL, orphanRemoval = true)
     private final SortedSet<DataPolicyDetail> dataPolicyDetails = new TreeSet<>();
 
     public DataPolicy(Plan plan, Integer dataQuantity) {
@@ -58,7 +59,7 @@ public class DataPolicy {
         if (dataPolicyDetails.size() >= 1
                 && dataPolicyDetails.last().getDataBoundary() < dataPolicyDetail.getDataBoundary()
                 && dataPolicyDetails.last().hasSpeedLimit())
-                throw new IllegalArgumentException("데이터 정책의 세부사항 중 마지막 세부사항만 속도 제한을 가질 수 있습니다.");
+            throw new IllegalArgumentException("데이터 정책의 세부사항 중 마지막 세부사항만 속도 제한을 가질 수 있습니다.");
 
         this.dataPolicyDetails.remove(dataPolicyDetail);
         this.dataPolicyDetails.add(dataPolicyDetail);
@@ -111,6 +112,13 @@ public class DataPolicy {
                 .map(DataPolicyDetail::getDataBoundary)
                 .toList()
                 .subList(1, dataPolicyDetails.size());
+    }
+
+    public double getMaxDataUsage() {
+        DataPolicyDetail last = dataPolicyDetails.last();
+        if (last.availableData())
+            return Double.POSITIVE_INFINITY;
+        return servingDataQuantity.getValue() + last.getDataBoundary();
     }
 
     private record ObjectThatGivesCharge(DataPolicyDetail dataPolicyDetail, long checkData) {

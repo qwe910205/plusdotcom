@@ -2,9 +2,13 @@ package com.qwe910205.plusdotcom.plan.domain;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -101,6 +105,43 @@ class PlanTest {
         long charge = plan.getChargeAboutMonthlyDataUsage(dataUsage);
 
         assertThat(charge).isEqualTo(plan.getBasicMonthlyCharge() + 30);
+    }
+
+    @Test
+    @DisplayName("요금제가 월간 데이터 정책 이외의 데이터 정책을 가지고 있다면 한 달간 최대 데이터 사용량을 구할 수 없다.")
+    void getMaxMonthlyDataUsage_1() {
+        Plan plan = createPlan();
+        plan.putLimitedDataPolicy(DataPolicyUnitPeriod.MONTH, 2000);
+        plan.putLimitedDataPolicy(DataPolicyUnitPeriod.DAY, 2000);
+
+        assertThatThrownBy(plan::getMaxMonthlyDataUsage).isInstanceOf(RuntimeException.class);
+    }
+
+    @Test
+    @DisplayName("요금제의 한 달간 최대 데이터 사용량을 구할 수 있다.")
+    void getMaxMonthlyDataUsage_2() {
+        Plan plan = createPlan();
+        plan.putLimitedDataPolicy(DataPolicyUnitPeriod.MONTH, 2000);
+        plan.addDataPolicyDetailThatHasNotAdditionalCharge(DataPolicyUnitPeriod.MONTH, 0, null);
+        plan.addDataPolicyDetailThatHasNotAdditionalCharge(DataPolicyUnitPeriod.MONTH, 2000, null);
+        plan.addDataPolicyDetailThatHasNotAdditionalCharge(DataPolicyUnitPeriod.MONTH, 4000, 0L);
+
+        double maxMonthlyDataUsage = plan.getMaxMonthlyDataUsage();
+
+        assertThat(maxMonthlyDataUsage).isEqualTo(6000);
+    }
+
+    @Test
+    @DisplayName("요금제의 한 달간 최대 데이터 사용량이 무한대일 경우에도 구할 수 있다.")
+    void getMaxMonthlyDataUsage_3() {
+        Plan plan = createPlan();
+        plan.putLimitedDataPolicy(DataPolicyUnitPeriod.MONTH, 2000);
+        plan.addDataPolicyDetailThatHasNotAdditionalCharge(DataPolicyUnitPeriod.MONTH, 0, null);
+        plan.addDataPolicyDetailThatHasNotAdditionalCharge(DataPolicyUnitPeriod.MONTH, 2000, null);
+
+        double maxMonthlyDataUsage = plan.getMaxMonthlyDataUsage();
+
+        assertThat(maxMonthlyDataUsage).isInfinite();
     }
 
     private Plan createPlan() {

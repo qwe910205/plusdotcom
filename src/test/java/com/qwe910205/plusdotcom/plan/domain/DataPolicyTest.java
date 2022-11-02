@@ -143,6 +143,30 @@ class DataPolicyTest {
         assertThat(additionalChargeAbout).isEqualTo(25);
     }
 
+    @Test
+    @DisplayName("데이터 정책의 최대 데이터 사용량은 마지막 정책 세부사항이 데이터를 사용할 수 없다면 기본 데이터 제공량에 마지막 정책 세부사항의 데이터 경곗값을 더한 값이다.")
+    void getMaxDataUsage_1() {
+        DataPolicy dataPolicy = new DataPolicy(createPlan(), 2000);
+        dataPolicy.addDataPolicyDetailThatHasNotAdditionalCharge(0, null);
+        dataPolicy.addDataPolicyDetailThatHasNotAdditionalCharge(3000, 0L);
+
+        double maxDataUsage = dataPolicy.getMaxDataUsage();
+
+        assertThat(maxDataUsage).isEqualTo(5000);
+    }
+
+    @Test
+    @DisplayName("데이터 정책의 최대 데이터 사용량은 마지막 정책 세부사항이 데이터를 사용가능하면 무한대이다.")
+    void getMaxDataUsage_2() {
+        DataPolicy dataPolicy = new DataPolicy(createPlan(), 2000);
+        dataPolicy.addDataPolicyDetailThatHasNotAdditionalCharge(0, null);
+        dataPolicy.addDataPolicyDetailThatHasNotAdditionalCharge(3000, 500L);
+
+        double maxDataUsage = dataPolicy.getMaxDataUsage();
+
+        assertThat(maxDataUsage).isInfinite();
+    }
+
     private Plan createPlan() {
         return Plan.builder()
                 .planId("Z202205252")
