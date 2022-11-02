@@ -8,7 +8,7 @@ import java.util.List;
 @Builder
 public record PhoneProductDto(String colorName, String colorCode, List<String> images, Integer stock) {
 
-    public static PhoneProductDto create(PhoneProduct phoneProduct) {
+    public static PhoneProductDto createFrom(PhoneProduct phoneProduct) {
         return PhoneProductDto.builder()
                 .colorName(phoneProduct.getColorName())
                 .colorCode(phoneProduct.getColorCode())

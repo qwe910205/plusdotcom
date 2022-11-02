@@ -8,7 +8,7 @@ class DataBoundaryTest {
 
     @Test
     @DisplayName("데이터 경곗값을 음수로 생성하면 예외가 발생한다.")
-    void createDataBoundaryWithNegative() {
+    void newDataBoundary() {
         int boundary = -1;
 
         Assertions.assertThatThrownBy(() -> new DataBoundary(boundary)).isInstanceOf(IllegalArgumentException.class);

@@ -21,7 +21,7 @@ class MoneyTest {
     void newPrice() {
         int price = -1;
 
-        assertThatThrownBy(() -> new Money(price)).isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new Money(price)).isInstanceOf(RuntimeException.class);
     }
 
     @Test

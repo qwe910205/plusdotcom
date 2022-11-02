@@ -6,11 +6,11 @@ import lombok.Builder;
 @Builder
 public record PaymentSpecificationDto(String discountType, PhoneFieldDto phoneField, PlanFieldDto planField, Integer totalMonthlyPayment) {
 
-    public static PaymentSpecificationDto from(PaymentSpecification paymentSpecification) {
+    public static PaymentSpecificationDto createFrom(PaymentSpecification paymentSpecification) {
         return PaymentSpecificationDto.builder()
                 .discountType(paymentSpecification.getDiscountTypeName())
-                .phoneField(PhoneFieldDto.from(paymentSpecification.getPhoneField()))
-                .planField(PlanFieldDto.from(paymentSpecification.getPlanField()))
+                .phoneField(PhoneFieldDto.createFrom(paymentSpecification.getPhoneField()))
+                .planField(PlanFieldDto.createFrom(paymentSpecification.getPlanField()))
                 .totalMonthlyPayment(paymentSpecification.getTotalMonthlyPayment())
                 .build();
     }
@@ -20,7 +20,7 @@ public record PaymentSpecificationDto(String discountType, PhoneFieldDto phoneFi
                                 Integer installmentPeriod, Integer installmentPrinciple, Integer installmentFee,
                                 Integer monthlyInstallment) {
 
-        public static PhoneFieldDto from(PaymentSpecification.PhoneField phoneField) {
+        public static PhoneFieldDto createFrom(PaymentSpecification.PhoneField phoneField) {
             return PhoneFieldDto.builder()
                     .modelId(phoneField.getModelId())
                     .normalPrice(phoneField.getNormalPrice())
@@ -38,7 +38,7 @@ public record PaymentSpecificationDto(String discountType, PhoneFieldDto phoneFi
     public record PlanFieldDto(String planId, Integer normalFee, Integer commitmentPeriod, Integer commitmentDiscountAmount,
                                Integer fee) {
 
-        public static PlanFieldDto from(PaymentSpecification.PlanField planField) {
+        public static PlanFieldDto createFrom(PaymentSpecification.PlanField planField) {
             return PlanFieldDto.builder()
                     .planId(planField.getPlanId())
                     .normalFee(planField.getBasicMonthlyCharge())

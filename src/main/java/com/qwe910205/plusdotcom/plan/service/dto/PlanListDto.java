@@ -6,7 +6,7 @@ import java.util.List;
 
 public record PlanListDto(List<PlanDtoForList> plans) {
 
-    public static PlanListDto create(List<Plan> plans) {
-        return new PlanListDto(plans.stream().map(PlanDtoForList::create).toList());
+    public static PlanListDto createFrom(List<Plan> plans) {
+        return new PlanListDto(plans.stream().map(PlanDtoForList::createFrom).toList());
     }
 }

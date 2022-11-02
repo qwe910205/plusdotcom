@@ -10,7 +10,7 @@ public record PhoneDto(String modelId, String modelName, String manufacturer, St
                        List<String> descriptionImages, PhoneDescriptionDto description, Integer price,
                        List<PhoneProductDto> products, List<String> convenienceFunctions) {
 
-    public static PhoneDto create(PhoneModel phoneModel) {
+    public static PhoneDto createFrom(PhoneModel phoneModel) {
         return PhoneDto.builder()
                 .modelId(phoneModel.getModelId())
                 .modelName(phoneModel.getName())
@@ -18,9 +18,9 @@ public record PhoneDto(String modelId, String modelName, String manufacturer, St
                 .networkTech(phoneModel.getNetworkTech())
                 .hashtags(phoneModel.getHashtags())
                 .descriptionImages(phoneModel.getDescriptionImages())
-                .description(PhoneDescriptionDto.create(phoneModel.getDescription()))
+                .description(PhoneDescriptionDto.createFrom(phoneModel.getDescription()))
                 .price(phoneModel.getMoney())
-                .products(phoneModel.getAllProducts().stream().map(PhoneProductDto::create).toList())
+                .products(phoneModel.getAllProducts().stream().map(PhoneProductDto::createFrom).toList())
                 .convenienceFunctions(phoneModel.getConvenienceFunctions())
                 .build();
     }

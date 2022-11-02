@@ -76,12 +76,9 @@ public class PhoneModel {
     @ManyToMany
     private final Set<ConvenienceFunction> convenienceFunctions = new HashSet<>();
 
-//    @MapKey(name = "plan")
-//    @OneToMany(mappedBy = "phoneModel", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private final Map<Plan, PubliclySubsidy> publiclySubsidies = new HashMap<>();
-
+    @CollectionTable(name = "PUBLICLY_SUBSIDY")
+    @MapKeyJoinColumn(name = "PLAN_ID")
     @ElementCollection
-    @MapKeyJoinColumn(name = "PLAN")
     private final Map<Plan, Money> publiclySubsidies = new HashMap<>();
 
     @Builder
@@ -95,10 +92,6 @@ public class PhoneModel {
         this.manufacturer = new Manufacturer(manufacturer);
         this.networkTech = new NetworkTech(networkTech);
         this.money = new Money(price);
-    }
-
-    public Long getId() {
-        return this.id;
     }
 
     public String getModelId() {

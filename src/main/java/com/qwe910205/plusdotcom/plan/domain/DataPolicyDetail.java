@@ -34,9 +34,9 @@ public class DataPolicyDetail implements Comparable<DataPolicyDetail> {
     private DataSpeed speedLimit;
 
     @AttributeOverrides({
-            @AttributeOverride(name = "dataUnit", column = @Column(name = "DATA_UNIT", nullable = true)),
-            @AttributeOverride(name = "cost", column = @Column(name = "COST", nullable = true)),
-            @AttributeOverride(name = "maximumCharge", column = @Column(name = "MAXIMUM_CHARGE", nullable = true))
+            @AttributeOverride(name = "dataUnit", column = @Column(name = "DATA_UNIT")),
+            @AttributeOverride(name = "cost", column = @Column(name = "COST")),
+            @AttributeOverride(name = "maximumCharge", column = @Column(name = "MAXIMUM_CHARGE"))
     })
     @Embedded
     private ChargePolicyAboutExcessDataUsage chargePolicy;

@@ -37,7 +37,7 @@ public class PaymentService {
 
         PaymentSpecification paymentSpecification = PaymentSpecificationFactory.createAndApplyDiscount(phoneModel, plan, installmentPeriod, discountType);
 
-        return PaymentSpecificationDto.from(paymentSpecification);
+        return PaymentSpecificationDto.createFrom(paymentSpecification);
     }
 
     public PaymentSpecificationListDto getPaymentSpecifications(String planId, Integer installmentPeriod, String discountTypeName) {
@@ -51,7 +51,7 @@ public class PaymentService {
                 .map(phoneModel -> PaymentSpecificationFactory.createAndApplyDiscount(phoneModel, plan, installmentPeriod, discountType))
                 .toList();
 
-        return PaymentSpecificationListDto.from(paymentSpecifications);
+        return PaymentSpecificationListDto.createFrom(paymentSpecifications);
     }
 
     private DiscountType resolveDiscountTypeName(String discountTypeName) {

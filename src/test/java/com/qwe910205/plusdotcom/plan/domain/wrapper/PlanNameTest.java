@@ -11,7 +11,7 @@ class PlanNameTest {
     @ParameterizedTest
     @NullAndEmptySource
     @DisplayName("요금제명을 텍스트가 없는 문자열이나 널로 생성하면 예외가 발생한다.")
-    void createPlanNameWithoutText(String name) {
+    void newPlanName(String name) {
         assertThatThrownBy(() -> new PlanName(name)).isInstanceOf(IllegalArgumentException.class);
     }
 }

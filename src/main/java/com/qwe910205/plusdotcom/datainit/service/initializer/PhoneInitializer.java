@@ -1,12 +1,9 @@
 package com.qwe910205.plusdotcom.datainit.service.initializer;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.qwe910205.plusdotcom.datainit.service.dto.ColorDto;
-import com.qwe910205.plusdotcom.datainit.service.dto.PhoneModelDto;
 import com.qwe910205.plusdotcom.datainit.service.dto.PhoneModelDtoList;
 import com.qwe910205.plusdotcom.phone.domain.PhoneDescription;
 import com.qwe910205.plusdotcom.phone.domain.PhoneModel;
-import com.qwe910205.plusdotcom.phone.domain.factory.PhoneModelFactory;
 import com.qwe910205.plusdotcom.phone.repository.PhoneRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.ClassPathResource;
@@ -56,19 +53,9 @@ public class PhoneInitializer implements DataInitializer {
             throw new RuntimeException(e);
         }
         Map<String, PhoneModel> phoneModels = new HashMap<>();
-        for (PhoneModelDto product : phoneModelDtoList.products()) {
-            PhoneModel phoneModel = PhoneModelFactory.create(product.model_id(), product.name(), product.manufacturer(), networkTechName, product.price());
-            phoneModel.addHashTags(Arrays.stream(product.hash_tag().split(" ")).toList());
-            PhoneDescription description = PhoneDescription.builder().cpuDescription(product.CPU()).displayDescription(product.display_description())
-                    .cameraDescription(product.camera()).batteryDescription(product.battery_capacity()).waterproofDescription(product.waterproof())
-                    .build();
-            phoneModel.setDescription(description);
-            phoneModel.addDescriptionImages(product.detail_image());
-            for (ColorDto colorDto : product.color()) {
-                phoneModel.addProduct(colorDto.color_name(), colorDto.color_code(), colorDto.color_image(), 100);
-            }
-            phoneModels.put(phoneModel.getName(), phoneModel);
-        }
+        phoneModelDtoList.products().stream()
+                .map(product -> product.toPhoneModel(networkTechName))
+                .forEach(phoneModel -> phoneModels.put(phoneModel.getName(), phoneModel));
         return phoneModels;
     }
 

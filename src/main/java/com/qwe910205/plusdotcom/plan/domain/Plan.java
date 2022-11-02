@@ -63,10 +63,6 @@ public class Plan {
         this.category = new PlanCategory(category);
     }
 
-    public Long getId() {
-        return id;
-    }
-
     public String getPlanId() {
         return planId.getValue();
     }

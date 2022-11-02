@@ -6,7 +6,7 @@ import java.util.List;
 
 public record PaymentSpecificationListDto(List<PaymentSpecificationDto> paymentSpecifications) {
 
-    public static PaymentSpecificationListDto from(List<PaymentSpecification> paymentSpecifications) {
-        return new PaymentSpecificationListDto(paymentSpecifications.stream().map(PaymentSpecificationDto::from).toList());
+    public static PaymentSpecificationListDto createFrom(List<PaymentSpecification> paymentSpecifications) {
+        return new PaymentSpecificationListDto(paymentSpecifications.stream().map(PaymentSpecificationDto::createFrom).toList());
     }
 }

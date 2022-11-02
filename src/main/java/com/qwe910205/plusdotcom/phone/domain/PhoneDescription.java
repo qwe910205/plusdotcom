@@ -20,7 +20,7 @@ public class PhoneDescription {
     private String waterproofDescription;
 
     @Builder
-    public PhoneDescription(String cpuDescription, String displayDescription, String sizeDescription, String cameraDescription, String memoryDescription, String batteryDescription, String waterproofDescription) {
+    private PhoneDescription(String cpuDescription, String displayDescription, String sizeDescription, String cameraDescription, String memoryDescription, String batteryDescription, String waterproofDescription) {
         this.cpuDescription = cpuDescription;
         this.displayDescription = displayDescription;
         this.sizeDescription = sizeDescription;

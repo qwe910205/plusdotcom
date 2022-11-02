@@ -5,7 +5,6 @@ import com.qwe910205.plusdotcom.datainit.service.dto.PlanDto;
 import com.qwe910205.plusdotcom.datainit.service.dto.PlanDtoList;
 import com.qwe910205.plusdotcom.plan.domain.DataPolicyUnitPeriod;
 import com.qwe910205.plusdotcom.plan.domain.Plan;
-import com.qwe910205.plusdotcom.plan.domain.factory.PlanFactory;
 import com.qwe910205.plusdotcom.plan.repository.PlanRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.ClassPathResource;
@@ -54,7 +53,7 @@ public class PlanInitializer implements DataInitializer {
             if (planDto.plan_category().equals("3G")) continue;
             if (planDto.name().contains("스마트기기") || planDto.name().contains("Wearable") || planDto.name().contains("태블릿"))
                 continue;
-            Plan plan = PlanFactory.create(planDto);
+            Plan plan = planDto.toPlan();
             planMap.put(plan.getName(), plan);
         }
         return planMap;

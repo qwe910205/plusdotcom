@@ -7,7 +7,7 @@ import lombok.Builder;
 public record PhoneDescriptionDto(String cpu, String display, String size, String camera, String memory, String battery,
                                   String waterproof) {
 
-    public static PhoneDescriptionDto create(PhoneDescription phoneDescription) {
+    public static PhoneDescriptionDto createFrom(PhoneDescription phoneDescription) {
         return PhoneDescriptionDto.builder()
                 .cpu(phoneDescription.getCpuDescription())
                 .display(phoneDescription.getDisplayDescription())

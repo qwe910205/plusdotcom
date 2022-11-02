@@ -16,7 +16,7 @@ class ChargePolicyAboutExcessDataUsageTest {
 
     @Test
     @DisplayName("최대 비용이 무제한인 데이터 초과 사용 정책을 생성할 수 있다.")
-    void createChargePolicyThatHasUnlimitedMaxCost() {
+    void newChargePolicyExcessDataUsage_1() {
         int dataUnit = 1;
         double cost = 1;
 
@@ -26,11 +26,11 @@ class ChargePolicyAboutExcessDataUsageTest {
     @ParameterizedTest
     @MethodSource
     @DisplayName("데이터 초과 사용 정책의 데이터 단위가 0이나 음수이거나 단위 당 비용이 음수이거나 최대 비용이 음수이면 예외가 발생한다.")
-    void createChargePolicyWithInvalidValue_1(int dateUnit, double cost, int maxCost) {
+    void newChargePolicyExcessDataUsage_2(int dateUnit, double cost, int maxCost) {
         assertThatThrownBy(() -> new ChargePolicyAboutExcessDataUsage(dateUnit, cost, maxCost)).isInstanceOf(IllegalArgumentException.class);
     }
 
-    private static Stream<Arguments> createChargePolicyWithInvalidValue_1() {
+    private static Stream<Arguments> newChargePolicyExcessDataUsage_2() {
         return Stream.of(
             Arguments.of(0, Double.MAX_VALUE, Integer.MAX_VALUE),
             Arguments.of(-1, Double.MAX_VALUE, Integer.MAX_VALUE),
@@ -41,7 +41,7 @@ class ChargePolicyAboutExcessDataUsageTest {
 
     @Test
     @DisplayName("단위 데이터에 비해 비용이 너무 크면 예외가 발생한다.")
-    void createChargePolicyWithInvalidValue_2() {
+    void newChargePolicyExcessDataUsage_3() {
         int dataUnit = 1000;
         double cost = Double.MAX_VALUE;
 
@@ -61,7 +61,7 @@ class ChargePolicyAboutExcessDataUsageTest {
 
     @Test
     @DisplayName("데이터 사용량에 대한 부과 비용은 데이터 사용량에 단위 데이터를 나눈 것에 비용을 곱한 것이다.")
-    void getChargeAbout() {
+    void getChargeAbout_1() {
         int dataUnit = 1;
         double cost = 1000;
         ChargePolicyAboutExcessDataUsage chargePolicyAboutExcessDataUsage = new ChargePolicyAboutExcessDataUsage(dataUnit, cost);
@@ -79,7 +79,7 @@ class ChargePolicyAboutExcessDataUsageTest {
 
     @Test
     @DisplayName("데이터 사용량이 10TB를 초과하면 예외가 발생한다.")
-    void getChargeAboutTooLargeDataUsage() {
+    void getChargeAbout_2() {
         int dataUnit = 1;
         double cost = 1000;
         ChargePolicyAboutExcessDataUsage chargePolicyAboutExcessDataUsage = new ChargePolicyAboutExcessDataUsage(dataUnit, cost);
@@ -90,7 +90,7 @@ class ChargePolicyAboutExcessDataUsageTest {
 
     @Test
     @DisplayName("데이터 사용량이 단위 데이터보다 적어도 비용이 부과된다.")
-    void getChargeAboutMinimumDataUsage() {
+    void getChargeAbout_3() {
         int dataUnit = 5000000;
         double cost = 100000.0;
         ChargePolicyAboutExcessDataUsage chargePolicyAboutExcessDataUsage = new ChargePolicyAboutExcessDataUsage(dataUnit, cost);
@@ -103,7 +103,7 @@ class ChargePolicyAboutExcessDataUsageTest {
 
     @Test
     @DisplayName("부과 비용은 정해진 최대 부과 비용을 초과하지 않는다.")
-    void getChargeAboutDataUsageThatExcessMaximumCharge() {
+    void getChargeAbout_4() {
         int dataUnit = 1;
         double cost = 1000;
         int maximumCharge = 1;

@@ -12,7 +12,7 @@ public record PhoneDtoForList(String modelId, String modelName, String manufactu
                               String thumbnailUrl, List<String> colorCodes, Double screenSize, Integer ramCapacity, Integer romCapacity,
                               Integer batteryCapacity, Integer price, Long releaseDate, List<String> convenienceFunctions) {
 
-    public static PhoneDtoForList create(PhoneModel phoneModel) {
+    public static PhoneDtoForList createFrom(PhoneModel phoneModel) {
         return PhoneDtoForList.builder()
                 .modelId(phoneModel.getModelId())
                 .modelName(phoneModel.getName())

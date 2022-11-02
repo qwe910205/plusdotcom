@@ -21,14 +21,14 @@ public class PlanService {
 
     public PlanListDto getPlans() {
         List<Plan> plans = planRepository.findAll();
-        return PlanListDto.create(plans);
+        return PlanListDto.createFrom(plans);
     }
 
     public PlanDto getPlan(String planId) {
         Plan plan = planRepository.findByPlanId(new PlanId(planId))
                 .orElseThrow(() -> new NoSuchElementException("아이디가 " + planId + "인 요금제는 존재하지 않습니다."));
 
-        return PlanDto.create(plan);
+        return PlanDto.createFrom(plan);
     }
 
     public long getChargeAboutMonthlyDataUsage(String planId, long dataUsage) {

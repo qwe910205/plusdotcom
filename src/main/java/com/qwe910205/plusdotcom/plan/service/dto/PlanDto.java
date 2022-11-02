@@ -10,16 +10,16 @@ public record PlanDto(String planId, String name, String networkTech, Integer mo
                       PlanDescriptionDto description, List<ServiceDto> premiumServices,
                       List<ServiceDto> mediaServices) {
 
-    public static PlanDto create(Plan plan) {
+    public static PlanDto createFrom(Plan plan) {
         return PlanDto.builder()
                 .planId(plan.getPlanId())
                 .name(plan.getName())
                 .networkTech(plan.getNetworkTech())
                 .monthlyPayment(plan.getBasicMonthlyCharge())
                 .category(plan.getCategory())
-                .description(PlanDescriptionDto.create(plan.getDescription()))
-                .premiumServices(plan.getPremiumServices().stream().map(ServiceDto::create).toList())
-                .mediaServices(plan.getMediaServices().stream().map(ServiceDto::create).toList())
+                .description(PlanDescriptionDto.createFrom(plan.getDescription()))
+                .premiumServices(plan.getPremiumServices().stream().map(ServiceDto::createFrom).toList())
+                .mediaServices(plan.getMediaServices().stream().map(ServiceDto::createFrom).toList())
                 .build();
     }
 }

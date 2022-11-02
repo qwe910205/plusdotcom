@@ -1,8 +1,6 @@
 package com.qwe910205.plusdotcom.phone.domain;
 
-import com.qwe910205.plusdotcom.phone.domain.factory.PhoneModelFactory;
 import com.qwe910205.plusdotcom.plan.domain.Plan;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +13,7 @@ class PhoneModelTest {
 
     @Test
     @DisplayName("같은 해시태그를 스마트폰 모델에 추가하면 아무 변화가 없다.")
-    void addDuplicateHashtag() {
+    void addHashtags() {
         PhoneModel phoneModel = createPhoneModel();
         List<String> hashtags = Arrays.asList("커버디스플레이", "플렉스캠", "대용량배터리");
         phoneModel.addHashTags(hashtags);
@@ -29,21 +27,32 @@ class PhoneModelTest {
 
     @Test
     @DisplayName("같은 편의기능을 스마트폰 모델에 추가하면 아무 변화가 없다.")
-    void addDuplicateConvenienceFunction() {
+    void addConvenienceFunctions() {
         PhoneModel phoneModel = createPhoneModel();
         List<String> convenienceFunctions = Arrays.asList("삼성페이", "지문인식");
         phoneModel.addConvenienceFunctions(convenienceFunctions);
         List<String> beforeAdding = phoneModel.getConvenienceFunctions();
 
-        phoneModel.addHashTags(convenienceFunctions);
+        phoneModel.addConvenienceFunctions(convenienceFunctions);
 
         List<String> afterAdding = phoneModel.getConvenienceFunctions();
         assertThat(afterAdding).containsExactlyElementsOf(beforeAdding);
     }
 
     @Test
+    @DisplayName("등록되지 않는 요금제에 대한 공시지원금을 조회하면 0원을 반환한다.")
+    void getPubliclySubsidy() {
+        PhoneModel phoneModel = createPhoneModel();
+        Plan plan = createPlan();
+
+        int publiclySubsidy = phoneModel.getPubliclySubsidy(plan);
+
+        assertThat(publiclySubsidy).isZero();
+    }
+
+    @Test
     @DisplayName("이미 추가된 요금제에 대한 공시지원금을 다른 값으로 추가하면 다른 값으로 바뀐다.")
-    void putPubliclySubsidy() {
+    void putPubliclySubsidy_1() {
         PhoneModel phoneModel = createPhoneModel();
         Plan plan = createPlan();
         int beforeAmount = 50000;
@@ -58,7 +67,7 @@ class PhoneModelTest {
 
     @Test
     @DisplayName("스마트폰 모델과 다른 통신 기술을 사용하는 요금제는 공시지원금을 추가하면 예외가 발생한다.")
-    void putPubliclySubsidyWithPlanThatHasDifferentNetworkTech() {
+    void putPubliclySubsidy_2() {
         PhoneModel phoneModel = createPhoneModel();
         Plan ltePlan = createLTEPlan();
 

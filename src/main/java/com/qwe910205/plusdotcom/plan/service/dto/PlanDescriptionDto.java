@@ -6,7 +6,7 @@ import lombok.Builder;
 @Builder
 public record PlanDescriptionDto(String shareData, String messagePolicy, String callingPolicy) {
 
-    public static PlanDescriptionDto create(PlanDescription planDescription) {
+    public static PlanDescriptionDto createFrom(PlanDescription planDescription) {
         return PlanDescriptionDto.builder()
                 .shareData(planDescription.getShareData())
                 .messagePolicy(planDescription.getMessagePolicy())
