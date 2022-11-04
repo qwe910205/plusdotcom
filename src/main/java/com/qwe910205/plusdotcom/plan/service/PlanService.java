@@ -30,13 +30,13 @@ public class PlanService {
         if (careAboutSpeedLimit)
             return PlanListDto.createFrom(
                     plans.stream()
-                            .filter(plan -> !plan.hasDataPolicyOtherThanMonthlyDataPolicy() &&
+                            .filter(plan -> !plan.canCalculateThingsRelatedToMonth() &&
                                     plan.monthlyAmountOfDataWithoutSpeedLimitAt(cost) >= minimumMonthlyDataUsage)
                             .toList()
             );
         return PlanListDto.createFrom(
                 plans.stream()
-                        .filter(plan -> !plan.hasDataPolicyOtherThanMonthlyDataPolicy() &&
+                        .filter(plan -> !plan.canCalculateThingsRelatedToMonth() &&
                                 plan.monthlyAmountOfDataAtCost(cost) >= minimumMonthlyDataUsage)
                         .toList()
         );

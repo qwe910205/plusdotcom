@@ -71,7 +71,7 @@ class PlanTest {
         plan.putLimitedDataPolicy(DataPolicyUnitPeriod.DAY, 5000);
         plan.putLimitedDataPolicy(DataPolicyUnitPeriod.MONTH, 5500);
 
-        boolean result = plan.hasDataPolicyOtherThanMonthlyDataPolicy();
+        boolean result = plan.canCalculateThingsRelatedToMonth();
 
         assertThat(result).isTrue();
     }
