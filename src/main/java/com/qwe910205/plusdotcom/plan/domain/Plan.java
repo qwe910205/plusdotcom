@@ -157,7 +157,7 @@ public class Plan {
 
     public long getChargeAboutMonthlyDataUsage(long dataUsage) {
         if (canCalculateThingsRelatedToMonth())
-            throw new RuntimeException(planId + " 요금제는 월간 데이터 정책 이외의 데이터 정책을 가지고 있어서 데이터 사용량에 따른 한 달간 요금을 계산할 수 없습니다.");
+            throw new RuntimeException(planId + " 요금제는 월간 데이터 정책 이외의 데이터 정책을 가지고 있거나 월간 데이터 정책을 가지고 있지 않아서 데이터 사용량에 따른 한 달간 요금을 계산할 수 없습니다.");
 
         if (getMaxMonthlyDataUsage() < dataUsage)
             throw new IllegalArgumentException("요금제의 월간 최대 데이터 사용량은 " + (int) getMaxMonthlyDataUsage() + "MB 입니다.");
@@ -175,7 +175,7 @@ public class Plan {
 
     public double getMaxMonthlyDataUsage() {
         if (canCalculateThingsRelatedToMonth())
-            throw new RuntimeException(planId + " 요금제는 월간 데이터 정책 이외의 데이터 정책을 가지고 있어서 한 달간 최대로 사용할 수 있는 데이터양을 계산할 수 없습니다.");
+            throw new RuntimeException(planId + " 요금제는 월간 데이터 정책 이외의 데이터 정책을 가지고 있거나 월간 데이터 정책을 가지고 있지 않아서 한 달간 최대로 사용할 수 있는 데이터양을 계산할 수 없습니다.");
 
         DataPolicy dataPolicy = dataPolicies.get(DataPolicyUnitPeriod.MONTH);
         return dataPolicy.getMaxDataUsage();
@@ -183,7 +183,7 @@ public class Plan {
 
     public double monthlyAmountOfDataWithoutSpeedLimitAt(int cost) {
         if (canCalculateThingsRelatedToMonth())
-            throw new RuntimeException(planId + " 요금제는 월간 데이터 정책 이외의 데이터 정책을 가지고 있어서 비용에 따른 한 달간 사용할 수 있는 무제한 속도의 데이터 양을 계산할 수 없습니다.");
+            throw new RuntimeException(planId + " 요금제는 월간 데이터 정책 이외의 데이터 정책을 가지고 있거나 월간 데이터 정책을 가지고 있지 않아서 비용에 따른 한 달간 사용할 수 있는 무제한 속도의 데이터 양을 계산할 수 없습니다.");
 
         if (cost < basicMonthlyCharge.getValue())
             return 0;
