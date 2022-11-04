@@ -18,12 +18,20 @@ public class PlanController {
         return planService.getPlans();
     }
 
+    @GetMapping(params = {"cost", "minimumMonthlyDataUsage"})
+    public PlanListDto getPlans(@RequestParam int cost, @RequestParam long minimumMonthlyDataUsage,
+                                @RequestParam(required = false, defaultValue = "false") boolean careAboutSpeedLimit) {
+        return planService.getPlans(cost, minimumMonthlyDataUsage, careAboutSpeedLimit);
+    }
+
     @GetMapping("/{planId}")
     public PlanDto getPlan(@PathVariable String planId) {
         return planService.getPlan(planId);
     }
 
-    /** 데이터 사용량 단위는 MB */
+    /**
+     * 데이터 사용량 단위는 MB
+     */
     @GetMapping("/{planId}/charge")
     public long getChargeAboutMonthlyDataUsage(@PathVariable String planId, @RequestParam long monthlyDataUsage) {
         if (monthlyDataUsage < 0)

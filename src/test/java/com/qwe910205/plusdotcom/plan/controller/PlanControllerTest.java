@@ -2,6 +2,7 @@ package com.qwe910205.plusdotcom.plan.controller;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -26,14 +27,40 @@ class PlanControllerTest {
         mockMvc = MockMvcBuilders.standaloneSetup(planController).build();
     }
 
-    @Test
-    @DisplayName("요금제 리스트를 요청할 수 있는 API를 호출할 수 있다.")
-    void getPlans() throws Exception {
-        MockHttpServletRequestBuilder builder = get("/plans");
+    @Nested
+    @DisplayName("getPlans 메소드는")
+    class Describe_getPlans {
+        @Nested
+        @DisplayName("쿼리 파라미터가 없다면")
+        class Context_without_query_params {
+            @Test
+            @DisplayName("잘 호출 된다.")
+            void it_returns_statusCode_OK() throws Exception {
+                MockHttpServletRequestBuilder builder = get("/plans");
 
-        mockMvc.perform(builder)
-                .andExpect(status().is2xxSuccessful())
-                .andDo(print());
+                mockMvc.perform(builder)
+                        .andExpect(status().is2xxSuccessful())
+                        .andDo(print());
+            }
+        }
+
+        @Nested
+        @DisplayName("쿼리 파라미터로 비용과 한 달간 최소 데이터 사용량, 속도 제한을 신경 쓰는지 여부가 주어지면")
+        class Context_with_query_params {
+            @Test
+            @DisplayName("잘 호출 된다.")
+            void it_returns_statusCode_OK() throws Exception {
+                MockHttpServletRequestBuilder builder = get("/plans")
+                        .param("cost", "50000")
+                        .param("minimumMonthlyDataUsage", "5000")
+                        .param("careAboutSpeedLimit", "true");
+
+                mockMvc.perform(builder)
+                        .andExpect(status().is2xxSuccessful())
+                        .andDo(print());
+            }
+        }
+
     }
 
     @Test

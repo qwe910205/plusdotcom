@@ -123,6 +123,15 @@ public class DataPolicy {
         return servingDataQuantity.getValue() + last.getDataBoundary();
     }
 
+    public double availableAdditionalUnlimitedAmountOfDataAt(int cost) {
+        double additionalUnlimitedAmountOfData = 0;
+        for (DataPolicyDetail detail : dataPolicyDetails) {
+//            additionalUnlimitedAmountOfData += detail.availableUnlimitedAmountOfDataAt(cost);
+//            cost -= detail.
+        }
+        return additionalUnlimitedAmountOfData;
+    }
+
     private record ObjectThatGivesCharge(DataPolicyDetail dataPolicyDetail, long checkData) {
 
         private long getCharge() {

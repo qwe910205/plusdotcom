@@ -1,14 +1,11 @@
 package com.qwe910205.plusdotcom.plan.domain;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -157,6 +154,54 @@ class PlanTest {
         double maxMonthlyDataUsage = plan.getMaxMonthlyDataUsage();
 
         assertThat(maxMonthlyDataUsage).isInfinite();
+    }
+
+    @Nested
+    @DisplayName("monthlyAmountOfDataWithoutSpeedLimitAt 메소드는")
+    class Describe_monthlyAmountOfDataWithoutSpeedLimitAt {
+        @Nested
+        @DisplayName("기본 월정액보다 적은 비용이 주어지면")
+        class Context_with_cost_less_than_basic_monthly_charge {
+            private int cost = 5000;
+            @Test
+            @DisplayName("0을 반환한다.")
+            void it_returns_zero() {
+                Plan plan = createPlan();
+                plan.putUnLimitedDataPolicy(DataPolicyUnitPeriod.MONTH);
+                double amountOfData = plan.monthlyAmountOfDataWithoutSpeedLimitAt(cost);
+
+                assertThat(amountOfData).isZero();
+            }
+        }
+        @Nested
+        @DisplayName("기본 월정액보다 크거가 같은 비용이 주어졌을 때 무제한 요금제라면")
+        class Context_with_cost_greater_than_or_equal_basic_monthly_charge_and_unlimited_plan {
+            private int cost = 105000;
+            @Test
+            @DisplayName("무한대를 반환한다.")
+            void it_returns_infinite() {
+                Plan plan = createPlan();
+                plan.putUnLimitedDataPolicy(DataPolicyUnitPeriod.MONTH);
+                double amountOfData = plan.monthlyAmountOfDataWithoutSpeedLimitAt(cost);
+
+                assertThat(amountOfData).isInfinite();
+            }
+        }
+        @Nested
+        @DisplayName("기본 월정액보다 크거가 같은 비용이 주어지면")
+        class Context_with_cost_greater_than_or_equal_basic_monthly_charge {
+            private int cost = 150000;
+            @Test
+            @DisplayName("한 달간 사용할 수 있는 무제한 속도의 데이터양을 반환한다.")
+            void it_returns_available_amount_of_unlimited_data() {
+                Plan plan = createPlan();
+                plan.putLimitedDataPolicy(DataPolicyUnitPeriod.MONTH, 2000);
+                plan.addDataPolicyDetail(DataPolicyUnitPeriod.MONTH, 0, null, 1, 1, null);
+                double amountOfData = plan.monthlyAmountOfDataWithoutSpeedLimitAt(cost);
+
+                assertThat(amountOfData).isEqualTo(6500);
+            }
+        }
     }
 
     private Plan createPlan() {

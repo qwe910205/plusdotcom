@@ -1,6 +1,7 @@
 package com.qwe910205.plusdotcom.plan.domain;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -175,6 +176,27 @@ class DataPolicyTest {
         double maxDataUsage = dataPolicy.getMaxDataUsage();
 
         assertThat(maxDataUsage).isInfinite();
+    }
+
+    @Nested
+    @DisplayName("availableAdditionalUnlimitedAmountOfDataAt 메소드는")
+    class Describe_availableAdditionalUnlimitedAmountOfDataAt {
+        @Nested
+        @DisplayName("비용이 주어지면")
+        class Context_with_cost {
+            private int cost = 5000;
+            @Test
+            @DisplayName("그에 맞는 추가적으로 사용할 수 있는 데이터양을 반환한다.")
+            void it_returns_available_additional_amount_of_data() {
+                DataPolicy dataPolicy = new DataPolicy(createPlan(), 2000);
+                dataPolicy.addDataPolicyDetailThatHasNotAdditionalCharge(0, null);
+                dataPolicy.addDataPolicyDetail(1000, 500L, 1, 50, null);
+
+                double amountOfData = dataPolicy.availableAdditionalUnlimitedAmountOfDataAt(cost);
+
+                assertThat(amountOfData).isEqualTo(1000);
+            }
+        }
     }
 
     private Plan createPlan() {
