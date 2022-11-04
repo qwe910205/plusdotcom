@@ -37,7 +37,7 @@ class DataPolicyDetailTest {
     void availableData_1() {
         DataPolicyDetail dataPolicyDetail = new DataPolicyDetail(new DataPolicy(createPlan(), 0), 0, 0L);
 
-        boolean available = dataPolicyDetail.availableData();
+        boolean available = dataPolicyDetail.canUseData();
 
         assertThat(available).isFalse();
     }
@@ -47,7 +47,7 @@ class DataPolicyDetailTest {
     void availableData_2() {
         DataPolicyDetail dataPolicyDetail = new DataPolicyDetail(new DataPolicy(createPlan(), 0), 0, null);
 
-        boolean available = dataPolicyDetail.availableData();
+        boolean available = dataPolicyDetail.canUseData();
 
         assertThat(available).isTrue();
     }

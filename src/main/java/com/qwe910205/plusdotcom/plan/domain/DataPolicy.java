@@ -118,7 +118,7 @@ public class DataPolicy {
 
     public double getMaxDataUsage() {
         DataPolicyDetail last = dataPolicyDetails.last();
-        if (last.availableData())
+        if (last.canUseData())
             return Double.POSITIVE_INFINITY;
         return servingDataQuantity.getValue() + last.getDataBoundary();
     }

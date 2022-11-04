@@ -70,7 +70,7 @@ public class DataPolicyDetail implements Comparable<DataPolicyDetail> {
         return Objects.nonNull(chargePolicy);
     }
 
-    public boolean availableData() {
+    public boolean canUseData() {
         return Objects.isNull(speedLimit) || speedLimit.getValue() != 0;
     }
 
