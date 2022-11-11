@@ -7,6 +7,7 @@
 * ```GET /phones```: 모든 스마트폰 모델 조회
 * ```GET /phones/{modelId}```: 스마트폰 모델 아이디로 스마트폰 모델 조회
 * ```GET /plans```: 모든 요금제 조회
+* ```GET /plans?payment=&minimumMonthlyDataUsage=careAboutSpeedLimit=```: 특정 비용을 지불할 때 한 달간 입력한 데이터 사용량만큼 사용할 수 있는 모든 요금제 조회(속도 제한을 신경쓰는지 선택 가능)
 * ```GET /plans/{planId}```: 요금제 아이디로 요금제 조회
 * ```GET /plans/{planId}/charge?monthlyDataUsage=```: 특정 요금제의 한 달간 데이터 사용량(MB 단위)에 대한 부과 비용 계산
 * ```GET /payments?modelId=planId=installmentPeriod=discountType=```: 스마트폰 모델, 요금제, 할부 기간, 할인 방식에 맞는 지불 금액 명세서 조회
