@@ -66,4 +66,9 @@ public class ChargePolicyAboutExcessDataUsage {
     public boolean hasMaximumCharge() {
         return maximumCharge != null;
     }
+
+    public double availableAmountOfDataWhenPayFor(long payment) {
+        if (cost == 0) return Double.POSITIVE_INFINITY;
+        return dataUnit * Math.floor(payment / cost);
+    }
 }

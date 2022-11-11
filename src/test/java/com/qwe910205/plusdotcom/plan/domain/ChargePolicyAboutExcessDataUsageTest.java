@@ -1,6 +1,7 @@
 package com.qwe910205.plusdotcom.plan.domain;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -113,5 +114,39 @@ class ChargePolicyAboutExcessDataUsageTest {
         long charge = chargePolicyAboutExcessDataUsage.getChargeAbout(dataUsage);
 
         assertThat(charge).isLessThanOrEqualTo(maximumCharge);
+    }
+
+    @Nested
+    @DisplayName("availableAmountOfDataWhenPayFor 메소드는")
+    class Describe_availableAmountOfDataWhenPayFor {
+        @Nested
+        @DisplayName("만약 부과 비용이 없을 때 얼마의 지불 금액이 주어지든")
+        class Context_with_payment_when_policy_does_not_have_cost {
+            private final long payment = 1;
+            @Test
+            @DisplayName("무한대를 반환한다.")
+            void it_returns_positive_infinite() {
+                ChargePolicyAboutExcessDataUsage chargePolicyAboutExcessDataUsage = new ChargePolicyAboutExcessDataUsage(1, 0);
+
+                double result = chargePolicyAboutExcessDataUsage.availableAmountOfDataWhenPayFor(payment);
+
+                assertThat(result).isInfinite();
+            }
+        }
+        @Nested
+        @DisplayName("지불 금액이 주어지면")
+        class Context_with_payment {
+            private final int payment = 10;
+            @Test
+            @DisplayName("그에 맞는 사용할 수 있는 데이터양을 반환한다.")
+            void it_returns_available_amount_of_data() {
+                ChargePolicyAboutExcessDataUsage chargePolicyAboutExcessDataUsage = new ChargePolicyAboutExcessDataUsage(2, 3);
+
+                double result = chargePolicyAboutExcessDataUsage.availableAmountOfDataWhenPayFor(payment);
+
+                assertThat(result).isEqualTo(6);
+            }
+        }
+
     }
 }

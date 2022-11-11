@@ -2,8 +2,10 @@ package com.qwe910205.plusdotcom.plan.service;
 
 import com.qwe910205.plusdotcom.plan.repository.PlanRepository;
 import com.qwe910205.plusdotcom.plan.service.dto.PlanDto;
+import com.qwe910205.plusdotcom.plan.service.dto.PlanDtoForList;
 import com.qwe910205.plusdotcom.plan.service.dto.PlanListDto;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,7 +17,8 @@ import static org.assertj.core.api.Assertions.*;
 @SpringBootTest
 class PlanServiceTest {
 
-    @Autowired PlanService planService;
+    @Autowired
+    PlanService planService;
     @Autowired
     PlanRepository planRepository;
 
@@ -26,6 +29,28 @@ class PlanServiceTest {
 
         assertThat(plans.plans().size()).isEqualTo(planRepository.count());
         plans.plans().forEach(System.out::println);
+    }
+
+    @Nested
+    @DisplayName("getPlans 메소드는")
+    class Describe_getPlans {
+
+        @Nested
+        @DisplayName("비용, 한 달간 최소 데이터 사용량, 속도 제한을 신경쓰는지 여부가 주어지면")
+        class Context_with_cases {
+            private final int payment = Integer.MAX_VALUE;
+            private final long minimumMonthlyDataUsage = Long.MAX_VALUE;
+            private final boolean careAboutSpeedLimit = true;
+
+            @Test
+            @DisplayName("그에 맞는 요금제들을 DTO로 만든 후 반환한다.")
+            void it_returns_PlanListDto() {
+                PlanListDto plans = planService.getPlans(payment, minimumMonthlyDataUsage, careAboutSpeedLimit);
+
+                assertThat(plans.plans().stream().map(PlanDtoForList::category))
+                        .allMatch(category -> category.equals("데이터 무제한"));
+            }
+        }
     }
 
     @Test

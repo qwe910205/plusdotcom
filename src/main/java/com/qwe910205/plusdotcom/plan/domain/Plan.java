@@ -14,7 +14,8 @@ import java.util.*;
 @Entity
 public class Plan {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long id;
 
     @AttributeOverride(name = "value", column = @Column(name = "PLAN_ID", unique = true, nullable = false, updatable = false))
@@ -155,8 +156,8 @@ public class Plan {
     }
 
     public long getChargeAboutMonthlyDataUsage(long dataUsage) {
-        if (hasDataPolicyOtherThanMonthlyDataPolicy())
-            throw new RuntimeException(planId + " 요금제는 월간 데이터 정책 이외의 데이터 정책을 가지고 있어서 데이터 사용량에 따른 한 달간 요금을 계산할 수 없습니다.");
+        if (!canCalculateThingsRelatedToMonth())
+            throw new RuntimeException(name + " 요금제는 월간 데이터 정책 이외의 데이터 정책을 가지고 있거나 월간 데이터 정책을 가지고 있지 않아서 데이터 사용량에 따른 한 달간 요금을 계산할 수 없습니다.");
 
         if (getMaxMonthlyDataUsage() < dataUsage)
             throw new IllegalArgumentException("요금제의 월간 최대 데이터 사용량은 " + (int) getMaxMonthlyDataUsage() + "MB 입니다.");
@@ -167,16 +168,37 @@ public class Plan {
         return basicMonthlyCharge.getValue() + additionalCharge;
     }
 
-    public boolean hasDataPolicyOtherThanMonthlyDataPolicy() {
-        Set<DataPolicyUnitPeriod> dataPolicyUnitPeriods = dataPolicies.keySet();
-        return !(dataPolicyUnitPeriods.contains(DataPolicyUnitPeriod.MONTH) && dataPolicyUnitPeriods.size() == 1);
+    public boolean canCalculateThingsRelatedToMonth() {
+        return dataPolicies.containsKey(DataPolicyUnitPeriod.MONTH) && dataPolicies.size() == 1;
     }
 
     public double getMaxMonthlyDataUsage() {
-        if (hasDataPolicyOtherThanMonthlyDataPolicy())
-            throw new RuntimeException(planId + " 요금제는 월간 데이터 정책 이외의 데이터 정책을 가지고 있어서 한 달간 최대로 사용할 수 있는 데이터양을 계산할 수 없습니다.");
+        if (!canCalculateThingsRelatedToMonth())
+            throw new RuntimeException(name + " 요금제는 월간 데이터 정책 이외의 데이터 정책을 가지고 있거나 월간 데이터 정책을 가지고 있지 않아서 한 달간 최대로 사용할 수 있는 데이터양을 계산할 수 없습니다.");
 
         DataPolicy dataPolicy = dataPolicies.get(DataPolicyUnitPeriod.MONTH);
         return dataPolicy.getMaxDataUsage();
+    }
+
+    public double availableMonthlyAmountOfDataWithoutSpeedLimitWhenPayFor(long payment) {
+        if (!canCalculateThingsRelatedToMonth())
+            throw new RuntimeException(name + " 요금제는 월간 데이터 정책 이외의 데이터 정책을 가지고 있거나 월간 데이터 정책을 가지고 있지 않아서 결제 금액에 따른 한 달간 속도 제한 없이 사용할 수 있는 데이터 양을 계산할 수 없습니다.");
+
+        if (payment < getBasicMonthlyCharge())
+            return 0;
+
+        DataPolicy dataPolicy = dataPolicies.get(DataPolicyUnitPeriod.MONTH);
+        return dataPolicy.availableAmountOfDataWithoutSpeedLimitWhenPayFor(payment - getBasicMonthlyCharge());
+    }
+
+    public double availableMonthlyAmountOfDataWhenPayFor(long payment) {
+        if (!canCalculateThingsRelatedToMonth())
+            throw new RuntimeException(name + " 요금제는 월간 데이터 정책 이외의 데이터 정책을 가지고 있거나 월간 데이터 정책을 가지고 있지 않아서 결제 금액에 따른 한 달간 사용할 수 있는 데이터 양을 계산할 수 없습니다.");
+
+        if (payment < getBasicMonthlyCharge())
+            return 0;
+
+        DataPolicy dataPolicy = dataPolicies.get(DataPolicyUnitPeriod.MONTH);
+        return dataPolicy.availableAmountOfDataWhenPayFor(payment - getBasicMonthlyCharge());
     }
 }

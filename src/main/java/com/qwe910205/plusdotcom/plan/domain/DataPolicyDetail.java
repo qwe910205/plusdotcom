@@ -48,6 +48,11 @@ public class DataPolicyDetail implements Comparable<DataPolicyDetail> {
             this.speedLimit = new DataSpeed(speedLimit);
     }
 
+    @Override
+    public int compareTo(DataPolicyDetail o) {
+        return this.dataBoundary.getValue() - o.dataBoundary.getValue();
+    }
+
     public void setChargePolicyAboutExcessDataUsage(ChargePolicyAboutExcessDataUsage chargePolicy) {
         this.chargePolicy = chargePolicy;
     }
@@ -70,12 +75,18 @@ public class DataPolicyDetail implements Comparable<DataPolicyDetail> {
         return Objects.nonNull(chargePolicy);
     }
 
-    public boolean availableData() {
+    public boolean canUseData() {
         return Objects.isNull(speedLimit) || speedLimit.getValue() != 0;
     }
 
-    @Override
-    public int compareTo(DataPolicyDetail o) {
-        return this.dataBoundary.getValue() - o.dataBoundary.getValue();
+    public double availableAmountOfDataWithoutSpeedLimitWhenPayFor(long payment) {
+        if (hasSpeedLimit()) return 0;
+        if (Objects.isNull(chargePolicy)) return Double.POSITIVE_INFINITY;
+        return chargePolicy.availableAmountOfDataWhenPayFor(payment);
+    }
+
+    public double availableAmountOfDataWhenPayFor(long payment) {
+        if (Objects.isNull(chargePolicy)) return Double.POSITIVE_INFINITY;
+        return chargePolicy.availableAmountOfDataWhenPayFor(payment);
     }
 }

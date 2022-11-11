@@ -1,14 +1,11 @@
 package com.qwe910205.plusdotcom.plan.domain;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -68,15 +65,15 @@ class PlanTest {
     }
 
     @Test
-    @DisplayName("요금제가 월간 데이터 정책 이외의 데이터 정책을 가지고 있을 때 아래 함수를 사용하면 참을 반환한다.")
-    void hasDataPolicyOtherThanMonthlyDataPolicy() {
+    @DisplayName("요금제가 월간 데이터 정책 이외의 데이터 정책을 가지고 있을 때 아래 함수를 사용하면 거짓을 반환한다.")
+    void canCalculateThingsRelatedToMonth() {
         Plan plan = createPlan();
         plan.putLimitedDataPolicy(DataPolicyUnitPeriod.DAY, 5000);
         plan.putLimitedDataPolicy(DataPolicyUnitPeriod.MONTH, 5500);
 
-        boolean result = plan.hasDataPolicyOtherThanMonthlyDataPolicy();
+        boolean result = plan.canCalculateThingsRelatedToMonth();
 
-        assertThat(result).isTrue();
+        assertThat(result).isFalse();
     }
 
     @Test
@@ -157,6 +154,74 @@ class PlanTest {
         double maxMonthlyDataUsage = plan.getMaxMonthlyDataUsage();
 
         assertThat(maxMonthlyDataUsage).isInfinite();
+    }
+
+    @Nested
+    @DisplayName("availableMonthlyAmountOfDataWithoutSpeedLimitWhenPayFor 메소드는")
+    class Describe_availableMonthlyAmountOfDataWithoutSpeedLimitAt {
+        @Nested
+        @DisplayName("기본 월정액보다 적은 지불 금액이 주어지면")
+        class Context_with_cost_less_than_basic_monthly_charge {
+            private final int payment = 5000;
+            @Test
+            @DisplayName("0을 반환한다.")
+            void it_returns_zero() {
+                Plan plan = createPlan();
+                plan.putUnLimitedDataPolicy(DataPolicyUnitPeriod.MONTH);
+                double amountOfData = plan.availableMonthlyAmountOfDataWithoutSpeedLimitWhenPayFor(payment);
+
+                assertThat(amountOfData).isZero();
+            }
+        }
+        @Nested
+        @DisplayName("기본 월정액보다 크거가 같은 지불 금액이 주어졌을 때 무제한 요금제라면")
+        class Context_with_cost_greater_than_or_equal_basic_monthly_charge_and_unlimited_plan {
+            private final int payment = 105000;
+            @Test
+            @DisplayName("무한대를 반환한다.")
+            void it_returns_infinite() {
+                Plan plan = createPlan();
+                plan.putUnLimitedDataPolicy(DataPolicyUnitPeriod.MONTH);
+                double amountOfData = plan.availableMonthlyAmountOfDataWithoutSpeedLimitWhenPayFor(payment);
+
+                assertThat(amountOfData).isInfinite();
+            }
+        }
+        @Nested
+        @DisplayName("기본 월정액보다 크거가 같은 지불 금액이 주어지면")
+        class Context_with_cost_greater_than_or_equal_basic_monthly_charge {
+            private final int payment = 150000;
+            @Test
+            @DisplayName("한 달간 사용할 수 있는 무제한 속도의 데이터양을 반환한다.")
+            void it_returns_available_amount_of_unlimited_data() {
+                Plan plan = createPlan();
+                plan.putLimitedDataPolicy(DataPolicyUnitPeriod.MONTH, 2000);
+                plan.addDataPolicyDetail(DataPolicyUnitPeriod.MONTH, 0, null, 1, 10, null);
+                double amountOfData = plan.availableMonthlyAmountOfDataWithoutSpeedLimitWhenPayFor(payment);
+
+                assertThat(amountOfData).isEqualTo(6500);
+            }
+        }
+    }
+
+    @Nested
+    @DisplayName("availableMonthlyAmountOfDataWhenPayFor 메소드는")
+    class Describe_availableMonthlyAmountOfDataWhenPayFor {
+        @Nested
+        @DisplayName("지불 금액이 주어지면")
+        class Context_given_payment {
+            private final long payment = 150000;
+            @Test
+            @DisplayName("한 달간 사용할 수 있는 데이터양을 반환한다.")
+            void it_returns_available_amount_of_data() {
+                Plan plan = createPlan();
+                plan.putLimitedDataPolicy(DataPolicyUnitPeriod.MONTH, 2000);
+                plan.addDataPolicyDetail(DataPolicyUnitPeriod.MONTH, 0, null, 1, 10, null);
+                double amountOfData = plan.availableMonthlyAmountOfDataWhenPayFor(payment);
+
+                assertThat(amountOfData).isEqualTo(6500);
+            }
+        }
     }
 
     private Plan createPlan() {
