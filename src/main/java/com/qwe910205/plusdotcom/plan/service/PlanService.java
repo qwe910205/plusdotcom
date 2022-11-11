@@ -24,20 +24,20 @@ public class PlanService {
         return PlanListDto.createFrom(plans);
     }
 
-    public PlanListDto getPlans(int cost, long minimumMonthlyDataUsage, boolean careAboutSpeedLimit) {
+    public PlanListDto getPlans(long payment, long minimumMonthlyDataUsage, boolean careAboutSpeedLimit) {
         List<Plan> plans = planRepository.findAll();
 
         if (careAboutSpeedLimit)
             return PlanListDto.createFrom(
                     plans.stream()
-                            .filter(plan -> !plan.canCalculateThingsRelatedToMonth() &&
-                                    plan.monthlyAmountOfDataWithoutSpeedLimitAt(cost) >= minimumMonthlyDataUsage)
+                            .filter(plan -> plan.canCalculateThingsRelatedToMonth() &&
+                                    plan.availableMonthlyAmountOfDataWithoutSpeedLimitWhenPayFor(payment) >= minimumMonthlyDataUsage)
                             .toList()
             );
         return PlanListDto.createFrom(
                 plans.stream()
-                        .filter(plan -> !plan.canCalculateThingsRelatedToMonth() &&
-                                plan.monthlyAmountOfDataAtCost(cost) >= minimumMonthlyDataUsage)
+                        .filter(plan -> plan.canCalculateThingsRelatedToMonth() &&
+                                plan.availableMonthlyAmountOfDataWhenPayFor(payment) >= minimumMonthlyDataUsage)
                         .toList()
         );
     }

@@ -25,4 +25,9 @@ public class PlanName {
         if (!StringUtils.hasText(value))
             throw new IllegalArgumentException("요금제명은 한 글자 이상이어야 합니다.");
     }
+
+    @Override
+    public String toString() {
+        return value;
+    }
 }

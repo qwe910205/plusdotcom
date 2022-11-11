@@ -123,13 +123,66 @@ public class DataPolicy {
         return servingDataQuantity.getValue() + last.getDataBoundary();
     }
 
-    public double availableAdditionalUnlimitedAmountOfDataAt(int cost) {
-        double additionalUnlimitedAmountOfData = 0;
-        for (DataPolicyDetail detail : dataPolicyDetails) {
-//            additionalUnlimitedAmountOfData += detail.availableUnlimitedAmountOfDataAt(cost);
-//            cost -= detail.
+    public double availableAmountOfDataWithoutSpeedLimitWhenPayFor(long payment) {
+        if (isUnlimited()) return Double.POSITIVE_INFINITY;
+
+        double amountOfData = servingDataQuantity.getValue();
+        List<Integer> boundaries = new ArrayList<>(List.of(0));
+        boundaries.addAll(getDataBoundariesExceptFirst());
+        List<Long> maxCharges = new ArrayList<>();
+        List<Long> maxDataUsages = new ArrayList<>();
+        List<DataPolicyDetail> dataPolicyDetailList = dataPolicyDetails.stream().toList();
+
+        for (int index = 1; index < boundaries.size(); index++) {
+            long dataUsage = boundaries.get(index) - boundaries.get(index - 1);
+            maxDataUsages.add(dataUsage);
+            DataPolicyDetail dataPolicyDetail = dataPolicyDetailList.get(index - 1);
+            long charge = dataPolicyDetail.getChargeAbout(dataUsage);
+            maxCharges.add(charge);
         }
-        return additionalUnlimitedAmountOfData;
+
+        for (int index = 0; index < maxCharges.size(); index++) {
+            long innerPayment = Math.min(maxCharges.get(index), payment);
+            long maxDataUsage = maxDataUsages.get(index);
+            amountOfData += Math.min(maxDataUsage, dataPolicyDetailList.get(index).availableAmountOfDataWithoutSpeedLimitWhenPayFor(innerPayment));
+            payment -= innerPayment;
+            if (payment <= 0) break;
+        }
+        if (payment > 0)
+            amountOfData += dataPolicyDetails.last().availableAmountOfDataWithoutSpeedLimitWhenPayFor(payment);
+
+        return amountOfData;
+    }
+
+    public double availableAmountOfDataWhenPayFor(long payment) {
+        if (isUnlimited()) return Double.POSITIVE_INFINITY;
+
+        double amountOfData = servingDataQuantity.getValue();
+        List<Integer> boundaries = new ArrayList<>(List.of(0));
+        boundaries.addAll(getDataBoundariesExceptFirst());
+        List<Long> maxCharges = new ArrayList<>();
+        List<Long> maxDataUsages = new ArrayList<>();
+        List<DataPolicyDetail> dataPolicyDetailList = dataPolicyDetails.stream().toList();
+
+        for (int index = 1; index < boundaries.size(); index++) {
+            long dataUsage = boundaries.get(index) - boundaries.get(index - 1);
+            maxDataUsages.add(dataUsage);
+            DataPolicyDetail dataPolicyDetail = dataPolicyDetailList.get(index - 1);
+            long charge = dataPolicyDetail.getChargeAbout(dataUsage);
+            maxCharges.add(charge);
+        }
+
+        for (int index = 0; index < maxCharges.size(); index++) {
+            long innerPayment = Math.min(maxCharges.get(index), payment);
+            long maxDataUsage = maxDataUsages.get(index);
+            amountOfData += Math.min(maxDataUsage, dataPolicyDetailList.get(index).availableAmountOfDataWhenPayFor(innerPayment));
+            payment -= innerPayment;
+            if (payment <= 0) break;
+        }
+        if (payment > 0)
+            amountOfData += dataPolicyDetails.last().availableAmountOfDataWhenPayFor(payment);
+
+        return amountOfData;
     }
 
     private record ObjectThatGivesCharge(DataPolicyDetail dataPolicyDetail, long checkData) {

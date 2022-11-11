@@ -18,10 +18,10 @@ public class PlanController {
         return planService.getPlans();
     }
 
-    @GetMapping(params = {"cost", "minimumMonthlyDataUsage"})
-    public PlanListDto getPlans(@RequestParam int cost, @RequestParam long minimumMonthlyDataUsage,
+    @GetMapping(params = {"payment", "minimumMonthlyDataUsage"})
+    public PlanListDto getPlans(@RequestParam long payment, @RequestParam long minimumMonthlyDataUsage,
                                 @RequestParam(required = false, defaultValue = "false") boolean careAboutSpeedLimit) {
-        return planService.getPlans(cost, minimumMonthlyDataUsage, careAboutSpeedLimit);
+        return planService.getPlans(payment, minimumMonthlyDataUsage, careAboutSpeedLimit);
     }
 
     @GetMapping("/{planId}")

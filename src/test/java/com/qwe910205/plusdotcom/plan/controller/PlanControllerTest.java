@@ -45,13 +45,13 @@ class PlanControllerTest {
         }
 
         @Nested
-        @DisplayName("쿼리 파라미터로 비용과 한 달간 최소 데이터 사용량, 속도 제한을 신경 쓰는지 여부가 주어지면")
+        @DisplayName("쿼리 파라미터로 지불 금액과 한 달간 최소 데이터 사용량, 속도 제한을 신경 쓰는지 여부가 주어지면")
         class Context_with_query_params {
             @Test
             @DisplayName("잘 호출 된다.")
             void it_returns_statusCode_OK() throws Exception {
                 MockHttpServletRequestBuilder builder = get("/plans")
-                        .param("cost", "50000")
+                        .param("payment", "50000")
                         .param("minimumMonthlyDataUsage", "5000")
                         .param("careAboutSpeedLimit", "true");
 

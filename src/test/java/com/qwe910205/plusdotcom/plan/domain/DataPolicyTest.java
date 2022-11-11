@@ -179,22 +179,37 @@ class DataPolicyTest {
     }
 
     @Nested
-    @DisplayName("availableAdditionalUnlimitedAmountOfDataAt 메소드는")
-    class Describe_availableAdditionalUnlimitedAmountOfDataAt {
+    @DisplayName("availableAmountOfDataWithoutSpeedLimitWhenPayFor 메소드는")
+    class Describe_availableAmountOfDataWithoutSpeedLimitWhenPayFor {
         @Nested
-        @DisplayName("비용이 주어지면")
-        class Context_with_cost {
-            private int cost = 5000;
+        @DisplayName("데이터 정책이 무제한 데이터 정책일 때 지불 금액이 주어지면")
+        class Context_given_payment_when_data_policy_is_unlimited {
+            private long payment = 1;
             @Test
-            @DisplayName("그에 맞는 추가적으로 사용할 수 있는 데이터양을 반환한다.")
-            void it_returns_available_additional_amount_of_data() {
+            @DisplayName("무한대를 반환한다.")
+            void it_returns_positive_infinite() {
+                DataPolicy dataPolicy = new DataPolicy(createPlan(), null);
+
+                double result = dataPolicy.availableAmountOfDataWithoutSpeedLimitWhenPayFor(payment);
+
+                assertThat(result).isInfinite();
+            }
+        }
+        @Nested
+        @DisplayName("지불 금액이 주어지면")
+        class Context_with_payment {
+            private long payment = 1500;
+            @Test
+            @DisplayName("사용할 수 있는 속도 제한 없는 데이터양을 반환한다.")
+            void it_returns_available_additional_amount_of_data_without_speed_limit() {
                 DataPolicy dataPolicy = new DataPolicy(createPlan(), 2000);
                 dataPolicy.addDataPolicyDetailThatHasNotAdditionalCharge(0, null);
-                dataPolicy.addDataPolicyDetail(1000, 500L, 1, 50, null);
+                dataPolicy.addDataPolicyDetail(1000, null, 500, 1000, null);
+                dataPolicy.addDataPolicyDetail(2000, 500L, 1, 50, null);
 
-                double amountOfData = dataPolicy.availableAdditionalUnlimitedAmountOfDataAt(cost);
+                double amountOfData = dataPolicy.availableAmountOfDataWithoutSpeedLimitWhenPayFor(payment);
 
-                assertThat(amountOfData).isEqualTo(1000);
+                assertThat(amountOfData).isEqualTo(3500);
             }
         }
     }

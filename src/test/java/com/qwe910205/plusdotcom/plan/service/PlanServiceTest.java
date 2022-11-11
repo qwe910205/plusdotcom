@@ -38,14 +38,14 @@ class PlanServiceTest {
         @Nested
         @DisplayName("비용, 한 달간 최소 데이터 사용량, 속도 제한을 신경쓰는지 여부가 주어지면")
         class Context_with_cases {
-            private final int cost = Integer.MAX_VALUE;
+            private final int payment = Integer.MAX_VALUE;
             private final long minimumMonthlyDataUsage = Long.MAX_VALUE;
             private final boolean careAboutSpeedLimit = true;
 
             @Test
             @DisplayName("그에 맞는 요금제들을 DTO로 만든 후 반환한다.")
             void it_returns_PlanListDto() {
-                PlanListDto plans = planService.getPlans(cost, minimumMonthlyDataUsage, careAboutSpeedLimit);
+                PlanListDto plans = planService.getPlans(payment, minimumMonthlyDataUsage, careAboutSpeedLimit);
 
                 assertThat(plans.plans().stream().map(PlanDtoForList::category))
                         .allMatch(category -> category.equals("데이터 무제한"));
