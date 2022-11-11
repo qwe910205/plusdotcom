@@ -121,37 +121,37 @@ class PlanTest {
 
     @Test
     @DisplayName("요금제가 월간 데이터 정책 이외의 데이터 정책을 가지고 있다면 한 달간 최대 데이터 사용량을 구할 수 없다.")
-    void getMaxMonthlyDataUsage_1() {
+    void availableMonthlyAmountOfData_1() {
         Plan plan = createPlan();
         plan.putLimitedDataPolicy(DataPolicyUnitPeriod.MONTH, 2000);
         plan.putLimitedDataPolicy(DataPolicyUnitPeriod.DAY, 2000);
 
-        assertThatThrownBy(plan::getMaxMonthlyDataUsage).isInstanceOf(RuntimeException.class);
+        assertThatThrownBy(plan::availableMonthlyAmountOfData).isInstanceOf(RuntimeException.class);
     }
 
     @Test
     @DisplayName("요금제의 한 달간 최대 데이터 사용량을 구할 수 있다.")
-    void getMaxMonthlyDataUsage_2() {
+    void availableMonthlyAmountOfData_2() {
         Plan plan = createPlan();
         plan.putLimitedDataPolicy(DataPolicyUnitPeriod.MONTH, 2000);
         plan.addDataPolicyDetailThatHasNotAdditionalCharge(DataPolicyUnitPeriod.MONTH, 0, null);
         plan.addDataPolicyDetailThatHasNotAdditionalCharge(DataPolicyUnitPeriod.MONTH, 2000, null);
         plan.addDataPolicyDetailThatHasNotAdditionalCharge(DataPolicyUnitPeriod.MONTH, 4000, 0L);
 
-        double maxMonthlyDataUsage = plan.getMaxMonthlyDataUsage();
+        double maxMonthlyDataUsage = plan.availableMonthlyAmountOfData();
 
         assertThat(maxMonthlyDataUsage).isEqualTo(6000);
     }
 
     @Test
     @DisplayName("요금제의 한 달간 최대 데이터 사용량이 무한대일 경우에도 구할 수 있다.")
-    void getMaxMonthlyDataUsage_3() {
+    void availableMonthlyAmountOfData_3() {
         Plan plan = createPlan();
         plan.putLimitedDataPolicy(DataPolicyUnitPeriod.MONTH, 2000);
         plan.addDataPolicyDetailThatHasNotAdditionalCharge(DataPolicyUnitPeriod.MONTH, 0, null);
         plan.addDataPolicyDetailThatHasNotAdditionalCharge(DataPolicyUnitPeriod.MONTH, 2000, null);
 
-        double maxMonthlyDataUsage = plan.getMaxMonthlyDataUsage();
+        double maxMonthlyDataUsage = plan.availableMonthlyAmountOfData();
 
         assertThat(maxMonthlyDataUsage).isInfinite();
     }
