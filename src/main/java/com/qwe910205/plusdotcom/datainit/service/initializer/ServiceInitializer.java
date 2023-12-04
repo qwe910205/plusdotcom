@@ -1,21 +1,17 @@
 package com.qwe910205.plusdotcom.datainit.service.initializer;
 
 import com.qwe910205.plusdotcom.plan.domain.MediaService;
-import com.qwe910205.plusdotcom.plan.domain.Plan;
 import com.qwe910205.plusdotcom.plan.domain.PremiumService;
 import com.qwe910205.plusdotcom.plan.repository.MediaServiceRepository;
-import com.qwe910205.plusdotcom.plan.repository.PlanRepository;
 import com.qwe910205.plusdotcom.plan.repository.PremiumServiceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-
-import javax.transaction.Transactional;
 
 @RequiredArgsConstructor
 @Component
 public class ServiceInitializer implements DataInitializer {
 
-    private int priority = 0;
+    private final int priority = 0;
     private final PremiumServiceRepository premiumServiceRepository;
     private final MediaServiceRepository mediaServiceRepository;
 

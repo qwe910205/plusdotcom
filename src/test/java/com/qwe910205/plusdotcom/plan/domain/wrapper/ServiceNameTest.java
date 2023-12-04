@@ -11,7 +11,7 @@ class ServiceNameTest {
     @ParameterizedTest
     @NullAndEmptySource
     @DisplayName("서비스명을 텍스트가 없는 문자열이나 널로 생성하면 예외가 발생한다.")
-    void createServiceNameWithoutText(String name) {
+    void newServiceName(String name) {
         assertThatThrownBy(() -> new ServiceName(name)).isInstanceOf(IllegalArgumentException.class);
     }
 

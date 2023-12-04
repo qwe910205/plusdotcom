@@ -15,11 +15,15 @@ import java.io.Serializable;
 @Embeddable
 public class PlanCategoryName implements Serializable {
 
-    private String name;
+    private String value;
 
-    public PlanCategoryName(String name) {
-        if (!StringUtils.hasText(name))
+    public PlanCategoryName(String value) {
+        checkIntegrity(value);
+        this.value = value;
+    }
+
+    private void checkIntegrity(String value) {
+        if (!StringUtils.hasText(value))
             throw new IllegalArgumentException("카테고리명은 한 글자 이상이어야 합니다.");
-        this.name = name;
     }
 }

@@ -5,13 +5,11 @@ import com.qwe910205.plusdotcom.datainit.service.dto.PlanDto;
 import com.qwe910205.plusdotcom.datainit.service.dto.PlanDtoList;
 import com.qwe910205.plusdotcom.plan.domain.DataPolicyUnitPeriod;
 import com.qwe910205.plusdotcom.plan.domain.Plan;
-import com.qwe910205.plusdotcom.plan.domain.factory.PlanFactory;
 import com.qwe910205.plusdotcom.plan.repository.PlanRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
-import javax.transaction.Transactional;
 import java.io.IOException;
 import java.util.*;
 
@@ -19,7 +17,7 @@ import java.util.*;
 @Component
 public class PlanInitializer implements DataInitializer {
 
-    private int priority = 1;
+    private final int priority = 1;
 
     private final PlanRepository planRepository;
     private final ObjectMapper objectMapper;
@@ -55,7 +53,7 @@ public class PlanInitializer implements DataInitializer {
             if (planDto.plan_category().equals("3G")) continue;
             if (planDto.name().contains("스마트기기") || planDto.name().contains("Wearable") || planDto.name().contains("태블릿"))
                 continue;
-            Plan plan = PlanFactory.create(planDto);
+            Plan plan = planDto.toPlan();
             planMap.put(plan.getName(), plan);
         }
         return planMap;
@@ -118,58 +116,63 @@ public class PlanInitializer implements DataInitializer {
     private void setDataPolicy(Map<String, Plan> planMap, String name, DataPolicyUnitPeriod unitPeriod, Integer dataQuantity) {
         Plan plan = planMap.get(name);
         if (Objects.nonNull(dataQuantity)) {
-            plan.addLimitDataPolicy(unitPeriod, dataQuantity);
+            plan.putLimitedDataPolicy(unitPeriod, dataQuantity);
             return;
         }
-        plan.addUnLimitDataPolicy(unitPeriod);
+        plan.putUnLimitedDataPolicy(unitPeriod);
     }
 
     public void initPolicyDetail(Map<String, Plan> planMap) {
-        addPolicyDetail(planMap, "추가 요금 걱정 없는 데이터 69", DataPolicyUnitPeriod.DAY, 0, 5000L, null, null, null);
-        addPolicyDetail(planMap, "추가 요금 걱정 없는 데이터 59", DataPolicyUnitPeriod.MONTH, 0, 1000L, null, null, null);
-        addPolicyDetail(planMap, "추가 요금 걱정 없는 데이터 49", DataPolicyUnitPeriod.MONTH, 0, 1000L, null, null, null);
-        addPolicyDetail(planMap, "추가 요금 걱정 없는 데이터 44", DataPolicyUnitPeriod.MONTH, 0, 400L, null, null, null);
-        addPolicyDetail(planMap, "LTE 데이터 33", DataPolicyUnitPeriod.MONTH, 0, null, 1000, 22.53, null);
-        addPolicyDetail(planMap, "LTE 데이터 33", DataPolicyUnitPeriod.MONTH, 3000, 200L, 1, 19800.0, 19800L);
-        addPolicyDetail(planMap, "LTE 표준 요금제", DataPolicyUnitPeriod.MONTH, 0, null, 1, 0.28, null);
-        addPolicyDetail(planMap, "추가 요금 걱정 없는 데이터 시니어 69", DataPolicyUnitPeriod.DAY, 0, 5000L, null, null, null);
-        addPolicyDetail(planMap, "추가 요금 걱정 없는 데이터 시니어 49", DataPolicyUnitPeriod.MONTH, 0, 1000L, null, null, null);
-        addPolicyDetail(planMap, "LTE 데이터 시니어 33", DataPolicyUnitPeriod.MONTH, 0, null, 1000, 22.53, null);
-        addPolicyDetail(planMap, "LTE 데이터 시니어 33", DataPolicyUnitPeriod.MONTH, 3000, 200L, 1, 19800.0, 19800L);
-        addPolicyDetail(planMap, "LTE 시니어 16.5 요금제(New 시니어 A)", DataPolicyUnitPeriod.MONTH, 0, 0L, null, null, null);
-        addPolicyDetail(planMap, "추가 요금 걱정 없는 데이터 청소년 69", DataPolicyUnitPeriod.DAY, 0, 5000L, null, null, null);
-        addPolicyDetail(planMap, "추가 요금 걱정 없는 데이터 청소년 59", DataPolicyUnitPeriod.MONTH, 0, 1000L, null, null, null);
-        addPolicyDetail(planMap, "추가 요금 걱정 없는 데이터 청소년 49", DataPolicyUnitPeriod.MONTH, 0, 1000L, null, null, null);
-        addPolicyDetail(planMap, "추가 요금 걱정 없는 데이터 청소년 33", DataPolicyUnitPeriod.MONTH, 0, 400L, null, null, null);
-        addPolicyDetail(planMap, "LTE 청소년 19", DataPolicyUnitPeriod.MONTH, 0, 0L, null, null, null);
-        addPolicyDetail(planMap, "LTE 키즈 39", DataPolicyUnitPeriod.MONTH, 0, 1000L, null, null, null);
-        addPolicyDetail(planMap, "LTE 키즈 29", DataPolicyUnitPeriod.MONTH, 0, 400L, null, null, null);
-        addPolicyDetail(planMap, "LTE 키즈 22", DataPolicyUnitPeriod.MONTH, 0, 400L, null, null, null);
-        addPolicyDetail(planMap, "LTE 복지 49", DataPolicyUnitPeriod.MONTH, 0, 1000L, null, null, null);
-        addPolicyDetail(planMap, "LTE 복지 33", DataPolicyUnitPeriod.MONTH, 0, 0L, null, null, null);
-        addPolicyDetail(planMap, "현역병사 데이터 55", DataPolicyUnitPeriod.DAY, 0, 5000L, null, null, null);
-        addPolicyDetail(planMap, "현역병사 데이터 33", DataPolicyUnitPeriod.DAY, 0, 3000L, null, null, null);
-        addPolicyDetail(planMap, "현역병사 데이터 33", DataPolicyUnitPeriod.MONTH, 0, 3000L, null, null, null);
-        addPolicyDetail(planMap, "LTE 다이렉트 45", DataPolicyUnitPeriod.DAY, 0, 5000L, null, null, null);
-        addPolicyDetail(planMap, "5G 복지 55", DataPolicyUnitPeriod.MONTH, 0, 1000L, null, null, null);
-        addPolicyDetail(planMap, "5G 복지 75", DataPolicyUnitPeriod.MONTH, 0, 5000L, null, null, null);
-        addPolicyDetail(planMap, "5G 스탠다드", DataPolicyUnitPeriod.MONTH, 0, 5000L, null, null, null);
-        addPolicyDetail(planMap, "5G 심플+", DataPolicyUnitPeriod.MONTH, 0, 1000L, null, null, null);
-        addPolicyDetail(planMap, "5G 라이트+", DataPolicyUnitPeriod.MONTH, 0, 1000L, null, null, null);
-        addPolicyDetail(planMap, "5G 슬림+", DataPolicyUnitPeriod.MONTH, 0, 400L, null, null, null);
-        addPolicyDetail(planMap, "5G 라이트 시니어", DataPolicyUnitPeriod.MONTH, 0, 1000L, null, null, null);
-        addPolicyDetail(planMap, "5G 라이트 청소년", DataPolicyUnitPeriod.MONTH, 0, 1000L, null, null, null);
-        addPolicyDetail(planMap, "5G 키즈 45", DataPolicyUnitPeriod.MONTH, 0, 1000L, null, null, null);
-        addPolicyDetail(planMap, "5G 키즈 39", DataPolicyUnitPeriod.MONTH, 0, 1000L, null, null, null);
-        addPolicyDetail(planMap, "5G 키즈 29", DataPolicyUnitPeriod.MONTH, 0, 400L, null, null, null);
-        addPolicyDetail(planMap, "5G 다이렉트 51", DataPolicyUnitPeriod.MONTH, 0, 5000L, null, null, null);
-        addPolicyDetail(planMap, "5G 다이렉트 44", DataPolicyUnitPeriod.MONTH, 0, 1000L, null, null, null);
-        addPolicyDetail(planMap, "5G 다이렉트 37.5", DataPolicyUnitPeriod.MONTH, 0, 1000L, null, null, null);
-        addPolicyDetail(planMap, "5G 다이렉트 34", DataPolicyUnitPeriod.MONTH, 0, 400L, null, null, null);
+        addDataPolicyDetail(planMap, "추가 요금 걱정 없는 데이터 69", DataPolicyUnitPeriod.DAY, 0, 5000L);
+        addDataPolicyDetail(planMap, "추가 요금 걱정 없는 데이터 59", DataPolicyUnitPeriod.MONTH, 0, 1000L);
+        addDataPolicyDetail(planMap, "추가 요금 걱정 없는 데이터 49", DataPolicyUnitPeriod.MONTH, 0, 1000L);
+        addDataPolicyDetail(planMap, "추가 요금 걱정 없는 데이터 44", DataPolicyUnitPeriod.MONTH, 0, 400L);
+        addDataPolicyDetail(planMap, "LTE 데이터 33", DataPolicyUnitPeriod.MONTH, 0, null, 1000, 22.53, null);
+        addDataPolicyDetail(planMap, "LTE 데이터 33", DataPolicyUnitPeriod.MONTH, 3000, 200L, 1, 19800.0, 19800);
+        addDataPolicyDetail(planMap, "LTE 표준 요금제", DataPolicyUnitPeriod.MONTH, 0, null, 1, 0.28, null);
+        addDataPolicyDetail(planMap, "추가 요금 걱정 없는 데이터 시니어 69", DataPolicyUnitPeriod.DAY, 0, 5000L);
+        addDataPolicyDetail(planMap, "추가 요금 걱정 없는 데이터 시니어 49", DataPolicyUnitPeriod.MONTH, 0, 1000L);
+        addDataPolicyDetail(planMap, "LTE 데이터 시니어 33", DataPolicyUnitPeriod.MONTH, 0, null, 1000, 22.53, null);
+        addDataPolicyDetail(planMap, "LTE 데이터 시니어 33", DataPolicyUnitPeriod.MONTH, 3000, 200L, 1, 19800.0, 19800);
+        addDataPolicyDetail(planMap, "LTE 시니어 16.5 요금제(New 시니어 A)", DataPolicyUnitPeriod.MONTH, 0, 0L);
+        addDataPolicyDetail(planMap, "추가 요금 걱정 없는 데이터 청소년 69", DataPolicyUnitPeriod.DAY, 0, 5000L);
+        addDataPolicyDetail(planMap, "추가 요금 걱정 없는 데이터 청소년 59", DataPolicyUnitPeriod.MONTH, 0, 1000L);
+        addDataPolicyDetail(planMap, "추가 요금 걱정 없는 데이터 청소년 49", DataPolicyUnitPeriod.MONTH, 0, 1000L);
+        addDataPolicyDetail(planMap, "추가 요금 걱정 없는 데이터 청소년 33", DataPolicyUnitPeriod.MONTH, 0, 400L);
+        addDataPolicyDetail(planMap, "LTE 청소년 19", DataPolicyUnitPeriod.MONTH, 0, 0L);
+        addDataPolicyDetail(planMap, "LTE 키즈 39", DataPolicyUnitPeriod.MONTH, 0, 1000L);
+        addDataPolicyDetail(planMap, "LTE 키즈 29", DataPolicyUnitPeriod.MONTH, 0, 400L);
+        addDataPolicyDetail(planMap, "LTE 키즈 22", DataPolicyUnitPeriod.MONTH, 0, 400L);
+        addDataPolicyDetail(planMap, "LTE 복지 49", DataPolicyUnitPeriod.MONTH, 0, 1000L);
+        addDataPolicyDetail(planMap, "LTE 복지 33", DataPolicyUnitPeriod.MONTH, 0, 0L);
+        addDataPolicyDetail(planMap, "현역병사 데이터 55", DataPolicyUnitPeriod.DAY, 0, 5000L);
+        addDataPolicyDetail(planMap, "현역병사 데이터 33", DataPolicyUnitPeriod.DAY, 0, 3000L);
+        addDataPolicyDetail(planMap, "현역병사 데이터 33", DataPolicyUnitPeriod.MONTH, 0, 3000L);
+        addDataPolicyDetail(planMap, "LTE 다이렉트 45", DataPolicyUnitPeriod.DAY, 0, 5000L);
+        addDataPolicyDetail(planMap, "5G 복지 55", DataPolicyUnitPeriod.MONTH, 0, 1000L);
+        addDataPolicyDetail(planMap, "5G 복지 75", DataPolicyUnitPeriod.MONTH, 0, 5000L);
+        addDataPolicyDetail(planMap, "5G 스탠다드", DataPolicyUnitPeriod.MONTH, 0, 5000L);
+        addDataPolicyDetail(planMap, "5G 심플+", DataPolicyUnitPeriod.MONTH, 0, 1000L);
+        addDataPolicyDetail(planMap, "5G 라이트+", DataPolicyUnitPeriod.MONTH, 0, 1000L);
+        addDataPolicyDetail(planMap, "5G 슬림+", DataPolicyUnitPeriod.MONTH, 0, 400L);
+        addDataPolicyDetail(planMap, "5G 라이트 시니어", DataPolicyUnitPeriod.MONTH, 0, 1000L);
+        addDataPolicyDetail(planMap, "5G 라이트 청소년", DataPolicyUnitPeriod.MONTH, 0, 1000L);
+        addDataPolicyDetail(planMap, "5G 키즈 45", DataPolicyUnitPeriod.MONTH, 0, 1000L);
+        addDataPolicyDetail(planMap, "5G 키즈 39", DataPolicyUnitPeriod.MONTH, 0, 1000L);
+        addDataPolicyDetail(planMap, "5G 키즈 29", DataPolicyUnitPeriod.MONTH, 0, 400L);
+        addDataPolicyDetail(planMap, "5G 다이렉트 51", DataPolicyUnitPeriod.MONTH, 0, 5000L);
+        addDataPolicyDetail(planMap, "5G 다이렉트 44", DataPolicyUnitPeriod.MONTH, 0, 1000L);
+        addDataPolicyDetail(planMap, "5G 다이렉트 37.5", DataPolicyUnitPeriod.MONTH, 0, 1000L);
+        addDataPolicyDetail(planMap, "5G 다이렉트 34", DataPolicyUnitPeriod.MONTH, 0, 400L);
     }
 
-    private void addPolicyDetail(Map<String, Plan> planMap, String name, DataPolicyUnitPeriod unitPeriod, int dataBoundary, Long speedLimit, Integer dataUnit, Double cost, Long maxCost) {
+    private void addDataPolicyDetail(Map<String, Plan> planMap, String name, DataPolicyUnitPeriod unitPeriod, int dataBoundary, Long speedLimit) {
         Plan plan = planMap.get(name);
-        plan.addPolicyDetail(unitPeriod, dataBoundary, speedLimit, dataUnit, cost, maxCost);
+        plan.addDataPolicyDetailThatHasNotAdditionalCharge(unitPeriod, dataBoundary, speedLimit);
+    }
+
+    private void addDataPolicyDetail(Map<String, Plan> planMap, String name, DataPolicyUnitPeriod unitPeriod, int dataBoundary, Long speedLimit, Integer dataUnit, Double cost, Integer maximumCharge) {
+        Plan plan = planMap.get(name);
+        plan.addDataPolicyDetail(unitPeriod, dataBoundary, speedLimit, dataUnit, cost, maximumCharge);
     }
 }

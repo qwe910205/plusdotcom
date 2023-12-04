@@ -15,11 +15,15 @@ import java.io.Serializable;
 @Embeddable
 public class ServiceName implements Serializable {
 
-    private String name;
+    private String value;
 
-    public ServiceName(String name) {
-        if (!StringUtils.hasText(name))
+    public ServiceName(String value) {
+        checkIntegrity(value);
+        this.value = value;
+    }
+
+    private void checkIntegrity(String value) {
+        if (!StringUtils.hasText(value))
             throw new IllegalArgumentException("서비스명은 한 글자 이상이어야 합니다.");
-        this.name = name;
     }
 }

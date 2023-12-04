@@ -14,11 +14,15 @@ import javax.persistence.Embeddable;
 public class DataSpeed {
 
     /** 단위는 Kbps */
-    private Long speed;
+    private long value;
 
-    public DataSpeed(Long speed) {
-        if (speed < 0)
+    public DataSpeed(long value) {
+        checkIntegrity(value);
+        this.value = value;
+    }
+
+    private void checkIntegrity(long value) {
+        if (value < 0)
             throw new IllegalArgumentException("데이터 속도는 음수일 수 없습니다.");
-        this.speed = speed;
     }
 }

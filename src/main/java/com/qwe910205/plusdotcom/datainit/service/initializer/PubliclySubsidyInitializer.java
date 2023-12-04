@@ -12,14 +12,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
-import javax.transaction.Transactional;
 import java.io.IOException;
 import java.util.*;
 
 @RequiredArgsConstructor
 @Component
 public class PubliclySubsidyInitializer implements DataInitializer {
-    private int priority = 2;
+    private final int priority = 2;
     private final ObjectMapper objectMapper;
     private final PhoneRepository phoneRepository;
     private final PlanRepository planRepository;

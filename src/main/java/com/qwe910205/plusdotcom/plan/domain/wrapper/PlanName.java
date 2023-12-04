@@ -14,11 +14,20 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class PlanName {
 
-    private String name;
+    private String value;
 
-    public PlanName(String name) {
-        if (!StringUtils.hasText(name))
+    public PlanName(String value) {
+        checkIntegrity(value);
+        this.value = value;
+    }
+
+    private void checkIntegrity(String value) {
+        if (!StringUtils.hasText(value))
             throw new IllegalArgumentException("요금제명은 한 글자 이상이어야 합니다.");
-        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return value;
     }
 }

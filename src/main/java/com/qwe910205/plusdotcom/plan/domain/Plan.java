@@ -1,11 +1,10 @@
 package com.qwe910205.plusdotcom.plan.domain;
 
 import com.qwe910205.plusdotcom.phone.domain.NetworkTech;
-import com.qwe910205.plusdotcom.plan.domain.wrapper.MonthlyPayment;
+import com.qwe910205.plusdotcom.phone.domain.wrapper.Money;
 import com.qwe910205.plusdotcom.plan.domain.wrapper.PlanId;
 import com.qwe910205.plusdotcom.plan.domain.wrapper.PlanName;
 import lombok.*;
-import org.springframework.validation.ObjectError;
 
 import javax.persistence.*;
 import java.util.*;
@@ -15,14 +14,15 @@ import java.util.*;
 @Entity
 public class Plan {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long id;
 
-    @AttributeOverride(name = "id", column = @Column(name = "PLAN_ID", unique = true, nullable = false, updatable = false))
+    @AttributeOverride(name = "value", column = @Column(name = "PLAN_ID", unique = true, nullable = false, updatable = false))
     @Embedded
     private PlanId planId;
 
-    @AttributeOverride(name = "name", column = @Column(nullable = false, unique = true))
+    @AttributeOverride(name = "value", column = @Column(name = "NAME", nullable = false, unique = true))
     @Embedded
     private PlanName name;
 
@@ -30,9 +30,9 @@ public class Plan {
     @JoinColumn(nullable = false)
     private NetworkTech networkTech;
 
-    @AttributeOverride(name = "monthlyPayment", column = @Column(nullable = false))
+    @AttributeOverride(name = "value", column = @Column(name = "BASIC_MONTHLY_CHARGE", nullable = false))
     @Embedded
-    private MonthlyPayment monthlyPayment;
+    private Money basicMonthlyCharge;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(nullable = false)
@@ -40,96 +40,165 @@ public class Plan {
 
     @MapKeyEnumerated(EnumType.STRING)
     @OneToMany(mappedBy = "plan", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Map<DataPolicyUnitPeriod, DataPolicy> dataPolicies = new HashMap<>();
+    private final Map<DataPolicyUnitPeriod, DataPolicy> dataPolicies = new HashMap<>();
 
     @Embedded
     private PlanDescription description;
 
     @ManyToMany
-    private List<PremiumService> premiumServices = new ArrayList<>();
+    private final Set<PremiumService> premiumServices = new HashSet<>();
 
     @ManyToMany
-    private List<MediaService> mediaServices = new ArrayList<>();
+    private final Set<MediaService> mediaServices = new HashSet<>();
 
     @Builder
-    public Plan(String id, String name, String networkTech, int monthlyPayment, String category) {
-        Objects.requireNonNull(id, "요금제의 아이디는 필수입니다.");
+    private Plan(String planId, String name, String networkTech, int basicMonthlyCharge, String category) {
+        Objects.requireNonNull(planId, "요금제의 아이디는 필수입니다.");
         Objects.requireNonNull(name, "요금제의 이름은 필수입니다.");
         Objects.requireNonNull(networkTech, "요금제의 통신 기술은 필수입니다.");
         Objects.requireNonNull(category, "요금제의 카테고리는 필수입니다");
-        this.planId = new PlanId(id);
+        this.planId = new PlanId(planId);
         this.name = new PlanName(name);
         this.networkTech = new NetworkTech(networkTech);
-        this.monthlyPayment = new MonthlyPayment(monthlyPayment);
+        this.basicMonthlyCharge = new Money(basicMonthlyCharge);
         this.category = new PlanCategory(category);
     }
 
-    public Long getId() {
-        return this.id;
-    }
-
     public String getPlanId() {
-        return this.planId.getId();
+        return planId.getValue();
     }
 
     public String getName() {
-        if (Objects.isNull(this.name))
+        if (Objects.isNull(name))
             return null;
-        return this.name.getName();
+        return name.getValue();
+    }
+
+    public String getNetworkTech() {
+        if (Objects.isNull(networkTech))
+            return null;
+        return networkTech.getName();
+    }
+
+    public Integer getBasicMonthlyCharge() {
+        if (Objects.isNull(basicMonthlyCharge))
+            return null;
+        return basicMonthlyCharge.getValue();
     }
 
     public String getCategory() {
-        if (Objects.isNull(this.category))
+        if (Objects.isNull(category))
             return null;
-        return this.category.getName();
+        return category.getName();
     }
 
     public void setDescription(PlanDescription planDescription) {
         this.description = planDescription;
     }
 
+    public PlanDescription getDescription() {
+        return description;
+    }
+
     public DataPolicy getDataPolicy(DataPolicyUnitPeriod unitPeriod) {
-        if (!this.dataPolicies.containsKey(unitPeriod))
+        if (!dataPolicies.containsKey(unitPeriod))
             throw new NoSuchElementException(unitPeriod + " 단위의 데이터 정책은 등록되지 않았습니다.");
-        return this.dataPolicies.get(unitPeriod);
+        return dataPolicies.get(unitPeriod);
     }
 
-    public List<DataPolicy> getDataPolicies() {
-        return this.dataPolicies.values().stream().toList();
-    }
-
-    public void addUnLimitDataPolicy(DataPolicyUnitPeriod unitPeriod) {
+    public void putUnLimitedDataPolicy(DataPolicyUnitPeriod unitPeriod) {
         DataPolicy dataPolicy = new DataPolicy(this, null);
-        this.dataPolicies.put(unitPeriod, dataPolicy);
+        putDataPolicy(unitPeriod, dataPolicy);
     }
 
-    public void addLimitDataPolicy(DataPolicyUnitPeriod unitPeriod, int dataQuantity) {
+    public void putLimitedDataPolicy(DataPolicyUnitPeriod unitPeriod, int dataQuantity) {
         DataPolicy dataPolicy = new DataPolicy(this, dataQuantity);
-        this.dataPolicies.put(unitPeriod, dataPolicy);
+        putDataPolicy(unitPeriod, dataPolicy);
     }
 
-    public void addPolicyDetail(DataPolicyUnitPeriod unitPeriod, int dataBoundary, Long speedLimit, Integer dataUnit, Double cost, Long maxCost) {
+    private void putDataPolicy(DataPolicyUnitPeriod unitPeriod, DataPolicy dataPolicy) {
+        if (hasUnlimitedDataPolicy())
+            throw new IllegalArgumentException("무제한 데이터 정책을 가진 요금제는 다른 데이터 정책을 추가할 수 없습니다.");
+
+        dataPolicies.put(unitPeriod, dataPolicy);
+    }
+
+    private boolean hasUnlimitedDataPolicy() {
+        return dataPolicies.values().stream().anyMatch(DataPolicy::isUnlimited);
+    }
+
+    public void addDataPolicyDetailThatHasNotAdditionalCharge(DataPolicyUnitPeriod unitPeriod, int dataBoundary, Long speedLimit) {
         DataPolicy dataPolicy = dataPolicies.get(unitPeriod);
-        dataPolicy.addPolicyDetail(dataBoundary, speedLimit, dataUnit, cost, maxCost);
+        dataPolicy.addDataPolicyDetailThatHasNotAdditionalCharge(dataBoundary, speedLimit);
+    }
+
+    public void addDataPolicyDetail(DataPolicyUnitPeriod unitPeriod, int dataBoundary, Long speedLimit, int dataUnit, double cost, Integer maximumCharge) {
+        DataPolicy dataPolicy = dataPolicies.get(unitPeriod);
+        dataPolicy.addDataPolicyDetail(dataBoundary, speedLimit, dataUnit, cost, maximumCharge);
     }
 
     public List<PremiumService> getPremiumServices() {
-        return this.premiumServices;
+        return premiumServices.stream().toList();
     }
 
     public void addPremiumService(PremiumService premiumService) {
-        if (!premiumServices.contains(premiumService))
-            premiumServices.add(premiumService);
+        premiumServices.remove(premiumService);
+        premiumServices.add(premiumService);
     }
 
     public List<MediaService> getMediaServices() {
-        return this.mediaServices;
+        return mediaServices.stream().toList();
     }
 
     public void addMediaService(MediaService mediaService) {
-        if (!mediaServices.contains(mediaService))
-            mediaServices.add(mediaService);
+        mediaServices.remove(mediaService);
+        mediaServices.add(mediaService);
     }
 
+    public long getChargeAboutMonthlyDataUsage(long dataUsage) {
+        if (!canCalculateThingsRelatedToMonth())
+            throw new RuntimeException(name + " 요금제는 월간 데이터 정책 이외의 데이터 정책을 가지고 있거나 월간 데이터 정책을 가지고 있지 않아서 데이터 사용량에 따른 한 달간 요금을 계산할 수 없습니다.");
 
+        if (availableAmountOfDataPerMonth() < dataUsage)
+            throw new IllegalArgumentException("요금제의 월간 최대 데이터 사용량은 " + (int) availableAmountOfDataPerMonth() + "MB 입니다.");
+
+        DataPolicy dataPolicy = dataPolicies.get(DataPolicyUnitPeriod.MONTH);
+
+        long additionalCharge = dataPolicy.getAdditionalChargeAbout(dataUsage);
+        return basicMonthlyCharge.getValue() + additionalCharge;
+    }
+
+    public boolean canCalculateThingsRelatedToMonth() {
+        return dataPolicies.containsKey(DataPolicyUnitPeriod.MONTH) && dataPolicies.size() == 1;
+    }
+
+    public double availableAmountOfDataPerMonth() {
+        if (!canCalculateThingsRelatedToMonth())
+            throw new RuntimeException(name + " 요금제는 월간 데이터 정책 이외의 데이터 정책을 가지고 있거나 월간 데이터 정책을 가지고 있지 않아서 한 달간 최대로 사용할 수 있는 데이터양을 계산할 수 없습니다.");
+
+        DataPolicy dataPolicy = dataPolicies.get(DataPolicyUnitPeriod.MONTH);
+        return dataPolicy.getMaxDataUsage();
+    }
+
+    public double availableMonthlyAmountOfDataWithoutSpeedLimitWhenPayFor(long payment) {
+        if (!canCalculateThingsRelatedToMonth())
+            throw new RuntimeException(name + " 요금제는 월간 데이터 정책 이외의 데이터 정책을 가지고 있거나 월간 데이터 정책을 가지고 있지 않아서 결제 금액에 따른 한 달간 속도 제한 없이 사용할 수 있는 데이터 양을 계산할 수 없습니다.");
+
+        if (payment < getBasicMonthlyCharge())
+            return 0;
+
+        DataPolicy dataPolicy = dataPolicies.get(DataPolicyUnitPeriod.MONTH);
+        return dataPolicy.availableAmountOfDataWithoutSpeedLimitWhenPayFor(payment - getBasicMonthlyCharge());
+    }
+
+    public double availableMonthlyAmountOfDataWhenPayFor(long payment) {
+        if (!canCalculateThingsRelatedToMonth())
+            throw new RuntimeException(name + " 요금제는 월간 데이터 정책 이외의 데이터 정책을 가지고 있거나 월간 데이터 정책을 가지고 있지 않아서 결제 금액에 따른 한 달간 사용할 수 있는 데이터 양을 계산할 수 없습니다.");
+
+        if (payment < getBasicMonthlyCharge())
+            return 0;
+
+        DataPolicy dataPolicy = dataPolicies.get(DataPolicyUnitPeriod.MONTH);
+        return dataPolicy.availableAmountOfDataWhenPayFor(payment - getBasicMonthlyCharge());
+    }
 }

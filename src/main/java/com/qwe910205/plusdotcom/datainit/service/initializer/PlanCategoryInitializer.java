@@ -5,13 +5,11 @@ import com.qwe910205.plusdotcom.plan.repository.PlanCategoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import javax.transaction.Transactional;
-
 @RequiredArgsConstructor
 @Component
 public class PlanCategoryInitializer implements DataInitializer {
 
-    private int priority = 0;
+    private final int priority = 0;
 
     private final PlanCategoryRepository planCategoryRepository;
 

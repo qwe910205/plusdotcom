@@ -11,13 +11,11 @@ import com.qwe910205.plusdotcom.plan.repository.PremiumServiceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import javax.transaction.Transactional;
-
 @RequiredArgsConstructor
 @Component
 public class PlanServiceInitializer implements DataInitializer {
 
-    private int priority = 2;
+    private final int priority = 2;
     private final PlanRepository planRepository;
     private final PremiumServiceRepository premiumServiceRepository;
     private final MediaServiceRepository mediaServiceRepository;

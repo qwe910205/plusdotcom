@@ -1,14 +1,9 @@
 package com.qwe910205.plusdotcom.datainit.service.initializer;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.qwe910205.plusdotcom.datainit.service.dto.ColorDto;
-import com.qwe910205.plusdotcom.datainit.service.dto.PhoneModelDto;
 import com.qwe910205.plusdotcom.datainit.service.dto.PhoneModelDtoList;
-import com.qwe910205.plusdotcom.phone.domain.FoldablePhoneModel;
 import com.qwe910205.plusdotcom.phone.domain.PhoneDescription;
 import com.qwe910205.plusdotcom.phone.domain.PhoneModel;
-import com.qwe910205.plusdotcom.phone.domain.factory.PhoneModelFactory;
-import com.qwe910205.plusdotcom.phone.domain.wrapper.*;
 import com.qwe910205.plusdotcom.phone.repository.PhoneRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.ClassPathResource;
@@ -22,7 +17,7 @@ import java.util.*;
 @Component
 public class PhoneInitializer implements DataInitializer {
 
-    private int priority = 1;
+    private final int priority = 1;
 
     private final PhoneRepository phoneRepository;
     private final ObjectMapper objectMapper;
@@ -33,7 +28,6 @@ public class PhoneInitializer implements DataInitializer {
         phoneModels.putAll(convertJsonToPhoneModels("data/4g-products.json", "LTE"));
         deletePhonesForInit(phoneModels);
         initSize(phoneModels);
-        initWeight(phoneModels);
         initInfo(phoneModels);
         initReleaseDate(phoneModels);
         initConvenienceFunction(phoneModels);
@@ -59,19 +53,9 @@ public class PhoneInitializer implements DataInitializer {
             throw new RuntimeException(e);
         }
         Map<String, PhoneModel> phoneModels = new HashMap<>();
-        for (PhoneModelDto product : phoneModelDtoList.products()) {
-            PhoneModel phoneModel = PhoneModelFactory.create(product.model_id(), product.name(), product.manufacturer(), networkTechName, product.price());
-            phoneModel.addHashTags(Arrays.stream(product.hash_tag().split(" ")).map(HashTag::new).toList());
-            PhoneDescription description = PhoneDescription.builder().cpuDescription(product.CPU()).displayDescription(product.display_description())
-                    .cameraDescription(product.camera()).batteryDescription(product.battery_capacity()).waterproofDescription(product.waterproof())
-                    .build();
-            phoneModel.setDescription(description);
-            phoneModel.addDescriptionImages(product.detail_image().stream().map(ImageSource::new).toList());
-            for (ColorDto colorDto : product.color()) {
-                phoneModel.addProduct(colorDto.color_name(), colorDto.color_code(), colorDto.color_image(), 100);
-            }
-            phoneModels.put(phoneModel.getName(), phoneModel);
-        }
+        phoneModelDtoList.products().stream()
+                .map(product -> product.toPhoneModel(networkTechName))
+                .forEach(phoneModel -> phoneModels.put(phoneModel.getName(), phoneModel));
         return phoneModels;
     }
 
@@ -89,107 +73,54 @@ public class PhoneInitializer implements DataInitializer {
     }
 
     public void initSize(Map<String, PhoneModel> phoneModelMap) {
-        setSize(phoneModelMap, "갤럭시 Z Flip 4", 155.1, 130.1, 6.3, 155.1, 67.1, 14.2, "접었을때 : 155.1 x 67.1 x 14.2 / 15.8mm , 펼쳤을때 : 155.1 x 130.1 x 6.3mm");
-        setSize(phoneModelMap, "갤럭시 Z Flip 4 메종키츠네 에디션", 165.2, 71.9, 6.9, 84.8,  71.9, 14.2, "접었을 때 : 84.8 X 71.9 X 15.9/17.1 mm , 펼쳤을 때 : 165.2 X 71.9 X 6.9 mm");
-        setSize(phoneModelMap, "갤럭시 Z Flip 4 512GB", 165.2, 71.9, 6.9, 84.8, 71.9, 15.9, "접었을 때 : 84.8 X 71.9 X 15.9/17.1 mm , 펼쳤을 때 : 165.2 X 71.9 X 6.9 mm");
-        setSize(phoneModelMap, "갤럭시 Z Fold 4", 155.1, 130.1, 6.3, 155.1, 67.1, 14.2, "접었을때 : 155.1 x 67.1 x 14.2 / 15.8mm , 펼쳤을때 : 155.1 x 130.1 x 6.3mm");
-        setSize(phoneModelMap, "갤럭시 Z Fold 4 512GB", 155.1, 130.1, 6.3, 155.1, 67.1, 14.2, "접었을때 : 155.1 x 67.1 x 14.2 / 15.8mm , 펼쳤을때 : 155.1 x 130.1 x 6.3mm");
-        setSize(phoneModelMap, "갤럭시 S20 중고폰", 151.7, 69.1, 7.9, null, null, null, "151.7 x 69.1 x 7.9 mm");
-        setSize(phoneModelMap, "갤럭시 S20+ 중고폰", 161.9, 73.7, 7.8, null, null, null, "161.9 x 73.7 x 7.8 mm");
-        setSize(phoneModelMap, "갤럭시 S20 Ultra 중고폰", 166.9, 76.0, 8.8, null, null, null, "166.9 x 76 x 8.8 mm");
-        setSize(phoneModelMap, "갤럭시 A33 5G", 159.7, 74.0, 8.1, null, null, null, "159.7 x 74.0 x 8.1mm");
-        setSize(phoneModelMap, "Galaxy Buddy 2", 77.0, 165.5, 8.4, null, null, null, "77 X 165.5 X 8.4 mm");
-        setSize(phoneModelMap, "Galaxy A53 5G", 159.6, 74.8, 8.1, null, null, null, "159.6 x 74.8 x 8.1mm");
-        setSize(phoneModelMap, "iPhone SE 128GB 3세대", 138.4, 67.3, 7.3, null, null, null, "138.4 x 67.3 x 7.3 mm");
-        setSize(phoneModelMap, "iPhone SE 64GB 3세대", 138.4, 67.3, 7.3, null, null, null, "138.4 x 67.3 x 7.3 mm");
-        setSize(phoneModelMap, "갤럭시 S22", 70.6, 146.0, 7.6, null, null, null, "70.6 x 146.0 x 7.6 mm");
-        setSize(phoneModelMap, "갤럭시 S22+", 75.8, 157.4, 7.6, null, null, null, "75.8 x 157.4 x 7.6 mm");
-        setSize(phoneModelMap, "갤럭시 S22 Ultra", 77.9, 163.3, 8.9, null, null, null, "77.9 x 163.3 x 8.9 mm");
-        setSize(phoneModelMap, "iPhone 13 mini 128G",  131.5, 64.2, 7.65,null, null, null, "131.5 x 64.2 x 7.65 mm");
-        setSize(phoneModelMap, "iPhone 13 128G", 146.7, 71.5, 7.65,null, null, null, "146.7 x 71.5 x 7.65 mm");
-        setSize(phoneModelMap, "iPhone 13 Pro 128G", 146.7, 71.5, 7.65,null, null, null, "146.7 x 71.5 x 7.65 mm");
-        setSize(phoneModelMap, "iPhone 13 Pro 256G", 160.8, 78.1, 7.65,null, null, null, "160.8 x 78.1 x 7.65 mm");
-        setSize(phoneModelMap, "iPhone 13 Pro Max 128G", 160.8, 78.1, 7.65,null, null, null, "160.8 x 78.1 x 7.65 mm");
-        setSize(phoneModelMap, "iPhone 13 Pro Max 256G", 160.8, 78.1, 7.65,null, null, null, "160.8 x 78.1 x 7.65 mm");
-        setSize(phoneModelMap, "Galaxy Buddy", 167.2, 76.4, 9.0,null, null, null, "167.2 x 76.4 x 9mm");
-        setSize(phoneModelMap, "갤럭시 Z 플립3", 166.0, 72.2, 6.9,86.4, 72.2, 15.9, "접었을 때 86.4 x 72.2 x 15.9/17.1 mm, 펼쳤을 때 166 x 72.2 x 6.9 mm");
-        setSize(phoneModelMap, "갤럭시 S21", 71.2, 151.7, 7.9,null, null, null, "71.2 x 151.7 x 7.9 mm");
-        setSize(phoneModelMap, "iPhone 12 mini 128G", 131.5, 64.2, 7.4,null, null, null, "131.5 x 64.2 x 7.4 mm");
-        setSize(phoneModelMap, "iPhone 12 Pro Max 256G", 160.8, 78.1, 7.4,null, null, null, "160.8 x 78.1 x 7.4 mm");
-        setSize(phoneModelMap, "iPhone 12 128G", 146.7, 71.5, 7.4,null, null, null, "146.7 x 71.5 x 7.4 mm");
-        setSize(phoneModelMap, "iPhone 12 64G", 146.7, 71.5, 7.4,null, null, null, "146.7 x 71.5 x 7.4 mm");
-        setSize(phoneModelMap, "iPhone 12 Pro 256G", 146.7, 71.5, 7.4,null, null, null, "146.7 x 71.5 x 7.4 mm");
-        setSize(phoneModelMap, "갤럭시 S20 FE 5G", 159.8, 74.5, 8.4,null, null, null, "159.8 x 74.5 x 8.4 mm");
-        setSize(phoneModelMap, "갤럭시 노트20", 161.6, 75.2, 8.3,null, null, null, "161.6 x 75.2 x 8.3 mm");
-        setSize(phoneModelMap, "Galaxy A13", 165.1, 76.4, 8.8,null, null, null, "165.1 x 76.4 X 8.8 mm");
-        setSize(phoneModelMap, "Redmi Note 11", 159.9, 73.9, 8.1,null, null, null, "159.9*73.9*8.1mm");
-        setSize(phoneModelMap, "갤럭시 A23", 165.4, 77.0, 8.4,null, null, null, "165.4×77.0×8.4 mm");
-        setSize(phoneModelMap, "U+키즈폰 with 리틀카카오프렌즈", 147.1, 71.6, 9.2,null, null, null, "147.1 x 71.6 x 9.2mm");
-        setSize(phoneModelMap, "갤럭시 폴더2 2021", 122.0, 60.2, 16.1,null, null, null, "122 X 60.2 X 16.1mm");
-        setSize(phoneModelMap, "갤럭시 A12", 164.0, 75.8, 8.9,null, null, null, "164.0 x 75.8 x 8.9 mm");
-        setSize(phoneModelMap, "갤럭시 A21s", 163.7, 75.3, 8.9,null, null, null, "163.7 x 75.3 x 8.9 mm");
-        setSize(phoneModelMap, "갤럭시 A31", 159.3, 73.1, 8.6,null, null, null, "159.3 × 73.1 × 8.6 ㎜");
+        setSize(phoneModelMap, "갤럭시 Z Flip 4", "접었을때 : 155.1 x 67.1 x 14.2 / 15.8mm , 펼쳤을때 : 155.1 x 130.1 x 6.3mm");
+        setSize(phoneModelMap, "갤럭시 Z Flip 4 메종키츠네 에디션", "접었을 때 : 84.8 X 71.9 X 15.9/17.1 mm , 펼쳤을 때 : 165.2 X 71.9 X 6.9 mm");
+        setSize(phoneModelMap, "갤럭시 Z Flip 4 512GB", "접었을 때 : 84.8 X 71.9 X 15.9/17.1 mm , 펼쳤을 때 : 165.2 X 71.9 X 6.9 mm");
+        setSize(phoneModelMap, "갤럭시 Z Fold 4", "접었을때 : 155.1 x 67.1 x 14.2 / 15.8mm , 펼쳤을때 : 155.1 x 130.1 x 6.3mm");
+        setSize(phoneModelMap, "갤럭시 Z Fold 4 512GB", "접었을때 : 155.1 x 67.1 x 14.2 / 15.8mm , 펼쳤을때 : 155.1 x 130.1 x 6.3mm");
+        setSize(phoneModelMap, "갤럭시 S20 중고폰", "151.7 x 69.1 x 7.9 mm");
+        setSize(phoneModelMap, "갤럭시 S20+ 중고폰", "161.9 x 73.7 x 7.8 mm");
+        setSize(phoneModelMap, "갤럭시 S20 Ultra 중고폰", "166.9 x 76 x 8.8 mm");
+        setSize(phoneModelMap, "갤럭시 A33 5G", "159.7 x 74.0 x 8.1mm");
+        setSize(phoneModelMap, "Galaxy Buddy 2", "77 X 165.5 X 8.4 mm");
+        setSize(phoneModelMap, "Galaxy A53 5G", "159.6 x 74.8 x 8.1mm");
+        setSize(phoneModelMap, "iPhone SE 128GB 3세대",  "138.4 x 67.3 x 7.3 mm");
+        setSize(phoneModelMap, "iPhone SE 64GB 3세대", "138.4 x 67.3 x 7.3 mm");
+        setSize(phoneModelMap, "갤럭시 S22", "70.6 x 146.0 x 7.6 mm");
+        setSize(phoneModelMap, "갤럭시 S22+", "75.8 x 157.4 x 7.6 mm");
+        setSize(phoneModelMap, "갤럭시 S22 Ultra", "77.9 x 163.3 x 8.9 mm");
+        setSize(phoneModelMap, "iPhone 13 mini 128G",  "131.5 x 64.2 x 7.65 mm");
+        setSize(phoneModelMap, "iPhone 13 128G",  "146.7 x 71.5 x 7.65 mm");
+        setSize(phoneModelMap, "iPhone 13 Pro 128G", "146.7 x 71.5 x 7.65 mm");
+        setSize(phoneModelMap, "iPhone 13 Pro 256G", "160.8 x 78.1 x 7.65 mm");
+        setSize(phoneModelMap, "iPhone 13 Pro Max 128G", "160.8 x 78.1 x 7.65 mm");
+        setSize(phoneModelMap, "iPhone 13 Pro Max 256G", "160.8 x 78.1 x 7.65 mm");
+        setSize(phoneModelMap, "Galaxy Buddy", "167.2 x 76.4 x 9mm");
+        setSize(phoneModelMap, "갤럭시 Z 플립3", "접었을 때 86.4 x 72.2 x 15.9/17.1 mm, 펼쳤을 때 166 x 72.2 x 6.9 mm");
+        setSize(phoneModelMap, "갤럭시 S21", "71.2 x 151.7 x 7.9 mm");
+        setSize(phoneModelMap, "iPhone 12 mini 128G", "131.5 x 64.2 x 7.4 mm");
+        setSize(phoneModelMap, "iPhone 12 Pro Max 256G", "160.8 x 78.1 x 7.4 mm");
+        setSize(phoneModelMap, "iPhone 12 128G", "146.7 x 71.5 x 7.4 mm");
+        setSize(phoneModelMap, "iPhone 12 64G", "146.7 x 71.5 x 7.4 mm");
+        setSize(phoneModelMap, "iPhone 12 Pro 256G", "146.7 x 71.5 x 7.4 mm");
+        setSize(phoneModelMap, "갤럭시 S20 FE 5G", "159.8 x 74.5 x 8.4 mm");
+        setSize(phoneModelMap, "갤럭시 노트20", "161.6 x 75.2 x 8.3 mm");
+        setSize(phoneModelMap, "Galaxy A13", "165.1 x 76.4 X 8.8 mm");
+        setSize(phoneModelMap, "Redmi Note 11", "159.9*73.9*8.1mm");
+        setSize(phoneModelMap, "갤럭시 A23", "165.4×77.0×8.4 mm");
+        setSize(phoneModelMap, "U+키즈폰 with 리틀카카오프렌즈", "147.1 x 71.6 x 9.2mm");
+        setSize(phoneModelMap, "갤럭시 폴더2 2021", "122 X 60.2 X 16.1mm");
+        setSize(phoneModelMap, "갤럭시 A12", "164.0 x 75.8 x 8.9 mm");
+        setSize(phoneModelMap, "갤럭시 A21s",  "163.7 x 75.3 x 8.9 mm");
+        setSize(phoneModelMap, "갤럭시 A31", "159.3 × 73.1 × 8.6 ㎜");
     }
 
-    private void setSize(Map<String, PhoneModel> phoneModelMap, String name, Double height, Double width, Double thickness, Double foldedHeight, Double foldedWidth, Double foldedThickness, String description) {
+    private void setSize(Map<String, PhoneModel> phoneModelMap, String name, String description) {
         PhoneModel phoneModel = phoneModelMap.get(name);
         if (Objects.isNull(phoneModel)) return;
-        phoneModel.setSize(new Size(height, width, thickness));
-        if (phoneModel instanceof FoldablePhoneModel foldablePhoneModel) {
-            foldablePhoneModel.setFoldedSize(new Size(foldedHeight, foldedWidth, foldedThickness));
-        }
         PhoneDescription phoneDescription = phoneModel.getDescription();
         PhoneDescription changedPhoneDescription = phoneDescription.changedDescription(null, null, description, null, null, null, null);
         phoneModel.setDescription(changedPhoneDescription);
-    }
-
-    public void initWeight(Map<String, PhoneModel> phoneModelMap) {
-        setWeight(phoneModelMap, "갤럭시 Z Flip 4", 263);
-        setWeight(phoneModelMap, "갤럭시 Z Flip 4 메종키츠네 에디션", 187);
-        setWeight(phoneModelMap, "갤럭시 Z Flip 4 512GB", 187);
-        setWeight(phoneModelMap, "갤럭시 Z Fold 4", 263);
-        setWeight(phoneModelMap, "갤럭시 Z Fold 4 512GB", 263);
-        setWeight(phoneModelMap, "갤럭시 S20 중고폰", 163);
-        setWeight(phoneModelMap, "갤럭시 S20+ 중고폰", 186);
-        setWeight(phoneModelMap, "갤럭시 S20 Ultra 중고폰", 186);
-        setWeight(phoneModelMap, "갤럭시 A33 5G", 220);
-        setWeight(phoneModelMap, "Galaxy Buddy 2", 186);
-        setWeight(phoneModelMap, "Galaxy A53 5G", 189);
-        setWeight(phoneModelMap, "iPhone SE 128GB 3세대", 144);
-        setWeight(phoneModelMap, "iPhone SE 64GB 3세대", 144);
-        setWeight(phoneModelMap, "갤럭시 S22", 144);
-        setWeight(phoneModelMap, "갤럭시 S22+", 195);
-        setWeight(phoneModelMap, "갤럭시 S22 Ultra", 228);
-        setWeight(phoneModelMap, "iPhone 13 mini 128G", 140);
-        setWeight(phoneModelMap, "iPhone 13 128G", 173);
-        setWeight(phoneModelMap, "iPhone 13 Pro 128G", 203);
-        setWeight(phoneModelMap, "iPhone 13 Pro 256G", 203);
-        setWeight(phoneModelMap, "iPhone 13 Pro Max 128G", 238);
-        setWeight(phoneModelMap, "iPhone 13 Pro Max 256G", 238);
-        setWeight(phoneModelMap, "Galaxy Buddy", 203);
-        setWeight(phoneModelMap, "갤럭시 Z 플립3", 183);
-        setWeight(phoneModelMap, "갤럭시 S21", 169);
-        setWeight(phoneModelMap, "iPhone 12 mini 128G", 133);
-        setWeight(phoneModelMap, "iPhone 12 Pro Max 256G", 226);
-        setWeight(phoneModelMap, "iPhone 12 128G", 162);
-        setWeight(phoneModelMap, "iPhone 12 64G", 162);
-        setWeight(phoneModelMap, "iPhone 12 Pro 256G", 187);
-        setWeight(phoneModelMap, "갤럭시 S20 FE 5G", 190);
-        setWeight(phoneModelMap, "갤럭시 노트20", 192);
-        setWeight(phoneModelMap, "Galaxy A13", 195);
-        setWeight(phoneModelMap, "Redmi Note 11", 179);
-        setWeight(phoneModelMap, "갤럭시 A23", 195);
-        setWeight(phoneModelMap, "U+키즈폰 with 리틀카카오프렌즈", 172);
-        setWeight(phoneModelMap, "갤럭시 폴더2 2021", 164);
-        setWeight(phoneModelMap, "갤럭시 A12", 192);
-        setWeight(phoneModelMap, "갤럭시 A21s", 192);
-        setWeight(phoneModelMap, "갤럭시 A31", 185);
-    }
-
-    private void setWeight(Map<String, PhoneModel> phoneModelMap, String name, int weight) {
-        PhoneModel phoneModel = phoneModelMap.get(name);
-        if (Objects.isNull(phoneModel)) return;
-        phoneModel.setWeight(new Weight(weight));
     }
 
     public void initInfo(Map<String, PhoneModel> phoneModelMap) {
@@ -238,9 +169,10 @@ public class PhoneInitializer implements DataInitializer {
     private void setInfo(Map<String, PhoneModel> phoneModelMap, String name, int batteryCapacity, double screenSize, String memoryDescription, int ramCapacity, int romCapacity) {
         PhoneModel phoneModel = phoneModelMap.get(name);
         if (Objects.isNull(phoneModel)) return;
-        phoneModel.setBatteryCapacity(new BatteryCapacity(batteryCapacity));
-        phoneModel.setScreenSize(new ScreenSize(screenSize));
-        phoneModel.setMemoryCapacity(new MemoryCapacity(ramCapacity, romCapacity));
+        phoneModel.setBatteryCapacity(batteryCapacity);
+        phoneModel.setScreenSize(screenSize);
+        phoneModel.setRamCapacity(ramCapacity);
+        phoneModel.setRomCapacity(romCapacity);
         PhoneDescription phoneDescription = phoneModel.getDescription().changedDescription(null, null, null, null, memoryDescription, null, null);
         phoneModel.setDescription(phoneDescription);
     }

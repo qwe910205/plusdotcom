@@ -10,7 +10,7 @@ class PlanCategoryNameTest {
     @ParameterizedTest
     @NullAndEmptySource
     @DisplayName("요금제 카테고리명을 텍스트가 없는 문자열이나 널로 생성하면 예외가 발생한다.")
-    void createPlanCategoryNameWithoutText(String name) {
+    void newPlanCategory(String name) {
         Assertions.assertThatThrownBy(() -> new PlanCategoryName(name)).isInstanceOf(IllegalArgumentException.class);
     }
 

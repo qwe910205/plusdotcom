@@ -3,7 +3,6 @@ package com.qwe910205.plusdotcom.plan.domain;
 import com.qwe910205.plusdotcom.plan.domain.wrapper.PlanCategoryName;
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -13,6 +12,7 @@ import javax.persistence.*;
 @Entity
 public class PlanCategory {
 
+    @AttributeOverride(name = "value", column = @Column(name = "NAME"))
     @EmbeddedId
     private PlanCategoryName name;
 
@@ -21,6 +21,6 @@ public class PlanCategory {
     }
 
     public String getName() {
-        return name.getName();
+        return name.getValue();
     }
 }
